@@ -12,7 +12,6 @@
 | **Credit Hours** | 3(2-1) — Theory + Lab |
 | **Semester** | VI |
 | **Instructor** | Muhammad Arham |
-| **Prerequisites** | Statistics II, Introduction to Data Science |
 
 ### 🎯 Syllabus Topics
 - **Introduction to Data Mining** — Concepts, process & applications
