@@ -1,0 +1,112 @@
+
+<style>
+  .notes-wrap { padding: 1rem 0; font-family: var(--font-sans); }
+  .topic-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.25rem; margin-bottom: 1rem; }
+  .topic-number { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px; }
+  .topic-title { font-size: 17px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 10px; }
+  .point { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 8px; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: #7F77DD; margin-top: 6px; flex-shrink: 0; }
+  .point-text { font-size: 14px; color: var(--color-text-primary); line-height: 1.6; }
+  .formula-box { background: var(--color-background-secondary); border-left: 3px solid #7F77DD; border-radius: 0 6px 6px 0; padding: 8px 12px; margin: 10px 0; font-size: 13px; font-family: var(--font-mono); color: var(--color-text-primary); }
+  .highlight { color: #3C3489; font-weight: 500; }
+  .compare-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
+  .compare-cell { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 10px; font-size: 13px; }
+  .cell-title { font-weight: 500; font-size: 13px; margin-bottom: 6px; color: var(--color-text-primary); }
+  .good { color: #0F6E56; }
+  .bad { color: #993C1D; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 6px 0; }
+</style>
+<div class="notes-wrap">
+
+  <div class="topic-card">
+    <span class="topic-number">Topic 1</span>
+    <p class="topic-title">RNN se Machine Translation — Bunyaadi Masla</p>
+    <div class="point"><div class="dot"></div><div class="point-text">RNN mein ek <span class="highlight">Encoder</span> hota hai jo input (jaise English) ko process karta hai aur ek <span class="highlight">hidden state h</span> banata hai.</div></div>
+    <div class="point"><div class="dot"></div><div class="point-text"><span class="highlight">Decoder</span> us hidden state ko le kar output (jaise Spanish) generate karta hai, ek word at a time.</div></div>
+    <div class="formula-box">Encoder: hₜ = fW(xₜ, hₜ₋₁) &nbsp;|&nbsp; Decoder: sₜ = gU(yₜ, sₜ₋₁)</div>
+    <div class="point"><div class="dot"></div><div class="point-text"><span class="highlight">Masla:</span> Poori input sequence ek fixed-size vector (bottleneck) se guzarti hai — lambi sentences ke liye yeh kaafi nahi hota.</div></div>
+    <div class="point"><div class="dot"></div><div class="point-text"><span class="highlight">Chhota hal:</span> Context vector c = h₄ add karo aur har decoder step mein use karo — lekin pھir bhi bottleneck hai.</div></div>
+  </div>
+
+  <div class="topic-card">
+    <span class="topic-number">Topic 2</span>
+    <p class="topic-title">Attention Mechanism — Asli Hal (Bahdanau 2015)</p>
+    <div class="point"><div class="dot"></div><div class="point-text"><span class="highlight">Idea:</span> Decoder ke har step par ek naya, alag context vector banao. Pehle wala fixed tha — yeh dynamic hai.</div></div>
+    <div class="point"><div class="dot"></div><div class="point-text">Har decoder state sₜ₋₁ ko har encoder hidden state hᵢ se compare karo ek <span class="highlight">alignment score eₜ,ᵢ</span> nikalne ke liye (MLP use hoti hai).</div></div>
+    <div class="point"><div class="dot"></div><div class="point-text">Scores ko <span class="highlight">Softmax</span> se guzaaro — yeh <span class="highlight">attention weights aₜ,ᵢ</span> bante hain (sab mil ke 1 hote hain).</div></div>
+    <div class="formula-box">cₜ = Σᵢ aₜ,ᵢ · hᵢ &nbsp;&nbsp; (weighted sum of encoder states)</div>
+    <div class="point"><div class="dot"></div><div class="point-text"><span class="highlight">Intuition:</span> "estamos" translate karte waqt, attention weights h₁ (we) aur h₂ (are) par zyada hoti hain — model wahi "dekhta" hai jo zaroori ho.</div></div>
+    <div class="point"><div class="dot"></div><div class="point-text">Yeh poora process <span class="highlight">differentiable</span> hai — attention weights ko directly train nahi karte, backprop sab kuch seekh leta hai.</div></div>
+  </div>
+
+  <div class="topic-card">
+    <span class="topic-number">Topic 3</span>
+    <p class="topic-title">Attention Layer — General Form (Query, Key, Value)</p>
+    <div class="point"><div class="dot"></div><div class="point-text">Attention ko generalize kiya gaya 3 cheezein mein: <span class="highlight">Query (Q)</span>, <span class="highlight">Key (K)</span>, aur <span class="highlight">Value (V)</span>.</div></div>
+    <div class="point"><div class="dot"></div><div class="point-text">Query = "main kya dhoondh raha hoon?" &nbsp;|&nbsp; Key = "mere paas kya hai?" &nbsp;|&nbsp; Value = "actual information"</div></div>
+    <div class="formula-box">K = X·Wₖ &nbsp;|&nbsp; V = X·Wᵥ &nbsp;|&nbsp; E = QKᵀ / √Dq &nbsp;|&nbsp; A = softmax(E) &nbsp;|&nbsp; Y = AV</div>
+    <div class="point"><div class="dot"></div><div class="point-text"><span class="highlight">Dot product</span> similarity use hoti hai (MLP ki jagah) — zyada fast aur parallelizable hai.</div></div>
+    <div class="point"><div class="dot"></div><div class="point-text"><span class="highlight">Scaling (√Dq)</span> isliye karte hain ke zyada dimensions mein dot products bahut bade ho jaate hain — softmax saturate ho jata hai.</div></div>
+  </div>
+
+  <div class="topic-card">
+    <span class="topic-number">Topic 4</span>
+    <p class="topic-title">Self-Attention Layer</p>
+    <div class="point"><div class="dot"></div><div class="point-text">Jab Q, K, V teeno ek hi input X se bante hain — isko <span class="highlight">Self-Attention</span> kehte hain.</div></div>
+    <div class="point"><div class="dot"></div><div class="point-text">Har input vector apne aap ko aur baaki sabse compare karta hai — "sentence mein context samajhna".</div></div>
+    <div class="formula-box">Q = X·Wq &nbsp;|&nbsp; K = X·Wₖ &nbsp;|&nbsp; V = X·Wᵥ</div>
+    <div class="point"><div class="dot"></div><div class="point-text"><span class="highlight">Permutation Equivariant:</span> Agar input ka order badlo, toh output bhi usi tarha badlega — f(s(x)) = s(f(x)). Matlab model naturally order nahi jaanta.</div></div>
+    <div class="point"><div class="dot"></div><div class="point-text"><span class="highlight">Positional Encoding:</span> Isliye position information alag se add karte hain input vectors ke saath — yeh learned table bhi ho sakti hai ya fixed sinusoidal function.</div></div>
+    <div class="point"><div class="dot"></div><div class="point-text"><span class="highlight">Masked Self-Attention:</span> Language modeling mein future tokens "dekhne" se rokne ke liye future positions ko -∞ se mask karte hain.</div></div>
+    <div class="point"><div class="dot"></div><div class="point-text"><span class="highlight">Multi-Head Attention:</span> H parallel attention heads chalao, alag Wq/Wₖ/Wᵥ ke saath, phir concatenate karo — zyada rich representation milti hai.</div></div>
+  </div>
+
+  <div class="topic-card">
+    <span class="topic-number">Topic 5</span>
+    <p class="topic-title">RNN vs 1D Conv vs Self-Attention — Comparison</p>
+    <div class="compare-row">
+      <div class="compare-cell">
+        <div class="cell-title">RNN</div>
+        <hr class="divider">
+        <div class="good">✓ Long sequences handle karta hai</div>
+        <div class="bad">✗ Parallel nahi chal sakta</div>
+        <div class="bad">✗ Sequential computation</div>
+      </div>
+      <div class="compare-cell">
+        <div class="cell-title">1D Convolution</div>
+        <hr class="divider">
+        <div class="good">✓ Highly parallel</div>
+        <div class="bad">✗ Long sequences ke liye kaafi layers chahiye</div>
+        <div class="bad">✗ Limited receptive field</div>
+      </div>
+      <div class="compare-cell">
+        <div class="cell-title">Self-Attention</div>
+        <hr class="divider">
+        <div class="good">✓ Ek hi layer mein sab kuch dekhta hai</div>
+        <div class="good">✓ Highly parallel</div>
+        <div class="bad">✗ Memory bahut zyada use karta hai (O(n²))</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <span class="topic-number">Topic 6</span>
+    <p class="topic-title">The Transformer (Vaswani et al, 2017 — "Attention is All You Need")</p>
+    <div class="point"><div class="dot"></div><div class="point-text">Ek <span class="highlight">Transformer Block</span> mein yeh hota hai: Self-Attention → Layer Norm + Residual → MLP → Layer Norm + Residual</div></div>
+    <div class="point"><div class="dot"></div><div class="point-text"><span class="highlight">Residual Connection (+):</span> Input ko output mein add karte hain — deep networks mein training asaan hoti hai, gradients theek se flow karte hain.</div></div>
+    <div class="point"><div class="dot"></div><div class="point-text"><span class="highlight">Layer Normalization:</span> Har vector ko normalize karo — training stable rehti hai. (Batch norm se different — yeh per-sample kaam karta hai)</div></div>
+    <div class="point"><div class="dot"></div><div class="point-text">Self-Attention sirf woh jagah hai jahan vectors aapas mein "baat karte" hain — MLP aur LayerNorm independently har vector par kaam karte hain.</div></div>
+    <div class="point"><div class="dot"></div><div class="point-text">Kaafi Transformer Blocks ko stack karo — yahi poora Transformer model hai. Encoder-Decoder architecture use hoti hai machine translation ke liye.</div></div>
+    <div class="point"><div class="dot"></div><div class="point-text"><span class="highlight">GLUE Benchmark:</span> NLP tasks par Transformers (BERT, RoBERTa etc.) ne human baseline ko bhi peeche chhod diya.</div></div>
+  </div>
+
+  <div class="topic-card">
+    <span class="topic-number">Topic 7</span>
+    <p class="topic-title">Transformers Sirf Text Ke Liye Nahi — ViLBERT</p>
+    <div class="point"><div class="dot"></div><div class="point-text">Transformers ko <span class="highlight">vision + language</span> dono ke liye use kar sakte hain — ViLBERT (Lu et al, 2019) iska example hai.</div></div>
+    <div class="point"><div class="dot"></div><div class="point-text">Image ko <span class="highlight">Faster R-CNN</span> se process karo — object regions ki features nikalo. Text ko alag transformer stream mein daalo.</div></div>
+    <div class="point"><div class="dot"></div><div class="point-text">Dono streams ek <span class="highlight">Multimodal Transformer</span> mein "cross-attention" ke zariye interact karti hain.</div></div>
+    <div class="point"><div class="dot"></div><div class="point-text">Kaam aata hai: Visual Question Answering (image ke baare mein sawaal), Image Captioning, Visual Grounding etc.</div></div>
+  </div>
+
+</div>

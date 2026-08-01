@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="ur" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RNN Study Notes - Roman Urdu</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d2e;
+    --surface2: #232640;
+    --accent: #7c6af5;
+    --accent2: #e85d7a;
+    --accent3: #3ecf8e;
+    --gold: #f5c842;
+    --text: #e8e8f0;
+    --muted: #8b8faa;
+    --border: rgba(124,106,245,0.25);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.75;
+    font-size: 16px;
+  }
+
+  .stars {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 0;
+    background: radial-gradient(ellipse at 20% 50%, rgba(124,106,245,0.06) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(62,207,142,0.05) 0%, transparent 50%);
+  }
+
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+    position: relative; z-index: 1;
+  }
+
+  /* HEADER */
+  .header {
+    text-align: center;
+    padding: 48px 24px 40px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
+    position: relative;
+  }
+  .header::before {
+    content: '';
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 120px; height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 2px;
+  }
+  .course-tag {
+    display: inline-block;
+    background: rgba(124,106,245,0.15);
+    color: var(--accent);
+    border: 1px solid var(--border);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-family: 'Amiri', serif;
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff 0%, var(--accent) 60%, var(--accent2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+  }
+  .header .subtitle {
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  /* SECTIONS */
+  .section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+  }
+  .section:hover {
+    box-shadow: 0 8px 40px rgba(124,106,245,0.12);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 24px;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+  }
+  .section-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .icon-purple { background: rgba(124,106,245,0.2); }
+  .icon-green  { background: rgba(62,207,142,0.2); }
+  .icon-red    { background: rgba(232,93,122,0.2); }
+  .icon-gold   { background: rgba(245,200,66,0.2); }
+  .icon-blue   { background: rgba(56,139,253,0.2); }
+
+  .section-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff;
+  }
+  .section-num {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .section-body {
+    padding: 24px;
+  }
+
+  /* POINTS */
+  .point {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 14px;
+    align-items: flex-start;
+  }
+  .point:last-child { margin-bottom: 0; }
+  .bullet {
+    width: 22px; height: 22px;
+    border-radius: 6px;
+    background: rgba(124,106,245,0.18);
+    border: 1px solid rgba(124,106,245,0.4);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .point-text { flex: 1; color: var(--text); }
+  .point-text b { color: var(--gold); font-weight: 700; }
+  .point-text em { color: var(--accent3); font-style: normal; font-weight: 600; }
+
+  /* HIGHLIGHT BOX */
+  .highlight {
+    background: rgba(124,106,245,0.1);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 15px;
+  }
+  .highlight.green {
+    background: rgba(62,207,142,0.08);
+    border-left-color: var(--accent3);
+  }
+  .highlight.red {
+    background: rgba(232,93,122,0.08);
+    border-left-color: var(--accent2);
+  }
+  .highlight.gold {
+    background: rgba(245,200,66,0.08);
+    border-left-color: var(--gold);
+  }
+
+  /* FORMULA BOX */
+  .formula {
+    background: #0d0e18;
+    border: 1px solid rgba(124,106,245,0.3);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 14px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 15px;
+    color: #a8d8ff;
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+  .formula .label {
+    display: block;
+    font-family: 'Nunito', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  /* TABLE */
+  .table-wrap { overflow-x: auto; margin: 14px 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  th {
+    background: var(--surface2);
+    padding: 10px 16px;
+    text-align: left;
+    font-weight: 700;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+  }
+  td {
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: var(--text);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+
+  /* TAGS */
+  .tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 2px 3px;
+  }
+  .tag-purple { background: rgba(124,106,245,0.2); color: #b3a8ff; border: 1px solid rgba(124,106,245,0.4); }
+  .tag-green  { background: rgba(62,207,142,0.15); color: #5ef5b5; border: 1px solid rgba(62,207,142,0.3); }
+  .tag-red    { background: rgba(232,93,122,0.15); color: #ff8fa6; border: 1px solid rgba(232,93,122,0.3); }
+  .tag-gold   { background: rgba(245,200,66,0.15); color: #ffd966; border: 1px solid rgba(245,200,66,0.3); }
+
+  /* SUB-SECTION */
+  .subsection {
+    background: rgba(255,255,255,0.03);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 14px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .subsection h4 {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--accent3);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  /* TIMELINE */
+  .timeline { padding: 8px 0; }
+  .tl-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .tl-year {
+    min-width: 48px;
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--gold);
+    padding-top: 2px;
+  }
+  .tl-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+  .tl-dot.red { background: var(--accent2); }
+  .tl-content { flex: 1; font-size: 14px; color: var(--text); }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 16px 0;
+  }
+
+  /* EXAM ALERT */
+  .exam-alert {
+    background: linear-gradient(135deg, rgba(232,93,122,0.12), rgba(124,106,245,0.08));
+    border: 1px solid rgba(232,93,122,0.3);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .exam-alert .icon { font-size: 20px; flex-shrink: 0; }
+  .exam-alert p { font-size: 14px; color: #ff8fa6; font-weight: 600; }
+
+  /* TWO COL */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 12px 0;
+  }
+  @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+  .col-box {
+    background: rgba(255,255,255,0.03);
+    border-radius: 10px;
+    padding: 14px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .col-box h5 {
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+  }
+  .col-box.purple h5 { color: var(--accent); }
+  .col-box.green h5 { color: var(--accent3); }
+  .col-box.red h5 { color: var(--accent2); }
+  .col-box.gold h5 { color: var(--gold); }
+
+  .small { font-size: 14px; }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 32px 0 0;
+    color: var(--muted);
+    font-size: 13px;
+    border-top: 1px solid var(--border);
+    margin-top: 16px;
+  }
+</style>
+</head>
+<body>
+<div class="stars"></div>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="course-tag">Deep Learning — Lecture 10</div>
+    <h1>Recurrent Neural Networks</h1>
+    <p class="subtitle">Mukammal Study Notes — Roman Urdu mein · Dr. M. Gufran Khan</p>
+  </div>
+
+  <!-- EXAM ALERT -->
+  <div class="exam-alert">
+    <span class="icon">🎯</span>
+    <p>Yeh notes tamam important topics cover kartay hain: Sequential Data, RNN ka structure, Training (BPTT), Vanishing Gradient Problem, aur Gated RNNs (LSTM &amp; GRU). Exam ki tayyari ke liye bold points zaroor yaad karo.</p>
+  </div>
+
+  <!-- SECTION 1: Sequential Data -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📊</div>
+      <div class="section-title">1. Sequential Data kya hota hai?</div>
+      <span class="section-num">SLIDES 5–10</span>
+    </div>
+    <div class="section-body">
+
+      <div class="highlight">
+        <b>Definition:</b> Sequential data woh data hai jisme har element ek specific order mein hota hai aur elements aapas mein depend kartay hain. Normal tabular data ki tarah nahi hota jahan rows independent hoti hain.
+      </div>
+
+      <div class="point">
+        <div class="bullet">1</div>
+        <div class="point-text"><b>Do key properties:</b> (a) Elements ek specific order mein atay hain, (b) Elements ek doosre par depend kartay hain — yaani aik element ka matlab doosray ke baghair samajhna mushkil hai.</div>
+      </div>
+      <div class="point">
+        <div class="bullet">2</div>
+        <div class="point-text"><b>Sequence ki examples:</b> Text documents (sentences), audio waveforms aur spectrograms, images (pixel rows), time-series data (stock market, brain waves, air temperature, radio waves).</div>
+      </div>
+
+      <div class="divider"></div>
+      <p style="font-size:14px; color: var(--muted); margin-bottom:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px;">Sequence ke 3 Types of Applications</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Input</th>
+              <th>Output</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="tag tag-purple">One-to-Many</span></td>
+              <td>Fixed-size (ek cheez)</td>
+              <td>Sequence (kai cheezain)</td>
+              <td>Image Captioning — ek tasweer dou, caption likha aayega</td>
+            </tr>
+            <tr>
+              <td><span class="tag tag-green">Many-to-One</span></td>
+              <td>Sequence (kai cheezain)</td>
+              <td>Fixed-size (ek cheez)</td>
+              <td>Sentiment Analysis — movie review dou, "positive/negative" aayega</td>
+            </tr>
+            <tr>
+              <td><span class="tag tag-gold">Many-to-Many</span></td>
+              <td>Sequence</td>
+              <td>Sequence</td>
+              <td>Language Translation — English sentence dou, Urdu sentence aayega</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: Historical Context -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-gold">📅</div>
+      <div class="section-title">2. Tarikhi Pasmanzar (Historical Context)</div>
+      <span class="section-num">SLIDE 12, 53</span>
+    </div>
+    <div class="section-body">
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-year">1847</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">Gradient Descent algorithm aaya</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">1956–59</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">Perceptron aur Machine Learning ki buniyad rakhi gayi</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">1980</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">Neocognitron — CNN ka baap</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year" style="color:var(--accent2)">1986 ⭐</div>
+          <div class="tl-dot red"></div>
+          <div class="tl-content"><b style="color:var(--accent2)">RNN ka janm!</b> Rumelhart ka mashhoor paper: "Learning internal representations by back-propagating errors"</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year" style="color:var(--accent2)">1997 ⭐</div>
+          <div class="tl-dot red"></div>
+          <div class="tl-content"><b style="color:var(--accent2)">LSTM</b> (Long Short-Term Memory) introduce hua — vanishing gradient problem ka solution</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year" style="color:var(--accent2)">2014 ⭐</div>
+          <div class="tl-dot red"></div>
+          <div class="tl-content"><b style="color:var(--accent2)">GRU</b> (Gated Recurrent Unit) aaya — LSTM ka simplified version</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: Feedforward vs RNN -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-blue">🔄</div>
+      <div class="section-title">3. Feedforward Network vs RNN — Farq kya hai?</div>
+      <span class="section-num">SLIDES 13–16</span>
+    </div>
+    <div class="section-body">
+
+      <div class="two-col">
+        <div class="col-box red">
+          <h5>❌ Feedforward Network (Purana)</h5>
+          <ul style="font-size:14px; padding-left:16px; line-height:1.9;">
+            <li>Har layer sirf agle layer ko input deti hai</li>
+            <li>Koi loop nahi — data sirf aage jaata hai</li>
+            <li>Problem 1: Bahut saray parameters</li>
+            <li>Problem 2: Input/output size fixed hoti hai</li>
+            <li><b style="color:var(--accent2)">Problem 3: Koi memory nahi</b> — weights independently seekhay jaatay hain, pichla data yaad nahi rehta</li>
+          </ul>
+        </div>
+        <div class="col-box green">
+          <h5>✅ Recurrent Network (Naya)</h5>
+          <ul style="font-size:14px; padding-left:16px; line-height:1.9;">
+            <li>Har layer previous layer + <em>previous time step ka output</em> bhi leta hai</li>
+            <li>Loop hota hai — "time-delayed connections"</li>
+            <li>Memory hoti hai — puraani info yaad rehti hai</li>
+            <li>Variable length sequences handle kar sakta hai</li>
+            <li>Shared weights — kam parameters</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight green">
+        <b>Main Idea (yaad rakho!):</b> RNN mein ek <em>hidden state</em> hota hai jo <b>past ki information store karta hai</b>. Yeh hidden state har time step par update hota rehta hai.
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: RNN Math -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-purple">🔢</div>
+      <div class="section-title">4. RNN ka Mathematical Structure</div>
+      <span class="section-num">SLIDES 15–26</span>
+    </div>
+    <div class="section-body">
+
+      <div class="formula">
+        <span class="label">Core Recurrence Formula</span>
+        s<sub>t</sub> = f<sub>m</sub>( s<sub>t-1</sub> , x<sub>t</sub> )
+      </div>
+
+      <div class="point">
+        <div class="bullet">s</div>
+        <div class="point-text"><b>s<sub>t</sub></b> = Naya hidden state (abhi ka) — <em>New State</em></div>
+      </div>
+      <div class="point">
+        <div class="bullet">s</div>
+        <div class="point-text"><b>s<sub>t-1</sub></b> = Purana hidden state (pichle waqt ka) — <em>Old State</em></div>
+      </div>
+      <div class="point">
+        <div class="bullet">x</div>
+        <div class="point-text"><b>x<sub>t</sub></b> = Abhi ka input — <em>Input at current time step</em></div>
+      </div>
+      <div class="point">
+        <div class="bullet">f</div>
+        <div class="point-text"><b>f<sub>m</sub></b> = Function jisme model parameters (m = model parameters) hain — same function har time step par lagaya jaata hai. Isliye iska naam <b>"Recurrent"</b> hai!</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="formula">
+        <span class="label">Forward Pass Formula (Practical RNN)</span>
+        h<sub>t</sub> = tanh( W<sub>hh</sub> · h<sub>t-1</sub> + W<sub>xh</sub> · x<sub>t</sub> + bias )
+      </div>
+
+      <div class="point">
+        <div class="bullet">W</div>
+        <div class="point-text"><b>W<sub>xh</sub></b> = Input ko hidden state se jodne wala weight matrix (green)</div>
+      </div>
+      <div class="point">
+        <div class="bullet">W</div>
+        <div class="point-text"><b>W<sub>hh</sub></b> = Hidden state ko agle hidden state se jodne wala weight matrix (orange)</div>
+      </div>
+      <div class="point">
+        <div class="bullet">W</div>
+        <div class="point-text"><b>W<sub>hy</sub></b> = Hidden state se output nikalne wala weight matrix (blue)</div>
+      </div>
+
+      <div class="highlight gold">
+        <b>🔑 Key Insight:</b> Tamam layers ke liye <b>same weights (U, V, W) use hotay hain</b>! Layers ke beech sirf x<sub>t</sub> (input) alag hota hai. Isliye RNN mein FNN ke muqablay bahut kam parameters hotay hain.
+      </div>
+
+      <div class="highlight">
+        <b>Unfolding kya hai?</b> RNN ka loop khol ke use time ke saath phailaao — toh woh ek deep feedforward network ban jaata hai jisme <b>shared weights</b> hotay hain. Yeh bahut important concept hai!
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 5: RNN Advantages -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-green">⚡</div>
+      <div class="section-title">5. RNN ke Fayde (Advantages)</div>
+      <span class="section-num">SLIDES 26–29</span>
+    </div>
+    <div class="section-body">
+      <div class="point">
+        <div class="bullet">1</div>
+        <div class="point-text"><b>Memory:</b> Previous hidden state use karke past ki information yaad rakhta hai — FNN mein yeh mumkin nahi tha kyunki weights independently seekhay jaatay thay.</div>
+      </div>
+      <div class="point">
+        <div class="bullet">2</div>
+        <div class="point-text"><b>Kam Parameters:</b> Sab time steps ke liye same weights share hotay hain — isliye FNN ke muqablay parameters ki tadaad bahut kam hoti hai.</div>
+      </div>
+      <div class="point">
+        <div class="bullet">3</div>
+        <div class="point-text"><b>Variable Length:</b> Theortically kisi bhi length ki sequence handle kar sakta hai — sirf time steps unfold/fold karo. Short ya long sequence, dono kaam kartay hain.</div>
+      </div>
+      <div class="point">
+        <div class="bullet">4</div>
+        <div class="point-text"><b>Dynamic Memory:</b> Past information kitni der yaad rakhi jayegi yeh model ki weights aur data decide kartay hain — koi fixed duration nahi. Yeh FNN se bahut different hai.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 6: RNN Example -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-gold">💡</div>
+      <div class="section-title">6. RNN Example: Character Prediction ("hello")</div>
+      <span class="section-num">SLIDES 30–45</span>
+    </div>
+    <div class="section-body">
+      <div class="highlight gold">
+        <b>Goal:</b> RNN ko "hello" jaisa text seekhna hai taa ke woh next character predict kar sake — yahi <b>automatic text completion</b> hai.
+      </div>
+
+      <div class="subsection">
+        <h4>Step 1 — Input Representation: One-Hot Encoding</h4>
+        <p class="small">Har character ko ek vector mein convert karo. Vocabulary = {h, e, l, o} hai.</p>
+        <div class="table-wrap" style="margin-top:10px;">
+          <table>
+            <thead>
+              <tr><th>Character</th><th>One-Hot Vector</th><th>Time Step</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>h</td><td>[1, 0, 0, 0]</td><td>t=1</td></tr>
+              <tr><td>e</td><td>[0, 1, 0, 0]</td><td>t=2</td></tr>
+              <tr><td>l</td><td>[0, 0, 1, 0]</td><td>t=3</td></tr>
+              <tr><td>l</td><td>[0, 0, 1, 0]</td><td>t=4</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h4>Step 2 — Forward Pass</h4>
+        <div class="point">
+          <div class="bullet">1</div>
+          <div class="point-text">Pehla hidden state: h<sub>t-1</sub> = 0 se start karo (zero initialize)</div>
+        </div>
+        <div class="point">
+          <div class="bullet">2</div>
+          <div class="point-text">Formula lagao: <b>h<sub>t</sub> = tanh(W<sub>hh</sub>·h<sub>t-1</sub> + W<sub>xh</sub>·x<sub>t</sub> + bias)</b></div>
+        </div>
+        <div class="point">
+          <div class="bullet">3</div>
+          <div class="point-text">Output: <b>y<sub>t</sub> = W<sub>hy</sub>·h<sub>t</sub></b> phir <b>softmax</b> lagao → probability milti hai har character ki</div>
+        </div>
+        <div class="point">
+          <div class="bullet">4</div>
+          <div class="point-text">Highest probability wala character predict kiya jaata hai</div>
+        </div>
+        <div class="point">
+          <div class="bullet">5</div>
+          <div class="point-text">Number of rows in weight matrix ek <em>hyperparameter</em> hai — zyada rows = zyada complex function represent kar sakta hai</div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h4>Step 3 — Test Time (Naya text banana)</h4>
+        <p class="small" style="margin-bottom:8px;">Training ke baad jab naya text generate karna ho:</p>
+        <div class="point">
+          <div class="bullet">→</div>
+          <div class="point-text">Pichle time step ki <b>prediction (y<sub>t-1</sub>)</b> ko aglay time step ka <b>input (x<sub>t</sub>)</b> banao — yahi autoregressive generation hai</div>
+        </div>
+        <div class="highlight green">
+          <b>Real Examples:</b> RNN ko Wikipedia articles, Shakespeare ki writings, C code, aur Facebook messages par train kiya gaya — aur usne similar style mein naya text generate kiya!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 7: Training -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-blue">🏋️</div>
+      <div class="section-title">7. Training Approach: BPTT</div>
+      <span class="section-num">SLIDES 36–43</span>
+    </div>
+    <div class="section-body">
+      <div class="highlight">
+        <b>Training ki method:</b> <em>Back-Propagation Through Time (BPTT)</em> — yeh wohi generalized gradient derivation hai jo hum pehle seekh chukay hain, sirf time ke saath unfolded network par apply hota hai.
+      </div>
+
+      <p style="margin-bottom:12px; font-weight:700; color: var(--muted); font-size:13px; text-transform:uppercase; letter-spacing:0.8px;">Yeh process baar baar repeat hoti hai jab tak stopping criterion poori na ho:</p>
+
+      <div class="subsection">
+        <h4>🔵 Step 1: Forward Pass</h4>
+        <p class="small">Training data ko unfolded RNN ke through propagate karo — output nikalte jao. Yeh forward direction mein hota hai.</p>
+      </div>
+
+      <div class="subsection">
+        <h4>🟢 Step 2: Error Quantification</h4>
+        <p class="small">Model ki predictions aur asli data mein kitna farq hai? Loss function use karke measure karo.</p>
+        <p class="small" style="margin-top:6px;">Many-to-Many task mein <b>Cross Entropy Loss</b> use hoti hai — har time step par loss calculate karo phir sab jodo.</p>
+      </div>
+
+      <div class="subsection">
+        <h4>🔴 Step 3: Backward Pass</h4>
+        <p class="small">Har model parameter (U, V, W) ke liye gradients calculate karo.</p>
+        <div class="highlight red" style="margin-top:10px;">
+          <b>Important!</b> Weight sharing ki wajah se: <b>gradients ko tamam time steps ke liye sum karo</b>. Ek weight ki gradient = har time step par us weight ki gradient ka sum.
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h4>⚪ Step 4: Update Parameters</h4>
+        <p class="small">Calculated gradients use karke har parameter update karo — gradient descent se.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 8: RNN Variants -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-green">🔀</div>
+      <div class="section-title">8. RNN Variants</div>
+      <span class="section-num">SLIDES 46–48</span>
+    </div>
+    <div class="section-body">
+
+      <p style="margin-bottom:14px; font-size:14px; color: var(--muted);">RNN ko different tasks ke liye different tareekon se arrange kiya ja sakta hai:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Variant</th><th>Structure</th><th>Use Case</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="tag tag-purple">One-to-One</span></td>
+              <td>1 input → 1 output</td>
+              <td>Standard classification</td>
+            </tr>
+            <tr>
+              <td><span class="tag tag-green">One-to-Many</span></td>
+              <td>1 input → sequence output</td>
+              <td>Image captioning</td>
+            </tr>
+            <tr>
+              <td><span class="tag tag-gold">Many-to-One</span></td>
+              <td>Sequence input → 1 output</td>
+              <td>Sentiment analysis</td>
+            </tr>
+            <tr>
+              <td><span class="tag tag-red">Many-to-Many (v1)</span></td>
+              <td>Sequence → delayed sequence</td>
+              <td>Machine translation (encoder-decoder)</td>
+            </tr>
+            <tr>
+              <td><span class="tag tag-purple">Many-to-Many (v2)</span></td>
+              <td>Sequence → same-length sequence</td>
+              <td>Named Entity Recognition — har word ka label chahiye</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="highlight">
+        <b>Deep RNN:</b> Multiple hidden layers use karo — depth badhao. Experimental evidence batata hai ke <b>deeper models better perform kartay hain</b> (especially speech recognition mein — Graves et al. 2013).
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 9: Vanishing Gradient Problem -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-red">⚠️</div>
+      <div class="section-title">9. Learning Problem: Vanishing Gradient</div>
+      <span class="section-num">SLIDES 49–51</span>
+    </div>
+    <div class="section-body">
+
+      <div class="highlight red">
+        <b>Problem:</b> RNN long-term dependencies seekhne mein fail ho jaata hai — matlab purani information (bahut pehle waala input) ko yaad nahi rakh paata.
+      </div>
+
+      <div class="subsection">
+        <h4>Example samjho</h4>
+        <p class="small">"In 2004, I started college" — yahaan "2004" shuroo mein hai aur baad mein uski zaroorat hai. Agar sequence lamba ho toh RNN "2004" bhool jaata hai.</p>
+      </div>
+
+      <div class="point">
+        <div class="bullet">!</div>
+        <div class="point-text"><b>Kyun hota hai yeh?</b> RNN mein unfolding ke baad same weights baar baar multiply hotay hain. Agar weight 1 se chhota ho (jaise 0.8), toh <b>0.8 × 0.8 × 0.8 × ... = 0 ki taraf jaata hai</b> — Yahi Vanishing Gradient hai!</div>
+      </div>
+      <div class="point">
+        <div class="bullet">!</div>
+        <div class="point-text"><b>Exploding Gradient bhi hota hai:</b> Agar weight 1 se bada ho, toh gradients bahut zyada barhte hain — especially ReLU activation ke saath.</div>
+      </div>
+      <div class="point">
+        <div class="bullet">!</div>
+        <div class="point-text"><b>Yeh FNN aur CNN mein itna bura kyun nahi?</b> Unme alag alag weights hotay hain har layer mein. RNN mein same weights repeatedly multiply hotay hain — isliye problem zyada severe hoti hai.</div>
+      </div>
+
+      <div class="two-col" style="margin-top:12px;">
+        <div class="col-box red">
+          <h5>Vanishing Gradient</h5>
+          <p class="small">Gradients → 0 ho jaatay hain. Neurons "die" kar jaatay hain (0 gradient). Purani information model nahi seekh paata.</p>
+        </div>
+        <div class="col-box gold">
+          <h5>Solution</h5>
+          <p class="small"><b>tanh</b> activation + <b>Gates</b> (LSTM/GRU) use karo. Gates control kartay hain kaunsi information yaad rakhni hai aur kounsi bhoolni hai.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 10: LSTM -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-purple">🧠</div>
+      <div class="section-title">10. Gated RNN #1: LSTM</div>
+      <span class="section-num">SLIDES 54–58</span>
+    </div>
+    <div class="section-body">
+
+      <div class="highlight">
+        <b>LSTM = Long Short-Term Memory</b> — 1997 mein aaya. Yeh basic RNN ka upgraded version hai jo long-term dependencies yaad rakh sakta hai.
+      </div>
+
+      <div class="subsection">
+        <h4>2 States Forward Pass Kartay Hain</h4>
+        <div class="two-col">
+          <div class="col-box purple">
+            <h5>Hidden State (h<sub>t</sub>)</h5>
+            <p class="small">Basic RNN ki tarah — short-term memory. Output nikalne ke liye use hota hai.</p>
+          </div>
+          <div class="col-box green">
+            <h5>Cell State (s<sub>t</sub>) — NEW!</h5>
+            <p class="small"><b>Long-term memory!</b> Bahut lamba waqt information retain kar sakta hai. Yeh LSTM ki asli power hai.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h4>3 Gates — Yeh LSTM ki Pehchaan Hain!</h4>
+
+        <div class="point">
+          <div class="bullet" style="background:rgba(62,207,142,0.2); border-color:rgba(62,207,142,0.5); color:var(--accent3);">i</div>
+          <div class="point-text"><b style="color:var(--accent3)">Input Gate (σ):</b> Decide karta hai — naya input <em>kitna</em> cell state mein add karna hai? (0 = kuch nahi, 1 = sab kuch)</div>
+        </div>
+        <div class="point">
+          <div class="bullet" style="background:rgba(232,93,122,0.2); border-color:rgba(232,93,122,0.5); color:var(--accent2);">f</div>
+          <div class="point-text"><b style="color:var(--accent2)">Forget Gate (σ):</b> Decide karta hai — purani cell state ki <em>kitni</em> information bhoolni hai? (0 = sab bhool jao, 1 = sab yaad rakho). <b>Yeh most important gate hai!</b></div>
+        </div>
+        <div class="point">
+          <div class="bullet" style="background:rgba(245,200,66,0.2); border-color:rgba(245,200,66,0.5); color:var(--gold);">o</div>
+          <div class="point-text"><b style="color:var(--gold)">Output Gate (σ):</b> Decide karta hai — cell state ki <em>kitni</em> information output mein deni hai?</div>
+        </div>
+      </div>
+
+      <div class="formula">
+        <span class="label">Cell State Update Formula</span>
+        s<sub>t</sub> = s<sub>t-1</sub> · f + g · i
+      </div>
+
+      <div class="point">
+        <div class="bullet">→</div>
+        <div class="point-text">Yahan <b>addition (+)</b> ka use hota hai multiplication ki jagah — isliye gradient time ke saath aasaani se flow karta hai (vanishing gradient fix hota hai!)</div>
+      </div>
+
+      <div class="highlight gold">
+        <b>Gate kyun bolte hain?</b> Gates mein <b>sigmoid (σ)</b> function use hota hai jiska output 0 se 1 ke beech hota hai — bilkul darwaze ki tarah: 0 = band, 1 = khula. Isliye naam "gate" hai!
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Forget Gate Value</th><th>Kya hota hai?</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag tag-red">f = 0</span></td><td>Pura purana cell state bhool jao (past discarded)</td></tr>
+            <tr><td><span class="tag tag-green">f = 1</span></td><td>Pura purana cell state yaad rakho (past retained)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 11: GRU -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-green">⚙️</div>
+      <div class="section-title">11. Gated RNN #2: GRU (Gated Recurrent Unit)</div>
+      <span class="section-num">SLIDE 59</span>
+    </div>
+    <div class="section-body">
+      <div class="highlight green">
+        <b>GRU = LSTM ka simplified version</b> — 2014 mein aaya. Yeh LSTM se zyada simple hai aur aksar same performance deta hai.
+      </div>
+
+      <div class="point">
+        <div class="bullet">✓</div>
+        <div class="point-text"><b>LSTM vs GRU ka farq:</b> LSTM mein 2 separate states hotay hain (hidden + cell). GRU mein sirf ek hidden state hota hai jo dono kaam karta hai.</div>
+      </div>
+      <div class="point">
+        <div class="bullet">✓</div>
+        <div class="point-text"><b>Single gate:</b> GRU mein ek <b>single gate</b> dono kaam karta hai — (1) forgetting factor aur (2) hidden units update karna. LSTM mein yeh alag alag hain.</div>
+      </div>
+      <div class="point">
+        <div class="bullet">✓</div>
+        <div class="point-text"><b>Reset gate (r[t]):</b> Kitna purana hidden state consider karna hai.</div>
+      </div>
+      <div class="point">
+        <div class="bullet">✓</div>
+        <div class="point-text"><b>Update gate (z[t]):</b> New hidden state calculate karne ke baad — kitna naya aur kitna purana mix karna hai? (complementary: <b>z</b> aur <b>1-z</b>)</div>
+      </div>
+
+      <div class="two-col">
+        <div class="col-box purple">
+          <h5>LSTM</h5>
+          <p class="small">3 gates (input, forget, output) + 2 states (h, s). Zyada complex, zyada parameters, zyada control.</p>
+        </div>
+        <div class="col-box green">
+          <h5>GRU</h5>
+          <p class="small">2 gates (reset, update) + 1 state (h). Simple, fewer parameters, faster training. Often similar performance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 12: Quick Summary -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-gold">📝</div>
+      <div class="section-title">12. Exam Ke Liye Quick Summary</div>
+      <span class="section-num">MUST READ</span>
+    </div>
+    <div class="section-body">
+
+      <div class="exam-alert">
+        <span class="icon">⭐</span>
+        <p>Yeh 8 points zaroor yaad karo — yeh exam mein aksar aatay hain!</p>
+      </div>
+
+      <div class="point">
+        <div class="bullet">1</div>
+        <div class="point-text"><b>Sequence kya hai?</b> Aisa data jisme order matter karta hai aur elements dependent hotay hain (text, audio, time-series).</div>
+      </div>
+      <div class="point">
+        <div class="bullet">2</div>
+        <div class="point-text"><b>RNN ka core idea?</b> Hidden state use karo past ki information yaad rakhne ke liye: <b>s<sub>t</sub> = f<sub>m</sub>(s<sub>t-1</sub>, x<sub>t</sub>)</b>.</div>
+      </div>
+      <div class="point">
+        <div class="bullet">3</div>
+        <div class="point-text"><b>RNN vs FNN?</b> RNN mein loop hai + memory hai + variable length sequences + shared weights. FNN mein koi memory nahi.</div>
+      </div>
+      <div class="point">
+        <div class="bullet">4</div>
+        <div class="point-text"><b>Unfolding?</b> RNN ka loop khol do toh ek deep FNN ban jaata hai jisme shared weights hotay hain.</div>
+      </div>
+      <div class="point">
+        <div class="bullet">5</div>
+        <div class="point-text"><b>Training method?</b> Back-Propagation Through Time (BPTT) — weight sharing ki wajah se gradients ko sab time steps par sum karo.</div>
+      </div>
+      <div class="point">
+        <div class="bullet">6</div>
+        <div class="point-text"><b>Vanishing Gradient?</b> Same weights baar baar multiply hotay hain — gradients 0 ho jaatay hain — RNN purani information bhool jaata hai.</div>
+      </div>
+      <div class="point">
+        <div class="bullet">7</div>
+        <div class="point-text"><b>LSTM ka solution?</b> Cell state + 3 gates (input, forget, output) — addition operation ki wajah se gradient flow theek rehta hai. <b>1997 mein aaya.</b></div>
+      </div>
+      <div class="point">
+        <div class="bullet">8</div>
+        <div class="point-text"><b>GRU?</b> LSTM ka simplified version — sirf 2 gates (reset, update) aur 1 state. <b>2014 mein aaya.</b> Aksar LSTM jitna hi acha kaam karta hai.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Deep Learning · Lecture 10 · Dr. M. Gufran Khan · Roman Urdu Notes</p>
+    <p style="margin-top:6px; font-size:12px;">Yeh notes tamam 62 slides se banaye gaye hain. Best of luck! 🎓</p>
+  </div>
+
+</div>
+</body>
+</html>
