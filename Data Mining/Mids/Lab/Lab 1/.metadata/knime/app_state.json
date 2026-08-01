@@ -1,0 +1,22 @@
+{
+  "version" : "5.11.0.v202603030810",
+  "projects" : [ {
+    "name" : "Retail Sales Analysis",
+    "active" : true,
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "relativePath" : "Retail Sales Analysis"
+    }
+  } ],
+  "mostRecentlyUsedProjects" : [ {
+    "name" : "Retail Sales Analysis",
+    "timeUsed" : "2026-04-03T11:20:09.5230398+05:00",
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "projectType" : "WORKFLOW",
+      "relativePath" : "Retail Sales Analysis"
+    }
+  } ]
+}

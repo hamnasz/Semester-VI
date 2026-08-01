@@ -1,0 +1,578 @@
+2026-04-03 11:16:33,793 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-03 11:16:33,794 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-03 11:16:33,794 : INFO  : main :  : NodeLogger :  :  : # Welcome to KNIME Analytics Platform v5.10.0.v202601281134 (Build January 28, 2026)    #
+2026-04-03 11:16:33,794 : INFO  : main :  : NodeLogger :  :  : # Based on Eclipse, http://www.eclipse.org                                              #
+2026-04-03 11:16:33,794 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-03 11:16:33,794 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-03 11:16:33,794 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-03 11:16:33,794 : INFO  : main :  : NodeLogger :  :  : # Copyright by KNIME AG, Zurich, Switzerland and others.                                #
+2026-04-03 11:16:33,794 : INFO  : main :  : NodeLogger :  :  : # Website: http://www.knime.com                                                         #
+2026-04-03 11:16:33,794 : INFO  : main :  : NodeLogger :  :  : # E-mail: contact@knime.com                                                             #
+2026-04-03 11:16:33,794 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-03 11:16:33,794 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-03 11:16:33,794 : INFO  : main :  : NodeLogger :  :  : # For more details see the KNIME log file:                                              #
+2026-04-03 11:16:33,794 : INFO  : main :  : NodeLogger :  :  : # E:\Artificial Intelligence\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\knime.log
+2026-04-03 11:16:33,794 : INFO  : main :  : NodeLogger :  :  : #---------------------------------------------------------------------------------------#
+2026-04-03 11:16:33,806 : INFO  : main :  : NodeLogger :  :  : # logging date=Fri Apr 03 11:16:33 PKT 2026
+2026-04-03 11:16:33,806 : INFO  : main :  : NodeLogger :  :  : # java.version=21.0.9
+2026-04-03 11:16:33,806 : INFO  : main :  : NodeLogger :  :  : # java.vm.version=21.0.9+10-LTS
+2026-04-03 11:16:33,806 : INFO  : main :  : NodeLogger :  :  : # java.vendor=Eclipse Adoptium
+2026-04-03 11:16:33,806 : INFO  : main :  : NodeLogger :  :  : # os.name=Windows 11
+2026-04-03 11:16:33,806 : INFO  : main :  : NodeLogger :  :  : # os.arch=amd64
+2026-04-03 11:16:33,806 : INFO  : main :  : NodeLogger :  :  : # number of CPUs=8
+2026-04-03 11:16:33,807 : INFO  : main :  : NodeLogger :  :  : # assertions=off
+2026-04-03 11:16:33,816 : INFO  : main :  : NodeLogger :  :  : # host=DevHamnah
+2026-04-03 11:16:33,841 : INFO  : main :  : NodeLogger :  :  : # username=Developer Hamna
+2026-04-03 11:16:33,841 : INFO  : main :  : NodeLogger :  :  : # max mem=8068MB
+2026-04-03 11:16:33,842 : INFO  : main :  : NodeLogger :  :  : # application=org.knime.product.KNIME_APPLICATION
+2026-04-03 11:16:33,875 : INFO  : main :  : NodeLogger :  :  : # KNID=11-64e971d6d4d66147-01-e2d873883bd7ff1b
+2026-04-03 11:16:33,875 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-03 11:15:54,531 : INFO  : main :  : RegisterBouncyCastleProvider :  :  : Added BouncyCastleProvider to Java Security providers
+2026-04-03 11:16:42,455 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'E:\Artificial Intelligence\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\history_database_drivers.txt' does not exist.
+2026-04-03 11:16:42,455 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'E:\Artificial Intelligence\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\history_database_urls.txt' does not exist.
+2026-04-03 11:16:42,852 : INFO  : Node Repository Initializer :  : MovingAggregationNodeFactory :  :  : Modern dialog for Moving Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-03 11:16:42,864 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'E:\Artificial Intelligence\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\history_string2date-formats.txt' does not exist.
+2026-04-03 11:16:57,366 : INFO  : main :  : ProcessWatchdog :  :  : KNIME Process Watchdog memory limit not configured
+2026-04-03 11:16:57,366 : INFO  : main :  : ProcessWatchdog :  :  : External process memory watchdog is disabled, because the memory limit is set to -1
+2026-04-03 11:16:57,778 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'E:\Artificial Intelligence\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\history_createFileNameHistoryKey.txt' does not exist.
+2026-04-03 11:16:58,673 : INFO  : Node Repository Initializer :  : Pivot2NodeFactory :  :  : Modern dialog for Pivot node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-03 11:16:58,874 : INFO  : Node Repository Initializer :  : GroupByNodeFactory :  :  : Modern dialog for GroupBy node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-03 11:16:59,978 : INFO  : Node Repository Initializer :  : ColumnAggregatorNodeFactory :  :  : Modern dialog for Column Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-03 11:17:02,892 : INFO  : main :  : StringHistory :  :  : History file 'E:\Artificial Intelligence\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\history_org.knime.kerberos.name.txt' does not exist.
+2026-04-03 11:17:04,577 : INFO  : Thread-208 :  : KnimeBrowserView :  :  : %cinfo%c Injecting global logger 
+      background: #00BCD4;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      (source: https://org.knime.ui.java/assets/index-_0U1dfPl.js; line: 101)
+2026-04-03 11:17:07,465 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-03 11:17:07,475 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-03 11:17:07,475 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-03 11:17:07,485 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-03 11:17:07,486 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-03 11:17:07,492 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-03 11:20:08,311 : ERROR : Thread-2164 :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object PromiseRejectionEvent] (source: https://org.knime.ui.java/assets/index-_0U1dfPl.js; line: 101)
+2026-04-03 11:20:08,315 : ERROR : Thread-2166 :  : KnimeBrowserView :  :  : Uncaught (in promise) AbortError: The user aborted a request. (source: https://org.knime.ui.java/index.html#/get-started; line: 0)
+2026-04-03 11:20:08,344 : INFO  : ModalContext :  : LoadWorkflowRunnable :  :  : New workflow created.
+2026-04-03 11:21:50,456 : WARN  : comm-pool-thread-1 :  : Node : CSV Reader : 3:1 : Please specify a file
+2026-04-03 11:23:16,035 : INFO  : AWT-EventQueue-0 :  : StringHistory : CSV Reader : 3:1 : History file 'E:\Artificial Intelligence\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\history_csv_reader_writer.txt' does not exist.
+2026-04-03 11:26:55,046 : WARN  : Worker-3: Updating Software :  : runtime :  :  : Could not remove temporary backup file (it is safe to manually delete it): D:\Softwares\KNIME\knime.exe-40ca495b-67ed-4cf2-a2e3-1fa3805f14f7.p2bu
+2026-04-03 11:27:46,162 : ERROR : main :  : NodeContainerEditPart :  :  : The dialog pane for node 'CSV Reader 3:1' has thrown a 'SWTException'. That is most likely an implementation error.
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4945)
+	at org.eclipse.swt.SWT.error(SWT.java:4860)
+	at org.eclipse.swt.SWT.error(SWT.java:4831)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:507)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:426)
+	at org.eclipse.swt.widgets.Shell.setEnabled(Shell.java:1633)
+	at org.knime.workbench.ui.wrapper.WrappedNodeDialog.open(WrappedNodeDialog.java:206)
+	at org.knime.workbench.editor2.editparts.NodeContainerEditPart.openDialog(NodeContainerEditPart.java:970)
+	at org.knime.workbench.editor2.editparts.NodeContainerEditPart.openNodeDialog(NodeContainerEditPart.java:872)
+	at org.knime.ui.java.api.NodeAPI.openNodeDialog(NodeAPI.java:101)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.knime.ui.java.api.DesktopAPI.invokeMethod(DesktopAPI.java:242)
+	at org.knime.ui.java.api.DesktopAPI.invoke(DesktopAPI.java:208)
+	at org.knime.ui.java.api.DesktopAPI.lambda$2(DesktopAPI.java:199)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:132)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4111)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3727)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.knime.product.rcp.KNIMEApplication.start(KNIMEApplication.java:212)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+2026-04-03 11:27:48,320 : INFO  : KNIME shutdown hooks - org.knime.core.util.FileUtil$$Lambda/0x000001cb89447798 :  : FileUtil :  :  : Deleting 1 temporary files.
+2026-04-03 11:27:48,337 : ERROR : Clear OSGi configuration :  : InvokeUpdateAction :  :  : Could not clean OSGi configuration area: D:\Softwares\KNIME\configuration\org.eclipse.osgi\279\0\.cp\swt-awt-win32-4969r18.dll
+2026-04-03 11:28:09,829 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-03 11:28:09,831 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-03 11:28:09,832 : INFO  : main :  : NodeLogger :  :  : # Welcome to KNIME Analytics Platform v5.11.0.v202603030810 (Build March 03, 2026)      #
+2026-04-03 11:28:09,832 : INFO  : main :  : NodeLogger :  :  : # Based on Eclipse, http://www.eclipse.org                                              #
+2026-04-03 11:28:09,832 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-03 11:28:09,832 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-03 11:28:09,832 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-03 11:28:09,832 : INFO  : main :  : NodeLogger :  :  : # Copyright by KNIME AG, Zurich, Switzerland and others.                                #
+2026-04-03 11:28:09,832 : INFO  : main :  : NodeLogger :  :  : # Website: http://www.knime.com                                                         #
+2026-04-03 11:28:09,832 : INFO  : main :  : NodeLogger :  :  : # E-mail: contact@knime.com                                                             #
+2026-04-03 11:28:09,832 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-03 11:28:09,832 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-03 11:28:09,832 : INFO  : main :  : NodeLogger :  :  : # For more details see the KNIME log file:                                              #
+2026-04-03 11:28:09,832 : INFO  : main :  : NodeLogger :  :  : # E:\Artificial Intelligence\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\knime.log
+2026-04-03 11:28:09,832 : INFO  : main :  : NodeLogger :  :  : #---------------------------------------------------------------------------------------#
+2026-04-03 11:28:09,842 : INFO  : main :  : NodeLogger :  :  : # logging date=Fri Apr 03 11:28:09 PKT 2026
+2026-04-03 11:28:09,842 : INFO  : main :  : NodeLogger :  :  : # java.version=21.0.9
+2026-04-03 11:28:09,842 : INFO  : main :  : NodeLogger :  :  : # java.vm.version=21.0.9+10-LTS
+2026-04-03 11:28:09,842 : INFO  : main :  : NodeLogger :  :  : # java.vendor=Eclipse Adoptium
+2026-04-03 11:28:09,842 : INFO  : main :  : NodeLogger :  :  : # os.name=Windows 11
+2026-04-03 11:28:09,842 : INFO  : main :  : NodeLogger :  :  : # os.arch=amd64
+2026-04-03 11:28:09,842 : INFO  : main :  : NodeLogger :  :  : # number of CPUs=8
+2026-04-03 11:28:09,842 : INFO  : main :  : NodeLogger :  :  : # assertions=off
+2026-04-03 11:28:09,849 : INFO  : main :  : NodeLogger :  :  : # host=DevHamnah
+2026-04-03 11:28:09,852 : INFO  : main :  : NodeLogger :  :  : # username=Developer Hamna
+2026-04-03 11:28:09,852 : INFO  : main :  : NodeLogger :  :  : # max mem=8068MB
+2026-04-03 11:28:09,852 : INFO  : main :  : NodeLogger :  :  : # application=org.knime.product.KNIME_APPLICATION
+2026-04-03 11:28:09,857 : INFO  : main :  : NodeLogger :  :  : # KNID=11-64e971d6d4d66147-01-e2d873883bd7ff1b
+2026-04-03 11:28:09,857 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-03 11:27:56,234 : INFO  : main :  : RegisterBouncyCastleProvider :  :  : Added BouncyCastleProvider to Java Security providers
+2026-04-03 11:28:12,778 : INFO  : main :  : StringHistory :  :  : History file 'E:\Artificial Intelligence\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\history_database_drivers.txt' does not exist.
+2026-04-03 11:28:12,778 : INFO  : main :  : StringHistory :  :  : History file 'E:\Artificial Intelligence\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\history_database_urls.txt' does not exist.
+2026-04-03 11:28:16,253 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'E:\Artificial Intelligence\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\history_string2date-formats.txt' does not exist.
+2026-04-03 11:28:16,267 : INFO  : Node Repository Initializer :  : MovingAggregationNodeFactory :  :  : Modern dialog for Moving Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-03 11:28:18,053 : INFO  : main :  : ProcessWatchdog :  :  : KNIME Process Watchdog memory limit not configured
+2026-04-03 11:28:18,054 : INFO  : main :  : ProcessWatchdog :  :  : External process memory watchdog is disabled, because the memory limit is set to -1
+2026-04-03 11:28:19,479 : INFO  : main :  : StringHistory :  :  : History file 'E:\Artificial Intelligence\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\history_org.knime.kerberos.name.txt' does not exist.
+2026-04-03 11:28:19,925 : INFO  : Node Repository Initializer :  : GroupByNodeFactory :  :  : Modern dialog for GroupBy node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-03 11:28:20,253 : INFO  : Thread-169 :  : KnimeBrowserView :  :  : %cinfo%c Injecting global logger 
+      background: #00BCD4;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-04-03 11:28:20,816 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'E:\Artificial Intelligence\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\history_createFileNameHistoryKey.txt' does not exist.
+2026-04-03 11:28:21,293 : WARN  : ModalContext :  : Node : CSV Reader : 3:1 : Please specify a file
+2026-04-03 11:28:21,299 : WARN  : ModalContext :  : Node : CSV Reader : 3:1 : Please specify a file
+2026-04-03 11:28:22,014 : INFO  : Node Repository Initializer :  : Pivot2NodeFactory :  :  : Modern dialog for Pivot node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-03 11:28:22,277 : INFO  : Node Repository Initializer :  : ColumnAggregatorNodeFactory :  :  : Modern dialog for Column Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-03 11:28:27,122 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-03 11:28:27,132 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-03 11:28:27,133 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-03 11:28:27,139 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-03 11:28:27,150 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-03 11:28:27,151 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-03 11:28:50,062 : WARN  : comm-pool-thread-2 :  : Node : CSV Reader : 3:1 : Please specify a file
+2026-04-03 11:29:43,139 : INFO  : KNIME-Worker-0-CSV Reader 3:1 :  : LocalNodeExecutionJob : CSV Reader : 3:1 : CSV Reader 3:1 End execute (0 secs)
+2026-04-03 11:32:31,720 : INFO  : KNIME shutdown hooks - org.knime.core.util.FileUtil$$Lambda/0x0000026124589438 :  : FileUtil :  :  : Deleting 2 temporary files.
+2026-04-04 15:55:43,325 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-04 15:55:43,326 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-04 15:55:43,326 : INFO  : main :  : NodeLogger :  :  : # Welcome to KNIME Analytics Platform v5.11.0.v202603030810 (Build March 03, 2026)      #
+2026-04-04 15:55:43,326 : INFO  : main :  : NodeLogger :  :  : # Based on Eclipse, http://www.eclipse.org                                              #
+2026-04-04 15:55:43,326 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-04 15:55:43,327 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-04 15:55:43,327 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-04 15:55:43,327 : INFO  : main :  : NodeLogger :  :  : # Copyright by KNIME AG, Zurich, Switzerland and others.                                #
+2026-04-04 15:55:43,327 : INFO  : main :  : NodeLogger :  :  : # Website: http://www.knime.com                                                         #
+2026-04-04 15:55:43,327 : INFO  : main :  : NodeLogger :  :  : # E-mail: contact@knime.com                                                             #
+2026-04-04 15:55:43,327 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-04 15:55:43,327 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-04 15:55:43,327 : INFO  : main :  : NodeLogger :  :  : # For more details see the KNIME log file:                                              #
+2026-04-04 15:55:43,327 : INFO  : main :  : NodeLogger :  :  : # D:\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\knime.log
+2026-04-04 15:55:43,327 : INFO  : main :  : NodeLogger :  :  : #---------------------------------------------------------------------------------------#
+2026-04-04 15:55:43,339 : INFO  : main :  : NodeLogger :  :  : # logging date=Sat Apr 04 15:55:43 PKT 2026
+2026-04-04 15:55:43,339 : INFO  : main :  : NodeLogger :  :  : # java.version=21.0.9
+2026-04-04 15:55:43,339 : INFO  : main :  : NodeLogger :  :  : # java.vm.version=21.0.9+10-LTS
+2026-04-04 15:55:43,339 : INFO  : main :  : NodeLogger :  :  : # java.vendor=Eclipse Adoptium
+2026-04-04 15:55:43,339 : INFO  : main :  : NodeLogger :  :  : # os.name=Windows 11
+2026-04-04 15:55:43,339 : INFO  : main :  : NodeLogger :  :  : # os.arch=amd64
+2026-04-04 15:55:43,339 : INFO  : main :  : NodeLogger :  :  : # number of CPUs=8
+2026-04-04 15:55:43,339 : INFO  : main :  : NodeLogger :  :  : # assertions=off
+2026-04-04 15:55:43,348 : INFO  : main :  : NodeLogger :  :  : # host=DevHamnah
+2026-04-04 15:55:43,351 : INFO  : main :  : NodeLogger :  :  : # username=Developer Hamna
+2026-04-04 15:55:43,351 : INFO  : main :  : NodeLogger :  :  : # max mem=8068MB
+2026-04-04 15:55:43,351 : INFO  : main :  : NodeLogger :  :  : # application=org.knime.product.KNIME_APPLICATION
+2026-04-04 15:55:43,360 : INFO  : main :  : NodeLogger :  :  : # KNID=11-64e971d6d4d66147-01-e2d873883bd7ff1b
+2026-04-04 15:55:43,360 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-04 15:55:22,050 : INFO  : main :  : RegisterBouncyCastleProvider :  :  : Added BouncyCastleProvider to Java Security providers
+2026-04-04 15:55:48,626 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\history_database_drivers.txt' does not exist.
+2026-04-04 15:55:48,627 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\history_database_urls.txt' does not exist.
+2026-04-04 15:55:52,992 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\history_string2date-formats.txt' does not exist.
+2026-04-04 15:55:53,025 : INFO  : Node Repository Initializer :  : MovingAggregationNodeFactory :  :  : Modern dialog for Moving Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-04 15:55:57,178 : INFO  : Node Repository Initializer :  : GroupByNodeFactory :  :  : Modern dialog for GroupBy node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-04 15:55:58,518 : INFO  : Node Repository Initializer :  : Pivot2NodeFactory :  :  : Modern dialog for Pivot node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-04 15:55:58,546 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\history_createFileNameHistoryKey.txt' does not exist.
+2026-04-04 15:55:58,802 : INFO  : Node Repository Initializer :  : ColumnAggregatorNodeFactory :  :  : Modern dialog for Column Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-04 15:56:01,653 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-04 15:56:01,681 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-04 15:56:01,696 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-04 15:56:01,787 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-04 15:56:01,794 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-04 15:56:01,794 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-04 15:56:02,767 : INFO  : main :  : ProcessWatchdog :  :  : KNIME Process Watchdog memory limit not configured
+2026-04-04 15:56:02,767 : INFO  : main :  : ProcessWatchdog :  :  : External process memory watchdog is disabled, because the memory limit is set to -1
+2026-04-04 15:56:03,923 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\history_org.knime.kerberos.name.txt' does not exist.
+2026-04-04 15:56:04,632 : INFO  : Thread-176 :  : KnimeBrowserView :  :  : %cinfo%c Injecting global logger 
+      background: #00BCD4;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-04-04 15:56:19,711 : ERROR : KNIME-Worker-1 :  : TransformationParametersStateProviders : CSV Reader : 3:1 : The specified file E:\Artificial Intelligence\Sixth Semester\Data Mining\Finals\Lab Manual\Lab 1\retail_sales_dataset.csv does not exist.
+org.knime.core.node.InvalidSettingsException: The specified file E:\Artificial Intelligence\Sixth Semester\Data Mining\Finals\Lab Manual\Lab 1\retail_sales_dataset.csv does not exist.
+	at org.knime.core.node.util.CheckUtils.checkSetting(CheckUtils.java:274)
+	at org.knime.core.node.util.CheckUtils.checkSetting(CheckUtils.java:224)
+	at org.knime.filehandling.core.defaultnodesettings.filechooser.AbstractFileChooserPathAccessor.getRootPath(AbstractFileChooserPathAccessor.java:318)
+	at org.knime.filehandling.core.defaultnodesettings.filechooser.AbstractFileChooserPathAccessor.getFSPaths(AbstractFileChooserPathAccessor.java:225)
+	at org.knime.base.node.io.filehandling.webui.reader2.TransformationParametersStateProviders$TypedReaderTableSpecsProvider.computeState(TransformationParametersStateProviders.java:238)
+	at org.knime.base.node.io.filehandling.webui.reader2.TransformationParametersStateProviders$TypedReaderTableSpecsProvider.computeState(TransformationParametersStateProviders.java:1)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.computeIndexedValue(InvokeTrigger.java:279)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.lambda$12(InvokeTrigger.java:266)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.AbstractList$RandomAccessSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.toArray(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.toArray(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.toList(Unknown Source)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.computeStateVertexState(InvokeTrigger.java:267)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.lambda$0(InvokeTrigger.java:251)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.cached(InvokeTrigger.java:324)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.accept(InvokeTrigger.java:251)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.accept(InvokeTrigger.java:1)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.StateVertex.visit(StateVertex.java:80)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.lambda$1(InvokeTrigger.java:255)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.HashMap$KeySpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.computeStateVertexState(InvokeTrigger.java:256)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.lambda$0(InvokeTrigger.java:251)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.cached(InvokeTrigger.java:324)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.accept(InvokeTrigger.java:251)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.accept(InvokeTrigger.java:1)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.StateVertex.visit(StateVertex.java:80)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.accept(InvokeTrigger.java:306)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.accept(InvokeTrigger.java:1)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.UpdateVertex.visit(UpdateVertex.java:57)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger.lambda$0(InvokeTrigger.java:111)
+	at java.base/java.util.stream.Collectors.lambda$uniqKeysMapAccumulator$1(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$3ReducingSink.accept(Unknown Source)
+	at java.base/java.util.Iterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger.invokeTrigger(InvokeTrigger.java:109)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.TriggerInvocationHandler.invokeTrigger(TriggerInvocationHandler.java:154)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.TriggerInvocationHandler.invokeTrigger(TriggerInvocationHandler.java:137)
+	at org.knime.core.webui.node.dialog.defaultdialog.dataservice.impl.DataServiceTriggerInvocationHandler.trigger(DataServiceTriggerInvocationHandler.java:112)
+	at org.knime.core.webui.node.dialog.defaultdialog.dataservice.impl.DefaultNodeDialogDataServiceImpl.lambda$4(DefaultNodeDialogDataServiceImpl.java:189)
+	at org.knime.core.util.ThreadUtils$CallableWithContextImpl.callWithContext(ThreadUtils.java:385)
+	at org.knime.core.util.ThreadUtils$CallableWithContext.call(ThreadUtils.java:271)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-04-04 15:56:21,047 : ERROR : KNIME-Worker-1 :  : TransformationParametersStateProviders : CSV Reader : 3:1 : The specified file E:\Artificial Intelligence\Sixth Semester\Data Mining\Finals\Lab Manual\Lab 1\retail_sales_dataset.csv does not exist.
+org.knime.core.node.InvalidSettingsException: The specified file E:\Artificial Intelligence\Sixth Semester\Data Mining\Finals\Lab Manual\Lab 1\retail_sales_dataset.csv does not exist.
+	at org.knime.core.node.util.CheckUtils.checkSetting(CheckUtils.java:274)
+	at org.knime.core.node.util.CheckUtils.checkSetting(CheckUtils.java:224)
+	at org.knime.filehandling.core.defaultnodesettings.filechooser.AbstractFileChooserPathAccessor.getRootPath(AbstractFileChooserPathAccessor.java:318)
+	at org.knime.filehandling.core.defaultnodesettings.filechooser.AbstractFileChooserPathAccessor.getFSPaths(AbstractFileChooserPathAccessor.java:225)
+	at org.knime.base.node.io.filehandling.webui.reader2.TransformationParametersStateProviders$TypedReaderTableSpecsProvider.computeState(TransformationParametersStateProviders.java:238)
+	at org.knime.base.node.io.filehandling.webui.reader2.TransformationParametersStateProviders$TypedReaderTableSpecsProvider.computeState(TransformationParametersStateProviders.java:1)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.computeIndexedValue(InvokeTrigger.java:279)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.lambda$12(InvokeTrigger.java:266)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.AbstractList$RandomAccessSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.toArray(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.toArray(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.toList(Unknown Source)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.computeStateVertexState(InvokeTrigger.java:267)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.lambda$0(InvokeTrigger.java:251)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.cached(InvokeTrigger.java:324)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.accept(InvokeTrigger.java:251)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.accept(InvokeTrigger.java:1)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.StateVertex.visit(StateVertex.java:80)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.lambda$1(InvokeTrigger.java:255)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.HashMap$KeySpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.computeStateVertexState(InvokeTrigger.java:256)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.lambda$0(InvokeTrigger.java:251)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.cached(InvokeTrigger.java:324)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.accept(InvokeTrigger.java:251)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.accept(InvokeTrigger.java:1)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.StateVertex.visit(StateVertex.java:80)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.accept(InvokeTrigger.java:306)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.accept(InvokeTrigger.java:1)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.UpdateVertex.visit(UpdateVertex.java:57)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger.lambda$0(InvokeTrigger.java:111)
+	at java.base/java.util.stream.Collectors.lambda$uniqKeysMapAccumulator$1(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$3ReducingSink.accept(Unknown Source)
+	at java.base/java.util.Iterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger.invokeTrigger(InvokeTrigger.java:109)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.TriggerInvocationHandler.invokeTrigger(TriggerInvocationHandler.java:154)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.TriggerInvocationHandler.invokeTrigger(TriggerInvocationHandler.java:137)
+	at org.knime.core.webui.node.dialog.defaultdialog.dataservice.impl.DataServiceTriggerInvocationHandler.trigger(DataServiceTriggerInvocationHandler.java:112)
+	at org.knime.core.webui.node.dialog.defaultdialog.dataservice.impl.DefaultNodeDialogDataServiceImpl.lambda$4(DefaultNodeDialogDataServiceImpl.java:189)
+	at org.knime.core.util.ThreadUtils$CallableWithContextImpl.callWithContext(ThreadUtils.java:385)
+	at org.knime.core.util.ThreadUtils$CallableWithContext.call(ThreadUtils.java:271)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-04-04 16:06:37,512 : INFO  : KNIME shutdown hooks - org.knime.core.util.FileUtil$$Lambda/0x00000237a0525f78 :  : FileUtil :  :  : Deleting 3 temporary files.
+2026-04-05 21:03:39,151 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-05 21:03:39,156 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-05 21:03:39,156 : INFO  : main :  : NodeLogger :  :  : # Welcome to KNIME Analytics Platform v5.11.0.v202603030810 (Build March 03, 2026)      #
+2026-04-05 21:03:39,156 : INFO  : main :  : NodeLogger :  :  : # Based on Eclipse, http://www.eclipse.org                                              #
+2026-04-05 21:03:39,156 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-05 21:03:39,156 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-05 21:03:39,156 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-05 21:03:39,156 : INFO  : main :  : NodeLogger :  :  : # Copyright by KNIME AG, Zurich, Switzerland and others.                                #
+2026-04-05 21:03:39,156 : INFO  : main :  : NodeLogger :  :  : # Website: http://www.knime.com                                                         #
+2026-04-05 21:03:39,156 : INFO  : main :  : NodeLogger :  :  : # E-mail: contact@knime.com                                                             #
+2026-04-05 21:03:39,156 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-05 21:03:39,156 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-05 21:03:39,156 : INFO  : main :  : NodeLogger :  :  : # For more details see the KNIME log file:                                              #
+2026-04-05 21:03:39,156 : INFO  : main :  : NodeLogger :  :  : # D:\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\knime.log
+2026-04-05 21:03:39,156 : INFO  : main :  : NodeLogger :  :  : #---------------------------------------------------------------------------------------#
+2026-04-05 21:03:39,170 : INFO  : main :  : NodeLogger :  :  : # logging date=Sun Apr 05 21:03:39 PKT 2026
+2026-04-05 21:03:39,170 : INFO  : main :  : NodeLogger :  :  : # java.version=21.0.9
+2026-04-05 21:03:39,170 : INFO  : main :  : NodeLogger :  :  : # java.vm.version=21.0.9+10-LTS
+2026-04-05 21:03:39,170 : INFO  : main :  : NodeLogger :  :  : # java.vendor=Eclipse Adoptium
+2026-04-05 21:03:39,170 : INFO  : main :  : NodeLogger :  :  : # os.name=Windows 11
+2026-04-05 21:03:39,170 : INFO  : main :  : NodeLogger :  :  : # os.arch=amd64
+2026-04-05 21:03:39,171 : INFO  : main :  : NodeLogger :  :  : # number of CPUs=8
+2026-04-05 21:03:39,171 : INFO  : main :  : NodeLogger :  :  : # assertions=off
+2026-04-05 21:03:39,181 : INFO  : main :  : NodeLogger :  :  : # host=DevHamnah
+2026-04-05 21:03:39,212 : INFO  : main :  : NodeLogger :  :  : # username=Developer Hamna
+2026-04-05 21:03:39,212 : INFO  : main :  : NodeLogger :  :  : # max mem=8068MB
+2026-04-05 21:03:39,212 : INFO  : main :  : NodeLogger :  :  : # application=org.knime.product.KNIME_APPLICATION
+2026-04-05 21:03:39,246 : INFO  : main :  : NodeLogger :  :  : # KNID=11-64e971d6d4d66147-01-e2d873883bd7ff1b
+2026-04-05 21:03:39,246 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-05 21:03:29,374 : INFO  : main :  : RegisterBouncyCastleProvider :  :  : Added BouncyCastleProvider to Java Security providers
+2026-04-05 21:03:47,524 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\history_database_drivers.txt' does not exist.
+2026-04-05 21:03:47,524 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\history_database_urls.txt' does not exist.
+2026-04-05 21:03:49,302 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\history_string2date-formats.txt' does not exist.
+2026-04-05 21:03:49,351 : INFO  : Node Repository Initializer :  : MovingAggregationNodeFactory :  :  : Modern dialog for Moving Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-05 21:04:02,233 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\history_createFileNameHistoryKey.txt' does not exist.
+2026-04-05 21:04:03,627 : INFO  : Node Repository Initializer :  : GroupByNodeFactory :  :  : Modern dialog for GroupBy node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-05 21:04:04,425 : INFO  : Node Repository Initializer :  : Pivot2NodeFactory :  :  : Modern dialog for Pivot node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-05 21:04:04,710 : INFO  : Node Repository Initializer :  : ColumnAggregatorNodeFactory :  :  : Modern dialog for Column Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-05 21:04:09,804 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-05 21:04:09,886 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-05 21:04:09,926 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-05 21:04:10,026 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-05 21:04:10,027 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-05 21:04:10,030 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-05 21:04:17,453 : ERROR : ForkJoinPool.commonPool-worker-1 :  : WelcomeAPEndpoint :  :  : Calling welcome page endpoint failed:Read timed out
+java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(Unknown Source)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(Unknown Source)
+	at java.base/sun.nio.ch.NioSocketImpl.read(Unknown Source)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(Unknown Source)
+	at java.base/java.net.Socket$SocketInputStream.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(Unknown Source)
+	at java.base/java.io.BufferedInputStream.fill(Unknown Source)
+	at java.base/java.io.BufferedInputStream.read1(Unknown Source)
+	at java.base/java.io.BufferedInputStream.implRead(Unknown Source)
+	at java.base/java.io.BufferedInputStream.read(Unknown Source)
+	at java.base/sun.net.www.http.HttpClient.parseHTTPHeader(Unknown Source)
+	at java.base/sun.net.www.http.HttpClient.parseHTTP(Unknown Source)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(Unknown Source)
+	at org.knime.product.rcp.intro.WelcomeAPEndpoint.performRequest(WelcomeAPEndpoint.java:180)
+	at org.knime.product.rcp.intro.WelcomeAPEndpoint.requestCategories(WelcomeAPEndpoint.java:147)
+	at org.knime.product.rcp.intro.WelcomeAPEndpoint.lambda$0(WelcomeAPEndpoint.java:119)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(Unknown Source)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(Unknown Source)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(Unknown Source)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(Unknown Source)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(Unknown Source)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(Unknown Source)
+2026-04-05 21:04:17,565 : INFO  : main :  : ProcessWatchdog :  :  : KNIME Process Watchdog memory limit not configured
+2026-04-05 21:04:17,565 : INFO  : main :  : ProcessWatchdog :  :  : External process memory watchdog is disabled, because the memory limit is set to -1
+2026-04-05 21:04:20,311 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 1\.metadata\knime\history_org.knime.kerberos.name.txt' does not exist.
+2026-04-05 21:04:21,357 : INFO  : Thread-169 :  : KnimeBrowserView :  :  : %cinfo%c Injecting global logger 
+      background: #00BCD4;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-04-05 21:16:03,185 : INFO  : KNIME-Worker-1-Statistics 3:2 :  : LocalNodeExecutionJob : Statistics : 3:2 : Statistics 3:2 End execute (4 secs)
+2026-04-05 21:46:36,072 : ERROR : Thread-24363 :  : CEFMiddlewareService :  :  : No web resource found for '/org/knime/core/ui/pagebuilder/app/assets/@fontsource/roboto/files/roboto-all-400-normal.woff'.
+2026-04-05 21:46:36,193 : WARN  : Thread-24373 :  : CEFNodeView :  :  : Failed to decode downloaded font: https://org.knime.js.pagebuilder/org/knime/core/ui/pagebuilder/app/assets/@fontsource/roboto/files/roboto-all-400-normal.woff (source: https://org.knime.js.pagebuilder/apWrapper.html; line: 0)
+2026-04-05 21:46:36,194 : WARN  : Thread-24375 :  : CEFNodeView :  :  : OTS parsing error: invalid sfntVersion: 1315905655 (source: https://org.knime.js.pagebuilder/apWrapper.html; line: 0)
+2026-04-05 21:58:02,203 : WARN  : comm-pool-thread-6 :  : Node : Math Formula : 3:3 : No configuration available
+2026-04-05 22:01:02,537 : INFO  : KNIME-Worker-8-Math Formula 3:3 :  : LocalNodeExecutionJob : Math Formula : 3:3 : Math Formula 3:3 End execute (0 secs)
+2026-04-05 22:10:02,425 : WARN  : comm-pool-thread-8 :  : Node : GroupBy : 3:4 : No grouping column included. Aggregate complete table.
+2026-04-05 22:10:02,426 : WARN  : comm-pool-thread-8 :  : Node : GroupBy : 3:4 : No aggregation column defined
+2026-04-05 22:10:02,520 : WARN  : comm-pool-thread-8 :  : Node : GroupBy : 3:4 : Please select at least one group or aggregation column
+2026-04-05 22:11:12,302 : WARN  : main :  : Node : GroupBy : 3:4 : No aggregation column defined
+2026-04-05 22:11:44,049 : WARN  : comm-pool-thread-8 :  : Node : GroupBy : 3:4 : No aggregation column defined
+2026-04-05 22:13:43,883 : INFO  : KNIME-Worker-10-GroupBy 3:4 :  : LocalNodeExecutionJob : GroupBy : 3:4 : GroupBy 3:4 End execute (0 secs)
+2026-04-05 22:15:19,829 : INFO  : KNIME-Worker-14-Sorter 3:5 :  : LocalNodeExecutionJob : Sorter : 3:5 : Sorter 3:5 End execute (0 secs)
+2026-04-05 22:15:36,283 : INFO  : KNIME-Worker-12-Sorter 3:5 :  : LocalNodeExecutionJob : Sorter : 3:5 : Sorter 3:5 End execute (0 secs)
+2026-04-05 22:18:06,005 : WARN  : comm-pool-thread-11 :  : Node : GroupBy : 3:6 : No grouping column included. Aggregate complete table.
+2026-04-05 22:18:06,006 : WARN  : comm-pool-thread-11 :  : Node : GroupBy : 3:6 : No aggregation column defined
+2026-04-05 22:18:06,006 : WARN  : comm-pool-thread-11 :  : Node : GroupBy : 3:6 : Please select at least one group or aggregation column
+2026-04-05 22:20:13,687 : WARN  : main :  : Node : GroupBy : 3:6 : No grouping column included. Aggregate complete table.
+2026-04-05 22:20:16,033 : INFO  : KNIME-Worker-18-GroupBy 3:6 :  : LocalNodeExecutionJob : GroupBy : 3:6 : GroupBy 3:6 End execute (0 secs)
+2026-04-05 22:25:44,722 : WARN  : comm-pool-thread-12 :  : Node : GroupBy : 3:7 : No grouping column included. Aggregate complete table.
+2026-04-05 22:25:44,723 : WARN  : comm-pool-thread-12 :  : Node : GroupBy : 3:7 : No aggregation column defined
+2026-04-05 22:25:44,723 : WARN  : comm-pool-thread-12 :  : Node : GroupBy : 3:7 : Please select at least one group or aggregation column
+2026-04-05 22:27:43,648 : INFO  : KNIME-Worker-19-GroupBy 3:7 :  : LocalNodeExecutionJob : GroupBy : 3:7 : GroupBy 3:7 End execute (0 secs)
+2026-04-05 22:28:44,763 : INFO  : KNIME-Worker-23-Sorter 3:8 :  : LocalNodeExecutionJob : Sorter : 3:8 : Sorter 3:8 End execute (0 secs)
+2026-04-05 22:30:46,124 : WARN  : comm-pool-thread-15 :  : Node : Math Formula : 3:3 : No such column: Quantity
+2026-04-05 22:34:21,614 : WARN  : main :  : WrappedNodeDialog : Math Formula : 3:3 : failed to apply settings: No such column: Quantity
+org.knime.core.node.InvalidSettingsException: No such column: Quantity
+	at org.knime.ext.jep.ExpressionParser.handleColumn(ExpressionParser.java:348)
+	at org.knime.ext.jep.ExpressionParser.dollarFound(ExpressionParser.java:264)
+	at org.knime.ext.jep.ExpressionParser.parse(ExpressionParser.java:171)
+	at org.knime.ext.jep.ExpressionParser.<init>(ExpressionParser.java:146)
+	at org.knime.ext.jep.JEPNodeDialogPane.saveSettingsTo(JEPNodeDialogPane.java:354)
+	at org.knime.core.node.NodeDialogPane.internalSaveSettingsTo(NodeDialogPane.java:553)
+	at org.knime.core.node.NodeDialogPane$4.run(NodeDialogPane.java:792)
+	at org.knime.core.node.util.ViewUtils$3.run(ViewUtils.java:353)
+	at org.knime.core.node.util.ViewUtils$2.run(ViewUtils.java:155)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.run(Unknown Source)
+2026-04-05 22:34:28,943 : WARN  : comm-pool-thread-17 :  : Node : GroupBy : 3:6 : No grouping column included. Aggregate complete table.
+2026-04-05 22:34:28,945 : WARN  : comm-pool-thread-17 :  : Node : GroupBy : 3:9 : No grouping column included. Aggregate complete table.
+2026-04-05 22:34:28,945 : WARN  : comm-pool-thread-17 :  : Node : GroupBy : 3:9 : No aggregation column defined
+2026-04-05 22:34:28,946 : WARN  : comm-pool-thread-17 :  : Node : GroupBy : 3:9 : Please select at least one group or aggregation column
+2026-04-05 22:34:29,596 : ERROR : KNIME-Worker-31 :  : TransformationParametersStateProviders : CSV Reader : 3:1 : The specified file E:\Artificial Intelligence\Sixth Semester\Data Mining\Finals\Lab Manual\Lab 1\retail_sales_dataset.csv does not exist.
+org.knime.core.node.InvalidSettingsException: The specified file E:\Artificial Intelligence\Sixth Semester\Data Mining\Finals\Lab Manual\Lab 1\retail_sales_dataset.csv does not exist.
+	at org.knime.core.node.util.CheckUtils.checkSetting(CheckUtils.java:274)
+	at org.knime.core.node.util.CheckUtils.checkSetting(CheckUtils.java:224)
+	at org.knime.filehandling.core.defaultnodesettings.filechooser.AbstractFileChooserPathAccessor.getRootPath(AbstractFileChooserPathAccessor.java:318)
+	at org.knime.filehandling.core.defaultnodesettings.filechooser.AbstractFileChooserPathAccessor.getFSPaths(AbstractFileChooserPathAccessor.java:225)
+	at org.knime.base.node.io.filehandling.webui.reader2.TransformationParametersStateProviders$TypedReaderTableSpecsProvider.computeState(TransformationParametersStateProviders.java:238)
+	at org.knime.base.node.io.filehandling.webui.reader2.TransformationParametersStateProviders$TypedReaderTableSpecsProvider.computeState(TransformationParametersStateProviders.java:1)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.computeIndexedValue(InvokeTrigger.java:279)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.lambda$12(InvokeTrigger.java:266)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.AbstractList$RandomAccessSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.toArray(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.toArray(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.toList(Unknown Source)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.computeStateVertexState(InvokeTrigger.java:267)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.lambda$0(InvokeTrigger.java:251)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.cached(InvokeTrigger.java:324)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.accept(InvokeTrigger.java:251)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.accept(InvokeTrigger.java:1)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.StateVertex.visit(StateVertex.java:80)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.lambda$1(InvokeTrigger.java:255)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.HashMap$KeySpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.computeStateVertexState(InvokeTrigger.java:256)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.lambda$0(InvokeTrigger.java:251)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.cached(InvokeTrigger.java:324)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.accept(InvokeTrigger.java:251)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.accept(InvokeTrigger.java:1)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.StateVertex.visit(StateVertex.java:80)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.accept(InvokeTrigger.java:306)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger$ComputeVisitor.accept(InvokeTrigger.java:1)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.UpdateVertex.visit(UpdateVertex.java:57)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger.lambda$0(InvokeTrigger.java:111)
+	at java.base/java.util.stream.Collectors.lambda$uniqKeysMapAccumulator$1(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$3ReducingSink.accept(Unknown Source)
+	at java.base/java.util.Iterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.InvokeTrigger.invokeTrigger(InvokeTrigger.java:109)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.TriggerInvocationHandler.invokeTrigger(TriggerInvocationHandler.java:154)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.updates.TriggerInvocationHandler.invokeTrigger(TriggerInvocationHandler.java:137)
+	at org.knime.core.webui.node.dialog.defaultdialog.dataservice.impl.DataServiceTriggerInvocationHandler.trigger(DataServiceTriggerInvocationHandler.java:112)
+	at org.knime.core.webui.node.dialog.defaultdialog.dataservice.impl.DefaultNodeDialogDataServiceImpl.lambda$4(DefaultNodeDialogDataServiceImpl.java:189)
+	at org.knime.core.util.ThreadUtils$CallableWithContextImpl.callWithContext(ThreadUtils.java:385)
+	at org.knime.core.util.ThreadUtils$CallableWithContext.call(ThreadUtils.java:271)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-04-05 22:34:39,682 : INFO  : KNIME-Worker-32-Math Formula 3:3 :  : LocalNodeExecutionJob : Math Formula : 3:3 : Math Formula 3:3 End execute (0 secs)
+2026-04-05 22:34:39,685 : WARN  : KNIME-Worker-32-Math Formula 3:3 :  : Node : GroupBy : 3:6 : No grouping column included. Aggregate complete table.
+2026-04-05 22:34:39,688 : WARN  : KNIME-Worker-32-Math Formula 3:3 :  : Node : GroupBy : 3:9 : No grouping column included. Aggregate complete table.
+2026-04-05 22:34:39,688 : WARN  : KNIME-Worker-32-Math Formula 3:3 :  : Node : GroupBy : 3:9 : No aggregation column defined
+2026-04-05 22:34:39,690 : WARN  : KNIME-Worker-32-Math Formula 3:3 :  : Node : GroupBy : 3:9 : Please select at least one group or aggregation column
+2026-04-05 22:34:46,575 : INFO  : KNIME-Worker-35-GroupBy 3:6 :  : LocalNodeExecutionJob : GroupBy : 3:6 : GroupBy 3:6 End execute (0 secs)
+2026-04-05 22:34:46,582 : INFO  : KNIME-Worker-33-GroupBy 3:7 :  : LocalNodeExecutionJob : GroupBy : 3:7 : GroupBy 3:7 End execute (0 secs)
+2026-04-05 22:34:46,582 : INFO  : KNIME-Worker-34-GroupBy 3:4 :  : LocalNodeExecutionJob : GroupBy : 3:4 : GroupBy 3:4 End execute (0 secs)
+2026-04-05 22:34:46,613 : INFO  : KNIME-Worker-31-Sorter 3:5 :  : LocalNodeExecutionJob : Sorter : 3:5 : Sorter 3:5 End execute (0 secs)
+2026-04-05 22:34:46,616 : INFO  : KNIME-Worker-30-Sorter 3:8 :  : LocalNodeExecutionJob : Sorter : 3:8 : Sorter 3:8 End execute (0 secs)
+2026-04-05 22:35:36,051 : INFO  : KNIME-Worker-32-GroupBy 3:9 :  : LocalNodeExecutionJob : GroupBy : 3:9 : GroupBy 3:9 End execute (0 secs)
+2026-04-05 22:36:26,297 : INFO  : KNIME-Worker-33-Sorter 3:10 :  : LocalNodeExecutionJob : Sorter : 3:10 : Sorter 3:10 End execute (0 secs)
+2026-04-05 22:48:19,072 : INFO  : KNIME shutdown hooks - org.knime.core.util.FileUtil$$Lambda/0x000002a88b51f028 :  : FileUtil :  :  : Deleting 23 temporary files.
