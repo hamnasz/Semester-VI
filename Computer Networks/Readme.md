@@ -10,8 +10,7 @@
 | **Course Title** | Computer Networks |
 | **Program** | BSAI-6A |
 | **Credit Hours** | 3(2-1) — Theory + Lab |
-| **Instructors** | Mehak Rana (Theory)
-                    Muhammad Shakeel (Lab) |
+| **Instructors** | Mehak Rana (Theory)<br>Muhammad Shakeel (Lab) |
 
 ### 🎯 Syllabus Topics
 - **OSI Model** — 7 layers, layered architecture, encapsulation, peer-to-peer processes
