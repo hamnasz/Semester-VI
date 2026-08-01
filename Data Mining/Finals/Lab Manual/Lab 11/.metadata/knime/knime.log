@@ -1,0 +1,347 @@
+2026-06-15 21:18:29,654 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-06-15 21:18:29,656 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-06-15 21:18:29,658 : INFO  : main :  : NodeLogger :  :  : # Welcome to KNIME Analytics Platform v5.11.0.v202603030810 (Build March 03, 2026)      #
+2026-06-15 21:18:29,658 : INFO  : main :  : NodeLogger :  :  : # Based on Eclipse, http://www.eclipse.org                                              #
+2026-06-15 21:18:29,658 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-06-15 21:18:29,658 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-06-15 21:18:29,658 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-06-15 21:18:29,658 : INFO  : main :  : NodeLogger :  :  : # Copyright by KNIME AG, Zurich, Switzerland and others.                                #
+2026-06-15 21:18:29,658 : INFO  : main :  : NodeLogger :  :  : # Website: http://www.knime.com                                                         #
+2026-06-15 21:18:29,658 : INFO  : main :  : NodeLogger :  :  : # E-mail: contact@knime.com                                                             #
+2026-06-15 21:18:29,658 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-06-15 21:18:29,658 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-06-15 21:18:29,658 : INFO  : main :  : NodeLogger :  :  : # For more details see the KNIME log file:                                              #
+2026-06-15 21:18:29,658 : INFO  : main :  : NodeLogger :  :  : # D:\Sixth Semester\Data Mining\Finals\Lab Manual\Lab 11\.metadata\knime\knime.log
+2026-06-15 21:18:29,658 : INFO  : main :  : NodeLogger :  :  : #---------------------------------------------------------------------------------------#
+2026-06-15 21:18:29,670 : INFO  : main :  : NodeLogger :  :  : # logging date=Mon Jun 15 21:18:29 PKT 2026
+2026-06-15 21:18:29,670 : INFO  : main :  : NodeLogger :  :  : # java.version=21.0.9
+2026-06-15 21:18:29,670 : INFO  : main :  : NodeLogger :  :  : # java.vm.version=21.0.9+10-LTS
+2026-06-15 21:18:29,673 : INFO  : main :  : NodeLogger :  :  : # java.vendor=Eclipse Adoptium
+2026-06-15 21:18:29,673 : INFO  : main :  : NodeLogger :  :  : # os.name=Windows 11
+2026-06-15 21:18:29,673 : INFO  : main :  : NodeLogger :  :  : # os.arch=amd64
+2026-06-15 21:18:29,673 : INFO  : main :  : NodeLogger :  :  : # number of CPUs=8
+2026-06-15 21:18:29,673 : INFO  : main :  : NodeLogger :  :  : # assertions=off
+2026-06-15 21:18:29,684 : INFO  : main :  : NodeLogger :  :  : # host=DevHamnah
+2026-06-15 21:18:29,705 : INFO  : main :  : NodeLogger :  :  : # username=Developer Hamna
+2026-06-15 21:18:29,705 : INFO  : main :  : NodeLogger :  :  : # max mem=8068MB
+2026-06-15 21:18:29,705 : INFO  : main :  : NodeLogger :  :  : # application=org.knime.product.KNIME_APPLICATION
+2026-06-15 21:18:29,724 : INFO  : main :  : NodeLogger :  :  : # KNID=11-64e971d6d4d66147-01-e2d873883bd7ff1b
+2026-06-15 21:18:29,724 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-06-15 21:18:19,412 : INFO  : main :  : RegisterBouncyCastleProvider :  :  : Added BouncyCastleProvider to Java Security providers
+2026-06-15 21:18:29,428 : INFO  : main :  : EarlyStartupCondaEnvironmentInstallation :  :  : Starting conda environment initialization during early startup
+2026-06-15 21:18:29,506 : INFO  : main :  : EarlyStartupCondaEnvironmentInstallation :  :  : Conda environment initialization completed successfully
+2026-06-15 21:18:32,758 : INFO  : ForkJoinPool.commonPool-worker-3 :  : PythonExtensionParser :  :  : Trying to load cached extension 'com.searchanalyticsnode.Search-Analytics-Node_1.8.2.202604031535' from D:\Softwares\KNIME\configuration\com.searchanalyticsnode.Search-Analytics-Node
+2026-06-15 21:18:33,017 : INFO  : KNIME-Worker-0 :  : PythonExtensionParser :  :  : Trying to load cached extension 'com.searchanalyticsnode.Search-Analytics-Node_1.8.2.202604031535' from D:\Softwares\KNIME\configuration\com.searchanalyticsnode.Search-Analytics-Node
+2026-06-15 21:18:37,976 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Finals\Lab Manual\Lab 11\.metadata\knime\history_database_drivers.txt' does not exist.
+2026-06-15 21:18:37,976 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Finals\Lab Manual\Lab 11\.metadata\knime\history_database_urls.txt' does not exist.
+2026-06-15 21:18:40,047 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Finals\Lab Manual\Lab 11\.metadata\knime\history_string2date-formats.txt' does not exist.
+2026-06-15 21:18:40,109 : INFO  : Node Repository Initializer :  : MovingAggregationNodeFactory :  :  : Modern dialog for Moving Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-06-15 21:18:56,266 : INFO  : main :  : ProcessWatchdog :  :  : KNIME Process Watchdog memory limit not configured
+2026-06-15 21:18:56,266 : INFO  : main :  : ProcessWatchdog :  :  : External process memory watchdog is disabled, because the memory limit is set to -1
+2026-06-15 21:18:57,830 : INFO  : Node Repository Initializer :  : Pivot2NodeFactory :  :  : Modern dialog for Pivot node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-06-15 21:18:57,940 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Finals\Lab Manual\Lab 11\.metadata\knime\history_org.knime.kerberos.name.txt' does not exist.
+2026-06-15 21:18:59,319 : INFO  : Thread-167 :  : KnimeBrowserView :  :  : %cinfo%c Injecting global logger 
+      background: #00BCD4;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-06-15 21:18:59,392 : INFO  : Node Repository Initializer :  : ColumnAggregatorNodeFactory :  :  : Modern dialog for Column Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-06-15 21:19:00,065 : INFO  : Node Repository Initializer :  : GroupByNodeFactory :  :  : Modern dialog for GroupBy node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-06-15 21:19:00,076 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Finals\Lab Manual\Lab 11\.metadata\knime\history_createFileNameHistoryKey.txt' does not exist.
+2026-06-15 21:19:00,470 : WARN  : comm-pool-thread-1 :  : JsonRpcErrorResolver :  :  : An unexpected json rpc error occurred
+java.lang.IllegalStateException: K-AI is not connected to a hub. Select a hub on the AI Assistant preference page.
+	at org.knime.ai.assistant.java.UiStringsUtils.getUiStrings(UiStringsUtils.java:84)
+	at org.knime.ai.assistant.java.ChatBackend.getUiStrings(ChatBackend.java:268)
+	at java.base/java.util.Optional.map(Unknown Source)
+	at org.knime.gateway.impl.webui.service.DefaultKaiService.getUiStrings(DefaultKaiService.java:165)
+	at org.knime.gateway.impl.webui.jsonrpc.service.JsonRpcKaiServiceWrapper.getUiStrings(JsonRpcKaiServiceWrapper.java:105)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at com.googlecode.jsonrpc4j.JsonRpcBasicServer.invoke(JsonRpcBasicServer.java:478)
+	at com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleObject(JsonRpcBasicServer.java:349)
+	at com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleJsonNodeRequest(JsonRpcBasicServer.java:274)
+	at com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleRequest(JsonRpcBasicServer.java:242)
+	at org.knime.gateway.impl.jsonrpc.JsonRpcRequestHandler.handle(JsonRpcRequestHandler.java:112)
+	at org.knime.ui.java.browser.lifecycle.Init.lambda$16(Init.java:343)
+	at com.equo.comm.common.MessageHandler.processReceivedEventMessage(MessageHandler.java:131)
+	at com.equo.comm.ee.provider.service.ChromiumService.receiveMessage(ChromiumService.java:98)
+	at com.equo.comm.ee.provider.CommunicationManagerChromiumImpl.receiveMessage(CommunicationManagerChromiumImpl.java:48)
+	at com.equo.chromium.swt.internal.spi.CommRouterHandler.handleRequest(CommRouterHandler.java:33)
+	at com.equo.chromium.swt.internal.spi.CommRouterHandler.lambda$1(CommRouterHandler.java:51)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-06-15 21:19:00,565 : ERROR : Thread-773 :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: K-AI is not connected to a hub. Select a hub on the AI Assistant preference page. (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-06-15 21:19:08,024 : INFO  : ModalContext :  : LoadWorkflowRunnable :  :  : New workflow created.
+2026-06-15 21:19:08,164 : ERROR : Thread-1093 :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object PromiseRejectionEvent] (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-06-15 21:19:08,165 : ERROR : Thread-1095 :  : KnimeBrowserView :  :  : Uncaught (in promise) AbortError: The user aborted a request. (source: https://org.knime.ui.java/index.html#/get-started; line: 0)
+2026-06-15 21:19:08,438 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-06-15 21:19:08,481 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-06-15 21:19:08,481 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-06-15 21:19:08,503 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-06-15 21:19:08,504 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-06-15 21:19:08,511 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-06-15 21:19:17,589 : INFO  : Thread-1985 :  : Server :  :  : jetty-12.0.21; built: 2025-05-09T00:32:00.688Z; git: 1c4719601e31b05b7d68910d2edd980259f1f53c; jvm 21.0.9+10-LTS
+2026-06-15 21:19:17,655 : INFO  : Thread-1985 :  : AbstractConnector :  :  : Started ServerConnector@6f209256{HTTP/1.1, (http/1.1)}{0.0.0.0:55245}
+2026-06-15 21:19:17,655 : INFO  : Thread-1985 :  : Server :  :  : Started oejs.Server@65a7f6c4{STARTING}[12.0.21,sto=0] @75274ms
+2026-06-15 21:19:17,656 : INFO  : Thread-1985 :  : OAuthAuthenticator :  :  : Opening browser to perform authentication for 'https://api.hub.knime.com'.
+2026-06-15 21:19:41,449 : INFO  : Thread-1998 :  : Server :  :  : Stopped oejs.Server@65a7f6c4{STOPPING}[12.0.21,sto=0]
+2026-06-15 21:19:41,466 : INFO  : Thread-1998 :  : AbstractConnector :  :  : Stopped ServerConnector@6f209256{HTTP/1.1, (http/1.1)}{0.0.0.0:55245}
+2026-06-15 21:20:01,771 : WARN  : comm-pool-thread-1 :  : Node : CSV Reader : 3:1 : Please specify a file
+2026-06-15 21:21:07,122 : INFO  : KNIME-Worker-0-CSV Reader 3:1 :  : LocalNodeExecutionJob : CSV Reader : 3:1 : CSV Reader 3:1 End execute (0 secs)
+2026-06-15 21:21:27,152 : INFO  : WebSocket@1656190232-5436 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-15 21:21:30,766 : INFO  : WebSocket@1656190232-5437 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-15 21:21:30,768 : INFO  : WebSocket@1656190232-5437 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-15 21:21:30,769 : INFO  : WebSocket@1656190232-5437 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-15 21:21:30,771 : INFO  : WebSocket@1656190232-5437 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-15 21:21:30,772 : INFO  : WebSocket@1656190232-5437 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-15 21:21:30,773 : INFO  : WebSocket@1656190232-5437 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-15 21:21:30,773 : INFO  : WebSocket@1656190232-5437 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-15 21:21:30,774 : INFO  : WebSocket@1656190232-5437 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-15 21:21:34,214 : INFO  : WebSocket@1656190232-5436 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-15 21:21:34,217 : INFO  : WebSocket@1656190232-5436 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-15 21:21:36,422 : INFO  : WebSocket@1656190232-5436 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-15 21:21:38,670 : INFO  : WebSocket@1656190232-5437 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-15 21:21:40,665 : INFO  : WebSocket@1656190232-5436 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-15 21:21:40,821 : WARN  : WebSocket@1656190232-5437 :  : Node : One to Many : 3:4 : Possible value domain for column "Income" is empty, use the Domain Calculator node (with a sufficient possible value limit) to create it.
+2026-06-15 21:21:43,086 : INFO  : WebSocket@1656190232-5437 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-15 21:21:45,276 : INFO  : WebSocket@1656190232-5437 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-15 21:21:48,654 : INFO  : WebSocket@1656190232-5437 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-15 21:21:48,673 : INFO  : Thread-5362 :  : WebSocketClient :  :  : Shutdown WebSocketClient@1e5aaf89[coreClient=oejwcc.WebSocketCoreClient@5e50e1d4{STARTED},openSessions.size=1]
+2026-06-15 21:23:01,038 : WARN  : comm-pool-thread-1 :  : Node : One to Many : 3:4 : Possible value domain for column "Income" is empty, use the Domain Calculator node (with a sufficient possible value limit) to create it.
+2026-06-15 21:23:06,021 : INFO  : KNIME-Worker-1-Column Filter 3:2 :  : LocalNodeExecutionJob : Column Filter : 3:2 : Column Filter 3:2 End execute (0 secs)
+2026-06-15 21:23:42,395 : WARN  : comm-pool-thread-4 :  : Node : One to Many : 3:4 : Possible value domain for column "Fraud" is empty, use the Domain Calculator node (with a sufficient possible value limit) to create it.
+2026-06-15 21:23:42,561 : ERROR : Thread-8438 :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: Failed to get port view
+ * No port view available at index 1 for current state of node Number to String 3:3. (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-06-15 21:23:42,564 : ERROR : Thread-8440 :  : KnimeBrowserView :  :  : %cerror%c UIExtension Lifecycle :: failed to initialize 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-06-15 21:23:42,613 : INFO  : KNIME-Worker-1-Number to String 3:3 :  : LocalNodeExecutionJob : Number to String : 3:3 : Number to String 3:3 End execute (0 secs)
+2026-06-15 21:24:19,121 : ERROR : Thread-9253 :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: Failed to get port view
+ * No port view available at index 1 for current state of node One to Many 3:4. (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-06-15 21:24:19,122 : ERROR : Thread-9255 :  : KnimeBrowserView :  :  : %cerror%c UIExtension Lifecycle :: failed to initialize 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-06-15 21:24:19,129 : INFO  : KNIME-Worker-1-One to Many 3:4 :  : LocalNodeExecutionJob : One to Many : 3:4 : One to Many 3:4 End execute (0 secs)
+2026-06-15 21:25:18,549 : ERROR : Thread-10236 :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: Failed to get port view
+ * No port view available at index 1 for current state of node Normalizer 3:5. (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-06-15 21:25:18,551 : ERROR : Thread-10238 :  : KnimeBrowserView :  :  : %cerror%c UIExtension Lifecycle :: failed to initialize 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-06-15 21:25:18,812 : INFO  : KNIME-Worker-1-Normalizer 3:5 :  : LocalNodeExecutionJob : Normalizer : 3:5 : Normalizer 3:5 End execute (0 secs)
+2026-06-15 21:25:33,097 : INFO  : KNIME-Worker-1-Normalizer 3:5 :  : LocalNodeExecutionJob : Normalizer : 3:5 : Normalizer 3:5 End execute (0 secs)
+2026-06-15 21:25:33,103 : ERROR : Thread-10765 :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: Failed to get port view
+ * No port view available at index 1 for current state of node Normalizer 3:5. (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-06-15 21:25:33,104 : ERROR : Thread-10767 :  : KnimeBrowserView :  :  : %cerror%c UIExtension Lifecycle :: failed to initialize 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-06-15 21:26:04,295 : INFO  : KNIME-Worker-1-Normalizer 3:5 :  : LocalNodeExecutionJob : Normalizer : 3:5 : Normalizer 3:5 End execute (0 secs)
+2026-06-15 21:26:04,343 : ERROR : Thread-11220 :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: Failed to get port view
+ * No port view available at index 1 for current state of node Normalizer 3:5. (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-06-15 21:26:04,345 : ERROR : Thread-11222 :  : KnimeBrowserView :  :  : %cerror%c UIExtension Lifecycle :: failed to initialize 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-06-15 21:26:49,092 : INFO  : KNIME-Worker-1-Table Partitioner 3:6 :  : LocalNodeExecutionJob : Table Partitioner : 3:6 : Table Partitioner 3:6 End execute (0 secs)
+2026-06-15 21:27:22,555 : WARN  : comm-pool-thread-6 :  : Node : SVM Learner : 3:7 : Class column not set
+2026-06-15 21:27:24,583 : WARN  : comm-pool-thread-6 :  : Node : SVM Learner : 3:8 : Class column not set
+2026-06-15 21:28:48,182 : WARN  : main :  : Node : SVM Learner : 3:7 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:28:50,076 : WARN  : main :  : Node : SVM Learner : 3:7 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:29:19,729 : WARN  : main :  : Node : SVM Learner : 3:8 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:29:20,514 : WARN  : main :  : Node : SVM Learner : 3:8 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:29:24,739 : WARN  : KNIME-Worker-2-SVM Learner 3:7 :  : Node : SVM Learner : 3:7 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:29:28,809 : WARN  : KNIME-Worker-5-SVM Learner 3:8 :  : Node : SVM Learner : 3:8 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:29:31,510 : INFO  : KNIME-Worker-5-SVM Learner 3:8 :  : LocalNodeExecutionJob : SVM Learner : 3:8 : SVM Learner 3:8 End execute (2 secs)
+2026-06-15 21:29:31,511 : ERROR : KNIME-Worker-5-SVM Learner 3:8 :  : NodeStateChangeListener : SVM Learner : 3:8 : Caught an exception while notifying node state listeners, skipping throwing to preserve the state change
+java.lang.NullPointerException: Cannot invoke "org.eclipse.ui.IWorkbenchWindow.getShell()" because the return value of "org.eclipse.ui.IWorkbench.getActiveWorkbenchWindow()" is null
+	at org.knime.ui.java.api.NodeAPI.getAppBoundsAsAWTRec(NodeAPI.java:179)
+	at org.knime.ui.java.api.PortAPI.lambda$2(PortAPI.java:129)
+	at org.knime.gateway.api.util.CoreUtil$1.stateChanged(CoreUtil.java:783)
+	at org.knime.core.node.workflow.NodeStateChangeListener.callStateChanged(NodeStateChangeListener.java:83)
+	at org.knime.core.node.workflow.NodeContainer.notifyStateChangeListeners(NodeContainer.java:958)
+	at org.knime.core.node.workflow.NodeContainer.setInternalState(NodeContainer.java:1030)
+	at org.knime.core.node.workflow.NativeNodeContainer.setInternalState(NativeNodeContainer.java:235)
+	at org.knime.core.node.workflow.NodeContainer.setInternalState(NodeContainer.java:1004)
+	at org.knime.core.node.workflow.NativeNodeContainer.performStateTransitionEXECUTED(NativeNodeContainer.java:557)
+	at org.knime.core.node.workflow.WorkflowManager.doAfterExecution(WorkflowManager.java:3736)
+	at org.knime.core.node.workflow.NodeContainer.notifyParentExecuteFinished(NodeContainer.java:689)
+	at org.knime.core.node.workflow.NodeExecutionJob$AfterRunRunnable.run(NodeExecutionJob.java:385)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at org.knime.core.util.ThreadPool.runInvisible(ThreadPool.java:687)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:223)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-06-15 21:30:02,032 : INFO  : KNIME-Worker-2-SVM Learner 3:7 :  : LocalNodeExecutionJob : SVM Learner : 3:7 : SVM Learner 3:7 End execute (37 secs)
+2026-06-15 21:30:02,034 : ERROR : KNIME-Worker-2-SVM Learner 3:7 :  : NodeStateChangeListener : SVM Learner : 3:7 : Caught an exception while notifying node state listeners, skipping throwing to preserve the state change
+java.lang.NullPointerException: Cannot invoke "org.eclipse.ui.IWorkbenchWindow.getShell()" because the return value of "org.eclipse.ui.IWorkbench.getActiveWorkbenchWindow()" is null
+	at org.knime.ui.java.api.NodeAPI.getAppBoundsAsAWTRec(NodeAPI.java:179)
+	at org.knime.ui.java.api.PortAPI.lambda$2(PortAPI.java:129)
+	at org.knime.gateway.api.util.CoreUtil$1.stateChanged(CoreUtil.java:783)
+	at org.knime.core.node.workflow.NodeStateChangeListener.callStateChanged(NodeStateChangeListener.java:83)
+	at org.knime.core.node.workflow.NodeContainer.notifyStateChangeListeners(NodeContainer.java:958)
+	at org.knime.core.node.workflow.NodeContainer.setInternalState(NodeContainer.java:1030)
+	at org.knime.core.node.workflow.NativeNodeContainer.setInternalState(NativeNodeContainer.java:235)
+	at org.knime.core.node.workflow.NodeContainer.setInternalState(NodeContainer.java:1004)
+	at org.knime.core.node.workflow.NativeNodeContainer.performStateTransitionEXECUTED(NativeNodeContainer.java:557)
+	at org.knime.core.node.workflow.WorkflowManager.doAfterExecution(WorkflowManager.java:3736)
+	at org.knime.core.node.workflow.NodeContainer.notifyParentExecuteFinished(NodeContainer.java:689)
+	at org.knime.core.node.workflow.NodeExecutionJob$AfterRunRunnable.run(NodeExecutionJob.java:385)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at org.knime.core.util.ThreadPool.runInvisible(ThreadPool.java:687)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:223)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-06-15 21:32:48,378 : INFO  : KNIME-Worker-8-SVM Predictor 3:9 :  : LocalNodeExecutionJob : SVM Predictor : 3:9 : SVM Predictor 3:9 End execute (5 secs)
+2026-06-15 21:32:48,907 : INFO  : KNIME-Worker-9-SVM Predictor 3:10 :  : LocalNodeExecutionJob : SVM Predictor : 3:10 : SVM Predictor 3:10 End execute (3 secs)
+2026-06-15 21:33:44,709 : WARN  : comm-pool-thread-7 :  : Node : Scorer : 3:11 : No columns selected yet.
+2026-06-15 21:33:52,036 : ERROR : Thread-17173 :  : KnimeBrowserView :  :  : %cerror%c Did not complete connection:  
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: aborting connection (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-06-15 21:33:56,056 : ERROR : Thread-17356 :  : KnimeBrowserView :  :  : %cerror%c Did not complete connection:  
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: aborting connection (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-06-15 21:34:49,536 : INFO  : KNIME-Worker-12-Scorer 3:11 :  : AbstractAccuracyScorerNodeModel : Scorer : 3:11 : error=49.9%, #correct=1002, #false=998, #rows=2000, #missing=0
+2026-06-15 21:34:49,543 : INFO  : KNIME-Worker-12-Scorer 3:11 :  : LocalNodeExecutionJob : Scorer : 3:11 : Scorer 3:11 End execute (0 secs)
+2026-06-15 21:38:52,156 : WARN  : comm-pool-thread-10 :  : Node : SVM Learner : 3:7 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:38:52,158 : WARN  : comm-pool-thread-10 :  : Node : SVM Learner : 3:8 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:38:59,848 : INFO  : KNIME-Worker-20-Column Filter 3:2 :  : LocalNodeExecutionJob : Column Filter : 3:2 : Column Filter 3:2 End execute (0 secs)
+2026-06-15 21:39:00,095 : INFO  : KNIME-Worker-21-Number to String 3:3 :  : LocalNodeExecutionJob : Number to String : 3:3 : Number to String 3:3 End execute (0 secs)
+2026-06-15 21:39:00,103 : WARN  : KNIME-Worker-21-Number to String 3:3 :  : Node : SVM Learner : 3:7 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:39:00,104 : WARN  : KNIME-Worker-21-Number to String 3:3 :  : Node : SVM Learner : 3:8 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:39:00,154 : INFO  : KNIME-Worker-22-One to Many 3:4 :  : LocalNodeExecutionJob : One to Many : 3:4 : One to Many 3:4 End execute (0 secs)
+2026-06-15 21:39:00,358 : INFO  : KNIME-Worker-17-Normalizer 3:5 :  : LocalNodeExecutionJob : Normalizer : 3:5 : Normalizer 3:5 End execute (0 secs)
+2026-06-15 21:39:00,361 : WARN  : KNIME-Worker-17-Normalizer 3:5 :  : Node : SVM Learner : 3:7 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:39:00,362 : WARN  : KNIME-Worker-17-Normalizer 3:5 :  : Node : SVM Learner : 3:8 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:39:00,430 : INFO  : KNIME-Worker-18-Table Partitioner 3:6 :  : LocalNodeExecutionJob : Table Partitioner : 3:6 : Table Partitioner 3:6 End execute (0 secs)
+2026-06-15 21:39:00,432 : WARN  : KNIME-Worker-18-Table Partitioner 3:6 :  : Node : SVM Learner : 3:7 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:39:00,433 : WARN  : KNIME-Worker-18-Table Partitioner 3:6 :  : Node : SVM Learner : 3:8 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:39:00,437 : WARN  : KNIME-Worker-19-SVM Learner 3:7 :  : Node : SVM Learner : 3:7 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:39:00,438 : WARN  : KNIME-Worker-20-SVM Learner 3:8 :  : Node : SVM Learner : 3:8 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:39:03,286 : INFO  : KNIME-Worker-20-SVM Learner 3:8 :  : LocalNodeExecutionJob : SVM Learner : 3:8 : SVM Learner 3:8 End execute (2 secs)
+2026-06-15 21:39:05,610 : INFO  : KNIME-Worker-23-SVM Predictor 3:10 :  : LocalNodeExecutionJob : SVM Predictor : 3:10 : SVM Predictor 3:10 End execute (2 secs)
+2026-06-15 21:39:28,213 : INFO  : KNIME-Worker-19-SVM Learner 3:7 :  : LocalNodeExecutionJob : SVM Learner : 3:7 : SVM Learner 3:7 End execute (27 secs)
+2026-06-15 21:39:33,748 : INFO  : KNIME-Worker-23-SVM Predictor 3:9 :  : LocalNodeExecutionJob : SVM Predictor : 3:9 : SVM Predictor 3:9 End execute (5 secs)
+2026-06-15 21:39:33,764 : INFO  : KNIME-Worker-21-Scorer 3:11 :  : AbstractAccuracyScorerNodeModel : Scorer : 3:11 : error=49.9%, #correct=1002, #false=998, #rows=2000, #missing=0
+2026-06-15 21:39:33,767 : INFO  : KNIME-Worker-21-Scorer 3:11 :  : LocalNodeExecutionJob : Scorer : 3:11 : Scorer 3:11 End execute (0 secs)
+2026-06-15 21:41:04,877 : WARN  : comm-pool-thread-10 :  : Node : SVM Learner : 3:7 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:41:04,879 : WARN  : comm-pool-thread-10 :  : Node : SVM Learner : 3:8 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:41:28,613 : INFO  : KNIME-Worker-24-Number to String 3:3 :  : LocalNodeExecutionJob : Number to String : 3:3 : Number to String 3:3 End execute (0 secs)
+2026-06-15 21:41:28,667 : INFO  : KNIME-Worker-25-One to Many 3:4 :  : LocalNodeExecutionJob : One to Many : 3:4 : One to Many 3:4 End execute (0 secs)
+2026-06-15 21:42:05,620 : WARN  : comm-pool-thread-10 :  : Node : SVM Learner : 3:7 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:42:05,623 : WARN  : comm-pool-thread-10 :  : Node : SVM Learner : 3:8 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:42:08,726 : INFO  : KNIME-Worker-26-Normalizer 3:5 :  : LocalNodeExecutionJob : Normalizer : 3:5 : Normalizer 3:5 End execute (0 secs)
+2026-06-15 21:42:08,735 : WARN  : KNIME-Worker-26-Normalizer 3:5 :  : Node : SVM Learner : 3:7 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:42:08,737 : WARN  : KNIME-Worker-26-Normalizer 3:5 :  : Node : SVM Learner : 3:8 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:42:08,822 : INFO  : KNIME-Worker-27-Table Partitioner 3:6 :  : LocalNodeExecutionJob : Table Partitioner : 3:6 : Table Partitioner 3:6 End execute (0 secs)
+2026-06-15 21:42:08,823 : WARN  : KNIME-Worker-27-Table Partitioner 3:6 :  : Node : SVM Learner : 3:7 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:42:08,825 : WARN  : KNIME-Worker-27-Table Partitioner 3:6 :  : Node : SVM Learner : 3:8 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:42:08,828 : WARN  : KNIME-Worker-29-SVM Learner 3:8 :  : Node : SVM Learner : 3:8 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:42:08,828 : WARN  : KNIME-Worker-28-SVM Learner 3:7 :  : Node : SVM Learner : 3:7 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:42:11,273 : INFO  : KNIME-Worker-29-SVM Learner 3:8 :  : LocalNodeExecutionJob : SVM Learner : 3:8 : SVM Learner 3:8 End execute (2 secs)
+2026-06-15 21:42:13,698 : INFO  : KNIME-Worker-27-SVM Predictor 3:10 :  : LocalNodeExecutionJob : SVM Predictor : 3:10 : SVM Predictor 3:10 End execute (2 secs)
+2026-06-15 21:42:38,317 : INFO  : KNIME-Worker-28-SVM Learner 3:7 :  : LocalNodeExecutionJob : SVM Learner : 3:7 : SVM Learner 3:7 End execute (29 secs)
+2026-06-15 21:42:42,834 : INFO  : KNIME-Worker-30-SVM Predictor 3:9 :  : LocalNodeExecutionJob : SVM Predictor : 3:9 : SVM Predictor 3:9 End execute (4 secs)
+2026-06-15 21:42:42,838 : INFO  : KNIME-Worker-24-Scorer 3:11 :  : AbstractAccuracyScorerNodeModel : Scorer : 3:11 : error=49.9%, #correct=1002, #false=998, #rows=2000, #missing=0
+2026-06-15 21:42:42,839 : INFO  : KNIME-Worker-24-Scorer 3:11 :  : LocalNodeExecutionJob : Scorer : 3:11 : Scorer 3:11 End execute (0 secs)
+2026-06-15 21:43:32,373 : WARN  : comm-pool-thread-10 :  : Node : SVM Learner : 3:7 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:43:32,375 : WARN  : comm-pool-thread-10 :  : Node : SVM Learner : 3:8 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:43:32,497 : INFO  : KNIME-Worker-29-Normalizer 3:5 :  : LocalNodeExecutionJob : Normalizer : 3:5 : Normalizer 3:5 End execute (0 secs)
+2026-06-15 21:43:32,502 : WARN  : KNIME-Worker-29-Normalizer 3:5 :  : Node : SVM Learner : 3:7 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:43:32,504 : WARN  : KNIME-Worker-29-Normalizer 3:5 :  : Node : SVM Learner : 3:8 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:43:42,811 : INFO  : KNIME-Worker-27-Table Partitioner 3:6 :  : LocalNodeExecutionJob : Table Partitioner : 3:6 : Table Partitioner 3:6 End execute (0 secs)
+2026-06-15 21:43:42,813 : WARN  : KNIME-Worker-27-Table Partitioner 3:6 :  : Node : SVM Learner : 3:7 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:43:42,815 : WARN  : KNIME-Worker-27-Table Partitioner 3:6 :  : Node : SVM Learner : 3:8 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:43:42,822 : WARN  : KNIME-Worker-25-SVM Learner 3:7 :  : Node : SVM Learner : 3:7 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:43:42,824 : WARN  : KNIME-Worker-26-SVM Learner 3:8 :  : Node : SVM Learner : 3:8 : Rejecting 1 column(s) due to incompatible type: [Profession]
+2026-06-15 21:43:45,378 : INFO  : KNIME-Worker-26-SVM Learner 3:8 :  : LocalNodeExecutionJob : SVM Learner : 3:8 : SVM Learner 3:8 End execute (2 secs)
+2026-06-15 21:43:47,580 : INFO  : KNIME-Worker-27-SVM Predictor 3:10 :  : LocalNodeExecutionJob : SVM Predictor : 3:10 : SVM Predictor 3:10 End execute (2 secs)
+2026-06-15 21:43:55,495 : INFO  : KNIME-Worker-25-SVM Learner 3:7 :  : LocalNodeExecutionJob : SVM Learner : 3:7 : SVM Learner 3:7 End execute (12 secs)
+2026-06-15 21:43:58,518 : INFO  : KNIME-Worker-30-SVM Predictor 3:9 :  : LocalNodeExecutionJob : SVM Predictor : 3:9 : SVM Predictor 3:9 End execute (3 secs)
+2026-06-15 21:43:58,523 : INFO  : KNIME-Worker-28-Scorer 3:11 :  : AbstractAccuracyScorerNodeModel : Scorer : 3:11 : error=49.9%, #correct=1002, #false=998, #rows=2000, #missing=0
+2026-06-15 21:43:58,524 : INFO  : KNIME-Worker-28-Scorer 3:11 :  : LocalNodeExecutionJob : Scorer : 3:11 : Scorer 3:11 End execute (0 secs)
+2026-06-15 21:46:35,185 : INFO  : KNIME shutdown hooks - org.knime.core.util.FileUtil$$Lambda/0x000002469f4064a0 :  : FileUtil :  :  : Deleting 26 temporary files.

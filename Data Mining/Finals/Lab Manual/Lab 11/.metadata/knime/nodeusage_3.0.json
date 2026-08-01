@@ -1,0 +1,130 @@
+{
+    "version": "5.11.0.v202603030810",
+    "created": "2026-06-15 16:18",
+    "nodestats": {
+        "nodes": [
+            {
+                "id": "org.knime.base.node.io.filehandling.csv.reader.CSVTableReaderNodeFactory",
+                "nodename": "CSV Reader",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 244,
+                "nrcreated": 1,
+                "nrsettingsChanged": 1,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.filter.column.DataColumnSpecFilterNodeFactory",
+                "nodename": "Column Filter",
+                "nrexecs": 2,
+                "nrfails": 0,
+                "exectime": 19,
+                "nrcreated": 0,
+                "nrsettingsChanged": 1,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.colconvert.numbertostring2.NumberToString2NodeFactory",
+                "nodename": "Number to String",
+                "nrexecs": 3,
+                "nrfails": 0,
+                "exectime": 450,
+                "nrcreated": 0,
+                "nrsettingsChanged": 1,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.columntrans2.One2ManyCol2NodeFactory",
+                "nodename": "One to Many",
+                "nrexecs": 3,
+                "nrfails": 0,
+                "exectime": 239,
+                "nrcreated": 0,
+                "nrsettingsChanged": 1,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.normalize3.Normalizer3NodeFactory",
+                "nodename": "Normalizer",
+                "nrexecs": 6,
+                "nrfails": 0,
+                "exectime": 1079,
+                "nrcreated": 0,
+                "nrsettingsChanged": 4,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.partition.PartitionNodeFactory",
+                "nodename": "Table Partitioner",
+                "nrexecs": 4,
+                "nrfails": 0,
+                "exectime": 378,
+                "nrcreated": 0,
+                "nrsettingsChanged": 1,
+                "successor": "org.knime.base.node.mine.svm.learner.SVMLearnerNodeFactory2",
+                "successornodename": "SVM Learner"
+            },
+            {
+                "id": "org.knime.base.node.mine.svm.learner.SVMLearnerNodeFactory2",
+                "nodename": "SVM Learner",
+                "nrexecs": 8,
+                "nrfails": 0,
+                "exectime": 117789,
+                "nrcreated": 2,
+                "nrsettingsChanged": 4,
+                "successor": "org.knime.base.node.mine.svm.predictor2.SVMPredictorNodeFactory",
+                "successornodename": "SVM Predictor"
+            },
+            {
+                "id": "org.knime.base.node.mine.svm.predictor2.SVMPredictorNodeFactory",
+                "nodename": "SVM Predictor",
+                "nrexecs": 8,
+                "nrfails": 0,
+                "exectime": 28961,
+                "nrcreated": 2,
+                "nrsettingsChanged": 0,
+                "successor": "org.knime.base.node.mine.scorer.accuracy.AccuracyScorer2NodeFactory",
+                "successornodename": "Scorer"
+            },
+            {
+                "id": "org.knime.base.node.mine.scorer.accuracy.AccuracyScorer2NodeFactory",
+                "nodename": "Scorer",
+                "nrexecs": 4,
+                "nrfails": 0,
+                "exectime": 84,
+                "nrcreated": 1,
+                "nrsettingsChanged": 1,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            }
+        ],
+        "metaNodes": {
+        },
+        "wrappedNodes": {
+        },
+        "createdVia": {
+            "WEB_UI": 6
+        }
+    },
+    "uptime": 1657894,
+    "workflowsOpened": 1,
+    "remoteWorkflowsOpened": 0,
+    "workflowsCreated": 1,
+    "remoteWorkflowsCreated": 0,
+    "columnarStorageWorkflowsOpened": 0,
+    "workflowsImported": 0,
+    "workflowsExported": 0,
+    "webUIPerspectiveSwitches": 0,
+    "javaUIPerspectiveSwitches": 0,
+    "lastUsedPerspective": "none",
+    "launches": 1,
+    "lastApplicationID": "org.knime.product.KNIME_APPLICATION",
+    "timeSinceLastStart": 1657894,
+    "crashes": 0,
+    "properlyShutDown": true
+}
