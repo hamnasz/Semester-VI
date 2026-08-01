@@ -1,0 +1,299 @@
+2026-02-26 13:21:44,165 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-02-26 13:21:44,167 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-02-26 13:21:44,167 : INFO  : main :  : NodeLogger :  :  : # Welcome to KNIME Analytics Platform v5.10.0.v202601281134 (Build January 28, 2026)    #
+2026-02-26 13:21:44,167 : INFO  : main :  : NodeLogger :  :  : # Based on Eclipse, http://www.eclipse.org                                              #
+2026-02-26 13:21:44,167 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-02-26 13:21:44,167 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-02-26 13:21:44,167 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-02-26 13:21:44,167 : INFO  : main :  : NodeLogger :  :  : # Copyright by KNIME AG, Zurich, Switzerland and others.                                #
+2026-02-26 13:21:44,167 : INFO  : main :  : NodeLogger :  :  : # Website: http://www.knime.com                                                         #
+2026-02-26 13:21:44,167 : INFO  : main :  : NodeLogger :  :  : # E-mail: contact@knime.com                                                             #
+2026-02-26 13:21:44,167 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-02-26 13:21:44,167 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-02-26 13:21:44,167 : INFO  : main :  : NodeLogger :  :  : # For more details see the KNIME log file:                                              #
+2026-02-26 13:21:44,167 : INFO  : main :  : NodeLogger :  :  : # E:\Artificial Intelligence\Sixth Semester\Data Mining\Mids\Lab\Lab 2\.metadata\knime\knime.log
+2026-02-26 13:21:44,167 : INFO  : main :  : NodeLogger :  :  : #---------------------------------------------------------------------------------------#
+2026-02-26 13:21:44,180 : INFO  : main :  : NodeLogger :  :  : # logging date=Thu Feb 26 13:21:44 PKT 2026
+2026-02-26 13:21:44,180 : INFO  : main :  : NodeLogger :  :  : # java.version=21.0.9
+2026-02-26 13:21:44,180 : INFO  : main :  : NodeLogger :  :  : # java.vm.version=21.0.9+10-LTS
+2026-02-26 13:21:44,181 : INFO  : main :  : NodeLogger :  :  : # java.vendor=Eclipse Adoptium
+2026-02-26 13:21:44,181 : INFO  : main :  : NodeLogger :  :  : # os.name=Windows 11
+2026-02-26 13:21:44,181 : INFO  : main :  : NodeLogger :  :  : # os.arch=amd64
+2026-02-26 13:21:44,181 : INFO  : main :  : NodeLogger :  :  : # number of CPUs=8
+2026-02-26 13:21:44,181 : INFO  : main :  : NodeLogger :  :  : # assertions=off
+2026-02-26 13:21:44,190 : INFO  : main :  : NodeLogger :  :  : # host=DevHamnah
+2026-02-26 13:21:44,220 : INFO  : main :  : NodeLogger :  :  : # username=Developer Hamna
+2026-02-26 13:21:44,220 : INFO  : main :  : NodeLogger :  :  : # max mem=8068MB
+2026-02-26 13:21:44,221 : INFO  : main :  : NodeLogger :  :  : # application=org.knime.product.KNIME_APPLICATION
+2026-02-26 13:21:44,251 : INFO  : main :  : NodeLogger :  :  : # KNID=11-64e971d6d4d66147-01-e2d873883bd7ff1b
+2026-02-26 13:21:44,251 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-02-26 13:20:50,694 : INFO  : main :  : RegisterBouncyCastleProvider :  :  : Added BouncyCastleProvider to Java Security providers
+2026-02-26 13:21:51,884 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'E:\Artificial Intelligence\Sixth Semester\Data Mining\Mids\Lab\Lab 2\.metadata\knime\history_database_drivers.txt' does not exist.
+2026-02-26 13:21:51,884 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'E:\Artificial Intelligence\Sixth Semester\Data Mining\Mids\Lab\Lab 2\.metadata\knime\history_database_urls.txt' does not exist.
+2026-02-26 13:21:52,440 : INFO  : Node Repository Initializer :  : MovingAggregationNodeFactory :  :  : Modern dialog for Moving Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-02-26 13:21:52,451 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'E:\Artificial Intelligence\Sixth Semester\Data Mining\Mids\Lab\Lab 2\.metadata\knime\history_string2date-formats.txt' does not exist.
+2026-02-26 13:22:08,676 : INFO  : main :  : ProcessWatchdog :  :  : KNIME Process Watchdog memory limit not configured
+2026-02-26 13:22:08,677 : INFO  : main :  : ProcessWatchdog :  :  : External process memory watchdog is disabled, because the memory limit is set to -1
+2026-02-26 13:22:09,349 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'E:\Artificial Intelligence\Sixth Semester\Data Mining\Mids\Lab\Lab 2\.metadata\knime\history_createFileNameHistoryKey.txt' does not exist.
+2026-02-26 13:22:09,362 : INFO  : Node Repository Initializer :  : ColumnAggregatorNodeFactory :  :  : Modern dialog for Column Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-02-26 13:22:10,506 : INFO  : Node Repository Initializer :  : Pivot2NodeFactory :  :  : Modern dialog for Pivot node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-02-26 13:22:11,200 : INFO  : Node Repository Initializer :  : GroupByNodeFactory :  :  : Modern dialog for GroupBy node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-02-26 13:22:12,996 : INFO  : main :  : StringHistory :  :  : History file 'E:\Artificial Intelligence\Sixth Semester\Data Mining\Mids\Lab\Lab 2\.metadata\knime\history_org.knime.kerberos.name.txt' does not exist.
+2026-02-26 13:22:14,379 : INFO  : Thread-196 :  : KnimeBrowserView :  :  : %cinfo%c Injecting global logger 
+      background: #00BCD4;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      (source: https://org.knime.ui.java/assets/index-_0U1dfPl.js; line: 101)
+2026-02-26 13:22:17,890 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-02-26 13:22:17,892 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-02-26 13:22:17,895 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-02-26 13:22:17,899 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-02-26 13:22:17,908 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-02-26 13:22:17,908 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-02-26 13:22:26,858 : ERROR : Thread-1190 :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object PromiseRejectionEvent] (source: https://org.knime.ui.java/assets/index-_0U1dfPl.js; line: 101)
+2026-02-26 13:22:26,859 : ERROR : Thread-1192 :  : KnimeBrowserView :  :  : Uncaught (in promise) AbortError: The user aborted a request. (source: https://org.knime.ui.java/index.html#/get-started; line: 0)
+2026-02-26 13:22:27,070 : INFO  : ModalContext :  : LoadWorkflowRunnable :  :  : New workflow created.
+2026-02-26 13:22:37,658 : WARN  : comm-pool-thread-1 :  : Node : CSV Reader : 3:1 : Please specify a file
+2026-02-26 13:24:00,778 : INFO  : AWT-EventQueue-0 :  : StringHistory : CSV Reader : 3:1 : History file 'E:\Artificial Intelligence\Sixth Semester\Data Mining\Mids\Lab\Lab 2\.metadata\knime\history_csv_reader_writer.txt' does not exist.
+2026-02-26 13:25:20,427 : INFO  : KNIME-Worker-2-CSV Reader 3:1 :  : LocalNodeExecutionJob : CSV Reader : 3:1 : CSV Reader 3:1 End execute (0 secs)
+2026-02-26 13:26:35,884 : INFO  : KNIME-Worker-3-Statistics 3:2 :  : LocalNodeExecutionJob : Statistics : 3:2 : Statistics 3:2 End execute (0 secs)
+2026-02-26 13:26:56,711 : INFO  : KNIME-Worker-7-Statistics 3:2 :  : LocalNodeExecutionJob : Statistics : 3:2 : Statistics 3:2 End execute (0 secs)
+2026-02-26 13:28:15,571 : WARN  : comm-pool-thread-5 :  : Node : Color Manager : 3:3 : Selected column "Column" with default nominal color mapping.
+2026-02-26 13:28:28,496 : WARN  : KNIME-Worker-8-Color Manager 3:3 :  : Node : Color Manager : 3:3 : Selected column "Column" with default nominal color mapping.
+2026-02-26 13:28:28,499 : INFO  : KNIME-Worker-8-Color Manager 3:3 :  : LocalNodeExecutionJob : Color Manager : 3:3 : Color Manager 3:3 End execute (0 secs)
+2026-02-26 13:29:42,310 : WARN  : comm-pool-thread-6 :  : Node : Color Manager : 3:3 : Selected column "Column" with default nominal color mapping.
+2026-02-26 13:29:42,356 : INFO  : KNIME-Worker-9-Statistics 3:2 :  : LocalNodeExecutionJob : Statistics : 3:2 : Statistics 3:2 End execute (0 secs)
+2026-02-26 13:29:42,358 : WARN  : KNIME-Worker-9-Statistics 3:2 :  : Node : Color Manager : 3:3 : Selected column "Column" with default nominal color mapping.
+2026-02-26 13:29:46,409 : WARN  : KNIME-Worker-13-Color Manager 3:3 :  : Node : Color Manager : 3:3 : Selected column "Column" with default nominal color mapping.
+2026-02-26 13:29:46,410 : INFO  : KNIME-Worker-13-Color Manager 3:3 :  : LocalNodeExecutionJob : Color Manager : 3:3 : Color Manager 3:3 End execute (0 secs)
+2026-02-26 13:30:42,136 : INFO  : KNIME-Worker-12-Color Manager 3:3 :  : LocalNodeExecutionJob : Color Manager : 3:3 : Color Manager 3:3 End execute (0 secs)
+2026-02-26 13:31:41,695 : INFO  : KNIME-Worker-16-Scatter Plot 3:4 :  : LocalNodeExecutionJob : Scatter Plot : 3:4 : Scatter Plot 3:4 End execute (0 secs)
+2026-02-26 13:31:41,841 : WARN  : Thread-12677 :  : KnimeBrowserView :  :  : An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. (source: https://org.knime.core.ui.view/uiext-view/org.knime.base.views.node.scatterplot.ScatterPlotNodeFactory/ScatterPlot.html; line: 0)
+2026-02-26 13:33:04,462 : INFO  : Thread-14650 :  : Server :  :  : jetty-12.0.21; built: 2025-05-09T00:32:00.688Z; git: 1c4719601e31b05b7d68910d2edd980259f1f53c; jvm 21.0.9+10-LTS
+2026-02-26 13:33:04,518 : INFO  : Thread-14650 :  : AbstractConnector :  :  : Started ServerConnector@4034a41d{HTTP/1.1, (http/1.1)}{0.0.0.0:51574}
+2026-02-26 13:33:04,518 : INFO  : Thread-14650 :  : Server :  :  : Started oejs.Server@46c8c2f0{STARTING}[12.0.21,sto=0] @745066ms
+2026-02-26 13:33:04,519 : INFO  : Thread-14650 :  : OAuthAuthenticator :  :  : Opening browser to perform authentication for 'https://api.hub.knime.com'.
+2026-02-26 13:33:19,030 : INFO  : Thread-14650 :  : Server :  :  : Stopped oejs.Server@46c8c2f0{STOPPING}[12.0.21,sto=0]
+2026-02-26 13:33:19,033 : WARN  : Thread-14650 :  : AbstractLifeCycle :  :  : FAILED oeji.ManagedSelector@62943842{FAILED}[id=3 keys=0 selected=0 updates=1 selection:tot=0/avg=0.00/max=0]: java.lang.InterruptedException
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(Unknown Source)
+	at java.base/java.util.concurrent.CountDownLatch.await(Unknown Source)
+	at org.eclipse.jetty.io.ManagedSelector.doStop(ManagedSelector.java:138)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.stop(ContainerLifeCycle.java:180)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStop(ContainerLifeCycle.java:202)
+	at org.eclipse.jetty.io.SelectorManager.doStop(SelectorManager.java:280)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.stop(ContainerLifeCycle.java:180)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStop(ContainerLifeCycle.java:202)
+	at org.eclipse.jetty.server.AbstractConnector.doStop(AbstractConnector.java:375)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStop(AbstractNetworkConnector.java:83)
+	at org.eclipse.jetty.server.ServerConnector.doStop(ServerConnector.java:245)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:132)
+	at org.eclipse.jetty.server.Server.doStop(Server.java:679)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:132)
+	at com.knime.explorer.server.rest.OAuthAuthenticator.stopServer(OAuthAuthenticator.java:800)
+	at com.knime.explorer.server.rest.OAuthAuthenticator.login(OAuthAuthenticator.java:648)
+	at com.knime.explorer.server.rest.OAuthLoginDialog.lambda$0(OAuthLoginDialog.java:179)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-02-26 13:33:19,049 : WARN  : Thread-14650 :  : AbstractLifeCycle :  :  : FAILED ServerConnectorManager@17bf3ac2[keys=0]: java.lang.InterruptedException
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(Unknown Source)
+	at java.base/java.util.concurrent.CountDownLatch.await(Unknown Source)
+	at org.eclipse.jetty.io.ManagedSelector.doStop(ManagedSelector.java:138)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.stop(ContainerLifeCycle.java:180)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStop(ContainerLifeCycle.java:202)
+	at org.eclipse.jetty.io.SelectorManager.doStop(SelectorManager.java:280)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.stop(ContainerLifeCycle.java:180)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStop(ContainerLifeCycle.java:202)
+	at org.eclipse.jetty.server.AbstractConnector.doStop(AbstractConnector.java:375)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStop(AbstractNetworkConnector.java:83)
+	at org.eclipse.jetty.server.ServerConnector.doStop(ServerConnector.java:245)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:132)
+	at org.eclipse.jetty.server.Server.doStop(Server.java:679)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:132)
+	at com.knime.explorer.server.rest.OAuthAuthenticator.stopServer(OAuthAuthenticator.java:800)
+	at com.knime.explorer.server.rest.OAuthAuthenticator.login(OAuthAuthenticator.java:648)
+	at com.knime.explorer.server.rest.OAuthLoginDialog.lambda$0(OAuthLoginDialog.java:179)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-02-26 13:33:19,050 : WARN  : Thread-14650 :  : AbstractLifeCycle :  :  : FAILED ServerConnector@4034a41d{HTTP/1.1, (http/1.1)}{0.0.0.0:51574}: java.lang.InterruptedException
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(Unknown Source)
+	at java.base/java.util.concurrent.CountDownLatch.await(Unknown Source)
+	at org.eclipse.jetty.io.ManagedSelector.doStop(ManagedSelector.java:138)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.stop(ContainerLifeCycle.java:180)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStop(ContainerLifeCycle.java:202)
+	at org.eclipse.jetty.io.SelectorManager.doStop(SelectorManager.java:280)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.stop(ContainerLifeCycle.java:180)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStop(ContainerLifeCycle.java:202)
+	at org.eclipse.jetty.server.AbstractConnector.doStop(AbstractConnector.java:375)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStop(AbstractNetworkConnector.java:83)
+	at org.eclipse.jetty.server.ServerConnector.doStop(ServerConnector.java:245)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:132)
+	at org.eclipse.jetty.server.Server.doStop(Server.java:679)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:132)
+	at com.knime.explorer.server.rest.OAuthAuthenticator.stopServer(OAuthAuthenticator.java:800)
+	at com.knime.explorer.server.rest.OAuthAuthenticator.login(OAuthAuthenticator.java:648)
+	at com.knime.explorer.server.rest.OAuthLoginDialog.lambda$0(OAuthLoginDialog.java:179)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-02-26 13:33:19,052 : INFO  : Thread-14650 :  : AbstractConnector :  :  : Stopped ServerConnector@4034a41d{HTTP/1.1, (http/1.1)}{0.0.0.0:51574}
+2026-02-26 13:33:21,557 : WARN  : qtp1003032868-14964 :  : ManagedSelector :  :  : select() failure
+java.nio.channels.ClosedSelectorException
+	at org.eclipse.jetty.io.ManagedSelector.select(ManagedSelector.java:196)
+	at org.eclipse.jetty.io.ManagedSelector$SelectorProducer.select(ManagedSelector.java:614)
+	at org.eclipse.jetty.io.ManagedSelector$SelectorProducer.produce(ManagedSelector.java:548)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produceTask(AdaptiveExecutionStrategy.java:514)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:258)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:195)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:981)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1211)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1166)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-02-26 13:33:21,560 : WARN  : Thread-14650 :  : AbstractLifeCycle :  :  : FAILED oejs.Server@46c8c2f0{FAILED}[12.0.21,sto=0]: java.lang.InterruptedException
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(Unknown Source)
+	at java.base/java.util.concurrent.CountDownLatch.await(Unknown Source)
+	at org.eclipse.jetty.io.ManagedSelector.doStop(ManagedSelector.java:138)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.stop(ContainerLifeCycle.java:180)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStop(ContainerLifeCycle.java:202)
+	at org.eclipse.jetty.io.SelectorManager.doStop(SelectorManager.java:280)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.stop(ContainerLifeCycle.java:180)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStop(ContainerLifeCycle.java:202)
+	at org.eclipse.jetty.server.AbstractConnector.doStop(AbstractConnector.java:375)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStop(AbstractNetworkConnector.java:83)
+	at org.eclipse.jetty.server.ServerConnector.doStop(ServerConnector.java:245)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:132)
+	at org.eclipse.jetty.server.Server.doStop(Server.java:679)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:132)
+	at com.knime.explorer.server.rest.OAuthAuthenticator.stopServer(OAuthAuthenticator.java:800)
+	at com.knime.explorer.server.rest.OAuthAuthenticator.login(OAuthAuthenticator.java:648)
+	at com.knime.explorer.server.rest.OAuthLoginDialog.lambda$0(OAuthLoginDialog.java:179)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-02-26 13:33:21,562 : WARN  : Thread-14650 :  : OAuthAuthenticator :  :  : Could not stop OAuth redirect listener: null
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(Unknown Source)
+	at java.base/java.util.concurrent.CountDownLatch.await(Unknown Source)
+	at org.eclipse.jetty.io.ManagedSelector.doStop(ManagedSelector.java:138)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.stop(ContainerLifeCycle.java:180)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStop(ContainerLifeCycle.java:202)
+	at org.eclipse.jetty.io.SelectorManager.doStop(SelectorManager.java:280)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.stop(ContainerLifeCycle.java:180)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStop(ContainerLifeCycle.java:202)
+	at org.eclipse.jetty.server.AbstractConnector.doStop(AbstractConnector.java:375)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStop(AbstractNetworkConnector.java:83)
+	at org.eclipse.jetty.server.ServerConnector.doStop(ServerConnector.java:245)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:132)
+	at org.eclipse.jetty.server.Server.doStop(Server.java:679)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:132)
+	at com.knime.explorer.server.rest.OAuthAuthenticator.stopServer(OAuthAuthenticator.java:800)
+	at com.knime.explorer.server.rest.OAuthAuthenticator.login(OAuthAuthenticator.java:648)
+	at com.knime.explorer.server.rest.OAuthLoginDialog.lambda$0(OAuthLoginDialog.java:179)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-02-26 13:33:23,054 : ERROR : comm-pool-thread-7 :  : ChatBackend : KNIME_project : 3 : Can't authenticate to fetch K-AI usage.
+org.knime.core.util.auth.CouldNotAuthorizeException: Could not authorize. Please log into My-KNIME-Hub.
+	at org.knime.ui.java.browser.lifecycle.Init.lambda$28(Init.java:455)
+	at java.base/java.util.Optional.orElseThrow(Unknown Source)
+	at org.knime.ui.java.browser.lifecycle.Init.lambda$27(Init.java:454)
+	at org.knime.ai.assistant.java.ChatBackend.getUsage(ChatBackend.java:235)
+	at org.knime.gateway.impl.webui.service.DefaultKaiService.lambda$6(DefaultKaiService.java:214)
+	at java.base/java.util.Optional.map(Unknown Source)
+	at org.knime.gateway.impl.webui.service.DefaultKaiService.getUsage(DefaultKaiService.java:214)
+	at org.knime.gateway.impl.webui.jsonrpc.service.JsonRpcKaiServiceWrapper.getUsage(JsonRpcKaiServiceWrapper.java:114)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at com.googlecode.jsonrpc4j.JsonRpcBasicServer.invoke(JsonRpcBasicServer.java:478)
+	at com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleObject(JsonRpcBasicServer.java:349)
+	at com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleJsonNodeRequest(JsonRpcBasicServer.java:274)
+	at com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleRequest(JsonRpcBasicServer.java:242)
+	at org.knime.gateway.impl.jsonrpc.JsonRpcRequestHandler.handle(JsonRpcRequestHandler.java:112)
+	at org.knime.ui.java.browser.lifecycle.Init.lambda$16(Init.java:343)
+	at com.equo.comm.common.MessageHandler.processReceivedEventMessage(MessageHandler.java:131)
+	at com.equo.comm.ee.provider.service.ChromiumService.receiveMessage(ChromiumService.java:98)
+	at com.equo.comm.ee.provider.CommunicationManagerChromiumImpl.receiveMessage(CommunicationManagerChromiumImpl.java:48)
+	at com.equo.chromium.swt.internal.spi.CommRouterHandler.handleRequest(CommRouterHandler.java:33)
+	at com.equo.chromium.swt.internal.spi.CommRouterHandler.lambda$1(CommRouterHandler.java:51)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-02-26 13:51:05,414 : ERROR : Thread-17216 :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object PromiseRejectionEvent] (source: https://org.knime.ui.java/assets/index-_0U1dfPl.js; line: 101)
+2026-02-26 13:51:05,416 : ERROR : Thread-17218 :  : KnimeBrowserView :  :  : Uncaught (in promise) AbortError: The user aborted a request. (source: https://org.knime.ui.java/index.html#/workflow/KNIME_project_ddac35e9-b128-4bcc-86d7-69c62f0295b9/root?version; line: 0)
+2026-02-26 13:53:37,721 : WARN  : ModalContext :  : Node : Decision Tree Learner : 4:3 : 6 rows removed due to missing class value;
+2026-02-26 13:53:37,723 : WARN  : ModalContext :  : Node : Decision Tree Predictor : 4:4 : Internal model could not be loaded.
+2026-02-26 13:53:51,297 : ERROR : KNIME-Worker-19-CSV Reader 4:1 :  : Node : CSV Reader : 4:1 : Execute failed: The specified file C:\Users\Lubaina Irfan\Documents\Iris.csv does not exist.
+org.knime.core.node.InvalidSettingsException: The specified file C:\Users\Lubaina Irfan\Documents\Iris.csv does not exist.
+	at org.knime.core.node.util.CheckUtils.checkSetting(CheckUtils.java:274)
+	at org.knime.core.node.util.CheckUtils.checkSetting(CheckUtils.java:224)
+	at org.knime.filehandling.core.defaultnodesettings.filechooser.AbstractFileChooserPathAccessor.getRootPath(AbstractFileChooserPathAccessor.java:318)
+	at org.knime.filehandling.core.defaultnodesettings.filechooser.AbstractFileChooserPathAccessor.getFSPaths(AbstractFileChooserPathAccessor.java:225)
+	at org.knime.filehandling.core.node.table.reader.paths.Path$1.getItems(Path.java:103)
+	at org.knime.filehandling.core.node.table.reader.CommonTableReaderNodeModel.getPaths(CommonTableReaderNodeModel.java:206)
+	at org.knime.filehandling.core.node.table.reader.CommonTableReaderNodeModel.execute(CommonTableReaderNodeModel.java:169)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-02-26 13:54:18,174 : INFO  : KNIME-Worker-20-CSV Reader 4:1 :  : LocalNodeExecutionJob : CSV Reader : 4:1 : CSV Reader 4:1 End execute (0 secs)
+2026-02-26 13:54:21,565 : INFO  : KNIME-Worker-21-Column Filter 4:2 :  : LocalNodeExecutionJob : Column Filter : 4:2 : Column Filter 4:2 End execute (0 secs)
+2026-02-26 13:54:27,054 : INFO  : KNIME-Worker-22-Decision Tree Learner 4:3 :  : DecisionTreeLearnerNodeModel2 : Decision Tree Learner : 4:3 : Decision tree consisting of 9 nodes created with pruning method No pruning
+2026-02-26 13:54:27,262 : INFO  : KNIME-Worker-22-Decision Tree Learner 4:3 :  : LocalNodeExecutionJob : Decision Tree Learner : 4:3 : Decision Tree Learner 4:3 End execute (0 secs)
+2026-02-26 13:54:27,263 : ERROR : KNIME-Worker-22-Decision Tree Learner 4:3 :  : NodeStateChangeListener : Decision Tree Learner : 4:3 : Caught an exception while notifying node state listeners, skipping throwing to preserve the state change
+java.lang.NullPointerException: Cannot invoke "org.eclipse.ui.IWorkbenchWindow.getShell()" because the return value of "org.eclipse.ui.IWorkbench.getActiveWorkbenchWindow()" is null
+	at org.knime.ui.java.api.NodeAPI.getAppBoundsAsAWTRec(NodeAPI.java:179)
+	at org.knime.ui.java.api.PortAPI.lambda$2(PortAPI.java:129)
+	at org.knime.gateway.api.util.CoreUtil$1.stateChanged(CoreUtil.java:798)
+	at org.knime.core.node.workflow.NodeStateChangeListener.callStateChanged(NodeStateChangeListener.java:83)
+	at org.knime.core.node.workflow.NodeContainer.notifyStateChangeListeners(NodeContainer.java:958)
+	at org.knime.core.node.workflow.NodeContainer.setInternalState(NodeContainer.java:1030)
+	at org.knime.core.node.workflow.NativeNodeContainer.setInternalState(NativeNodeContainer.java:235)
+	at org.knime.core.node.workflow.NodeContainer.setInternalState(NodeContainer.java:1004)
+	at org.knime.core.node.workflow.NativeNodeContainer.performStateTransitionEXECUTED(NativeNodeContainer.java:557)
+	at org.knime.core.node.workflow.WorkflowManager.doAfterExecution(WorkflowManager.java:3739)
+	at org.knime.core.node.workflow.NodeContainer.notifyParentExecuteFinished(NodeContainer.java:689)
+	at org.knime.core.node.workflow.NodeExecutionJob$AfterRunRunnable.run(NodeExecutionJob.java:385)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at org.knime.core.util.ThreadPool.runInvisible(ThreadPool.java:687)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:223)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-02-26 13:54:30,888 : INFO  : KNIME-Worker-23-Decision Tree Predictor 4:4 :  : LocalNodeExecutionJob : Decision Tree Predictor : 4:4 : Decision Tree Predictor 4:4 End execute (0 secs)
+2026-02-26 13:58:38,013 : INFO  : KNIME shutdown hooks - org.knime.core.util.FileUtil$$Lambda/0x000002a3ca446a18 :  : FileUtil :  :  : Deleting 1 temporary files.

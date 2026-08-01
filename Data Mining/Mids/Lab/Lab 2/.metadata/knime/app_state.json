@@ -1,0 +1,39 @@
+{
+  "version" : "5.10.0.v202601281134",
+  "projects" : [ {
+    "name" : "KNIME_project",
+    "active" : false,
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "relativePath" : "KNIME_project"
+    }
+  }, {
+    "name" : "KNIME_project2",
+    "active" : true,
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "relativePath" : "KNIME_project2"
+    }
+  } ],
+  "mostRecentlyUsedProjects" : [ {
+    "name" : "KNIME_project",
+    "timeUsed" : "2026-02-26T13:22:28.2739873+05:00",
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "projectType" : "WORKFLOW",
+      "relativePath" : "KNIME_project"
+    }
+  }, {
+    "name" : "KNIME_project2",
+    "timeUsed" : "2026-02-26T13:53:38.4339911+05:00",
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "projectType" : "WORKFLOW",
+      "relativePath" : "KNIME_project2"
+    }
+  } ]
+}
