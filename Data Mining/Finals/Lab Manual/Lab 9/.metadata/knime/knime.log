@@ -1,0 +1,736 @@
+2026-06-13 12:36:21,367 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-06-13 12:36:21,373 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-06-13 12:36:21,373 : INFO  : main :  : NodeLogger :  :  : # Welcome to KNIME Analytics Platform v5.11.0.v202603030810 (Build March 03, 2026)      #
+2026-06-13 12:36:21,373 : INFO  : main :  : NodeLogger :  :  : # Based on Eclipse, http://www.eclipse.org                                              #
+2026-06-13 12:36:21,373 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-06-13 12:36:21,373 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-06-13 12:36:21,373 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-06-13 12:36:21,375 : INFO  : main :  : NodeLogger :  :  : # Copyright by KNIME AG, Zurich, Switzerland and others.                                #
+2026-06-13 12:36:21,375 : INFO  : main :  : NodeLogger :  :  : # Website: http://www.knime.com                                                         #
+2026-06-13 12:36:21,375 : INFO  : main :  : NodeLogger :  :  : # E-mail: contact@knime.com                                                             #
+2026-06-13 12:36:21,375 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-06-13 12:36:21,375 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-06-13 12:36:21,375 : INFO  : main :  : NodeLogger :  :  : # For more details see the KNIME log file:                                              #
+2026-06-13 12:36:21,375 : INFO  : main :  : NodeLogger :  :  : # D:\Sixth Semester\Data Mining\Finals\Lab Manual\Lab 9\.metadata\knime\knime.log
+2026-06-13 12:36:21,375 : INFO  : main :  : NodeLogger :  :  : #---------------------------------------------------------------------------------------#
+2026-06-13 12:36:21,388 : INFO  : main :  : NodeLogger :  :  : # logging date=Sat Jun 13 12:36:21 PKT 2026
+2026-06-13 12:36:21,388 : INFO  : main :  : NodeLogger :  :  : # java.version=21.0.9
+2026-06-13 12:36:21,388 : INFO  : main :  : NodeLogger :  :  : # java.vm.version=21.0.9+10-LTS
+2026-06-13 12:36:21,388 : INFO  : main :  : NodeLogger :  :  : # java.vendor=Eclipse Adoptium
+2026-06-13 12:36:21,388 : INFO  : main :  : NodeLogger :  :  : # os.name=Windows 11
+2026-06-13 12:36:21,388 : INFO  : main :  : NodeLogger :  :  : # os.arch=amd64
+2026-06-13 12:36:21,388 : INFO  : main :  : NodeLogger :  :  : # number of CPUs=8
+2026-06-13 12:36:21,388 : INFO  : main :  : NodeLogger :  :  : # assertions=off
+2026-06-13 12:36:21,402 : INFO  : main :  : NodeLogger :  :  : # host=DevHamnah
+2026-06-13 12:36:21,427 : INFO  : main :  : NodeLogger :  :  : # username=Developer Hamna
+2026-06-13 12:36:21,427 : INFO  : main :  : NodeLogger :  :  : # max mem=8068MB
+2026-06-13 12:36:21,430 : INFO  : main :  : NodeLogger :  :  : # application=org.knime.product.KNIME_APPLICATION
+2026-06-13 12:36:21,443 : INFO  : main :  : NodeLogger :  :  : # KNID=11-64e971d6d4d66147-01-e2d873883bd7ff1b
+2026-06-13 12:36:21,443 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-06-13 12:35:49,855 : INFO  : main :  : RegisterBouncyCastleProvider :  :  : Added BouncyCastleProvider to Java Security providers
+2026-06-13 12:36:21,162 : INFO  : main :  : EarlyStartupCondaEnvironmentInstallation :  :  : Starting conda environment initialization during early startup
+2026-06-13 12:36:21,261 : INFO  : main :  : EarlyStartupCondaEnvironmentInstallation :  :  : Conda environment initialization completed successfully
+2026-06-13 12:36:23,755 : INFO  : ForkJoinPool.commonPool-worker-2 :  : PythonExtensionParser :  :  : Trying to load cached extension 'com.searchanalyticsnode.Search-Analytics-Node_1.8.2.202604031535' from D:\Softwares\KNIME\configuration\com.searchanalyticsnode.Search-Analytics-Node
+2026-06-13 12:36:24,011 : INFO  : KNIME-Worker-0 :  : PythonExtensionParser :  :  : Trying to load cached extension 'com.searchanalyticsnode.Search-Analytics-Node_1.8.2.202604031535' from D:\Softwares\KNIME\configuration\com.searchanalyticsnode.Search-Analytics-Node
+2026-06-13 12:36:28,649 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Finals\Lab Manual\Lab 9\.metadata\knime\history_database_drivers.txt' does not exist.
+2026-06-13 12:36:28,650 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Finals\Lab Manual\Lab 9\.metadata\knime\history_database_urls.txt' does not exist.
+2026-06-13 12:36:30,221 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Finals\Lab Manual\Lab 9\.metadata\knime\history_string2date-formats.txt' does not exist.
+2026-06-13 12:36:30,284 : INFO  : Node Repository Initializer :  : MovingAggregationNodeFactory :  :  : Modern dialog for Moving Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-06-13 12:36:42,085 : INFO  : main :  : ProcessWatchdog :  :  : KNIME Process Watchdog memory limit not configured
+2026-06-13 12:36:42,085 : INFO  : main :  : ProcessWatchdog :  :  : External process memory watchdog is disabled, because the memory limit is set to -1
+2026-06-13 12:36:43,941 : INFO  : Node Repository Initializer :  : ColumnAggregatorNodeFactory :  :  : Modern dialog for Column Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-06-13 12:36:44,418 : INFO  : Node Repository Initializer :  : Pivot2NodeFactory :  :  : Modern dialog for Pivot node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-06-13 12:36:44,811 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Finals\Lab Manual\Lab 9\.metadata\knime\history_createFileNameHistoryKey.txt' does not exist.
+2026-06-13 12:36:44,844 : INFO  : Node Repository Initializer :  : GroupByNodeFactory :  :  : Modern dialog for GroupBy node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-06-13 12:36:46,790 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Finals\Lab Manual\Lab 9\.metadata\knime\history_org.knime.kerberos.name.txt' does not exist.
+2026-06-13 12:36:48,429 : INFO  : Thread-169 :  : KnimeBrowserView :  :  : %cinfo%c Injecting global logger 
+      background: #00BCD4;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-06-13 12:36:52,874 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-06-13 12:36:52,891 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-06-13 12:36:52,892 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-06-13 12:36:52,902 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-06-13 12:36:52,902 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-06-13 12:36:52,907 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-06-13 12:37:06,500 : INFO  : ModalContext :  : LoadWorkflowRunnable :  :  : New workflow created.
+2026-06-13 12:37:06,672 : ERROR : Thread-1355 :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object PromiseRejectionEvent] (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-06-13 12:37:06,673 : ERROR : Thread-1357 :  : KnimeBrowserView :  :  : Uncaught (in promise) AbortError: The user aborted a request. (source: https://org.knime.ui.java/index.html#/get-started; line: 0)
+2026-06-13 12:37:15,993 : WARN  : Thread-2504 :  : KnimeBrowserView :  :  : An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. (source: https://org.knime.core.ui.dialog/uiext-dialog/org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory/index.html; line: 0)
+2026-06-13 12:38:50,148 : WARN  : comm-pool-thread-5 :  : Node : CSV Reader : 3:2 : Please specify a file
+2026-06-13 12:39:38,942 : INFO  : KNIME-Worker-1-CSV Reader 3:2 :  : LocalNodeExecutionJob : CSV Reader : 3:2 : CSV Reader 3:2 End execute (0 secs)
+2026-06-13 12:39:41,625 : WARN  : Thread-6355 :  : KnimeBrowserView :  :  : An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. (source: https://org.knime.core.ui.dialog/uiext-dialog/org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory/index.html; line: 0)
+2026-06-13 12:39:41,665 : WARN  : Thread-6402 :  : KnimeBrowserView :  :  : An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. (source: https://org.knime.core.ui.dialog/uiext-dialog/org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory/index.html; line: 0)
+2026-06-13 12:39:46,176 : WARN  : KNIME-Worker-1-Python Script 3:1 :  : PythonScriptNodeModel : Python Script : 3:1 : Traceback (most recent call last):
+  File "<string>", line 2, in <module>
+2026-06-13 12:39:46,294 : ERROR : KNIME-Worker-1-Python Script 3:1 :  : Node : Python Script : 3:1 : Execute failed: ModuleNotFoundError: No module named 'knio'
+org.knime.core.node.KNIMEException: Execute failed: ModuleNotFoundError: No module named 'knio'
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.checkExecutionAnswer(PythonScriptNodeModel.java:279)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.runUserScript(PythonScriptNodeModel.java:267)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.execute(PythonScriptNodeModel.java:212)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-06-13 12:39:51,352 : WARN  : KNIME-Worker-2-Python Script 3:1 :  : PythonScriptNodeModel : Python Script : 3:1 : Traceback (most recent call last):
+  File "<string>", line 2, in <module>
+2026-06-13 12:39:51,470 : ERROR : KNIME-Worker-2-Python Script 3:1 :  : Node : Python Script : 3:1 : Execute failed: ModuleNotFoundError: No module named 'knio'
+org.knime.core.node.KNIMEException: Execute failed: ModuleNotFoundError: No module named 'knio'
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.checkExecutionAnswer(PythonScriptNodeModel.java:279)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.runUserScript(PythonScriptNodeModel.java:267)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.execute(PythonScriptNodeModel.java:212)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-06-13 12:45:36,443 : WARN  : KNIME-Worker-3-Python Script 3:1 :  : PythonScriptNodeModel : Python Script : 3:1 : Traceback (most recent call last):
+  File "<string>", line 2, in <module>
+2026-06-13 12:45:36,617 : ERROR : KNIME-Worker-3-Python Script 3:1 :  : Node : Python Script : 3:1 : Execute failed: ModuleNotFoundError: No module named 'knio'
+org.knime.core.node.KNIMEException: Execute failed: ModuleNotFoundError: No module named 'knio'
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.checkExecutionAnswer(PythonScriptNodeModel.java:279)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.runUserScript(PythonScriptNodeModel.java:267)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.execute(PythonScriptNodeModel.java:212)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-06-13 12:47:30,466 : INFO  : Thread-10746 :  : Server :  :  : jetty-12.0.21; built: 2025-05-09T00:32:00.688Z; git: 1c4719601e31b05b7d68910d2edd980259f1f53c; jvm 21.0.9+10-LTS
+2026-06-13 12:47:30,503 : INFO  : Thread-10746 :  : AbstractConnector :  :  : Started ServerConnector@47319b45{HTTP/1.1, (http/1.1)}{0.0.0.0:52986}
+2026-06-13 12:47:30,503 : INFO  : Thread-10746 :  : Server :  :  : Started oejs.Server@23d3bbb5{STARTING}[12.0.21,sto=0] @714998ms
+2026-06-13 12:47:30,504 : INFO  : Thread-10746 :  : OAuthAuthenticator :  :  : Opening browser to perform authentication for 'https://api.hub.knime.com'.
+2026-06-13 12:48:08,988 : INFO  : Thread-10779 :  : Server :  :  : Stopped oejs.Server@23d3bbb5{STOPPING}[12.0.21,sto=0]
+2026-06-13 12:48:09,018 : INFO  : Thread-10779 :  : AbstractConnector :  :  : Stopped ServerConnector@47319b45{HTTP/1.1, (http/1.1)}{0.0.0.0:52986}
+2026-06-13 12:49:26,999 : INFO  : WebSocket@1029671641-11744 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:49:29,120 : INFO  : WebSocket@1029671641-11742 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:49:29,121 : INFO  : WebSocket@1029671641-11742 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:49:29,122 : INFO  : WebSocket@1029671641-11742 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:49:29,123 : INFO  : WebSocket@1029671641-11742 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:49:29,125 : INFO  : WebSocket@1029671641-11742 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:49:29,126 : INFO  : WebSocket@1029671641-11742 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:49:32,763 : INFO  : WebSocket@1029671641-11742 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:49:33,263 : INFO  : WebSocket@1029671641-11744 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:49:33,720 : INFO  : WebSocket@1029671641-11742 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:49:34,188 : INFO  : WebSocket@1029671641-11744 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:49:34,647 : ERROR : WebSocket@1029671641-11742 :  : Chat :  :  : Error in non-MCP JSONRPC request.
+org.knime.ai.assistant.java.ChatException: The node identified by 'org.knime.python3.scripting.nodes.script.PythonScriptNodeFactory' is not available.
+	at org.knime.ai.assistant.java.command.RpcRequestExecutorImpl.execute(RpcRequestExecutorImpl.java:138)
+	at org.knime.ai.assistant.java.Chat.executeMethod(Chat.java:269)
+	at org.knime.ai.assistant.java.Chat.handleJsonRpc(Chat.java:230)
+	at org.knime.ai.assistant.java.Chat.reactToJson(Chat.java:190)
+	at org.knime.ai.assistant.java.Chat.onServerMessage(Chat.java:146)
+	at org.knime.ai.assistant.java.jetty.JettyBackendFactory$WebSocketListener.lambda$0(JettyBackendFactory.java:170)
+	at java.base/java.util.Optional.ifPresent(Unknown Source)
+	at org.knime.ai.assistant.java.jetty.JettyBackendFactory$WebSocketListener.onWebSocketText(JettyBackendFactory.java:170)
+	at org.eclipse.jetty.websocket.core.messages.StringMessageSink.accept(StringMessageSink.java:67)
+	at org.eclipse.jetty.websocket.common.JettyWebSocketFrameHandler.acceptFrame(JettyWebSocketFrameHandler.java:397)
+	at org.eclipse.jetty.websocket.common.JettyWebSocketFrameHandler.onTextFrame(JettyWebSocketFrameHandler.java:368)
+	at org.eclipse.jetty.websocket.common.JettyWebSocketFrameHandler.onFrame(JettyWebSocketFrameHandler.java:216)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession$IncomingAdaptor.lambda$onFrame$0(WebSocketCoreSession.java:647)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession.handle(WebSocketCoreSession.java:106)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession$IncomingAdaptor.onFrame(WebSocketCoreSession.java:647)
+	at org.eclipse.jetty.websocket.core.ExtensionStack.onFrame(ExtensionStack.java:113)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession.onFrame(WebSocketCoreSession.java:463)
+	at org.eclipse.jetty.websocket.core.WebSocketConnection.onFrame(WebSocketConnection.java:254)
+	at org.eclipse.jetty.websocket.core.WebSocketConnection.fillAndParse(WebSocketConnection.java:447)
+	at org.eclipse.jetty.websocket.core.WebSocketConnection.onFillable(WebSocketConnection.java:332)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:322)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:99)
+	at org.eclipse.jetty.io.ssl.SslConnection$SslEndPoint.onFillable(SslConnection.java:574)
+	at org.eclipse.jetty.io.ssl.SslConnection.onFillable(SslConnection.java:390)
+	at org.eclipse.jetty.io.ssl.SslConnection$2.succeeded(SslConnection.java:150)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:99)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:478)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:441)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:293)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:201)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:311)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:979)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1209)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1164)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalArgumentException: The node identified by 'org.knime.python3.scripting.nodes.script.PythonScriptNodeFactory' is not available.
+	at org.knime.ai.assistant.java.command.impl.AddNodeFunc.lambda$0(AddNodeFunc.java:80)
+	at java.base/java.util.Optional.orElseThrow(Unknown Source)
+	at org.knime.ai.assistant.java.command.impl.AddNodeFunc.execute(AddNodeFunc.java:80)
+	at org.knime.ai.assistant.java.command.impl.AddNodeFunc.execute(AddNodeFunc.java:1)
+	at org.knime.ai.assistant.java.command.RpcRequestExecutorImpl$KaiCommandAdapter.execute(RpcRequestExecutorImpl.java:171)
+	at org.knime.gateway.impl.webui.service.DefaultKaiService$KaiCommandAdapter.executeWithWorkflowLockAndContext(DefaultKaiService.java:124)
+	at org.knime.gateway.impl.webui.service.commands.AbstractWorkflowCommand.executeWithWorkflowLockAndContextInternal(AbstractWorkflowCommand.java:118)
+	at org.knime.gateway.impl.webui.service.commands.AbstractWorkflowCommand.executeInternal(AbstractWorkflowCommand.java:109)
+	at org.knime.gateway.impl.webui.service.commands.AbstractWorkflowCommand.execute(AbstractWorkflowCommand.java:104)
+	at org.knime.gateway.impl.webui.service.commands.WorkflowCommands.executeCommandAndModifyCommandStacks(WorkflowCommands.java:299)
+	at org.knime.gateway.impl.webui.service.commands.WorkflowCommands.execute(WorkflowCommands.java:175)
+	at org.knime.gateway.impl.webui.service.commands.WorkflowCommands.execute(WorkflowCommands.java:147)
+	at org.knime.gateway.impl.webui.service.DefaultKaiService$KaiCommandExecutorImpl.execute(DefaultKaiService.java:103)
+	at org.knime.ai.assistant.java.command.RpcRequestExecutorImpl.execute(RpcRequestExecutorImpl.java:136)
+	... 35 more
+2026-06-13 12:49:36,113 : INFO  : WebSocket@1029671641-11744 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:49:41,905 : WARN  : KNIME-Worker-5-Python Script 3:1 :  : PythonScriptNodeModel : Python Script : 3:1 : Traceback (most recent call last):
+  File "<string>", line 2, in <module>
+2026-06-13 12:49:42,087 : ERROR : KNIME-Worker-5-Python Script 3:1 :  : Node : Python Script : 3:1 : Execute failed: ModuleNotFoundError: No module named 'knio'
+org.knime.core.node.KNIMEException: Execute failed: ModuleNotFoundError: No module named 'knio'
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.checkExecutionAnswer(PythonScriptNodeModel.java:279)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.runUserScript(PythonScriptNodeModel.java:267)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.execute(PythonScriptNodeModel.java:212)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-06-13 12:50:28,729 : WARN  : Thread-12719 :  : KnimeBrowserView :  :  : An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. (source: https://org.knime.core.ui.dialog/uiext-dialog/org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory/index.html; line: 0)
+2026-06-13 12:50:39,410 : INFO  : WebSocket@1029671641-11744 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:50:40,687 : ERROR : WebSocket@1029671641-11742 :  : Chat :  :  : Error in non-MCP JSONRPC request.
+org.knime.ai.assistant.java.ChatException: Configure failed.
+	at org.knime.ai.assistant.java.command.impl.ConfigureKaiInterface.execute(ConfigureKaiInterface.java:90)
+	at org.knime.ai.assistant.java.command.impl.ConfigureKaiInterface.execute(ConfigureKaiInterface.java:1)
+	at org.knime.ai.assistant.java.command.RpcRequestExecutorImpl.lambda$2(RpcRequestExecutorImpl.java:119)
+	at org.knime.gateway.impl.webui.service.DefaultKaiService$KaiCommandExecutorImpl.executeWorkflowAction(DefaultKaiService.java:110)
+	at org.knime.ai.assistant.java.command.RpcRequestExecutorImpl.execute(RpcRequestExecutorImpl.java:117)
+	at org.knime.ai.assistant.java.Chat.executeMethod(Chat.java:269)
+	at org.knime.ai.assistant.java.Chat.handleJsonRpc(Chat.java:230)
+	at org.knime.ai.assistant.java.Chat.reactToJson(Chat.java:190)
+	at org.knime.ai.assistant.java.Chat.onServerMessage(Chat.java:146)
+	at org.knime.ai.assistant.java.jetty.JettyBackendFactory$WebSocketListener.lambda$0(JettyBackendFactory.java:170)
+	at java.base/java.util.Optional.ifPresent(Unknown Source)
+	at org.knime.ai.assistant.java.jetty.JettyBackendFactory$WebSocketListener.onWebSocketText(JettyBackendFactory.java:170)
+	at org.eclipse.jetty.websocket.core.messages.StringMessageSink.accept(StringMessageSink.java:67)
+	at org.eclipse.jetty.websocket.common.JettyWebSocketFrameHandler.acceptFrame(JettyWebSocketFrameHandler.java:397)
+	at org.eclipse.jetty.websocket.common.JettyWebSocketFrameHandler.onTextFrame(JettyWebSocketFrameHandler.java:368)
+	at org.eclipse.jetty.websocket.common.JettyWebSocketFrameHandler.onFrame(JettyWebSocketFrameHandler.java:216)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession$IncomingAdaptor.lambda$onFrame$0(WebSocketCoreSession.java:647)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession.handle(WebSocketCoreSession.java:106)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession$IncomingAdaptor.onFrame(WebSocketCoreSession.java:647)
+	at org.eclipse.jetty.websocket.core.ExtensionStack.onFrame(ExtensionStack.java:113)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession.onFrame(WebSocketCoreSession.java:463)
+	at org.eclipse.jetty.websocket.core.WebSocketConnection.onFrame(WebSocketConnection.java:254)
+	at org.eclipse.jetty.websocket.core.WebSocketConnection.fillAndParse(WebSocketConnection.java:447)
+	at org.eclipse.jetty.websocket.core.WebSocketConnection.onFillable(WebSocketConnection.java:332)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:322)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:99)
+	at org.eclipse.jetty.io.ssl.SslConnection$SslEndPoint.onFillable(SslConnection.java:574)
+	at org.eclipse.jetty.io.ssl.SslConnection.onFillable(SslConnection.java:390)
+	at org.eclipse.jetty.io.ssl.SslConnection$2.succeeded(SslConnection.java:150)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:99)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:478)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:441)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:293)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:201)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:311)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:979)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1209)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1164)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-06-13 12:50:40,838 : INFO  : WebSocket@1029671641-11744 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:50:43,345 : ERROR : WebSocket@1029671641-11742 :  : Chat :  :  : Error in non-MCP JSONRPC request.
+org.knime.ai.assistant.java.ChatException: Configure failed.
+	at org.knime.ai.assistant.java.command.impl.ConfigureKaiInterface.execute(ConfigureKaiInterface.java:90)
+	at org.knime.ai.assistant.java.command.impl.ConfigureKaiInterface.execute(ConfigureKaiInterface.java:1)
+	at org.knime.ai.assistant.java.command.RpcRequestExecutorImpl.lambda$2(RpcRequestExecutorImpl.java:119)
+	at org.knime.gateway.impl.webui.service.DefaultKaiService$KaiCommandExecutorImpl.executeWorkflowAction(DefaultKaiService.java:110)
+	at org.knime.ai.assistant.java.command.RpcRequestExecutorImpl.execute(RpcRequestExecutorImpl.java:117)
+	at org.knime.ai.assistant.java.Chat.executeMethod(Chat.java:269)
+	at org.knime.ai.assistant.java.Chat.handleJsonRpc(Chat.java:230)
+	at org.knime.ai.assistant.java.Chat.reactToJson(Chat.java:190)
+	at org.knime.ai.assistant.java.Chat.onServerMessage(Chat.java:146)
+	at org.knime.ai.assistant.java.jetty.JettyBackendFactory$WebSocketListener.lambda$0(JettyBackendFactory.java:170)
+	at java.base/java.util.Optional.ifPresent(Unknown Source)
+	at org.knime.ai.assistant.java.jetty.JettyBackendFactory$WebSocketListener.onWebSocketText(JettyBackendFactory.java:170)
+	at org.eclipse.jetty.websocket.core.messages.StringMessageSink.accept(StringMessageSink.java:67)
+	at org.eclipse.jetty.websocket.common.JettyWebSocketFrameHandler.acceptFrame(JettyWebSocketFrameHandler.java:397)
+	at org.eclipse.jetty.websocket.common.JettyWebSocketFrameHandler.onTextFrame(JettyWebSocketFrameHandler.java:368)
+	at org.eclipse.jetty.websocket.common.JettyWebSocketFrameHandler.onFrame(JettyWebSocketFrameHandler.java:216)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession$IncomingAdaptor.lambda$onFrame$0(WebSocketCoreSession.java:647)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession.handle(WebSocketCoreSession.java:106)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession$IncomingAdaptor.onFrame(WebSocketCoreSession.java:647)
+	at org.eclipse.jetty.websocket.core.ExtensionStack.onFrame(ExtensionStack.java:113)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession.onFrame(WebSocketCoreSession.java:463)
+	at org.eclipse.jetty.websocket.core.WebSocketConnection.onFrame(WebSocketConnection.java:254)
+	at org.eclipse.jetty.websocket.core.WebSocketConnection.fillAndParse(WebSocketConnection.java:447)
+	at org.eclipse.jetty.websocket.core.WebSocketConnection.onFillable(WebSocketConnection.java:332)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:322)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:99)
+	at org.eclipse.jetty.io.ssl.SslConnection$SslEndPoint.onFillable(SslConnection.java:574)
+	at org.eclipse.jetty.io.ssl.SslConnection.onFillable(SslConnection.java:390)
+	at org.eclipse.jetty.io.ssl.SslConnection$2.succeeded(SslConnection.java:150)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:99)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:478)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:441)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:293)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:201)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:311)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:979)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1209)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1164)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-06-13 12:50:43,501 : INFO  : WebSocket@1029671641-11744 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:50:45,135 : ERROR : WebSocket@1029671641-11744 :  : Chat :  :  : Error in non-MCP JSONRPC request.
+org.knime.ai.assistant.java.ChatException: Configure failed.
+	at org.knime.ai.assistant.java.command.impl.ConfigureKaiInterface.execute(ConfigureKaiInterface.java:90)
+	at org.knime.ai.assistant.java.command.impl.ConfigureKaiInterface.execute(ConfigureKaiInterface.java:1)
+	at org.knime.ai.assistant.java.command.RpcRequestExecutorImpl.lambda$2(RpcRequestExecutorImpl.java:119)
+	at org.knime.gateway.impl.webui.service.DefaultKaiService$KaiCommandExecutorImpl.executeWorkflowAction(DefaultKaiService.java:110)
+	at org.knime.ai.assistant.java.command.RpcRequestExecutorImpl.execute(RpcRequestExecutorImpl.java:117)
+	at org.knime.ai.assistant.java.Chat.executeMethod(Chat.java:269)
+	at org.knime.ai.assistant.java.Chat.handleJsonRpc(Chat.java:230)
+	at org.knime.ai.assistant.java.Chat.reactToJson(Chat.java:190)
+	at org.knime.ai.assistant.java.Chat.onServerMessage(Chat.java:146)
+	at org.knime.ai.assistant.java.jetty.JettyBackendFactory$WebSocketListener.lambda$0(JettyBackendFactory.java:170)
+	at java.base/java.util.Optional.ifPresent(Unknown Source)
+	at org.knime.ai.assistant.java.jetty.JettyBackendFactory$WebSocketListener.onWebSocketText(JettyBackendFactory.java:170)
+	at org.eclipse.jetty.websocket.core.messages.StringMessageSink.accept(StringMessageSink.java:67)
+	at org.eclipse.jetty.websocket.common.JettyWebSocketFrameHandler.acceptFrame(JettyWebSocketFrameHandler.java:397)
+	at org.eclipse.jetty.websocket.common.JettyWebSocketFrameHandler.onTextFrame(JettyWebSocketFrameHandler.java:368)
+	at org.eclipse.jetty.websocket.common.JettyWebSocketFrameHandler.onFrame(JettyWebSocketFrameHandler.java:216)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession$IncomingAdaptor.lambda$onFrame$0(WebSocketCoreSession.java:647)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession.handle(WebSocketCoreSession.java:106)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession$IncomingAdaptor.onFrame(WebSocketCoreSession.java:647)
+	at org.eclipse.jetty.websocket.core.ExtensionStack.onFrame(ExtensionStack.java:113)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession.onFrame(WebSocketCoreSession.java:463)
+	at org.eclipse.jetty.websocket.core.WebSocketConnection.onFrame(WebSocketConnection.java:254)
+	at org.eclipse.jetty.websocket.core.WebSocketConnection.fillAndParse(WebSocketConnection.java:447)
+	at org.eclipse.jetty.websocket.core.WebSocketConnection.onFillable(WebSocketConnection.java:332)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:322)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:99)
+	at org.eclipse.jetty.io.ssl.SslConnection$SslEndPoint.onFillable(SslConnection.java:574)
+	at org.eclipse.jetty.io.ssl.SslConnection.onFillable(SslConnection.java:390)
+	at org.eclipse.jetty.io.ssl.SslConnection$2.succeeded(SslConnection.java:150)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:99)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:478)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:441)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:293)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:201)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:311)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:979)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1209)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1164)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-06-13 12:50:45,284 : INFO  : WebSocket@1029671641-11742 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:50:46,386 : ERROR : WebSocket@1029671641-11744 :  : Chat :  :  : Error in non-MCP JSONRPC request.
+org.knime.ai.assistant.java.ChatException: Configure failed.
+	at org.knime.ai.assistant.java.command.impl.ConfigureKaiInterface.execute(ConfigureKaiInterface.java:90)
+	at org.knime.ai.assistant.java.command.impl.ConfigureKaiInterface.execute(ConfigureKaiInterface.java:1)
+	at org.knime.ai.assistant.java.command.RpcRequestExecutorImpl.lambda$2(RpcRequestExecutorImpl.java:119)
+	at org.knime.gateway.impl.webui.service.DefaultKaiService$KaiCommandExecutorImpl.executeWorkflowAction(DefaultKaiService.java:110)
+	at org.knime.ai.assistant.java.command.RpcRequestExecutorImpl.execute(RpcRequestExecutorImpl.java:117)
+	at org.knime.ai.assistant.java.Chat.executeMethod(Chat.java:269)
+	at org.knime.ai.assistant.java.Chat.handleJsonRpc(Chat.java:230)
+	at org.knime.ai.assistant.java.Chat.reactToJson(Chat.java:190)
+	at org.knime.ai.assistant.java.Chat.onServerMessage(Chat.java:146)
+	at org.knime.ai.assistant.java.jetty.JettyBackendFactory$WebSocketListener.lambda$0(JettyBackendFactory.java:170)
+	at java.base/java.util.Optional.ifPresent(Unknown Source)
+	at org.knime.ai.assistant.java.jetty.JettyBackendFactory$WebSocketListener.onWebSocketText(JettyBackendFactory.java:170)
+	at org.eclipse.jetty.websocket.core.messages.StringMessageSink.accept(StringMessageSink.java:67)
+	at org.eclipse.jetty.websocket.common.JettyWebSocketFrameHandler.acceptFrame(JettyWebSocketFrameHandler.java:397)
+	at org.eclipse.jetty.websocket.common.JettyWebSocketFrameHandler.onTextFrame(JettyWebSocketFrameHandler.java:368)
+	at org.eclipse.jetty.websocket.common.JettyWebSocketFrameHandler.onFrame(JettyWebSocketFrameHandler.java:216)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession$IncomingAdaptor.lambda$onFrame$0(WebSocketCoreSession.java:647)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession.handle(WebSocketCoreSession.java:106)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession$IncomingAdaptor.onFrame(WebSocketCoreSession.java:647)
+	at org.eclipse.jetty.websocket.core.ExtensionStack.onFrame(ExtensionStack.java:113)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession.onFrame(WebSocketCoreSession.java:463)
+	at org.eclipse.jetty.websocket.core.WebSocketConnection.onFrame(WebSocketConnection.java:254)
+	at org.eclipse.jetty.websocket.core.WebSocketConnection.fillAndParse(WebSocketConnection.java:447)
+	at org.eclipse.jetty.websocket.core.WebSocketConnection.onFillable(WebSocketConnection.java:332)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:322)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:99)
+	at org.eclipse.jetty.io.ssl.SslConnection$SslEndPoint.onFillable(SslConnection.java:574)
+	at org.eclipse.jetty.io.ssl.SslConnection.onFillable(SslConnection.java:390)
+	at org.eclipse.jetty.io.ssl.SslConnection$2.succeeded(SslConnection.java:150)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:99)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:478)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:441)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:293)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:201)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:311)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:979)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1209)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1164)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-06-13 12:50:48,640 : INFO  : WebSocket@1029671641-11742 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:50:48,653 : INFO  : Thread-13499 :  : WebSocketClient :  :  : Shutdown WebSocketClient@319475d5[coreClient=oejwcc.WebSocketCoreClient@1ffd35df{STARTED},openSessions.size=1]
+2026-06-13 12:51:06,745 : WARN  : Thread-13768 :  : KnimeBrowserView :  :  : An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. (source: https://org.knime.core.ui.dialog/uiext-dialog/org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory/index.html; line: 0)
+2026-06-13 12:51:39,598 : INFO  : WebSocket@777890969-15456 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:51:41,509 : INFO  : WebSocket@777890969-15455 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:51:41,510 : INFO  : WebSocket@777890969-15455 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:51:41,511 : INFO  : WebSocket@777890969-15455 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:51:41,511 : INFO  : WebSocket@777890969-15455 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:51:41,512 : INFO  : WebSocket@777890969-15455 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:51:41,512 : INFO  : WebSocket@777890969-15455 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:51:44,498 : ERROR : WebSocket@777890969-15456 :  : Chat :  :  : Error in non-MCP JSONRPC request.
+org.knime.ai.assistant.java.ChatException: The node identified by 'org.knime.base.node.io.csvreader.CSVTableReaderNodeFactory' is not available.
+	at org.knime.ai.assistant.java.command.RpcRequestExecutorImpl.execute(RpcRequestExecutorImpl.java:138)
+	at org.knime.ai.assistant.java.Chat.executeMethod(Chat.java:269)
+	at org.knime.ai.assistant.java.Chat.handleJsonRpc(Chat.java:230)
+	at org.knime.ai.assistant.java.Chat.reactToJson(Chat.java:190)
+	at org.knime.ai.assistant.java.Chat.onServerMessage(Chat.java:146)
+	at org.knime.ai.assistant.java.jetty.JettyBackendFactory$WebSocketListener.lambda$0(JettyBackendFactory.java:170)
+	at java.base/java.util.Optional.ifPresent(Unknown Source)
+	at org.knime.ai.assistant.java.jetty.JettyBackendFactory$WebSocketListener.onWebSocketText(JettyBackendFactory.java:170)
+	at org.eclipse.jetty.websocket.core.messages.StringMessageSink.accept(StringMessageSink.java:67)
+	at org.eclipse.jetty.websocket.common.JettyWebSocketFrameHandler.acceptFrame(JettyWebSocketFrameHandler.java:397)
+	at org.eclipse.jetty.websocket.common.JettyWebSocketFrameHandler.onTextFrame(JettyWebSocketFrameHandler.java:368)
+	at org.eclipse.jetty.websocket.common.JettyWebSocketFrameHandler.onFrame(JettyWebSocketFrameHandler.java:216)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession$IncomingAdaptor.lambda$onFrame$0(WebSocketCoreSession.java:647)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession.handle(WebSocketCoreSession.java:106)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession$IncomingAdaptor.onFrame(WebSocketCoreSession.java:647)
+	at org.eclipse.jetty.websocket.core.ExtensionStack.onFrame(ExtensionStack.java:113)
+	at org.eclipse.jetty.websocket.core.WebSocketCoreSession.onFrame(WebSocketCoreSession.java:463)
+	at org.eclipse.jetty.websocket.core.WebSocketConnection.onFrame(WebSocketConnection.java:254)
+	at org.eclipse.jetty.websocket.core.WebSocketConnection.fillAndParse(WebSocketConnection.java:447)
+	at org.eclipse.jetty.websocket.core.WebSocketConnection.onFillable(WebSocketConnection.java:332)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:322)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:99)
+	at org.eclipse.jetty.io.ssl.SslConnection$SslEndPoint.onFillable(SslConnection.java:574)
+	at org.eclipse.jetty.io.ssl.SslConnection.onFillable(SslConnection.java:390)
+	at org.eclipse.jetty.io.ssl.SslConnection$2.succeeded(SslConnection.java:150)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:99)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:478)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:441)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:293)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:201)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:311)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:979)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1209)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1164)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalArgumentException: The node identified by 'org.knime.base.node.io.csvreader.CSVTableReaderNodeFactory' is not available.
+	at org.knime.ai.assistant.java.command.impl.AddNodeFunc.lambda$0(AddNodeFunc.java:80)
+	at java.base/java.util.Optional.orElseThrow(Unknown Source)
+	at org.knime.ai.assistant.java.command.impl.AddNodeFunc.execute(AddNodeFunc.java:80)
+	at org.knime.ai.assistant.java.command.impl.AddNodeFunc.execute(AddNodeFunc.java:1)
+	at org.knime.ai.assistant.java.command.RpcRequestExecutorImpl$KaiCommandAdapter.execute(RpcRequestExecutorImpl.java:171)
+	at org.knime.gateway.impl.webui.service.DefaultKaiService$KaiCommandAdapter.executeWithWorkflowLockAndContext(DefaultKaiService.java:124)
+	at org.knime.gateway.impl.webui.service.commands.AbstractWorkflowCommand.executeWithWorkflowLockAndContextInternal(AbstractWorkflowCommand.java:118)
+	at org.knime.gateway.impl.webui.service.commands.AbstractWorkflowCommand.executeInternal(AbstractWorkflowCommand.java:109)
+	at org.knime.gateway.impl.webui.service.commands.AbstractWorkflowCommand.execute(AbstractWorkflowCommand.java:104)
+	at org.knime.gateway.impl.webui.service.commands.WorkflowCommands.executeCommandAndModifyCommandStacks(WorkflowCommands.java:299)
+	at org.knime.gateway.impl.webui.service.commands.WorkflowCommands.execute(WorkflowCommands.java:175)
+	at org.knime.gateway.impl.webui.service.commands.WorkflowCommands.execute(WorkflowCommands.java:147)
+	at org.knime.gateway.impl.webui.service.DefaultKaiService$KaiCommandExecutorImpl.execute(DefaultKaiService.java:103)
+	at org.knime.ai.assistant.java.command.RpcRequestExecutorImpl.execute(RpcRequestExecutorImpl.java:136)
+	... 35 more
+2026-06-13 12:51:44,911 : INFO  : WebSocket@777890969-15456 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:51:45,233 : INFO  : WebSocket@777890969-15456 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:51:45,730 : INFO  : WebSocket@777890969-15455 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:51:46,187 : INFO  : WebSocket@777890969-15456 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:51:50,231 : INFO  : WebSocket@777890969-15455 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:51:50,233 : INFO  : Thread-15159 :  : WebSocketClient :  :  : Shutdown WebSocketClient@cba9eadc[coreClient=oejwcc.WebSocketCoreClient@587db22c{STARTED},openSessions.size=1]
+2026-06-13 12:52:00,710 : WARN  : comm-pool-thread-1 :  : Node : Decision Tree Learner : 3:5 : Guessing target column: "deposit".
+2026-06-13 12:52:03,993 : INFO  : KNIME-Worker-8-Column Filter 3:3 :  : LocalNodeExecutionJob : Column Filter : 3:3 : Column Filter 3:3 End execute (0 secs)
+2026-06-13 12:52:08,089 : INFO  : KNIME-Worker-7-Table Partitioner 3:4 :  : LocalNodeExecutionJob : Table Partitioner : 3:4 : Table Partitioner 3:4 End execute (0 secs)
+2026-06-13 12:52:11,771 : INFO  : KNIME-Worker-8-Decision Tree Learner 3:5 :  : DecisionTreeLearnerNodeModel2 : Decision Tree Learner : 3:5 : Decision tree consisting of 1596 nodes created with pruning method No pruning
+2026-06-13 12:52:11,936 : INFO  : KNIME-Worker-8-Decision Tree Learner 3:5 :  : LocalNodeExecutionJob : Decision Tree Learner : 3:5 : Decision Tree Learner 3:5 End execute (0 secs)
+2026-06-13 12:52:11,937 : ERROR : KNIME-Worker-8-Decision Tree Learner 3:5 :  : NodeStateChangeListener : Decision Tree Learner : 3:5 : Caught an exception while notifying node state listeners, skipping throwing to preserve the state change
+java.lang.NullPointerException: Cannot invoke "org.eclipse.ui.IWorkbenchWindow.getShell()" because the return value of "org.eclipse.ui.IWorkbench.getActiveWorkbenchWindow()" is null
+	at org.knime.ui.java.api.NodeAPI.getAppBoundsAsAWTRec(NodeAPI.java:179)
+	at org.knime.ui.java.api.PortAPI.lambda$2(PortAPI.java:129)
+	at org.knime.gateway.api.util.CoreUtil$1.stateChanged(CoreUtil.java:783)
+	at org.knime.core.node.workflow.NodeStateChangeListener.callStateChanged(NodeStateChangeListener.java:83)
+	at org.knime.core.node.workflow.NodeContainer.notifyStateChangeListeners(NodeContainer.java:958)
+	at org.knime.core.node.workflow.NodeContainer.setInternalState(NodeContainer.java:1030)
+	at org.knime.core.node.workflow.NativeNodeContainer.setInternalState(NativeNodeContainer.java:235)
+	at org.knime.core.node.workflow.NodeContainer.setInternalState(NodeContainer.java:1004)
+	at org.knime.core.node.workflow.NativeNodeContainer.performStateTransitionEXECUTED(NativeNodeContainer.java:557)
+	at org.knime.core.node.workflow.WorkflowManager.doAfterExecution(WorkflowManager.java:3736)
+	at org.knime.core.node.workflow.NodeContainer.notifyParentExecuteFinished(NodeContainer.java:689)
+	at org.knime.core.node.workflow.NodeExecutionJob$AfterRunRunnable.run(NodeExecutionJob.java:385)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at org.knime.core.util.ThreadPool.runInvisible(ThreadPool.java:687)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:223)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-06-13 12:52:16,034 : INFO  : KNIME-Worker-7-Decision Tree Predictor 3:6 :  : LocalNodeExecutionJob : Decision Tree Predictor : 3:6 : Decision Tree Predictor 3:6 End execute (0 secs)
+2026-06-13 12:52:57,713 : INFO  : WebSocket@244267967-17801 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:52:58,747 : INFO  : WebSocket@244267967-17800 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:53:02,000 : INFO  : WebSocket@244267967-17801 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:53:02,001 : INFO  : Thread-17489 :  : WebSocketClient :  :  : Shutdown WebSocketClient@98449114[coreClient=oejwcc.WebSocketCoreClient@558205f{STARTED},openSessions.size=1]
+2026-06-13 12:53:50,950 : WARN  : Thread-19092 :  : KnimeBrowserView :  :  : An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. (source: https://org.knime.core.ui.dialog/uiext-dialog/org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory/index.html; line: 0)
+2026-06-13 12:53:53,247 : WARN  : Thread-19439 :  : KnimeBrowserView :  :  : An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. (source: https://org.knime.core.ui.dialog/uiext-dialog/org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory/index.html; line: 0)
+2026-06-13 12:54:44,570 : WARN  : Thread-20760 :  : KnimeBrowserView :  :  : An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. (source: https://org.knime.core.ui.dialog/uiext-dialog/org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory/index.html; line: 0)
+2026-06-13 12:56:28,400 : WARN  : KNIME-Worker-9-Python Script 3:7 :  : PythonScriptNodeModel : Python Script : 3:7 : Traceback (most recent call last):
+  File "<string>", line 12, in <module>
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\sklearn\utils\_param_validation.py", line 218, in wrapper
+    return func(*args, **kwargs)
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\sklearn\metrics\_classification.py", line 411, in accuracy_score
+    y_type, y_true, y_pred, sample_weight = _check_targets(
+                                            ~~~~~~~~~~~~~~^
+        y_true, y_pred, sample_weight
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\sklearn\metrics\_classification.py", line 110, in _check_targets
+    type_pred = type_of_target(y_pred, input_name="y_pred")
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\sklearn\utils\multiclass.py", line 432, in type_of_target
+    if cached_unique(y).shape[0] > 2 or (y.ndim == 2 and len(first_row_or_val) > 1):
+       ~~~~~~~~~~~~~^^^
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\sklearn\utils\_unique.py", line 105, in cached_unique
+    res = tuple(_cached_unique(y, xp=xp) for y in ys)
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\sklearn\utils\_unique.py", line 105, in <genexpr>
+    res = tuple(_cached_unique(y, xp=xp) for y in ys)
+                ~~~~~~~~~~~~~~^^^^^^^^^^
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\sklearn\utils\_unique.py", line 78, in _cached_unique
+    return xp.unique_values(y)
+           ~~~~~~~~~~~~~~~~^^^
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\sklearn\externals\array_api_compat\_internal.py", line 34, in wrapped_f
+    return f(*args, xp=xp, **kwargs)
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\sklearn\externals\array_api_compat\common\_aliases.py", line 255, in unique_values
+    return xp.unique(
+           ~~~~~~~~~^
+        x,
+        ^^
+    ...<3 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\numpy\lib\_arraysetops_impl.py", line 294, in unique
+    ret = _unique1d(ar, return_index, return_inverse, return_counts,
+                    equal_nan=equal_nan, inverse_shape=ar.shape, axis=None,
+                    sorted=sorted)
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\numpy\lib\_arraysetops_impl.py", line 382, in _unique1d
+    ar.sort()
+    ~~~~~~~^^
+  File "pandas/_libs/missing.pyx", line 392, in pandas._libs.missing.NAType.__bool__
+2026-06-13 12:56:28,500 : ERROR : KNIME-Worker-9-Python Script 3:7 :  : Node : Python Script : 3:7 : Execute failed: TypeError: boolean value of NA is ambiguous
+org.knime.core.node.KNIMEException: Execute failed: TypeError: boolean value of NA is ambiguous
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.checkExecutionAnswer(PythonScriptNodeModel.java:279)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.runUserScript(PythonScriptNodeModel.java:267)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.execute(PythonScriptNodeModel.java:212)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-06-13 12:56:31,478 : WARN  : KNIME-Worker-10-Python Script 3:7 :  : PythonScriptNodeModel : Python Script : 3:7 : Traceback (most recent call last):
+  File "<string>", line 12, in <module>
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\sklearn\utils\_param_validation.py", line 218, in wrapper
+    return func(*args, **kwargs)
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\sklearn\metrics\_classification.py", line 411, in accuracy_score
+    y_type, y_true, y_pred, sample_weight = _check_targets(
+                                            ~~~~~~~~~~~~~~^
+        y_true, y_pred, sample_weight
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\sklearn\metrics\_classification.py", line 110, in _check_targets
+    type_pred = type_of_target(y_pred, input_name="y_pred")
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\sklearn\utils\multiclass.py", line 432, in type_of_target
+    if cached_unique(y).shape[0] > 2 or (y.ndim == 2 and len(first_row_or_val) > 1):
+       ~~~~~~~~~~~~~^^^
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\sklearn\utils\_unique.py", line 105, in cached_unique
+    res = tuple(_cached_unique(y, xp=xp) for y in ys)
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\sklearn\utils\_unique.py", line 105, in <genexpr>
+    res = tuple(_cached_unique(y, xp=xp) for y in ys)
+                ~~~~~~~~~~~~~~^^^^^^^^^^
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\sklearn\utils\_unique.py", line 78, in _cached_unique
+    return xp.unique_values(y)
+           ~~~~~~~~~~~~~~~~^^^
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\sklearn\externals\array_api_compat\_internal.py", line 34, in wrapped_f
+    return f(*args, xp=xp, **kwargs)
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\sklearn\externals\array_api_compat\common\_aliases.py", line 255, in unique_values
+    return xp.unique(
+           ~~~~~~~~~^
+        x,
+        ^^
+    ...<3 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\numpy\lib\_arraysetops_impl.py", line 294, in unique
+    ret = _unique1d(ar, return_index, return_inverse, return_counts,
+                    equal_nan=equal_nan, inverse_shape=ar.shape, axis=None,
+                    sorted=sorted)
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\numpy\lib\_arraysetops_impl.py", line 382, in _unique1d
+    ar.sort()
+    ~~~~~~~^^
+  File "pandas/_libs/missing.pyx", line 392, in pandas._libs.missing.NAType.__bool__
+2026-06-13 12:56:31,574 : ERROR : KNIME-Worker-10-Python Script 3:7 :  : Node : Python Script : 3:7 : Execute failed: TypeError: boolean value of NA is ambiguous
+org.knime.core.node.KNIMEException: Execute failed: TypeError: boolean value of NA is ambiguous
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.checkExecutionAnswer(PythonScriptNodeModel.java:279)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.runUserScript(PythonScriptNodeModel.java:267)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.execute(PythonScriptNodeModel.java:212)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-06-13 12:58:04,090 : INFO  : WebSocket@24079628-24967 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:58:13,865 : INFO  : WebSocket@24079628-24968 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:58:13,866 : INFO  : Thread-24713 :  : WebSocketClient :  :  : Shutdown WebSocketClient@e5e548c8[coreClient=oejwcc.WebSocketCoreClient@23cfc256{STARTED},openSessions.size=1]
+2026-06-13 12:58:38,107 : WARN  : KNIME-Worker-11-Python Script 3:7 :  : PythonScriptNodeModel : Python Script : 3:7 : Traceback (most recent call last):
+  File "<string>", line 2, in <module>
+2026-06-13 12:58:38,212 : ERROR : KNIME-Worker-11-Python Script 3:7 :  : Node : Python Script : 3:7 : Execute failed: ModuleNotFoundError: No module named 'knio'
+org.knime.core.node.KNIMEException: Execute failed: ModuleNotFoundError: No module named 'knio'
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.checkExecutionAnswer(PythonScriptNodeModel.java:279)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.runUserScript(PythonScriptNodeModel.java:267)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.execute(PythonScriptNodeModel.java:212)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-06-13 12:59:09,159 : INFO  : WebSocket@496743449-26960 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:59:12,779 : INFO  : WebSocket@496743449-26961 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 12:59:12,781 : INFO  : Thread-26433 :  : WebSocketClient :  :  : Shutdown WebSocketClient@15037192[coreClient=oejwcc.WebSocketCoreClient@7f2dfa41{STARTED},openSessions.size=1]
+2026-06-13 12:59:31,636 : WARN  : KNIME-Worker-12-Python Script 3:7 :  : PythonScriptNodeModel : Python Script : 3:7 : Traceback (most recent call last):
+  File "<string>", line 5, in <module>
+2026-06-13 12:59:31,734 : ERROR : KNIME-Worker-12-Python Script 3:7 :  : Node : Python Script : 3:7 : Execute failed: NameError: name 'input_table' is not defined
+org.knime.core.node.KNIMEException: Execute failed: NameError: name 'input_table' is not defined
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.checkExecutionAnswer(PythonScriptNodeModel.java:279)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.runUserScript(PythonScriptNodeModel.java:267)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.execute(PythonScriptNodeModel.java:212)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-06-13 13:00:22,584 : INFO  : WebSocket@1897616819-29196 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 13:00:31,153 : INFO  : WebSocket@1897616819-29196 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 13:00:34,694 : INFO  : WebSocket@1897616819-29198 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 13:00:38,331 : INFO  : WebSocket@1897616819-29196 :  : Chat :  :  : The received JSON message is not a JSONRPC call. Sending it as text to the frontend.
+2026-06-13 13:00:38,332 : INFO  : Thread-28747 :  : WebSocketClient :  :  : Shutdown WebSocketClient@8b11c27[coreClient=oejwcc.WebSocketCoreClient@ed9bfca{STARTED},openSessions.size=1]
+2026-06-13 13:01:06,249 : INFO  : python-js-scripting-5 :  : ColumnarPreferenceUtils : Python Script : 3:7 : Column Data Cache size is 2842 MB.
+2026-06-13 13:01:06,261 : INFO  : KNIME-Worker-13-Python Script 3:7 :  : LocalNodeExecutionJob : Python Script : 3:7 : Python Script 3:7 End execute (1 sec)
+2026-06-13 13:19:09,896 : INFO  : KNIME-Worker-19-CSV Reader 3:2 :  : LocalNodeExecutionJob : CSV Reader : 3:2 : CSV Reader 3:2 End execute (0 secs)
+2026-06-13 13:19:10,222 : ERROR : Thread-36666 :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: Failed to get port view
+ * No port view available at index 1 for current state of node CSV Reader 3:2. (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-06-13 13:19:10,223 : ERROR : Thread-36668 :  : KnimeBrowserView :  :  : %cerror%c UIExtension Lifecycle :: failed to initialize 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-06-13 13:25:28,759 : INFO  : KNIME-Worker-21-Column Filter 3:3 :  : LocalNodeExecutionJob : Column Filter : 3:3 : Column Filter 3:3 End execute (0 secs)
+2026-06-13 13:27:34,098 : INFO  : KNIME-Worker-22-Table Partitioner 3:4 :  : LocalNodeExecutionJob : Table Partitioner : 3:4 : Table Partitioner 3:4 End execute (0 secs)
+2026-06-13 13:28:44,176 : INFO  : KNIME-Worker-23-Decision Tree Learner 3:5 :  : DecisionTreeLearnerNodeModel2 : Decision Tree Learner : 3:5 : Decision tree consisting of 2833 nodes created with pruning method No pruning
+2026-06-13 13:28:44,435 : INFO  : KNIME-Worker-23-Decision Tree Learner 3:5 :  : LocalNodeExecutionJob : Decision Tree Learner : 3:5 : Decision Tree Learner 3:5 End execute (0 secs)
+2026-06-13 13:33:22,233 : INFO  : KNIME-Worker-24-Decision Tree Predictor 3:6 :  : LocalNodeExecutionJob : Decision Tree Predictor : 3:6 : Decision Tree Predictor 3:6 End execute (0 secs)
+2026-06-13 13:34:21,517 : WARN  : Thread-41564 :  : KnimeBrowserView :  :  : An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. (source: https://org.knime.core.ui.dialog/uiext-dialog/org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory/index.html; line: 0)
+2026-06-13 13:34:25,103 : INFO  : KNIME-Worker-25-Python Script 3:7 :  : LocalNodeExecutionJob : Python Script : 3:7 : Python Script 3:7 End execute (2 secs)
+2026-06-13 13:36:41,066 : WARN  : ModalContext :  : AbstractColumnarContainerTable : Python Script : 3:7 : Creation of hard links not supported, will copy files instead (and suppress further warnings)
+java.nio.file.FileSystemException: D:\Sixth Semester\Data Mining\Finals\Lab Manual\Lab 9\KNIME_project\Python Script (#7)\port_1\data.zip -> C:\Users\devha\AppData\Local\Temp\knime_KNIME_project_15881\knime_container_20260613_16028309071585400334.knable: The system cannot move the file to a different disk drive
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(Unknown Source)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.createLink(Unknown Source)
+	at java.base/java.nio.file.Files.createLink(Unknown Source)
+	at org.knime.core.data.columnar.table.AbstractColumnarContainerTable.hardLinkOrCopy(AbstractColumnarContainerTable.java:317)
+	at org.knime.core.data.columnar.table.AbstractColumnarContainerTable.saveToFileOverwrite(AbstractColumnarContainerTable.java:174)
+	at org.knime.core.data.columnar.table.UnsavedColumnarContainerTable.saveToFileOverwrite(UnsavedColumnarContainerTable.java:100)
+	at org.knime.core.node.ExtensionTable.saveToFile(ExtensionTable.java:261)
+	at org.knime.core.node.BufferedDataTable.save(BufferedDataTable.java:685)
+	at org.knime.core.node.FileNodePersistor.saveBufferedDataTable(FileNodePersistor.java:1439)
+	at org.knime.core.node.FileNodePersistor.savePort(FileNodePersistor.java:1344)
+	at org.knime.core.node.FileNodePersistor.savePorts(FileNodePersistor.java:1248)
+	at org.knime.core.node.FileNodePersistor.save(FileNodePersistor.java:1202)
+	at org.knime.core.node.workflow.FileNativeNodeContainerPersistor.save(FileNativeNodeContainerPersistor.java:548)
+	at org.knime.core.node.workflow.FileSingleNodeContainerPersistor.save(FileSingleNodeContainerPersistor.java:641)
+	at org.knime.core.node.workflow.FileWorkflowPersistor.saveNodeContainer(FileWorkflowPersistor.java:2343)
+	at org.knime.core.node.workflow.FileWorkflowPersistor.saveContent(FileWorkflowPersistor.java:2091)
+	at org.knime.core.node.workflow.FileWorkflowPersistor.save(FileWorkflowPersistor.java:1982)
+	at org.knime.core.node.workflow.WorkflowManager.save(WorkflowManager.java:9745)
+	at org.knime.core.node.workflow.WorkflowManager.save(WorkflowManager.java:9694)
+	at org.knime.ui.java.api.SaveProject.saveRegularWorkflow(SaveProject.java:217)
+	at org.knime.ui.java.api.SaveProject.saveLocalProject(SaveProject.java:192)
+	at org.knime.ui.java.api.SaveProject.saveProject(SaveProject.java:176)
+	at org.knime.ui.java.api.SaveProject.lambda$0(SaveProject.java:154)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+2026-06-13 13:37:08,623 : INFO  : KNIME shutdown hooks - org.knime.core.util.FileUtil$$Lambda/0x00000241a84453c0 :  : FileUtil :  :  : Deleting 21 temporary files.

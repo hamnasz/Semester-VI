@@ -1,0 +1,97 @@
+{
+    "version": "5.11.0.v202603030810",
+    "created": "2026-06-13 07:36",
+    "nodestats": {
+        "nodes": [
+            {
+                "id": "org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory",
+                "nodename": "Python Script",
+                "nrexecs": 2,
+                "nrfails": 8,
+                "exectime": 14386,
+                "nrcreated": 2,
+                "nrsettingsChanged": 5,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.io.filehandling.csv.reader.CSVTableReaderNodeFactory",
+                "nodename": "CSV Reader",
+                "nrexecs": 2,
+                "nrfails": 0,
+                "exectime": 502,
+                "nrcreated": 1,
+                "nrsettingsChanged": 3,
+                "successor": "org.knime.base.node.preproc.filter.column.DataColumnSpecFilterNodeFactory",
+                "successornodename": "Column Filter"
+            },
+            {
+                "id": "org.knime.base.node.preproc.filter.column.DataColumnSpecFilterNodeFactory",
+                "nodename": "Column Filter",
+                "nrexecs": 2,
+                "nrfails": 0,
+                "exectime": 15,
+                "nrcreated": 0,
+                "nrsettingsChanged": 2,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.partition.PartitionNodeFactory",
+                "nodename": "Table Partitioner",
+                "nrexecs": 2,
+                "nrfails": 0,
+                "exectime": 162,
+                "nrcreated": 0,
+                "nrsettingsChanged": 2,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.mine.decisiontree2.learner2.DecisionTreeLearnerNodeFactory3",
+                "nodename": "Decision Tree Learner",
+                "nrexecs": 2,
+                "nrfails": 0,
+                "exectime": 1176,
+                "nrcreated": 0,
+                "nrsettingsChanged": 1,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.mine.decisiontree2.predictor2.DecTreePredictorNodeFactory",
+                "nodename": "Decision Tree Predictor",
+                "nrexecs": 2,
+                "nrfails": 0,
+                "exectime": 950,
+                "nrcreated": 0,
+                "nrsettingsChanged": 1,
+                "successor": "org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory",
+                "successornodename": "Python Script"
+            }
+        ],
+        "metaNodes": {
+        },
+        "wrappedNodes": {
+        },
+        "createdVia": {
+            "WEB_UI": 3
+        }
+    },
+    "uptime": 3625559,
+    "workflowsOpened": 1,
+    "remoteWorkflowsOpened": 0,
+    "workflowsCreated": 1,
+    "remoteWorkflowsCreated": 0,
+    "columnarStorageWorkflowsOpened": 0,
+    "workflowsImported": 0,
+    "workflowsExported": 0,
+    "webUIPerspectiveSwitches": 0,
+    "javaUIPerspectiveSwitches": 0,
+    "lastUsedPerspective": "none",
+    "launches": 1,
+    "lastApplicationID": "org.knime.product.KNIME_APPLICATION",
+    "timeSinceLastStart": 3625559,
+    "crashes": 0,
+    "properlyShutDown": true
+}
