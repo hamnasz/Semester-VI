@@ -1,0 +1,2964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Computer Vision & OS — Topper Exam Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ════════════════════════════════════════
+     ELEGANT ACADEMIC — REDESIGNED STYLE
+     ════════════════════════════════════════ */
+  :root {
+    /* Backgrounds — warm ivory academic */
+    --bg:    #faf8f5;
+    --bg2:   #f2efe9;
+    --bg3:   #e9e5dc;
+    --card:  #ffffff;
+    --card2: #fdfcfa;
+
+    /* Borders */
+    --border:  #e5e0d5;
+    --border2: #cec8bb;
+
+    /* Brand colours — deep, saturated, ink-like */
+    --yellow:     #b86e00;
+    --yellow-dim: #b86e0010;
+    --cyan:       #0a6e82;
+    --cyan-dim:   #0a6e820d;
+    --pink:       #a8185a;
+    --pink-dim:   #a8185a0d;
+    --green:      #1a6640;
+    --green-dim:  #1a66400d;
+    --orange:     #8c3210;
+    --orange-dim: #8c32100d;
+    --purple:     #5b21b6;
+    --purple-dim: #5b21b60d;
+    --red:        #a81c1c;
+    --red-dim:    #a81c1c0d;
+
+    /* Text — rich ink */
+    --text:  #18160f;
+    --text2: #44403a;
+    --text3: #8a8278;
+
+    /* Typography */
+    --font-head: 'Lora', Georgia, serif;
+    --font-mono: 'Fira Code', 'Courier New', monospace;
+    --font-body: 'Outfit', system-ui, sans-serif;
+
+    /* Shadows — soft, paper-like */
+    --shadow-sm:  0 1px 4px rgba(0,0,0,.05), 0 1px 2px rgba(0,0,0,.03);
+    --shadow-md:  0 4px 16px rgba(0,0,0,.07), 0 2px 5px rgba(0,0,0,.04);
+    --shadow-lg:  0 12px 36px rgba(0,0,0,.09), 0 4px 10px rgba(0,0,0,.04);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.78;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* warm parchment background effect */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse at 15% 10%, rgba(184,110,0,.05) 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 90%, rgba(10,110,130,.04) 0%, transparent 55%),
+      radial-gradient(ellipse at 50% 50%, rgba(255,255,255,.3) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 64px 52px 52px;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 52px; right: 52px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border2) 25%, var(--border2) 75%, transparent);
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #fffbf0, #fef3d0);
+    border: 1.5px solid var(--yellow);
+    color: var(--yellow);
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    font-weight: 600;
+    padding: 5px 16px;
+    border-radius: 3px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    box-shadow: 0 1px 6px rgba(184,110,0,.12);
+  }
+
+  .badge::before { content: '◈'; font-size: 8px; }
+
+  h1.hero-title {
+    font-family: var(--font-head);
+    font-size: clamp(30px, 4.5vw, 58px);
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--text);
+    margin-bottom: 14px;
+    letter-spacing: -0.3px;
+  }
+
+  h1.hero-title span {
+    color: var(--cyan);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .hero-sub {
+    color: var(--text3);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-family: var(--font-mono);
+    margin-bottom: 0;
+  }
+
+  /* ── TOC ── */
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--cyan);
+    border-radius: 0 0 8px 8px;
+    padding: 28px 36px;
+    max-width: 1400px;
+    margin: 0 auto 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 2px 32px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .toc-title {
+    grid-column: 1/-1;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    color: var(--cyan);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .toc a {
+    color: var(--text2);
+    text-decoration: none;
+    font-size: 12.5px;
+    font-weight: 500;
+    padding: 6px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.15s, padding-left 0.15s;
+    border-bottom: 1px solid var(--bg2);
+  }
+
+  .toc a:hover { color: var(--cyan); padding-left: 4px; }
+  .toc a::before {
+    content: '›';
+    color: var(--border2);
+    font-size: 14px;
+    line-height: 1;
+    transition: color 0.15s, transform 0.15s;
+    flex-shrink: 0;
+  }
+  .toc a:hover::before { color: var(--cyan); transform: translateX(2px); }
+
+  /* ── MAIN LAYOUT ── */
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 52px 100px;
+  }
+
+  /* ── TOPIC SECTION ── */
+  .topic-section {
+    margin-bottom: 80px;
+    animation: fadeUp 0.4s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 22px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-number {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    font-weight: 600;
+    color: var(--text3);
+    letter-spacing: 2px;
+    background: var(--bg3);
+    padding: 3px 10px;
+    border-radius: 3px;
+    border: 1px solid var(--border2);
+  }
+
+  .section-icon {
+    font-size: 20px;
+    filter: none;
+  }
+
+  .section-title {
+    font-family: var(--font-head);
+    font-size: clamp(19px, 2.2vw, 26px);
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.2px;
+  }
+
+  .section-accent {
+    height: 1.5px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+    opacity: 0.5;
+  }
+
+  /* ── GRIDS ── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .grid-auto { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+
+  @media (max-width: 900px) {
+    .grid-2, .grid-3, .grid-4, .grid-auto { grid-template-columns: 1fr; }
+    .container { padding: 0 20px 80px; }
+    .hero { padding: 44px 20px 32px; }
+    .toc { padding: 20px; }
+  }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 22px 24px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  /* Elegant left accent bar */
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 3px;
+    border-radius: 8px 0 0 8px;
+  }
+
+  .card.yellow { background: linear-gradient(135deg, #fffdf5 0%, #ffffff 50%); border-color: #e8d090; }
+  .card.cyan   { background: linear-gradient(135deg, #f5fbff 0%, #ffffff 50%); border-color: #9ecedd; }
+  .card.pink   { background: linear-gradient(135deg, #fff5f9 0%, #ffffff 50%); border-color: #e0a0c0; }
+  .card.green  { background: linear-gradient(135deg, #f4fff8 0%, #ffffff 50%); border-color: #8ecca0; }
+  .card.orange { background: linear-gradient(135deg, #fff6f2 0%, #ffffff 50%); border-color: #e0a888; }
+  .card.purple { background: linear-gradient(135deg, #f8f4ff 0%, #ffffff 50%); border-color: #c0a0e8; }
+  .card.red    { background: linear-gradient(135deg, #fff4f4 0%, #ffffff 50%); border-color: #e0a0a0; }
+
+  .card.yellow::before { background: var(--yellow); }
+  .card.cyan::before   { background: var(--cyan);   }
+  .card.pink::before   { background: var(--pink);   }
+  .card.green::before  { background: var(--green);  }
+  .card.orange::before { background: var(--orange); }
+  .card.purple::before { background: var(--purple); }
+  .card.red::before    { background: var(--red);    }
+
+  .card-title {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 0.1px;
+  }
+
+  .card.yellow .card-title { color: var(--yellow); }
+  .card.cyan   .card-title { color: var(--cyan);   }
+  .card.pink   .card-title { color: var(--pink);   }
+  .card.green  .card-title { color: var(--green);  }
+  .card.orange .card-title { color: var(--orange); }
+  .card.purple .card-title { color: var(--purple); }
+  .card.red    .card-title { color: var(--red);    }
+
+  /* ── PILLS ── */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin: 3px 3px 3px 0;
+  }
+
+  .pill.yellow { background: var(--yellow-dim); color: var(--yellow); border: 1px solid #e8d090; }
+  .pill.cyan   { background: var(--cyan-dim);   color: var(--cyan);   border: 1px solid #9ecedd; }
+  .pill.pink   { background: var(--pink-dim);   color: var(--pink);   border: 1px solid #e0a0c0; }
+  .pill.green  { background: var(--green-dim);  color: var(--green);  border: 1px solid #8ecca0; }
+  .pill.orange { background: var(--orange-dim); color: var(--orange); border: 1px solid #e0a888; }
+  .pill.purple { background: var(--purple-dim); color: var(--purple); border: 1px solid #c0a0e8; }
+  .pill.red    { background: var(--red-dim);    color: var(--red);    border: 1px solid #e0a0a0; }
+
+  /* ── POINT LIST ── */
+  .point-list { list-style: none; }
+  .point-list li {
+    padding: 6px 0 6px 20px;
+    position: relative;
+    color: var(--text2);
+    font-size: 13px;
+    border-bottom: 1px solid var(--bg2);
+  }
+  .point-list li:last-child { border-bottom: none; }
+  .point-list li::before {
+    content: '–';
+    position: absolute; left: 4px;
+    color: var(--border2);
+    font-size: 13px;
+    line-height: 1.6;
+    font-weight: 700;
+  }
+  .point-list li strong { color: var(--text); font-weight: 600; }
+
+  /* ── FORMULA BOX ── */
+  .formula {
+    background: var(--bg2);
+    border: 1px solid var(--border2);
+    border-left: 3px solid var(--yellow);
+    padding: 14px 18px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--yellow);
+    margin: 12px 0;
+    letter-spacing: 0.3px;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .formula.cyan   { border-left-color: var(--cyan);   color: var(--cyan);   }
+  .formula.green  { border-left-color: var(--green);  color: var(--green);  }
+  .formula.pink   { border-left-color: var(--pink);   color: var(--pink);   }
+  .formula.orange { border-left-color: var(--orange); color: var(--orange); }
+
+  /* ── TABLES ── */
+  .table-wrap { overflow-x: auto; margin: 16px 0; border-radius: 8px; box-shadow: var(--shadow-sm); border: 1px solid var(--border); }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  th {
+    background: var(--bg2);
+    color: var(--cyan);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 18px;
+    border: 1px solid var(--border);
+    text-align: left;
+  }
+  td {
+    padding: 10px 18px;
+    border: 1px solid var(--border);
+    color: var(--text2);
+    vertical-align: top;
+    font-size: 13px;
+  }
+  tr:nth-child(even) td { background: #fdfcf9; }
+  tr:hover td { background: #f2f8fb; color: var(--text); }
+
+  /* ── PIPELINE ── */
+  .pipeline {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    overflow-x: auto;
+    padding: 8px 0 16px;
+  }
+
+  .pipe-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 110px;
+    flex: 1;
+  }
+
+  .pipe-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 8px;
+    text-align: center;
+    font-size: 11px;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    color: var(--text);
+    width: 100%;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .pipe-arrow {
+    display: flex;
+    align-items: center;
+    color: var(--text3);
+    font-size: 16px;
+    padding: 0 4px;
+    min-width: 22px;
+    justify-content: center;
+    padding-top: 10px;
+  }
+
+  .pipe-label {
+    font-size: 9px;
+    color: var(--text3);
+    margin-top: 6px;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── HIGHLIGHT BLOCKS ── */
+  .highlight {
+    background: #fffdf0;
+    border: 1px solid #dfc860;
+    border-left: 3px solid var(--yellow);
+    padding: 15px 20px;
+    margin: 16px 0;
+    position: relative;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .highlight::before {
+    content: '★  EXAM POINT';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 8px;
+    font-weight: 600;
+    color: var(--yellow);
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+  }
+
+  .highlight p { color: var(--text); font-size: 13.5px; line-height: 1.68; }
+
+  .highlight.cyan  { background: #f4fbff; border-color: #8ec8dc; border-left-color: var(--cyan); }
+  .highlight.cyan::before  { content: '★  KEY CONCEPT'; color: var(--cyan); }
+  .highlight.pink  { background: #fff4f8; border-color: #d890b0; border-left-color: var(--pink); }
+  .highlight.pink::before  { content: '⚠  WATCH OUT'; color: var(--pink); }
+  .highlight.green { background: #f4fff8; border-color: #78bc8a; border-left-color: var(--green); }
+  .highlight.green::before { content: '✓  TOPPER TIP'; color: var(--green); }
+
+  /* ── INFOGRAPHICS — fixed proportional sizing ── */
+  .infographic-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 18px 0;
+    box-shadow: var(--shadow-sm);
+    overflow-x: auto;
+    overflow-y: visible;
+  }
+
+  svg.infographic {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+
+  /* ── DIAGRAM AUTO-SCALE SYSTEM ── */
+  /*
+   * All SVGs use width:100% so they stretch to fill the container.
+   * To keep text legible at 100% zoom we enforce a min-width on the
+   * wrapper so the SVG never shrinks past the point where its internal
+   * font sizes become illegible.  The wrappers scroll horizontally on
+   * very narrow viewports rather than squashing.
+   *
+   * Rule of thumb:  min-width ≈ viewBox-width × (target-font-px / svg-font-px)
+   * We target ~12 px rendered for the smallest text in each diagram.
+   */
+
+  /* Wide full-bleed infographic boxes (viewBox 900 × N) */
+  .infographic-box svg {
+    min-width: 640px;   /* ~12 px text when SVG font-size is 8-9 px in a 900-wide viewBox */
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Narrow architecture diagrams embedded inside grid cards (viewBox ≤ 220) */
+  .card svg,
+  .card > svg {
+    min-width: 180px;
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+
+  /* Cards that contain architecture diagrams must not shrink below their SVG */
+  .card:has(svg) {
+    min-width: 200px;
+  }
+
+  /* Pipeline wrappers already use overflow-x:auto — just ensure enough height */
+  .pipeline {
+    min-height: 80px;
+  }
+
+  /* Scrollable wrapper for diagrams that are wider than the column */
+  .diagram-scroll {
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+  }
+  .diagram-scroll svg {
+    min-width: 700px;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ── STEPS ── */
+  .steps { display: flex; flex-direction: column; gap: 10px; margin: 12px 0; }
+  .step {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.15s, transform 0.15s;
+  }
+  .step:hover { box-shadow: var(--shadow-md); transform: translateX(2px); }
+
+  .step-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    min-width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    flex-shrink: 0;
+  }
+
+  .step-num.yellow { background: var(--yellow-dim); color: var(--yellow); border: 1px solid #e8d090; }
+  .step-num.cyan   { background: var(--cyan-dim);   color: var(--cyan);   border: 1px solid #9ecedd; }
+  .step-num.pink   { background: var(--pink-dim);   color: var(--pink);   border: 1px solid #e0a0c0; }
+  .step-num.green  { background: var(--green-dim);  color: var(--green);  border: 1px solid #8ecca0; }
+  .step-num.orange { background: var(--orange-dim); color: var(--orange); border: 1px solid #e0a888; }
+  .step-num.purple { background: var(--purple-dim); color: var(--purple); border: 1px solid #c0a0e8; }
+
+  .step-content { flex: 1; }
+  .step-title { font-family: var(--font-body); font-weight: 700; font-size: 13.5px; color: var(--text); margin-bottom: 3px; }
+  .step-desc  { color: var(--text2); font-size: 12.5px; }
+
+  /* ── EXAM QS ── */
+  .exam-qs {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--pink);
+    border-radius: 0 0 8px 8px;
+    padding: 22px 28px;
+    margin-top: 20px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .exam-qs-title {
+    font-family: var(--font-mono);
+    font-size: 8.5px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--pink);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .exam-qs-title::before { content: '📝'; }
+
+  .exam-q {
+    padding: 9px 0;
+    color: var(--text2);
+    font-size: 13px;
+    border-bottom: 1px solid var(--bg2);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .exam-q:last-child { border-bottom: none; }
+  .q-num {
+    color: var(--pink);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 600;
+    background: var(--pink-dim);
+    padding: 2px 7px;
+    border-radius: 3px;
+    text-align: center;
+    flex-shrink: 0;
+    border: 1px solid #e0a0c0;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border2) 20%, var(--border2) 80%, transparent);
+    margin: 60px 0;
+    position: relative;
+  }
+
+  .divider::after {
+    content: attr(data-label);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg);
+    padding: 0 20px;
+    font-family: var(--font-mono);
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--text3);
+    text-transform: uppercase;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px; top: 4px; bottom: 4px;
+    width: 1.5px;
+    background: linear-gradient(180deg, var(--cyan), var(--purple));
+    border-radius: 2px;
+    opacity: 0.35;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 16px;
+    padding-left: 16px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    top: 6px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--card);
+    border: 2px solid var(--cyan);
+    box-shadow: 0 0 0 2px var(--cyan-dim);
+  }
+
+  .timeline-year {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    font-weight: 600;
+    color: var(--cyan);
+    margin-bottom: 2px;
+    letter-spacing: 1px;
+  }
+
+  .timeline-event { font-size: 13px; color: var(--text2); }
+  .timeline-event strong { color: var(--text); font-weight: 600; }
+
+  /* ── VS BOX ── */
+  .vs-container { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; }
+  .vs-label {
+    font-family: var(--font-head);
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--text3);
+    text-align: center;
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: var(--bg2); }
+  ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 10px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--text3); }
+
+  /* ── PAGE NAV DOTS ── */
+  .page-nav {
+    position: fixed;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 100;
+  }
+
+  .nav-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--border2);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    border: 1.5px solid transparent;
+  }
+
+  .nav-dot:hover { background: var(--cyan); transform: scale(1.4); }
+  .nav-dot.active { background: var(--cyan); border-color: white; box-shadow: 0 0 0 2px var(--cyan-dim); }
+
+  @media (max-width: 768px) { .page-nav { display: none; } }
+
+  /* ── ANCHOR FIX ── */
+  [id] { scroll-margin-top: 28px; }
+
+  /* ── KEYWORD CLOUD ── */
+  .keyword-cloud { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
+</style>
+</head>
+<body>
+
+<!-- PAGE NAV DOTS -->
+<nav class="page-nav">
+  <a class="nav-dot" href="#s1" title="Historical CV"></a>
+  <a class="nav-dot" href="#s2" title="Image Localization"></a>
+  <a class="nav-dot" href="#s3" title="R-CNN"></a>
+  <a class="nav-dot" href="#s4" title="Fast/Faster R-CNN"></a>
+  <a class="nav-dot" href="#s5" title="YOLO"></a>
+  <a class="nav-dot" href="#s6" title="U-Net"></a>
+  <a class="nav-dot" href="#s7" title="SegNet"></a>
+  <a class="nav-dot" href="#s8" title="Mask R-CNN"></a>
+  <a class="nav-dot" href="#s9" title="GANs"></a>
+  <a class="nav-dot" href="#s10" title="Paging & Segmentation"></a>
+  <a class="nav-dot" href="#s11" title="CNN Segmentation Q&A"></a>
+  <a class="nav-dot" href="#s12" title="YOLO Numericals"></a>
+  <a class="nav-dot" href="#s13" title="Assignment 2 Solutions"></a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="badge">ONE NIGHT BEFORE EXAM</div>
+  <h1 class="hero-title">Computer Vision<br><span>& OS Exam Notes</span></h1>
+  <p class="hero-sub">// TOPPER EDITION — ALL TOPICS COVERED — INFOGRAPHICS INCLUDED</p>
+</header>
+
+<!-- TABLE OF CONTENTS -->
+<nav class="toc container" style="max-width:1400px;margin:0 auto 40px;">
+  <div class="toc-title">Contents</div>
+  <a href="#s1">① Historical / Classical CV</a>
+  <a href="#s2">② Image Localization & Object Detection</a>
+  <a href="#s3">③ R-CNN (2014)</a>
+  <a href="#s4">④ Fast R-CNN & Faster R-CNN</a>
+  <a href="#s5">⑤ YOLO — You Only Look Once</a>
+  <a href="#s6">⑥ U-Net — Semantic Segmentation</a>
+  <a href="#s7">⑦ SegNet</a>
+  <a href="#s8">⑧ Mask R-CNN — Instance Segmentation</a>
+  <a href="#s9">⑨ GANs — Generative Adversarial Networks</a>
+  <a href="#s10">⑩ Paging & Segmentation (OS)</a>
+  <a href="#s11">⑪ CNN Segmentation Q&amp;A</a>
+  <a href="#s12">⑫ YOLO Numericals (8 Solved)</a>
+  <a href="#s13">⑬ Assignment 2 Full Solutions</a>
+</nav>
+
+<main class="container">
+
+<!-- ═══════════════════════════════════════════════ -->
+<!--  SECTION 1 — HISTORICAL CV                      -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="topic-section" id="s1">
+  <div class="section-header">
+    <span class="section-number">01</span>
+    <span class="section-icon" style="color:var(--cyan)">📸</span>
+    <h2 class="section-title">Historical / Classical Computer Vision <small style="font-size:13px;color:var(--text3)">(Pre-2012 Era)</small></h2>
+  </div>
+  <div class="section-accent" style="background:linear-gradient(90deg,var(--cyan),transparent)"></div>
+
+  <div class="grid-2">
+    <div class="card cyan">
+      <div class="card-title">📌 Overview</div>
+      <ul class="point-list">
+        <li><strong>Era:</strong> Early 1980s – Early 2000s</li>
+        <li><strong>Core Idea:</strong> Hand-Crafted Features</li>
+        <li>Engineers design filters & rules manually</li>
+        <li><strong>Goals:</strong> Edge detection, object detection, segmentation</li>
+        <li><strong>Limitation:</strong> Less robust in complex scenes</li>
+      </ul>
+    </div>
+    <div class="card yellow">
+      <div class="card-title">⏱ Evolution Timeline</div>
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-year">1968</div><div class="timeline-event"><strong>Sobel Operator</strong> — Edge Detection</div></div>
+        <div class="timeline-item"><div class="timeline-year">1979</div><div class="timeline-event"><strong>Otsu Thresholding</strong> — Segmentation</div></div>
+        <div class="timeline-item"><div class="timeline-year">1986</div><div class="timeline-event"><strong>Canny Edge Detector</strong> — Optimal edges</div></div>
+        <div class="timeline-item"><div class="timeline-year">1999</div><div class="timeline-event"><strong>SIFT</strong> — Scale Invariant Features</div></div>
+        <div class="timeline-item"><div class="timeline-year">2001</div><div class="timeline-event"><strong>Viola-Jones</strong> — Real-time face detect</div></div>
+        <div class="timeline-item"><div class="timeline-year">2005</div><div class="timeline-event"><strong>HOG</strong> — Pedestrian Detection</div></div>
+        <div class="timeline-item"><div class="timeline-year">2006</div><div class="timeline-event"><strong>SURF</strong> — Faster SIFT</div></div>
+        <div class="timeline-item"><div class="timeline-year">2012+</div><div class="timeline-event"><strong>Deep Learning Era</strong> — CNN, AlexNet, YOLO</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INFOGRAPHIC: Historical vs Modern -->
+  <div class="infographic-box diagram-scroll" style="margin:20px 0;padding:16px 20px;">
+    <svg class="infographic" viewBox="0 0 900 130" xmlns="http://www.w3.org/2000/svg" style="min-width:700px;">
+      <defs>
+        <linearGradient id="g1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#00d4ff33"/><stop offset="100%" stop-color="#00d4ff00"/></linearGradient>
+        <linearGradient id="g2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#f5c84200"/><stop offset="100%" stop-color="#f5c84233"/></linearGradient>
+      </defs>
+      <rect x="0" y="0" width="420" height="122" rx="2" fill="url(#g1)" stroke="#0e7490" stroke-width="0.5"/>
+      <rect x="480" y="0" width="420" height="122" rx="2" fill="url(#g2)" stroke="#c47d0e" stroke-width="0.5"/>
+      <text x="14" y="24" font-family="IBM Plex Mono" font-size="13" fill="#0e7490" letter-spacing="2" font-weight="600">HISTORICAL CV</text>
+      <text x="494" y="24" font-family="IBM Plex Mono" font-size="13" fill="#c47d0e" letter-spacing="2" font-weight="600">MODERN CV (DL)</text>
+      <text x="14" y="48" font-family="IBM Plex Mono" font-size="12" fill="#4b4740">✦ Hand-Crafted Features</text>
+      <text x="14" y="66" font-family="IBM Plex Mono" font-size="12" fill="#4b4740">✦ Rule-Based</text>
+      <text x="14" y="84" font-family="IBM Plex Mono" font-size="12" fill="#4b4740">✦ Small Datasets / CPU</text>
+      <text x="14" y="102" font-family="IBM Plex Mono" font-size="12" fill="#4b4740">✦ Sobel, SIFT, HOG, Viola-Jones</text>
+      <text x="494" y="48" font-family="IBM Plex Mono" font-size="12" fill="#4b4740">✦ Automatically Learned Features</text>
+      <text x="494" y="66" font-family="IBM Plex Mono" font-size="12" fill="#4b4740">✦ Data-Driven</text>
+      <text x="494" y="84" font-family="IBM Plex Mono" font-size="12" fill="#4b4740">✦ Massive Datasets / GPU</text>
+      <text x="494" y="102" font-family="IBM Plex Mono" font-size="12" fill="#4b4740">✦ CNN, YOLO, ResNet, ViT</text>
+      <text x="440" y="66" font-family="Syne" font-size="22" font-weight="800" fill="#252535" text-anchor="middle">VS</text>
+    </svg>
+  </div>
+
+  <div class="grid-3">
+    <!-- Canny -->
+    <div class="card green">
+      <div class="card-title">⭐ Canny Edge Detector (1986)</div>
+      <div style="font-size:11px;color:var(--text3);margin-bottom:10px;">Optimal Edge Detector — John Canny</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num green">01</div>
+          <div class="step-content">
+            <div class="step-title">Gaussian Blur</div>
+            <div class="step-desc">Remove noise from image</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num green">02</div>
+          <div class="step-content">
+            <div class="step-title">Gradient Calculation</div>
+            <div class="step-desc">Find edge strength & direction using Sobel</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num green">03</div>
+          <div class="step-content">
+            <div class="step-title">Non-Maximum Suppression</div>
+            <div class="step-desc">Thin thick edges, keep strongest pixels</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num green">04</div>
+          <div class="step-content">
+            <div class="step-title">Hysteresis Thresholding</div>
+            <div class="step-desc">Remove weak edges, connect strong edges</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Viola-Jones -->
+    <div class="card pink">
+      <div class="card-title">👤 Viola-Jones (2001)</div>
+      <div style="font-size:11px;color:var(--text3);margin-bottom:10px;">First real-time face detection</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num pink">A</div>
+          <div class="step-content">
+            <div class="step-title">Haar-like Features</div>
+            <div class="step-desc">Black & White rectangles — detect eyes, nose, face</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num pink">B</div>
+          <div class="step-content">
+            <div class="step-title">Integral Image</div>
+            <div class="step-desc">O(1) computation — only 4 array lookups</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num pink">C</div>
+          <div class="step-content">
+            <div class="step-title">AdaBoost</div>
+            <div class="step-desc">Select best Haar features, remove useless ones</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num pink">D</div>
+          <div class="step-content">
+            <div class="step-title">Cascade Classifier</div>
+            <div class="step-desc">Filter chain — reject non-faces quickly</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Descriptors -->
+    <div>
+      <div class="card orange" style="margin-bottom:12px;">
+        <div class="card-title">🔑 SIFT (1999)</div>
+        <ul class="point-list">
+          <li><strong>Full:</strong> Scale Invariant Feature Transform</li>
+          <li>Rotation Invariant ✓ &nbsp; Scale Invariant ✓</li>
+          <li>Excellent feature matching</li>
+          <li><strong>Limitation:</strong> Computationally expensive</li>
+        </ul>
+      </div>
+      <div class="card purple" style="margin-bottom:12px;">
+        <div class="card-title">🚀 SURF (2006)</div>
+        <ul class="point-list">
+          <li><strong>Full:</strong> Speeded Up Robust Features</li>
+          <li>Faster version of SIFT</li>
+          <li>Scale & Rotation Invariant</li>
+        </ul>
+      </div>
+      <div class="card yellow">
+        <div class="card-title">🚶 HOG (2005)</div>
+        <ul class="point-list">
+          <li><strong>Full:</strong> Histogram of Oriented Gradients</li>
+          <li>Uses edge directions & gradients</li>
+          <li><strong>Famous:</strong> Pedestrian Detection</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sobel Formula -->
+  <div class="grid-2" style="margin-top:16px;">
+    <div>
+      <div class="card cyan">
+        <div class="card-title">📏 Sobel Operator (1968)</div>
+        <ul class="point-list">
+          <li>Two 3×3 kernels: <strong>Sobel X</strong> and <strong>Sobel Y</strong></li>
+          <li>Detects horizontal and vertical edges</li>
+          <li><strong>Limitation:</strong> Sensitive to noise</li>
+        </ul>
+        <div class="formula cyan">
+          Gx = SobelX * I<br>
+          Gy = SobelY * I<br>
+          G  = √(Gx² + Gy²)   ← Edge Strength
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card yellow">
+        <div class="card-title">📊 Otsu Thresholding (1979)</div>
+        <ul class="point-list">
+          <li>Automatic threshold selection — no manual input</li>
+          <li>Converts image → <strong>Foreground</strong> & <strong>Background</strong></li>
+          <li>Input: Histogram — Goal: Maximize Between-Class Variance</li>
+          <li>Application: Document scanning, OCR</li>
+        </ul>
+        <div class="highlight">
+          <p>Otsu finds threshold T automatically by maximizing variance between foreground and background classes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="exam-qs">
+    <div class="exam-qs-title">Must-Know Exam Questions — Historical CV</div>
+    <div class="exam-q"><span class="q-num">Q1</span> What are Hand-Crafted Features? How do they differ from learned features?</div>
+    <div class="exam-q"><span class="q-num">Q2</span> Write the 4 steps of Canny Edge Detector and explain each.</div>
+    <div class="exam-q"><span class="q-num">Q3</span> Explain the 4 pillars of Viola-Jones algorithm.</div>
+    <div class="exam-q"><span class="q-num">Q4</span> Write the Sobel gradient formula and explain its output.</div>
+    <div class="exam-q"><span class="q-num">Q5</span> Compare SIFT, SURF, and HOG.</div>
+    <div class="exam-q"><span class="q-num">Q6</span> Why did Deep Learning replace Classical Computer Vision?</div>
+  </div>
+</section>
+
+<div class="divider" data-label="section 02"></div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!--  SECTION 2 — IMAGE LOCALIZATION                 -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="topic-section" id="s2">
+  <div class="section-header">
+    <span class="section-number">02</span>
+    <span class="section-icon" style="color:var(--yellow)">🖼️</span>
+    <h2 class="section-title">Image Localization & Object Detection</h2>
+  </div>
+  <div class="section-accent" style="background:linear-gradient(90deg,var(--yellow),transparent)"></div>
+
+  <!-- Task Comparison Infographic -->
+  <div class="infographic-box diagram-scroll">
+    <svg class="infographic" viewBox="0 0 900 165" xmlns="http://www.w3.org/2000/svg" style="min-width:700px;">
+      <!-- Classification -->
+      <rect x="10" y="10" width="260" height="145" rx="2" fill="#f0f8ff" stroke="#0e7490" stroke-width="1"/>
+      <text x="140" y="36" font-family="IBM Plex Mono" font-size="12" fill="#0e7490" text-anchor="middle" letter-spacing="1" font-weight="600">CLASSIFICATION</text>
+      <rect x="60" y="50" width="160" height="65" rx="2" fill="#f5f4f0" stroke="#d4d0c8" stroke-width="1"/>
+      <text x="140" y="90" font-family="Syne" font-size="22" fill="#4b4740" text-anchor="middle">🐱</text>
+      <text x="140" y="128" font-family="IBM Plex Mono" font-size="11" fill="#9c9588" text-anchor="middle">Output: "Cat"</text>
+      <text x="140" y="146" font-family="IBM Plex Mono" font-size="10" fill="#9c9588" text-anchor="middle">Single label only</text>
+      <!-- Localization -->
+      <rect x="320" y="10" width="260" height="145" rx="2" fill="#f0f8ff" stroke="#c47d0e" stroke-width="1"/>
+      <text x="450" y="36" font-family="IBM Plex Mono" font-size="12" fill="#c47d0e" text-anchor="middle" letter-spacing="1" font-weight="600">LOCALIZATION</text>
+      <rect x="370" y="50" width="160" height="65" rx="2" fill="#f5f4f0" stroke="#d4d0c8" stroke-width="1"/>
+      <rect x="395" y="57" width="70" height="52" rx="1" fill="none" stroke="#c47d0e" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <text x="450" y="90" font-family="Syne" font-size="20" fill="#4b4740" text-anchor="middle">🐱</text>
+      <text x="450" y="128" font-family="IBM Plex Mono" font-size="11" fill="#9c9588" text-anchor="middle">Class + 1 BBox</text>
+      <text x="450" y="146" font-family="IBM Plex Mono" font-size="10" fill="#9c9588" text-anchor="middle">Single main object</text>
+      <!-- Detection -->
+      <rect x="630" y="10" width="260" height="145" rx="2" fill="#f0f8ff" stroke="#be185d" stroke-width="1"/>
+      <text x="760" y="36" font-family="IBM Plex Mono" font-size="12" fill="#be185d" text-anchor="middle" letter-spacing="1" font-weight="600">OBJECT DETECTION</text>
+      <rect x="680" y="50" width="160" height="65" rx="2" fill="#f5f4f0" stroke="#d4d0c8" stroke-width="1"/>
+      <rect x="686" y="55" width="55" height="50" rx="1" fill="none" stroke="#c47d0e" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <rect x="750" y="60" width="50" height="47" rx="1" fill="none" stroke="#0e7490" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <rect x="700" y="70" width="40" height="38" rx="1" fill="none" stroke="#166534" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <text x="760" y="128" font-family="IBM Plex Mono" font-size="11" fill="#9c9588" text-anchor="middle">Multiple classes + BBoxes</text>
+      <text x="760" y="146" font-family="IBM Plex Mono" font-size="10" fill="#9c9588" text-anchor="middle">Cat + Dog + Car</text>
+    </svg>
+  </div>
+
+  <div class="grid-3" style="margin-top:20px;">
+    <div class="card cyan">
+      <div class="card-title">📦 Bounding Box Formats</div>
+      <div style="font-size:11px;color:var(--text3);margin-bottom:8px;">Format 1 — Center + Size</div>
+      <div class="formula cyan">
+        (bx, by, bw, bh)<br>
+        bx = Center X &nbsp; by = Center Y<br>
+        bw = Width &nbsp;&nbsp; bh = Height
+      </div>
+      <div style="font-size:11px;color:var(--text3);margin:10px 0 8px;">Format 2 — Corner Coordinates</div>
+      <div class="formula cyan">
+        (xmin, ymin, xmax, ymax)<br>
+        xmin=Left &nbsp; ymin=Top<br>
+        xmax=Right &nbsp; ymax=Bottom
+      </div>
+    </div>
+
+    <div class="card yellow">
+      <div class="card-title">🧠 Localization Architecture</div>
+      <!-- Pipeline SVG -->
+      <svg viewBox="0 0 220 195" style="width:100%;min-width:180px;margin:8px 0">
+        <rect x="60" y="5" width="100" height="30" rx="2" fill="#f5f4f0" stroke="#d4d0c8"/>
+        <text x="110" y="25" font-family="IBM Plex Mono" font-size="11" fill="#4b4740" text-anchor="middle">Input Image</text>
+        <line x1="110" y1="35" x2="110" y2="52" stroke="#d4d0c8" stroke-width="1" marker-end="url(#arr)"/>
+        <defs><marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#9c9588"/></marker></defs>
+        <rect x="30" y="54" width="160" height="30" rx="2" fill="#ffffff" stroke="#0e7490"/>
+        <text x="110" y="73" font-family="IBM Plex Mono" font-size="10" fill="#0e7490" text-anchor="middle">CNN Backbone (ResNet)</text>
+        <line x1="110" y1="84" x2="110" y2="101" stroke="#d4d0c8" stroke-width="1" marker-end="url(#arr)"/>
+        <rect x="60" y="103" width="100" height="24" rx="2" fill="#f5f4f0" stroke="#d4d0c8"/>
+        <text x="110" y="119" font-family="IBM Plex Mono" font-size="10" fill="#4b4740" text-anchor="middle">Feature Maps</text>
+        <line x1="80" y1="127" x2="50" y2="150" stroke="#d4d0c8" stroke-width="1"/>
+        <line x1="140" y1="127" x2="170" y2="150" stroke="#d4d0c8" stroke-width="1"/>
+        <rect x="8" y="150" width="90" height="28" rx="2" fill="#ffffff" stroke="#c47d0e"/>
+        <text x="53" y="168" font-family="IBM Plex Mono" font-size="10" fill="#c47d0e" text-anchor="middle">Classification</text>
+        <rect x="122" y="150" width="90" height="28" rx="2" fill="#ffffff" stroke="#be185d"/>
+        <text x="167" y="168" font-family="IBM Plex Mono" font-size="10" fill="#be185d" text-anchor="middle">Regression</text>
+        <text x="53" y="186" font-family="IBM Plex Mono" font-size="9" fill="#9c9588" text-anchor="middle">(Class)</text>
+        <text x="167" y="186" font-family="IBM Plex Mono" font-size="9" fill="#9c9588" text-anchor="middle">(BBox)</text>
+      </svg>
+      <ul class="point-list">
+        <li>CNN backbone extracts features</li>
+        <li>Split into two heads simultaneously</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="card green" style="margin-bottom:12px;">
+        <div class="card-title">📏 IoU Formula</div>
+        <div class="formula green">
+          IoU = Area of Overlap<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;──────────────────<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Area of Union<br><br>
+          Range: 0 ≤ IoU ≤ 1<br>
+          IoU &gt; 0.5 → Good Prediction
+        </div>
+        <ul class="point-list" style="margin-top:8px;">
+          <li><strong>IoU = 0</strong> → No overlap at all</li>
+          <li><strong>IoU = 1</strong> → Perfect prediction</li>
+        </ul>
+      </div>
+      <div class="card orange">
+        <div class="card-title">📉 Loss Functions</div>
+        <ul class="point-list">
+          <li><strong>Classification:</strong> Softmax + Cross Entropy Loss</li>
+          <li><strong>Regression:</strong> L2 Loss (MSE) or Smooth L1 Loss</li>
+          <li><strong>Total Loss:</strong> Classification + Localization Loss</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detectors comparison -->
+  <div class="grid-2" style="margin-top:16px;">
+    <div class="card cyan">
+      <div class="card-title">🐢 Two-Stage Detectors</div>
+      <ul class="point-list">
+        <li><strong>Stage 1:</strong> Find candidate boxes (region proposals)</li>
+        <li><strong>Stage 2:</strong> Classify objects in those regions</li>
+        <li>✅ Highly Accurate &nbsp; ❌ Slow</li>
+        <li><strong>Examples:</strong> R-CNN, Fast R-CNN, Faster R-CNN</li>
+        <li><em style="color:var(--text3)">Memory Trick: Detect First, Classify Later</em></li>
+      </ul>
+    </div>
+    <div class="card yellow">
+      <div class="card-title">⚡ One-Stage Detectors</div>
+      <ul class="point-list">
+        <li>Detect + Classify in a <strong>single forward pass</strong></li>
+        <li>No separate region proposal stage</li>
+        <li>✅ Very Fast &nbsp; ✅ Real-Time &nbsp; ❌ Less accurate on small objects</li>
+        <li><strong>Examples:</strong> YOLO, SSD</li>
+        <li><em style="color:var(--text3)">Memory Trick: Everything At Once</em></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <p><strong>Localization = Classification + Bounding Box Regression</strong> — always performed simultaneously using Multi-Task Learning with a combined loss function.</p>
+  </div>
+</section>
+
+<div class="divider" data-label="section 03"></div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!--  SECTION 3 — R-CNN                              -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="topic-section" id="s3">
+  <div class="section-header">
+    <span class="section-number">03</span>
+    <span class="section-icon" style="color:var(--orange)">📦</span>
+    <h2 class="section-title">R-CNN — Region-Based CNN (2014)</h2>
+  </div>
+  <div class="section-accent" style="background:linear-gradient(90deg,var(--orange),transparent)"></div>
+
+  <div class="grid-2" style="margin-bottom:16px;">
+    <div class="card orange">
+      <div class="card-title">🎯 Purpose & Core Idea</div>
+      <ul class="point-list">
+        <li>Introduced by <strong>Ross Girshick (2014)</strong></li>
+        <li>Revolutionized deep learning-based object detection</li>
+        <li>Replaced HOG, SIFT, and Sliding Window methods</li>
+        <li><strong>Key Insight:</strong> Focus only on likely object regions (RoIs) — don't scan entire image</li>
+        <li>Region Proposals → CNN Features → SVM → BBox Regression</li>
+      </ul>
+    </div>
+    <div class="card red">
+      <div class="card-title">❌ Drawbacks (Most Important!)</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num red">1</div>
+          <div class="step-content"><div class="step-title">Extremely Slow</div><div class="step-desc">CNN runs 2000 times per image ≈ 47 sec/image</div></div>
+        </div>
+        <div class="step">
+          <div class="step-num red">2</div>
+          <div class="step-content"><div class="step-title">High Memory</div><div class="step-desc">Stores 4096-D feature vectors → huge disk & RAM</div></div>
+        </div>
+        <div class="step">
+          <div class="step-num red">3</div>
+          <div class="step-content"><div class="step-title">Multi-Stage Training</div><div class="step-desc">CNN, SVM, BBox Regressor trained separately — NOT end-to-end</div></div>
+        </div>
+        <div class="step">
+          <div class="step-num red">4</div>
+          <div class="step-content"><div class="step-title">Selective Search Bottleneck</div><div class="step-desc">Traditional, not learnable, expensive</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pipeline -->
+  <div style="margin-bottom:16px;">
+    <div style="font-family:var(--font-mono);font-size:10px;color:var(--text3);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">R-CNN 4-Step Pipeline</div>
+    <div class="infographic-box diagram-scroll">
+      <svg viewBox="0 0 900 120" style="width:100%;min-width:700px;">
+        <defs><marker id="a2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#9c9588"/></marker></defs>
+        <!-- Step 1 -->
+        <rect x="10" y="14" width="190" height="86" rx="2" fill="#ffffff" stroke="#9a3412"/>
+        <text x="105" y="50" font-family="IBM Plex Mono" font-size="11" fill="#9a3412" text-anchor="middle" font-weight="600">REGION PROPOSAL</text>
+        <text x="105" y="68" font-family="IBM Plex Mono" font-size="10" fill="#9c9588" text-anchor="middle">Selective Search</text>
+        <text x="105" y="86" font-family="IBM Plex Mono" font-size="10" fill="#9c9588" text-anchor="middle">≈2000 proposals/img</text>
+        <line x1="200" y1="57" x2="218" y2="57" stroke="#9c9588" stroke-width="1.5" marker-end="url(#a2)"/>
+        <!-- Step 2 -->
+        <rect x="220" y="14" width="185" height="86" rx="2" fill="#ffffff" stroke="#c47d0e"/>
+        <text x="312" y="50" font-family="IBM Plex Mono" font-size="11" fill="#c47d0e" text-anchor="middle" font-weight="600">WARP / RESIZE</text>
+        <text x="312" y="68" font-family="IBM Plex Mono" font-size="10" fill="#9c9588" text-anchor="middle">CNN needs fixed size</text>
+        <text x="312" y="86" font-family="IBM Plex Mono" font-size="10" fill="#9c9588" text-anchor="middle">→ 227 × 227 pixels</text>
+        <line x1="405" y1="57" x2="423" y2="57" stroke="#9c9588" stroke-width="1.5" marker-end="url(#a2)"/>
+        <!-- Step 3 -->
+        <rect x="425" y="14" width="200" height="86" rx="2" fill="#ffffff" stroke="#0e7490"/>
+        <text x="525" y="50" font-family="IBM Plex Mono" font-size="11" fill="#0e7490" text-anchor="middle" font-weight="600">FEATURE EXTRACTION</text>
+        <text x="525" y="68" font-family="IBM Plex Mono" font-size="10" fill="#9c9588" text-anchor="middle">AlexNet / VGG16</text>
+        <text x="525" y="86" font-family="IBM Plex Mono" font-size="10" fill="#9c9588" text-anchor="middle">→ 4096-D Vector</text>
+        <line x1="625" y1="57" x2="643" y2="57" stroke="#9c9588" stroke-width="1.5" marker-end="url(#a2)"/>
+        <!-- Step 4 -->
+        <rect x="645" y="14" width="248" height="86" rx="2" fill="#ffffff" stroke="#be185d"/>
+        <text x="769" y="44" font-family="IBM Plex Mono" font-size="11" fill="#be185d" text-anchor="middle" font-weight="600">CLASSIFY + LOCALIZE</text>
+        <text x="769" y="62" font-family="IBM Plex Mono" font-size="10" fill="#9c9588" text-anchor="middle">Linear SVM → Class</text>
+        <text x="769" y="80" font-family="IBM Plex Mono" font-size="10" fill="#9c9588" text-anchor="middle">BBox Regressor → (x,y,w,h)</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="highlight green">
+    <p><strong>Key Exam Fact:</strong> R-CNN runs CNN separately for each of the 2000 proposals → extremely slow (~47 sec/image). This is the main motivation for Fast R-CNN and Faster R-CNN.</p>
+  </div>
+
+  <div class="keyword-cloud">
+    <div class="pill orange">Region Proposal</div><div class="pill orange">Selective Search</div><div class="pill orange">RoI</div><div class="pill orange">Warping</div><div class="pill orange">AlexNet / VGG16</div><div class="pill orange">4096-D Vector</div><div class="pill orange">SVM Classifier</div><div class="pill orange">BBox Regressor</div><div class="pill orange">L2 Loss</div><div class="pill orange">Multi-Stage Training</div>
+  </div>
+</section>
+
+<div class="divider" data-label="section 04"></div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!--  SECTION 4 — FAST R-CNN & FASTER R-CNN          -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="topic-section" id="s4">
+  <div class="section-header">
+    <span class="section-number">04</span>
+    <span class="section-icon" style="color:var(--cyan)">🚀</span>
+    <h2 class="section-title">Fast R-CNN & Faster R-CNN (2015)</h2>
+  </div>
+  <div class="section-accent" style="background:linear-gradient(90deg,var(--cyan),transparent)"></div>
+
+  <!-- Evolution speed infographic -->
+  <div class="infographic-box diagram-scroll" style="margin-bottom:20px;">
+    <svg viewBox="0 0 900 100" style="width:100%;min-width:700px;">
+      <rect x="10" y="10" width="260" height="74" rx="2" fill="#ffffff" stroke="#9c9588"/>
+      <text x="140" y="38" font-family="IBM Plex Mono" font-size="12" fill="#4b4740" text-anchor="middle" font-weight="600">R-CNN (2014)</text>
+      <text x="140" y="58" font-family="IBM Plex Mono" font-size="14" fill="#b91c1c" text-anchor="middle" font-weight="700">≈ 47 sec / image</text>
+      <text x="140" y="76" font-family="IBM Plex Mono" font-size="10" fill="#9c9588" text-anchor="middle">2000 CNN passes</text>
+      <!-- arrow -->
+      <text x="285" y="55" font-family="Syne" font-size="26" fill="#252535">→</text>
+      <rect x="310" y="10" width="280" height="74" rx="2" fill="#ffffff" stroke="#c47d0e"/>
+      <text x="450" y="38" font-family="IBM Plex Mono" font-size="12" fill="#c47d0e" text-anchor="middle" font-weight="600">Fast R-CNN (2015)</text>
+      <text x="450" y="58" font-family="IBM Plex Mono" font-size="14" fill="#c47d0e" text-anchor="middle" font-weight="700">≈ 2 sec / image</text>
+      <text x="450" y="76" font-family="IBM Plex Mono" font-size="10" fill="#9c9588" text-anchor="middle">1 CNN pass + RoI Pooling</text>
+      <!-- arrow -->
+      <text x="605" y="55" font-family="Syne" font-size="26" fill="#252535">→</text>
+      <rect x="630" y="10" width="260" height="74" rx="2" fill="#ffffff" stroke="#0e7490"/>
+      <text x="760" y="38" font-family="IBM Plex Mono" font-size="12" fill="#0e7490" text-anchor="middle" font-weight="600">Faster R-CNN (2015)</text>
+      <text x="760" y="58" font-family="IBM Plex Mono" font-size="14" fill="#166534" text-anchor="middle" font-weight="700">≈ 0.2 sec / image</text>
+      <text x="760" y="76" font-family="IBM Plex Mono" font-size="10" fill="#9c9588" text-anchor="middle">RPN + Shared CNN</text>
+    </svg>
+  </div>
+
+  <div class="grid-2">
+    <!-- Fast R-CNN -->
+    <div class="card yellow">
+      <div class="card-title">⚡ Fast R-CNN — Key Improvement</div>
+      <div class="highlight" style="margin-bottom:12px;">
+        <p><strong>Run CNN only ONCE per image</strong> — then project proposals onto the shared feature map</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num yellow">01</div>
+          <div class="step-content"><div class="step-title">Single CNN Forward Pass</div><div class="step-desc">Entire image → VGG16 / AlexNet → Feature Map</div></div>
+        </div>
+        <div class="step">
+          <div class="step-num yellow">02</div>
+          <div class="step-content"><div class="step-title">Region Projection</div><div class="step-desc">Selective Search → ~2000 RoIs projected onto Feature Map</div></div>
+        </div>
+        <div class="step">
+          <div class="step-num yellow">03</div>
+          <div class="step-content"><div class="step-title">RoI Pooling ⭐</div><div class="step-desc">Different-size regions → fixed-size output (7×7)</div></div>
+        </div>
+        <div class="step">
+          <div class="step-num yellow">04</div>
+          <div class="step-content"><div class="step-title">Multi-Task Output</div><div class="step-desc">Softmax Classifier + BBox Regressor (End-to-End)</div></div>
+        </div>
+      </div>
+      <div style="margin-top:12px;">
+        <div class="pill yellow">✅ End-to-End Training</div>
+        <div class="pill red">❌ Still uses Selective Search (slow)</div>
+      </div>
+    </div>
+
+    <!-- Faster R-CNN -->
+    <div class="card cyan">
+      <div class="card-title">⚡⚡ Faster R-CNN — The Big Jump</div>
+      <div class="highlight cyan" style="margin-bottom:12px;">
+        <p><strong>Replace Selective Search with a Neural Network (RPN)</strong> — fully learnable region proposals</p>
+      </div>
+
+      <div style="font-size:12px;color:var(--text2);margin-bottom:10px;font-family:var(--font-mono);">Two Main Components:</div>
+
+      <div class="card" style="background:var(--bg3);border-color:var(--border2);margin-bottom:10px;padding:14px;">
+        <div style="color:var(--cyan);font-size:11px;font-family:var(--font-mono);font-weight:700;margin-bottom:8px;">A. Shared CNN Backbone</div>
+        <ul class="point-list">
+          <li>Extracts Feature Maps shared by RPN and Detector</li>
+          <li>Run only once — very efficient</li>
+        </ul>
+      </div>
+
+      <div class="card" style="background:var(--bg3);border-color:var(--border2);margin-bottom:10px;padding:14px;">
+        <div style="color:var(--yellow);font-size:11px;font-family:var(--font-mono);font-weight:700;margin-bottom:8px;">B. Region Proposal Network (RPN)</div>
+        <ul class="point-list">
+          <li>Small neural network sliding over feature map</li>
+          <li>Predicts <strong>Objectness Score</strong> + Bounding Boxes</li>
+          <li>Completely replaces Selective Search</li>
+        </ul>
+      </div>
+
+      <div style="font-size:12px;color:var(--text2);margin:10px 0 8px;font-family:var(--font-mono);">📦 Anchor Boxes</div>
+      <ul class="point-list">
+        <li><strong>Scales:</strong> 128², 256², 512²</li>
+        <li><strong>Aspect Ratios:</strong> 1:1 (square), 1:2 (tall), 2:1 (wide)</li>
+        <li><strong>Total:</strong> 3 scales × 3 ratios = <strong>9 anchors per location</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="margin-top:16px;">
+    <div class="formula" style="border-left-color:var(--purple);color:var(--purple);">
+      Multi-Task Loss = L_cls + λ × L_loc<br>
+      L_cls = Classification Loss (Softmax)<br>
+      L_loc = Localization Loss (Smooth L1)<br>
+      λ = Balance Parameter
+    </div>
+  </div>
+
+  <!-- Comparison Table -->
+  <div class="table-wrap" style="margin-top:20px;">
+    <table>
+      <thead><tr><th>Feature</th><th style="color:var(--red)">R-CNN</th><th style="color:var(--yellow)">Fast R-CNN</th><th style="color:var(--cyan)">Faster R-CNN</th></tr></thead>
+      <tbody>
+        <tr><td>Region Proposals</td><td>Selective Search</td><td>Selective Search</td><td>RPN (Learnable)</td></tr>
+        <tr><td>CNN Passes</td><td style="color:var(--red)">2000 per image</td><td style="color:var(--yellow)">1 per image</td><td style="color:var(--cyan)">1 (shared)</td></tr>
+        <tr><td>Training</td><td>Multi-Stage</td><td>End-to-End</td><td>End-to-End</td></tr>
+        <tr><td>Speed</td><td style="color:var(--red)">~47 sec/img</td><td style="color:var(--yellow)">~2 sec/img</td><td style="color:var(--green)">~0.2 sec/img</td></tr>
+        <tr><td>Special Feature</td><td>—</td><td>RoI Pooling</td><td>Anchor Boxes</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="exam-qs">
+    <div class="exam-qs-title">Must-Know Exam Questions — Fast/Faster R-CNN</div>
+    <div class="exam-q"><span class="q-num">Q1</span> What is RoI Pooling and why is it needed?</div>
+    <div class="exam-q"><span class="q-num">Q2</span> What is the Region Proposal Network (RPN)?</div>
+    <div class="exam-q"><span class="q-num">Q3</span> Explain Anchor Boxes — scales, aspect ratios, total count.</div>
+    <div class="exam-q"><span class="q-num">Q4</span> Write the Multi-Task Loss function of Faster R-CNN.</div>
+    <div class="exam-q"><span class="q-num">Q5</span> Compare R-CNN, Fast R-CNN, Faster R-CNN in a table.</div>
+  </div>
+</section>
+
+<div class="divider" data-label="section 05"></div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!--  SECTION 5 — YOLO                               -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="topic-section" id="s5">
+  <div class="section-header">
+    <span class="section-number">05</span>
+    <span class="section-icon" style="color:var(--green)">🎯</span>
+    <h2 class="section-title">YOLO — You Only Look Once</h2>
+  </div>
+  <div class="section-accent" style="background:linear-gradient(90deg,var(--green),transparent)"></div>
+
+  <div class="grid-3">
+    <div class="card green">
+      <div class="card-title">📌 Core Philosophy</div>
+      <ul class="point-list">
+        <li>Introduced by <strong>Joseph Redmon (2016)</strong></li>
+        <li>Single-Stage Object Detector</li>
+        <li>Image processed only <strong>ONCE</strong></li>
+        <li>Detection = <strong>Regression Problem</strong></li>
+        <li>No Region Proposals, No Selective Search, No RPN</li>
+        <li>Output: BBoxes + Class Probabilities + Confidence</li>
+      </ul>
+      <div class="formula green" style="margin-top:10px;">
+        Input Image → CNN → Output Tensor
+        (All in ONE forward pass)
+      </div>
+    </div>
+
+    <div class="card yellow">
+      <div class="card-title">⚙️ Working Pipeline</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num yellow">1</div>
+          <div class="step-content">
+            <div class="step-title">Grid Division (S×S)</div>
+            <div class="step-desc">Image → 7×7 grid. Object belongs to cell containing its <strong>center point</strong></div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num yellow">2</div>
+          <div class="step-content">
+            <div class="step-title">BBox Prediction</div>
+            <div class="step-desc">Each cell predicts B=2 boxes with (x, y, w, h, confidence)</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num yellow">3</div>
+          <div class="step-content">
+            <div class="step-title">Class Prediction</div>
+            <div class="step-desc">Each cell predicts C=20 classes (PASCAL VOC)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <!-- Output Tensor -->
+      <div class="card orange" style="margin-bottom:12px;">
+        <div class="card-title">🧮 Output Tensor Formula</div>
+        <div class="formula orange">
+          S × S × (B×5 + C)<br><br>
+          S = 7 (grid size)<br>
+          B = 2 (boxes per cell)<br>
+          C = 20 (classes)<br><br>
+          = 7 × 7 × (2×5 + 20)<br>
+          = 7 × 7 × 30
+        </div>
+      </div>
+      <!-- NMS -->
+      <div class="card purple">
+        <div class="card-title">🚫 Non-Maximum Suppression (NMS)</div>
+        <ul class="point-list">
+          <li>Removes duplicate bounding boxes</li>
+          <li>Select highest confidence box</li>
+          <li>Remove highly overlapping boxes (by IoU)</li>
+          <li><strong>Result:</strong> 1 Object → 1 Box</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- YOLO Grid infographic -->
+  <div class="infographic-box diagram-scroll" style="margin:20px 0;">
+    <svg viewBox="0 0 900 175" style="width:100%;min-width:700px;">
+      <!-- Grid visualization -->
+      <text x="80" y="22" font-family="IBM Plex Mono" font-size="12" fill="#166534" text-anchor="middle" letter-spacing="1" font-weight="600">7×7 GRID</text>
+      <g transform="translate(10,30)">
+        <!-- 7x7 grid outer border -->
+        <rect x="0" y="0" width="130" height="130" fill="none" stroke="#166534" stroke-width="0.8" opacity="0.4"/>
+        <!-- Grid lines horizontal -->
+        <line x1="0" y1="18.6" x2="130" y2="18.6" stroke="#d4d0c8" stroke-width="0.5"/>
+        <line x1="0" y1="37.1" x2="130" y2="37.1" stroke="#d4d0c8" stroke-width="0.5"/>
+        <line x1="0" y1="55.7" x2="130" y2="55.7" stroke="#d4d0c8" stroke-width="0.5"/>
+        <line x1="0" y1="74.3" x2="130" y2="74.3" stroke="#d4d0c8" stroke-width="0.5"/>
+        <line x1="0" y1="92.9" x2="130" y2="92.9" stroke="#d4d0c8" stroke-width="0.5"/>
+        <line x1="0" y1="111.4" x2="130" y2="111.4" stroke="#d4d0c8" stroke-width="0.5"/>
+        <!-- Vertical lines -->
+        <line x1="18.6" y1="0" x2="18.6" y2="130" stroke="#d4d0c8" stroke-width="0.5"/>
+        <line x1="37.1" y1="0" x2="37.1" y2="130" stroke="#d4d0c8" stroke-width="0.5"/>
+        <line x1="55.7" y1="0" x2="55.7" y2="130" stroke="#d4d0c8" stroke-width="0.5"/>
+        <line x1="74.3" y1="0" x2="74.3" y2="130" stroke="#d4d0c8" stroke-width="0.5"/>
+        <line x1="92.9" y1="0" x2="92.9" y2="130" stroke="#d4d0c8" stroke-width="0.5"/>
+        <line x1="111.4" y1="0" x2="111.4" y2="130" stroke="#d4d0c8" stroke-width="0.5"/>
+        <!-- Highlight center cell with object -->
+        <rect x="55.7" y="55.7" width="18.6" height="18.6" fill="#16653420" stroke="#166534" stroke-width="1"/>
+        <!-- Object bbox (spans multiple cells) -->
+        <rect x="42" y="38" width="50" height="56" fill="none" stroke="#c47d0e" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <text x="65" y="68" font-family="Syne" font-size="11" fill="#166534" text-anchor="middle">●</text>
+      </g>
+
+      <!-- Legend -->
+      <rect x="162" y="34" width="12" height="12" fill="#16653420" stroke="#166534"/>
+      <text x="180" y="45" font-family="IBM Plex Mono" font-size="11" fill="#4b4740">Cell containing object center</text>
+      <rect x="162" y="58" width="12" height="12" fill="none" stroke="#c47d0e" stroke-dasharray="3,2"/>
+      <text x="180" y="69" font-family="IBM Plex Mono" font-size="11" fill="#4b4740">Predicted Bounding Box</text>
+      <text x="180" y="92" font-family="IBM Plex Mono" font-size="10" fill="#9c9588">That cell is RESPONSIBLE for detecting the object</text>
+      <text x="180" y="110" font-family="IBM Plex Mono" font-size="10" fill="#9c9588">Even if bbox extends beyond cell boundaries</text>
+
+      <!-- Tensor shape -->
+      <rect x="500" y="14" width="384" height="148" rx="2" fill="#f0f8ff" stroke="#9a3412"/>
+      <text x="692" y="40" font-family="IBM Plex Mono" font-size="12" fill="#9a3412" text-anchor="middle" letter-spacing="1" font-weight="600">OUTPUT TENSOR BREAKDOWN</text>
+      <text x="520" y="66" font-family="IBM Plex Mono" font-size="11" fill="#4b4740">Each cell output = B×5 + C values</text>
+      <text x="520" y="88" font-family="IBM Plex Mono" font-size="11" fill="#c47d0e">  5 values per box: x, y, w, h, confidence</text>
+      <text x="520" y="108" font-family="IBM Plex Mono" font-size="11" fill="#0e7490">  2 boxes per cell × 5 = 10 values</text>
+      <text x="520" y="128" font-family="IBM Plex Mono" font-size="11" fill="#166534">  C = 20 class probabilities</text>
+      <text x="520" y="150" font-family="IBM Plex Mono" font-size="12" fill="#9a3412" font-weight="600">  Total = 7×7×30 = 1470 predictions</text>
+    </svg>
+  </div>
+        <line x1="34" y1="0" x2="34" y2="119" stroke="#d4d0c8" stroke-width="0.5"/>
+        <line x1="51" y1="0" x2="51" y2="119" stroke="#d4d0c8" stroke-width="0.5"/>
+        <line x1="68" y1="0" x2="68" y2="119" stroke="#d4d0c8" stroke-width="0.5"/>
+        <line x1="85" y1="0" x2="85" y2="119" stroke="#d4d0c8" stroke-width="0.5"/>
+        <line x1="102" y1="0" x2="102" y2="119" stroke="#d4d0c8" stroke-width="0.5"/>
+        <!-- Highlight center cell with object -->
+  <div class="grid-2">
+    <div class="card green">
+      <div class="card-title">✅ Advantages</div>
+      <ul class="point-list">
+        <li>Extremely fast — <strong>45-155 FPS</strong></li>
+        <li>Real-Time detection capability</li>
+        <li>Single neural network (End-to-End)</li>
+        <li>Global image context → fewer background errors</li>
+        <li>Can process videos live</li>
+      </ul>
+    </div>
+    <div class="card red">
+      <div class="card-title">❌ Limitations</div>
+      <ul class="point-list">
+        <li>Struggles with <strong>small objects</strong></li>
+        <li>Difficulty with <strong>dense crowds</strong></li>
+        <li>Limited boxes per grid cell</li>
+        <li>Localization less accurate than Faster R-CNN</li>
+        <li>Multiple nearby objects may be missed</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- YOLO versions -->
+  <div class="card" style="background:var(--card);border-color:var(--border);margin-top:16px;padding:20px;">
+    <div class="card-title" style="color:var(--green);">🚀 YOLO Evolution</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Version</th><th>Year</th><th>Key Feature</th></tr></thead>
+        <tbody>
+          <tr><td>YOLOv1</td><td>2016</td><td>7×7 Grid — First Real-Time Detector</td></tr>
+          <tr><td>YOLOv2 / YOLO9000</td><td>2017</td><td>Anchor Boxes Added, Better Accuracy</td></tr>
+          <tr><td>YOLOv3</td><td>2018</td><td>Multi-Scale Detection, Better Small Objects</td></tr>
+          <tr><td>YOLOv4</td><td>2020</td><td>Speed + Accuracy improvements</td></tr>
+          <tr><td>YOLOv5</td><td>2020</td><td>Popular Industry Version</td></tr>
+          <tr><td>YOLOv7</td><td>2022</td><td>State-of-the-Art Performance</td></tr>
+          <tr><td>YOLOv8+</td><td>2023+</td><td>Detection + Segmentation + Classification</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider" data-label="section 06"></div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!--  SECTION 6 — U-NET                              -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="topic-section" id="s6">
+  <div class="section-header">
+    <span class="section-number">06</span>
+    <span class="section-icon" style="color:var(--purple)">🧠</span>
+    <h2 class="section-title">U-Net — Semantic Segmentation (2015)</h2>
+  </div>
+  <div class="section-accent" style="background:linear-gradient(90deg,var(--purple),transparent)"></div>
+
+  <div class="grid-3">
+    <div class="card purple">
+      <div class="card-title">📌 Core Concept</div>
+      <ul class="point-list">
+        <li>Proposed by <strong>Olaf Ronneberger (2015)</strong></li>
+        <li>Designed for <strong>Biomedical Image Segmentation</strong></li>
+        <li>Task: Assign a class to <strong>every single pixel</strong></li>
+        <li>Architecture shaped like letter <strong>U</strong></li>
+        <li>Applications: Tumor detection, road segmentation, cell segmentation</li>
+      </ul>
+      <div style="margin-top:10px;">
+        <div class="pill purple">Encoder</div>
+        <div class="pill purple">Bottleneck</div>
+        <div class="pill purple">Decoder</div>
+        <div class="pill yellow">Skip Connections</div>
+      </div>
+    </div>
+
+    <div class="card cyan">
+      <div class="card-title">🏗 Architecture Flow</div>
+      <!-- U-Net SVG -->
+      <svg viewBox="0 0 240 230" style="width:100%;min-width:200px;margin-top:8px">
+        <!-- Encoder -->
+        <rect x="10" y="10" width="62" height="26" rx="1" fill="#ffffff" stroke="#6d28d9"/>
+        <text x="41" y="27" font-family="IBM Plex Mono" font-size="9" fill="#6d28d9" text-anchor="middle">572×572×1</text>
+        <rect x="10" y="46" width="62" height="26" rx="1" fill="#ffffff" stroke="#6d28d9"/>
+        <text x="41" y="63" font-family="IBM Plex Mono" font-size="9" fill="#6d28d9" text-anchor="middle">284×284×128</text>
+        <rect x="10" y="82" width="62" height="26" rx="1" fill="#ffffff" stroke="#6d28d9"/>
+        <text x="41" y="99" font-family="IBM Plex Mono" font-size="9" fill="#6d28d9" text-anchor="middle">142×142×256</text>
+        <rect x="10" y="118" width="62" height="26" rx="1" fill="#ffffff" stroke="#6d28d9"/>
+        <text x="41" y="135" font-family="IBM Plex Mono" font-size="9" fill="#6d28d9" text-anchor="middle">71×71×512</text>
+
+        <!-- Down arrows -->
+        <text x="41" y="44" font-family="IBM Plex Mono" font-size="10" fill="#9c9588" text-anchor="middle">↓</text>
+        <text x="41" y="80" font-family="IBM Plex Mono" font-size="10" fill="#9c9588" text-anchor="middle">↓</text>
+        <text x="41" y="116" font-family="IBM Plex Mono" font-size="10" fill="#9c9588" text-anchor="middle">↓</text>
+        <text x="41" y="152" font-family="IBM Plex Mono" font-size="10" fill="#9c9588" text-anchor="middle">↓</text>
+
+        <!-- Bottleneck -->
+        <rect x="88" y="155" width="64" height="32" rx="1" fill="#ffffff" stroke="#c47d0e" stroke-width="1.5"/>
+        <text x="120" y="169" font-family="IBM Plex Mono" font-size="8" fill="#c47d0e" text-anchor="middle">BOTTLENECK</text>
+        <text x="120" y="182" font-family="IBM Plex Mono" font-size="8" fill="#9c9588" text-anchor="middle">35×35×1024</text>
+
+        <!-- Decoder -->
+        <rect x="168" y="118" width="62" height="26" rx="1" fill="#ffffff" stroke="#0e7490"/>
+        <text x="199" y="135" font-family="IBM Plex Mono" font-size="9" fill="#0e7490" text-anchor="middle">71×71×512</text>
+        <rect x="168" y="82" width="62" height="26" rx="1" fill="#ffffff" stroke="#0e7490"/>
+        <text x="199" y="99" font-family="IBM Plex Mono" font-size="9" fill="#0e7490" text-anchor="middle">142×142×256</text>
+        <rect x="168" y="46" width="62" height="26" rx="1" fill="#ffffff" stroke="#0e7490"/>
+        <text x="199" y="63" font-family="IBM Plex Mono" font-size="9" fill="#0e7490" text-anchor="middle">284×284×128</text>
+        <rect x="168" y="10" width="62" height="26" rx="1" fill="#ffffff" stroke="#166534"/>
+        <text x="199" y="27" font-family="IBM Plex Mono" font-size="9" fill="#166534" text-anchor="middle">OUTPUT MASK</text>
+
+        <!-- Up arrows -->
+        <text x="199" y="44" font-family="IBM Plex Mono" font-size="10" fill="#9c9588" text-anchor="middle">↑</text>
+        <text x="199" y="80" font-family="IBM Plex Mono" font-size="10" fill="#9c9588" text-anchor="middle">↑</text>
+        <text x="199" y="116" font-family="IBM Plex Mono" font-size="10" fill="#9c9588" text-anchor="middle">↑</text>
+        <text x="199" y="152" font-family="IBM Plex Mono" font-size="10" fill="#9c9588" text-anchor="middle">↑</text>
+
+        <!-- Bottleneck connections -->
+        <line x1="72" y1="144" x2="88" y2="168" stroke="#9c9588" stroke-width="0.8"/>
+        <line x1="152" y1="168" x2="168" y2="144" stroke="#9c9588" stroke-width="0.8"/>
+
+        <!-- Skip connections (dashed) -->
+        <line x1="72" y1="23" x2="168" y2="23" stroke="#be185d" stroke-width="1" stroke-dasharray="4,2"/>
+        <line x1="72" y1="59" x2="168" y2="59" stroke="#be185d" stroke-width="1" stroke-dasharray="4,2"/>
+        <line x1="72" y1="95" x2="168" y2="95" stroke="#be185d" stroke-width="1" stroke-dasharray="4,2"/>
+        <line x1="72" y1="131" x2="168" y2="131" stroke="#be185d" stroke-width="1" stroke-dasharray="4,2"/>
+
+        <!-- Labels -->
+        <text x="41" y="220" font-family="IBM Plex Mono" font-size="9" fill="#6d28d9" text-anchor="middle">ENCODER</text>
+        <text x="120" y="220" font-family="IBM Plex Mono" font-size="8" fill="#c47d0e" text-anchor="middle">BOTTLE</text>
+        <text x="199" y="220" font-family="IBM Plex Mono" font-size="9" fill="#0e7490" text-anchor="middle">DECODER</text>
+
+        <!-- Skip legend -->
+        <line x1="10" y1="210" x2="38" y2="210" stroke="#be185d" stroke-dasharray="4,2" stroke-width="1"/>
+        <text x="42" y="214" font-family="IBM Plex Mono" font-size="8" fill="#be185d">skip</text>
+      </svg>
+    </div>
+
+    <div>
+      <div class="card pink" style="margin-bottom:12px;">
+        <div class="card-title">⭐ Skip Connections — Key Strength</div>
+        <ul class="point-list">
+          <li><strong>Problem:</strong> Max Pooling loses spatial location info</li>
+          <li><strong>Solution:</strong> Copy encoder features directly to decoder</li>
+          <li>Also called <strong>Copy-and-Crop</strong> mechanism</li>
+          <li>✅ Preserve fine details (tumor boundaries, edges)</li>
+          <li>✅ Better localization &amp; higher accuracy</li>
+        </ul>
+      </div>
+      <div class="card yellow">
+        <div class="card-title">🎲 Dice Loss</div>
+        <div class="formula" style="border-left-color:var(--yellow);color:var(--yellow);">
+          Dice = 2|A∩B| / (|A| + |B|)<br><br>
+          A = Ground Truth Mask<br>
+          B = Predicted Mask<br><br>
+          Dice Loss = 1 − Dice Score
+        </div>
+        <ul class="point-list" style="margin-top:8px;">
+          <li><strong>Why needed?</strong> Medical data: 99% background, 1% tumor → class imbalance</li>
+          <li>Dice Score = 0 → No overlap</li>
+          <li>Dice Score = 1 → Perfect match</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight green">
+    <p><strong>Encoder:</strong> Conv→ReLU→MaxPool (H↓, W↓, C↑) &nbsp;|&nbsp; <strong>Bottleneck:</strong> Deepest, most abstract &nbsp;|&nbsp; <strong>Decoder:</strong> UpConv→Concat→Conv (H↑, W↑, C↓) &nbsp;|&nbsp; <strong>Output:</strong> 1×1 Conv → pixel-wise class labels</p>
+  </div>
+</section>
+
+<div class="divider" data-label="section 07"></div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!--  SECTION 7 — SEGNET                             -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="topic-section" id="s7">
+  <div class="section-header">
+    <span class="section-number">07</span>
+    <span class="section-icon" style="color:var(--orange)">🗺️</span>
+    <h2 class="section-title">SegNet — Semantic Segmentation (2015)</h2>
+  </div>
+  <div class="section-accent" style="background:linear-gradient(90deg,var(--orange),transparent)"></div>
+
+  <div class="grid-2">
+    <div class="card orange">
+      <div class="card-title">📌 Key Facts</div>
+      <ul class="point-list">
+        <li>Developed at <strong>University of Cambridge (2015)</strong> — Vijay Badrinarayanan</li>
+        <li>Deep <strong>Encoder-Decoder</strong> architecture</li>
+        <li>Primary use: <strong>Autonomous Driving &amp; Robotics</strong></li>
+        <li>Encoder based on <strong>VGG-16</strong> (first 13 conv layers)</li>
+        <li><strong>Key Innovation:</strong> Stores pooling indices instead of full feature maps</li>
+      </ul>
+    </div>
+
+    <div class="card cyan">
+      <div class="card-title">⭐ Max Pooling Indices — The Big Idea</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;">
+        <div style="background:var(--bg3);padding:10px;border:1px solid var(--border);">
+          <div style="font-family:var(--font-mono);font-size:9px;color:var(--pink);margin-bottom:6px;">U-NET</div>
+          <ul class="point-list">
+            <li>Transfers <strong>full feature maps</strong></li>
+            <li>Very high memory usage</li>
+            <li>Best boundary accuracy</li>
+          </ul>
+        </div>
+        <div style="background:var(--bg3);padding:10px;border:1px solid var(--border);">
+          <div style="font-family:var(--font-mono);font-size:9px;color:var(--cyan);margin-bottom:6px;">SEGNET</div>
+          <ul class="point-list">
+            <li>Stores only <strong>pooling locations</strong></li>
+            <li>~2 bits per 2×2 window</li>
+            <li>Very low memory usage</li>
+          </ul>
+        </div>
+      </div>
+      <div class="highlight cyan" style="margin-top:10px;">
+        <p>SegNet: Memory Efficient → suitable for embedded systems, robotics, self-driving cars</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pipeline -->
+  <div style="margin:16px 0;">
+    <div style="font-family:var(--font-mono);font-size:10px;color:var(--text3);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">SegNet Pipeline</div>
+    <div class="pipeline">
+      <div class="pipe-step"><div class="pipe-box" style="border-color:var(--orange);color:var(--orange);">Input Image</div><div class="pipe-label">Original</div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step"><div class="pipe-box" style="border-color:var(--orange);color:var(--text2);">Encoder<br><small style="color:var(--text3)">VGG-16 Conv+Pool</small></div><div class="pipe-label">Features</div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step"><div class="pipe-box" style="border-color:var(--yellow);color:var(--yellow);">Save Pool<br>Indices ⭐</div><div class="pipe-label">2 bits/window</div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step"><div class="pipe-box" style="border-color:var(--cyan);color:var(--text2);">Decoder<br><small style="color:var(--text3)">Max Unpooling</small></div><div class="pipe-label">Reconstruct</div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step"><div class="pipe-box" style="border-color:var(--cyan);color:var(--text2);">Conv<br>Refinement</div><div class="pipe-label">Sharpen</div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step"><div class="pipe-box" style="border-color:var(--green);color:var(--green);">Softmax<br>→ Mask</div><div class="pipe-label">Output</div></div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Feature</th><th>FCN</th><th style="color:var(--pink)">U-Net</th><th style="color:var(--cyan)">SegNet</th></tr></thead>
+      <tbody>
+        <tr><td>Upsampling</td><td>Deconvolution</td><td>Transposed Conv</td><td>Max Unpooling</td></tr>
+        <tr><td>Skip Connections</td><td>No</td><td style="color:var(--green)">Yes</td><td>No</td></tr>
+        <tr><td>Data Transfer</td><td>None</td><td style="color:var(--red)">Full Feature Maps</td><td style="color:var(--green)">Pooling Indices Only</td></tr>
+        <tr><td>Memory Usage</td><td>Medium</td><td style="color:var(--red)">Very High</td><td style="color:var(--green)">Very Low</td></tr>
+        <tr><td>Boundary Accuracy</td><td>Moderate</td><td style="color:var(--green)">Best</td><td>Good</td></tr>
+        <tr><td>Main Use</td><td>General</td><td style="color:var(--pink)">Medical Imaging</td><td style="color:var(--cyan)">Road/Robotics</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Loss function -->
+  <div class="card" style="background:var(--card);border-color:var(--border);margin-top:16px;padding:16px;">
+    <div class="card-title" style="color:var(--orange)">📉 Loss Function — Weighted Cross Entropy</div>
+    <div class="formula orange">
+      Loss = −∑ w_ci × log(p_i,ci)<br><br>
+      p_i,ci = predicted probability of pixel i belonging to true class<br>
+      w_ci  = class weight (rare classes → higher weight → larger penalty)<br><br>
+      Technique: Median Frequency Balancing
+    </div>
+  </div>
+</section>
+
+<div class="divider" data-label="section 08"></div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!--  SECTION 8 — MASK R-CNN                         -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="topic-section" id="s8">
+  <div class="section-header">
+    <span class="section-number">08</span>
+    <span class="section-icon" style="color:var(--pink)">🎭</span>
+    <h2 class="section-title">Mask R-CNN — Instance Segmentation (2017)</h2>
+  </div>
+  <div class="section-accent" style="background:linear-gradient(90deg,var(--pink),transparent)"></div>
+
+  <div class="grid-2">
+    <div class="card pink">
+      <div class="card-title">💡 Core Concept</div>
+      <div class="highlight pink" style="margin-bottom:12px;">
+        <p><strong>Instance Segmentation = Object Detection + Semantic Segmentation</strong><br>
+        Detects: What? + Where? + Exact pixel mask per instance</p>
+      </div>
+      <ul class="point-list">
+        <li>3 Dogs → Dog1+Mask, Dog2+Mask, Dog3+Mask separately</li>
+        <li>Extends Faster R-CNN with a <strong>Mask Head</strong></li>
+        <li>Key upgrade: <strong>RoIAlign</strong> replaces RoIPool</li>
+        <li>Backbone: <strong>ResNet-50/101 + FPN</strong></li>
+      </ul>
+    </div>
+
+    <div class="card cyan">
+      <div class="card-title">🔑 RoIPool vs RoIAlign</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Feature</th><th style="color:var(--red)">RoIPool</th><th style="color:var(--green)">RoIAlign</th></tr></thead>
+          <tbody>
+            <tr><td>Coordinates</td><td>Rounded (15.2→15)</td><td>Exact (15.2 stays)</td></tr>
+            <tr><td>Error</td><td>Quantization Error</td><td>No error</td></tr>
+            <tr><td>Interpolation</td><td>None</td><td>Bilinear</td></tr>
+            <tr><td>Masks</td><td>Less accurate</td><td>Highly accurate</td></tr>
+            <tr><td>Best for</td><td>Detection only</td><td>Segmentation ✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="highlight cyan" style="margin-top:10px;">
+        <p>RoIAlign uses Bilinear Interpolation — no rounding — preserves exact pixel locations → accurate masks</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Architecture Flow -->
+  <div style="margin:20px 0;">
+    <div class="infographic-box diagram-scroll">
+      <svg viewBox="0 0 900 155" style="width:100%;min-width:700px;">
+        <defs><marker id="a3" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#9c9588"/></marker></defs>
+        <!-- Input -->
+        <rect x="10" y="46" width="110" height="46" rx="2" fill="#ffffff" stroke="#9c9588"/>
+        <text x="65" y="66" font-family="IBM Plex Mono" font-size="11" fill="#4b4740" text-anchor="middle" font-weight="600">INPUT</text>
+        <text x="65" y="82" font-family="IBM Plex Mono" font-size="11" fill="#4b4740" text-anchor="middle">IMAGE</text>
+        <line x1="120" y1="69" x2="138" y2="69" stroke="#9c9588" marker-end="url(#a3)"/>
+        <!-- Backbone -->
+        <rect x="140" y="46" width="120" height="46" rx="2" fill="#ffffff" stroke="#6d28d9"/>
+        <text x="200" y="66" font-family="IBM Plex Mono" font-size="9" fill="#6d28d9" text-anchor="middle" font-weight="600">ResNet + FPN</text>
+        <text x="200" y="82" font-family="IBM Plex Mono" font-size="8" fill="#9c9588" text-anchor="middle">Feature Maps</text>
+        <line x1="260" y1="69" x2="278" y2="69" stroke="#9c9588" marker-end="url(#a3)"/>
+        <!-- RPN -->
+        <rect x="280" y="46" width="110" height="46" rx="2" fill="#ffffff" stroke="#c47d0e"/>
+        <text x="335" y="66" font-family="IBM Plex Mono" font-size="11" fill="#c47d0e" text-anchor="middle" font-weight="600">RPN</text>
+        <text x="335" y="82" font-family="IBM Plex Mono" font-size="8" fill="#9c9588" text-anchor="middle">Region Proposals</text>
+        <line x1="390" y1="69" x2="408" y2="69" stroke="#9c9588" marker-end="url(#a3)"/>
+        <!-- RoIAlign -->
+        <rect x="410" y="46" width="120" height="46" rx="2" fill="#ffffff" stroke="#0e7490"/>
+        <text x="470" y="66" font-family="IBM Plex Mono" font-size="10" fill="#0e7490" text-anchor="middle" font-weight="600">RoIAlign ⭐</text>
+        <text x="470" y="82" font-family="IBM Plex Mono" font-size="8" fill="#9c9588" text-anchor="middle">Exact Features</text>
+        <!-- Split -->
+        <line x1="530" y1="58" x2="560" y2="34" stroke="#9c9588" stroke-width="1"/>
+        <line x1="530" y1="82" x2="560" y2="108" stroke="#9c9588" stroke-width="1"/>
+        <!-- Detection Head -->
+        <rect x="562" y="10" width="168" height="48" rx="2" fill="#ffffff" stroke="#c47d0e"/>
+        <text x="646" y="30" font-family="IBM Plex Mono" font-size="9" fill="#c47d0e" text-anchor="middle" font-weight="600">DETECTION HEAD</text>
+        <text x="646" y="48" font-family="IBM Plex Mono" font-size="8" fill="#9c9588" text-anchor="middle">Softmax + BBox Regression</text>
+        <line x1="730" y1="34" x2="748" y2="34" stroke="#9c9588" marker-end="url(#a3)"/>
+        <rect x="750" y="14" width="140" height="36" rx="2" fill="#c47d0e12" stroke="#c47d0e"/>
+        <text x="820" y="36" font-family="IBM Plex Mono" font-size="10" fill="#c47d0e" text-anchor="middle">Class + BBox</text>
+        <!-- Mask Head -->
+        <rect x="562" y="86" width="168" height="48" rx="2" fill="#ffffff" stroke="#be185d"/>
+        <text x="646" y="106" font-family="IBM Plex Mono" font-size="9" fill="#be185d" text-anchor="middle" font-weight="600">MASK HEAD (FCN)</text>
+        <text x="646" y="124" font-family="IBM Plex Mono" font-size="8" fill="#9c9588" text-anchor="middle">Binary Mask Output</text>
+        <line x1="730" y1="110" x2="748" y2="110" stroke="#9c9588" marker-end="url(#a3)"/>
+        <rect x="750" y="92" width="140" height="36" rx="2" fill="#be185d10" stroke="#be185d"/>
+        <text x="820" y="114" font-family="IBM Plex Mono" font-size="10" fill="#be185d" text-anchor="middle">Pixel Mask</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Loss Function -->
+  <div class="card" style="background:var(--card);border-color:var(--border);padding:16px;">
+    <div class="card-title" style="color:var(--pink)">📐 Multi-Task Loss Function</div>
+    <div class="formula pink">
+      L = L_cls + L_box + L_mask<br><br>
+      L_cls  = Classification Loss (Cross-Entropy)<br>
+      L_box  = BBox Loss (Smooth L1)<br>
+      L_mask = Mask Loss (Binary Cross-Entropy) — correct class only
+    </div>
+  </div>
+
+  <!-- Comparison -->
+  <div class="table-wrap" style="margin-top:16px;">
+    <table>
+      <thead><tr><th>Feature</th><th>Faster R-CNN</th><th>U-Net / SegNet</th><th style="color:var(--pink)">Mask R-CNN</th></tr></thead>
+      <tbody>
+        <tr><td>Task</td><td>Object Detection</td><td>Semantic Segmentation</td><td style="color:var(--pink)">Instance Segmentation</td></tr>
+        <tr><td>Output</td><td>Class + BBox</td><td>Pixel Labels</td><td style="color:var(--pink)">Class + BBox + Mask</td></tr>
+        <tr><td>Distinguish Instances</td><td>Yes</td><td>No</td><td style="color:var(--green)">Yes</td></tr>
+        <tr><td>Pixel-Level Mask</td><td>No</td><td>Yes</td><td style="color:var(--green)">Yes</td></tr>
+        <tr><td>Individual Object Mask</td><td>No</td><td>No</td><td style="color:var(--green)">Yes ✓</td></tr>
+        <tr><td>RoI Method</td><td>RoIPool</td><td>Not Used</td><td style="color:var(--cyan)">RoIAlign</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="divider" data-label="section 09"></div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!--  SECTION 9 — GANs                               -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="topic-section" id="s9">
+  <div class="section-header">
+    <span class="section-number">09</span>
+    <span class="section-icon" style="color:var(--green)">🤖</span>
+    <h2 class="section-title">GANs — Generative Adversarial Networks (2014)</h2>
+  </div>
+  <div class="section-accent" style="background:linear-gradient(90deg,var(--green),transparent)"></div>
+
+  <div class="grid-3">
+    <div class="card green">
+      <div class="card-title">💡 Core Concept</div>
+      <ul class="point-list">
+        <li>Introduced by <strong>Ian Goodfellow (2014)</strong></li>
+        <li>Adversarial game between 2 networks</li>
+        <li>Type: <strong>Zero-Sum / Minimax Game</strong></li>
+        <li>Analogy: <em>Art Forger vs Expert</em></li>
+        <li>Goal: Generate realistic synthetic data</li>
+      </ul>
+      <div class="highlight green" style="margin-top:10px;">
+        <p><strong>Nash Equilibrium:</strong> D(x) = 0.5 — Discriminator completely confused, cannot distinguish real from fake</p>
+      </div>
+    </div>
+
+    <div class="card yellow">
+      <div class="card-title">🏗 Architecture</div>
+      <!-- GAN Flow SVG -->
+      <svg viewBox="0 0 210 195" style="width:100%;min-width:180px;">
+        <defs><marker id="a4" markerWidth="5" markerHeight="5" refX="3" refY="3" orient="auto"><path d="M0,0 L0,5 L5,2.5 z" fill="#9c9588"/></marker></defs>
+        <!-- Noise -->
+        <rect x="60" y="8" width="90" height="26" rx="1" fill="#ffffff" stroke="#d4d0c8"/>
+        <text x="105" y="25" font-family="IBM Plex Mono" font-size="9" fill="#9c9588" text-anchor="middle">Random Noise z</text>
+        <line x1="105" y1="34" x2="105" y2="48" stroke="#9c9588" marker-end="url(#a4)"/>
+        <!-- Generator -->
+        <rect x="35" y="50" width="140" height="32" rx="1" fill="#ffffff" stroke="#166534"/>
+        <text x="105" y="66" font-family="IBM Plex Mono" font-size="9" fill="#166534" text-anchor="middle" font-weight="600">Generator (G)</text>
+        <text x="105" y="78" font-family="IBM Plex Mono" font-size="8" fill="#9c9588" text-anchor="middle">Forger — Fools D</text>
+        <line x1="105" y1="82" x2="105" y2="96" stroke="#9c9588" marker-end="url(#a4)"/>
+        <!-- Fake Image -->
+        <rect x="60" y="98" width="90" height="26" rx="1" fill="#ffffff" stroke="#d4d0c8"/>
+        <text x="105" y="115" font-family="IBM Plex Mono" font-size="9" fill="#4b4740" text-anchor="middle">Fake Image</text>
+        <line x1="105" y1="124" x2="105" y2="138" stroke="#9c9588" marker-end="url(#a4)"/>
+        <!-- Discriminator -->
+        <rect x="25" y="140" width="160" height="32" rx="1" fill="#ffffff" stroke="#c47d0e"/>
+        <text x="105" y="156" font-family="IBM Plex Mono" font-size="9" fill="#c47d0e" text-anchor="middle" font-weight="600">Discriminator (D)</text>
+        <text x="105" y="168" font-family="IBM Plex Mono" font-size="8" fill="#9c9588" text-anchor="middle">Expert — Detects Fakes</text>
+        <!-- Real images input -->
+        <text x="8" y="158" font-family="IBM Plex Mono" font-size="8" fill="#9c9588" text-anchor="middle">Real</text>
+        <text x="8" y="168" font-family="IBM Plex Mono" font-size="8" fill="#9c9588" text-anchor="middle">imgs</text>
+        <line x1="18" y1="160" x2="23" y2="160" stroke="#9c9588" marker-end="url(#a4)"/>
+        <line x1="105" y1="172" x2="105" y2="186" stroke="#9c9588" marker-end="url(#a4)"/>
+        <text x="105" y="194" font-family="IBM Plex Mono" font-size="8" fill="#166534" text-anchor="middle">P(Real) → 0 or 1</text>
+      </svg>
+    </div>
+
+    <div>
+      <!-- Training Challenges -->
+      <div class="card red" style="margin-bottom:12px;">
+        <div class="card-title">🔥 Training Challenges</div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num red">1</div>
+            <div class="step-content">
+              <div class="step-title">Mode Collapse</div>
+              <div class="step-desc">G generates same image repeatedly — no diversity</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num red">2</div>
+            <div class="step-content">
+              <div class="step-title">Vanishing Gradient</div>
+              <div class="step-desc">D too strong → G gets no learning signal</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num red">3</div>
+            <div class="step-content">
+              <div class="step-title">Non-Convergence</div>
+              <div class="step-desc">Loss oscillates continuously — never stabilizes</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card purple">
+        <div class="card-title">🎯 GAN Variants</div>
+        <ul class="point-list">
+          <li><strong>DCGAN (2015):</strong> Uses CNN layers, more stable training</li>
+          <li><strong>cGAN:</strong> Conditional — Noise + Label → controlled output</li>
+          <li><strong>CycleGAN:</strong> Image translation (Horse→Zebra, Day→Night) — no paired data</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loss Function -->
+  <div class="card" style="background:var(--card);border-color:var(--border);margin-top:16px;padding:16px;">
+    <div class="card-title" style="color:var(--green)">📊 Minimax Objective Function</div>
+    <div class="formula green">
+      min_G max_D V(D,G) =<br>
+        E[log D(x)]        ← Discriminator wants real → 1<br>
+      + E[log(1 − D(G(z)))] ← Discriminator wants fake → 0<br><br>
+      Generator Minimizes → wants D(G(z)) → 1 (fool D)<br>
+      Nash Equilibrium when D(x) = 0.5
+    </div>
+  </div>
+
+  <div class="exam-qs">
+    <div class="exam-qs-title">Must-Know Exam Questions — GANs</div>
+    <div class="exam-q"><span class="q-num">Q1</span> Explain the role of Generator and Discriminator in a GAN.</div>
+    <div class="exam-q"><span class="q-num">Q2</span> Write and explain the Minimax Loss function of GAN.</div>
+    <div class="exam-q"><span class="q-num">Q3</span> What is Nash Equilibrium in GANs?</div>
+    <div class="exam-q"><span class="q-num">Q4</span> Explain Mode Collapse, Vanishing Gradient, Non-Convergence.</div>
+    <div class="exam-q"><span class="q-num">Q5</span> Differentiate DCGAN, cGAN, and CycleGAN.</div>
+  </div>
+</section>
+
+<div class="divider" data-label="section 10"></div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!--  SECTION 10 — PAGING & SEGMENTATION (OS)        -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="topic-section" id="s10">
+  <div class="section-header">
+    <span class="section-number">10</span>
+    <span class="section-icon" style="color:var(--yellow)">🖥️</span>
+    <h2 class="section-title">Paging & Segmentation — OS Memory Management</h2>
+  </div>
+  <div class="section-accent" style="background:linear-gradient(90deg,var(--yellow),transparent)"></div>
+
+  <div class="highlight" style="margin-bottom:20px;">
+    <p><strong>Purpose of Memory Management:</strong> Efficient RAM utilization, address translation, memory protection, process isolation, and memory sharing.</p>
+  </div>
+
+  <div class="grid-2">
+    <!-- PAGING -->
+    <div class="card cyan">
+      <div class="card-title">📄 PAGING — Physical View</div>
+      <ul class="point-list">
+        <li>Process divided into fixed-size <strong>Pages</strong></li>
+        <li>RAM divided into fixed-size <strong>Frames</strong></li>
+        <li>Page Size = Frame Size (typically <strong>4 KB</strong>)</li>
+        <li>Page → Logical block &nbsp;|&nbsp; Frame → Physical block</li>
+      </ul>
+
+      <div style="margin:12px 0 8px;font-family:var(--font-mono);font-size:10px;color:var(--cyan);">Logical Address Format</div>
+      <div class="formula cyan">
+        (p, d)<br>
+        p = Page Number<br>
+        d = Offset (Displacement)
+      </div>
+
+      <div style="margin:10px 0 8px;font-family:var(--font-mono);font-size:10px;color:var(--cyan);">Address Translation</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num cyan">1</div>
+          <div class="step-content"><div class="step-title">CPU generates (p, d)</div></div>
+        </div>
+        <div class="step">
+          <div class="step-num cyan">2</div>
+          <div class="step-content"><div class="step-title">p → Page Table → Frame Number (f)</div></div>
+        </div>
+        <div class="step">
+          <div class="step-num cyan">3</div>
+          <div class="step-content"><div class="step-title">Physical Address = (f, d)</div></div>
+        </div>
+      </div>
+
+      <!-- TLB -->
+      <div style="margin:12px 0 8px;font-family:var(--font-mono);font-size:10px;color:var(--yellow);">TLB (Translation Lookaside Buffer)</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div style="background:var(--bg3);padding:8px;border:1px solid var(--green);">
+          <div style="font-size:9px;color:var(--green);font-family:var(--font-mono);margin-bottom:4px;">TLB HIT</div>
+          <ul class="point-list"><li>Frame found fast</li><li><strong>1</strong> memory access</li></ul>
+        </div>
+        <div style="background:var(--bg3);padding:8px;border:1px solid var(--red);">
+          <div style="font-size:9px;color:var(--red);font-family:var(--font-mono);margin-bottom:4px;">TLB MISS</div>
+          <ul class="point-list"><li>Search Page Table</li><li><strong>2</strong> memory accesses</li></ul>
+        </div>
+      </div>
+
+      <div class="formula cyan" style="margin-top:10px;">
+        EAT = α(TLB + Mem) + (1−α)(TLB + 2×Mem)<br>
+        α = TLB Hit Ratio
+      </div>
+    </div>
+
+    <!-- SEGMENTATION -->
+    <div class="card yellow">
+      <div class="card-title">📑 SEGMENTATION — Logical / User View</div>
+      <ul class="point-list">
+        <li>Program divided into logical, <strong>variable-size Segments</strong></li>
+        <li>Matches programmer's view of memory</li>
+        <li>Examples: Main program, Functions, Stack, Heap, Libraries</li>
+      </ul>
+
+      <div style="margin:12px 0 8px;font-family:var(--font-mono);font-size:10px;color:var(--yellow);">Logical Address Format</div>
+      <div class="formula">
+        (s, d)<br>
+        s = Segment Number<br>
+        d = Offset
+      </div>
+
+      <div style="margin:10px 0 8px;font-family:var(--font-mono);font-size:10px;color:var(--yellow);">Segment Table Entry</div>
+      <div class="formula">
+        Base  = Starting Physical Address<br>
+        Limit = Size of Segment
+      </div>
+
+      <div style="margin:10px 0 8px;font-family:var(--font-mono);font-size:10px;color:var(--yellow);">Address Translation Rule</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num yellow">1</div>
+          <div class="step-content"><div class="step-title">Check: d &lt; Limit?</div></div>
+        </div>
+        <div class="step">
+          <div class="step-num green">✓</div>
+          <div class="step-content">
+            <div class="step-title">TRUE → Physical = Base + d</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num red">✗</div>
+          <div class="step-content">
+            <div class="step-title">FALSE → Segmentation Fault</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin:10px 0 8px;">
+        <div class="pill yellow">✅ Logical structure</div>
+        <div class="pill yellow">✅ Easy sharing</div>
+        <div class="pill red">❌ External fragmentation</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Paging vs Segmentation -->
+  <div style="margin-top:20px;">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Feature</th><th style="color:var(--cyan)">Paging</th><th style="color:var(--yellow)">Segmentation</th></tr></thead>
+        <tbody>
+          <tr><td>Unit Size</td><td>Fixed-size Pages</td><td>Variable-size Segments</td></tr>
+          <tr><td>View</td><td>Physical (hardware) view</td><td>Logical / User view</td></tr>
+          <tr><td>Table</td><td>Page Table</td><td>Segment Table (Base + Limit)</td></tr>
+          <tr><td>Fragmentation</td><td style="color:var(--yellow)">Internal fragmentation</td><td style="color:var(--red)">External fragmentation</td></tr>
+          <tr><td>Hardware</td><td>TLB + Page Table</td><td>Base Register + Limit Register</td></tr>
+          <tr><td>Sharing</td><td>Page-level sharing</td><td>Easy segment-level sharing</td></tr>
+          <tr><td>Address</td><td>(page, offset)</td><td>(segment, offset)</td></tr>
+          <tr><td>Protection</td><td>Valid/Invalid, R/W/X bits</td><td>Limit checking</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Protection Bits -->
+  <div class="grid-2" style="margin-top:16px;">
+    <div class="card purple">
+      <div class="card-title">🔒 Paging Protection Bits</div>
+      <ul class="point-list">
+        <li><strong>Valid (V):</strong> Page belongs to process — legal access</li>
+        <li><strong>Invalid (I):</strong> Page not in use — illegal access</li>
+        <li><strong>Read bit</strong> — readable?</li>
+        <li><strong>Write bit</strong> — writable?</li>
+        <li><strong>Execute bit</strong> — executable code?</li>
+      </ul>
+    </div>
+    <div class="card orange">
+      <div class="card-title">⚠️ Fragmentation Types</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div style="background:var(--bg3);padding:10px;border:1px solid var(--border);">
+          <div style="font-family:var(--font-mono);font-size:9px;color:var(--cyan);margin-bottom:6px;">INTERNAL</div>
+          <ul class="point-list">
+            <li>Wasted space <strong>inside</strong> a block</li>
+            <li>Occurs in <strong>Paging</strong></li>
+            <li>Last page may be partially empty</li>
+          </ul>
+        </div>
+        <div style="background:var(--bg3);padding:10px;border:1px solid var(--border);">
+          <div style="font-family:var(--font-mono);font-size:9px;color:var(--yellow);margin-bottom:6px;">EXTERNAL</div>
+          <ul class="point-list">
+            <li>Free memory <strong>scattered</strong></li>
+            <li>Occurs in <strong>Segmentation</strong></li>
+            <li>Can't fit process despite enough total free</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="exam-qs">
+    <div class="exam-qs-title">Must-Know Exam Questions — Paging & Segmentation</div>
+    <div class="exam-q"><span class="q-num">Q1</span> Explain Paging with its address translation steps and a diagram.</div>
+    <div class="exam-q"><span class="q-num">Q2</span> What is TLB? Explain TLB Hit and Miss. Write the EAT formula.</div>
+    <div class="exam-q"><span class="q-num">Q3</span> Explain Segmentation with its address translation and Segmentation Fault.</div>
+    <div class="exam-q"><span class="q-num">Q4</span> Differentiate between Internal and External Fragmentation.</div>
+    <div class="exam-q"><span class="q-num">Q5</span> Compare Paging vs Segmentation in a table (all key features).</div>
+    <div class="exam-q"><span class="q-num">Q6</span> What are protection bits in Paging? Explain Valid/Invalid bit.</div>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="divider" data-label="section 11"></div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!--  SECTION 11 — CNN SEGMENTATION Q&A                  -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="topic-section" id="s11">
+  <div class="section-header">
+    <span class="section-number">11</span>
+    <span class="section-icon" style="color:var(--cyan)">🧠</span>
+    <h2 class="section-title">CNN & Image Segmentation — Exam Q&amp;A</h2>
+  </div>
+  <div class="section-accent" style="background:linear-gradient(90deg,var(--cyan),transparent)"></div>
+
+  <!-- Q1 -->
+  <div style="margin-bottom:28px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <div style="background:var(--cyan-dim);border:1px solid var(--cyan);color:var(--cyan);font-family:var(--font-mono);font-size:10px;padding:4px 12px;letter-spacing:2px;">Q1</div>
+      <div style="font-family:var(--font-head);font-size:15px;font-weight:700;color:var(--text);">How is CNN used in medical image segmentation?</div>
+    </div>
+    <div class="highlight cyan">
+      <p>A Convolutional Neural Network (CNN) learns patterns from medical images such as MRI, CT, and X-ray scans. In image segmentation, the CNN classifies each pixel into categories (e.g., tumor, organ, background), creating a detailed map of anatomical structures.</p>
+    </div>
+    <div class="grid-2" style="margin-top:14px;">
+      <div class="card cyan">
+        <div class="card-title">🔑 Key Points</div>
+        <ul class="point-list">
+          <li>Automatically <strong>extracts image features</strong> via convolutional layers</li>
+          <li>Identifies <strong>boundaries</strong> of organs or abnormalities</li>
+          <li>Common architectures: <strong>U-Net, FCN, Mask R-CNN</strong></li>
+          <li>Used for <strong>tumor detection</strong>, organ segmentation, and lesion analysis</li>
+        </ul>
+      </div>
+      <div class="card green">
+        <div class="card-title">✅ Benefits</div>
+        <ul class="point-list">
+          <li><strong>High accuracy</strong> — surpasses traditional methods</li>
+          <li>Reduces <strong>manual effort</strong> by radiologists</li>
+          <li>Supports <strong>faster diagnosis</strong> and treatment planning</li>
+          <li>Works on <strong>MRI, CT, X-ray</strong> image types</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div style="margin-bottom:28px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <div style="background:var(--yellow-dim);border:1px solid var(--yellow);color:var(--yellow);font-family:var(--font-mono);font-size:10px;padding:4px 12px;letter-spacing:2px;">Q2</div>
+      <div style="font-family:var(--font-head);font-size:15px;font-weight:700;color:var(--text);">What are real-world applications of CNN-based image segmentation?</div>
+    </div>
+    <div class="grid-3">
+      <div class="card yellow">
+        <div class="card-title">🏥 Healthcare</div>
+        <ul class="point-list">
+          <li>Tumor segmentation in MRI scans</li>
+          <li>Organ identification in CT scans</li>
+        </ul>
+      </div>
+      <div class="card cyan">
+        <div class="card-title">🚗 Autonomous Vehicles</div>
+        <ul class="point-list">
+          <li>Road, lane, pedestrian segmentation</li>
+          <li>Vehicle and obstacle detection</li>
+        </ul>
+      </div>
+      <div class="card green">
+        <div class="card-title">🌱 Agriculture</div>
+        <ul class="point-list">
+          <li>Crop and weed detection</li>
+          <li>Plant disease monitoring</li>
+        </ul>
+      </div>
+      <div class="card orange">
+        <div class="card-title">🏭 Manufacturing</div>
+        <ul class="point-list">
+          <li>Defect detection on products</li>
+          <li>Quality control automation</li>
+        </ul>
+      </div>
+      <div class="card purple">
+        <div class="card-title">🛰️ Satellite Imaging</div>
+        <ul class="point-list">
+          <li>Land-use classification</li>
+          <li>Forest and water-body mapping</li>
+        </ul>
+      </div>
+      <div class="card pink">
+        <div class="card-title">📷 Surveillance</div>
+        <ul class="point-list">
+          <li>Human detection and tracking</li>
+          <li>Crowd monitoring</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div style="margin-bottom:24px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <div style="background:var(--pink-dim);border:1px solid var(--pink);color:var(--pink);font-family:var(--font-mono);font-size:10px;padding:4px 12px;letter-spacing:2px;">Q3</div>
+      <div style="font-family:var(--font-head);font-size:15px;font-weight:700;color:var(--text);">What is the difference between Semantic and Instance Segmentation?</div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>Feature</th>
+          <th style="color:var(--cyan)">Semantic Segmentation</th>
+          <th style="color:var(--yellow)">Instance Segmentation</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>Purpose</td><td>Classifies each pixel by <strong>category</strong></td><td>Classifies each <strong>object separately</strong></td></tr>
+          <tr><td>Multiple Objects</td><td>Same-class objects share <strong>one label</strong></td><td>Each object gets its <strong>own label</strong></td></tr>
+          <tr><td>Output</td><td>Category map</td><td>Category map + object identity</td></tr>
+          <tr><td>Example (3 cars)</td><td style="color:var(--cyan)">All cars → labeled "Car"</td><td style="color:var(--yellow)">Car 1, Car 2, Car 3 identified separately</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid-2" style="margin-top:14px;">
+      <div class="card cyan">
+        <div class="card-title">🔵 Semantic Segmentation</div>
+        <ul class="point-list">
+          <li>Tells <strong>what</strong> each pixel belongs to</li>
+          <li>All cars → labeled as <strong>"Car"</strong> (same label)</li>
+          <li>Simpler output, faster processing</li>
+        </ul>
+      </div>
+      <div class="card yellow">
+        <div class="card-title">🟡 Instance Segmentation</div>
+        <ul class="point-list">
+          <li>Tells <strong>what the object is</strong> AND <strong>which specific object</strong></li>
+          <li>Car 1 → Object A &nbsp;|&nbsp; Car 2 → Object B</li>
+          <li>More detailed — used in robotics, AR</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="exam-qs">
+    <div class="exam-qs-title">CNN Segmentation — Exam Must-Knows</div>
+    <div class="exam-q"><span class="q-num">Q1</span> How does CNN perform medical image segmentation? Name 3 architectures.</div>
+    <div class="exam-q"><span class="q-num">Q2</span> List 4 real-world applications of CNN-based image segmentation with examples.</div>
+    <div class="exam-q"><span class="q-num">Q3</span> Differentiate Semantic vs Instance Segmentation with a table and example.</div>
+  </div>
+</section>
+
+<div class="divider" data-label="section 12"></div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!--  SECTION 12 — YOLO NUMERICAL PROBLEMS               -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="topic-section" id="s12">
+  <div class="section-header">
+    <span class="section-number">12</span>
+    <span class="section-icon" style="color:var(--orange)">🔢</span>
+    <h2 class="section-title">YOLO Numericals — Complete Solved Problems</h2>
+  </div>
+  <div class="section-accent" style="background:linear-gradient(90deg,var(--orange),transparent)"></div>
+
+  <div class="highlight" style="margin-bottom:24px;">
+    <p><strong>YOLO Key Formulas:</strong> &nbsp; Grid Cells = S × S &nbsp;|&nbsp; Bounding Boxes = Grid Cells × B &nbsp;|&nbsp; Processing Time = Boxes × time/box &nbsp;|&nbsp; Output Tensor = S × S × (B×5 + C) &nbsp;|&nbsp; FPS = 1000 / ms_per_frame</p>
+  </div>
+
+  <!-- Numericals Grid -->
+  <div class="grid-2">
+
+    <!-- N1 -->
+    <div class="card orange">
+      <div class="card-title">📐 Numerical 1 — Basic Grid (7×7)</div>
+      <div style="background:var(--bg3);border:1px solid var(--border);padding:10px 14px;margin-bottom:12px;font-size:12px;color:var(--text2);">
+        7×7 grid · 2 boxes/cell · 0.4 sec/box · Find: cells, boxes, time, optimized time (−25%)
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num orange">1</div>
+          <div class="step-content">
+            <div class="step-title">Grid Cells</div>
+            <div class="step-desc">7 × 7 = <strong style="color:var(--orange)">49 cells</strong></div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num orange">2</div>
+          <div class="step-content">
+            <div class="step-title">Bounding Boxes</div>
+            <div class="step-desc">49 × 2 = <strong style="color:var(--orange)">98 boxes</strong></div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num orange">3</div>
+          <div class="step-content">
+            <div class="step-title">Processing Time</div>
+            <div class="step-desc">98 × 0.4 = <strong style="color:var(--orange)">39.2 sec</strong></div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num orange">4</div>
+          <div class="step-content">
+            <div class="step-title">Optimized Time (−25%)</div>
+            <div class="step-desc">39.2 × 0.75 = <strong style="color:var(--green)">29.4 sec</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- N2 -->
+    <div class="card cyan">
+      <div class="card-title">📐 Numerical 2 — Larger Grid (13×13)</div>
+      <div style="background:var(--bg3);border:1px solid var(--border);padding:10px 14px;margin-bottom:12px;font-size:12px;color:var(--text2);">
+        13×13 grid · 3 boxes/cell · 0.2 sec/box · Find: cells, boxes, processing time
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num cyan">1</div>
+          <div class="step-content">
+            <div class="step-title">Grid Cells</div>
+            <div class="step-desc">13 × 13 = <strong style="color:var(--cyan)">169 cells</strong></div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num cyan">2</div>
+          <div class="step-content">
+            <div class="step-title">Bounding Boxes</div>
+            <div class="step-desc">169 × 3 = <strong style="color:var(--cyan)">507 boxes</strong></div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num cyan">3</div>
+          <div class="step-content">
+            <div class="step-title">Processing Time</div>
+            <div class="step-desc">507 × 0.2 = <strong style="color:var(--cyan)">101.4 sec</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- N3 -->
+    <div class="card green">
+      <div class="card-title">📐 Numerical 3 — Optimization (9×9, −40%)</div>
+      <div style="background:var(--bg3);border:1px solid var(--border);padding:10px 14px;margin-bottom:12px;font-size:12px;color:var(--text2);">
+        9×9 grid · 2 boxes/cell · 0.3 sec/box · Optimization reduces time by 40%
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num green">1</div>
+          <div class="step-content">
+            <div class="step-title">Grid Cells</div>
+            <div class="step-desc">9 × 9 = <strong style="color:var(--green)">81 cells</strong></div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num green">2</div>
+          <div class="step-content">
+            <div class="step-title">Bounding Boxes</div>
+            <div class="step-desc">81 × 2 = <strong style="color:var(--green)">162 boxes</strong></div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num green">3</div>
+          <div class="step-content">
+            <div class="step-title">Original Processing Time</div>
+            <div class="step-desc">162 × 0.3 = <strong style="color:var(--green)">48.6 sec</strong></div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num green">4</div>
+          <div class="step-content">
+            <div class="step-title">New Time (−40%)</div>
+            <div class="step-desc">48.6 × 0.60 = <strong style="color:var(--yellow)">29.16 sec</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- N4 -->
+    <div class="card purple">
+      <div class="card-title">📐 Numerical 4 — Multi-Class (11×11)</div>
+      <div style="background:var(--bg3);border:1px solid var(--border);padding:10px 14px;margin-bottom:12px;font-size:12px;color:var(--text2);">
+        11×11 grid · 4 boxes/cell · 0.15 sec/box · Find: cells, boxes, processing time
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num purple">1</div>
+          <div class="step-content">
+            <div class="step-title">Grid Cells</div>
+            <div class="step-desc">11 × 11 = <strong style="color:var(--purple)">121 cells</strong></div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num purple">2</div>
+          <div class="step-content">
+            <div class="step-title">Bounding Boxes</div>
+            <div class="step-desc">121 × 4 = <strong style="color:var(--purple)">484 boxes</strong></div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num purple">3</div>
+          <div class="step-content">
+            <div class="step-title">Processing Time</div>
+            <div class="step-desc">484 × 0.15 = <strong style="color:var(--purple)">72.6 sec</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- N5 -->
+    <div class="card pink">
+      <div class="card-title">📐 Numerical 5 — Batch Processing (50 images)</div>
+      <div style="background:var(--bg3);border:1px solid var(--border);padding:10px 14px;margin-bottom:12px;font-size:12px;color:var(--text2);">
+        7×7 grid · 2 boxes/cell · 0.25 sec/box · 50 images in batch
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num pink">1</div>
+          <div class="step-content">
+            <div class="step-title">Bounding Boxes / Image</div>
+            <div class="step-desc">7 × 7 × 2 = <strong style="color:var(--pink)">98 boxes</strong></div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num pink">2</div>
+          <div class="step-content">
+            <div class="step-title">Time / Image</div>
+            <div class="step-desc">98 × 0.25 = <strong style="color:var(--pink)">24.5 sec</strong></div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num pink">3</div>
+          <div class="step-content">
+            <div class="step-title">Total Time (50 images)</div>
+            <div class="step-desc">24.5 × 50 = <strong style="color:var(--yellow)">1225 sec</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- N6 + N7 + N8 stacked in right column -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+
+      <!-- N6 -->
+      <div class="card yellow">
+        <div class="card-title">📐 Numerical 6 — Output Tensor Size</div>
+        <div style="background:var(--bg3);border:1px solid var(--border);padding:10px 14px;margin-bottom:12px;font-size:12px;color:var(--text2);">
+          7×7 grid · 2 boxes/cell · 20 classes · Find output tensor
+        </div>
+        <div class="formula">
+          Formula: S × S × (B×5 + C)<br>
+          = 7 × 7 × (2×5 + 20)<br>
+          = 7 × 7 × 30<br>
+          = <strong>1470 total values</strong>
+        </div>
+        <div style="font-size:11px;color:var(--text2);margin-top:8px;">Output tensor shape: <strong style="color:var(--yellow)">7 × 7 × 30</strong></div>
+      </div>
+
+      <!-- N7 -->
+      <div class="card green">
+        <div class="card-title">📐 Numerical 7 — mAP Improvement</div>
+        <div style="background:var(--bg3);border:1px solid var(--border);padding:10px 14px;margin-bottom:12px;font-size:12px;color:var(--text2);">
+          Initial mAP = 75% · Relative increase = 12% · Find new mAP
+        </div>
+        <div class="formula green">
+          New mAP = 75 + (75 × 0.12)<br>
+          = 75 + 9<br>
+          = <strong>84%</strong>
+        </div>
+      </div>
+
+      <!-- N8 -->
+      <div class="card cyan">
+        <div class="card-title">📐 Numerical 8 — FPS Calculation</div>
+        <div style="background:var(--bg3);border:1px solid var(--border);padding:10px 14px;margin-bottom:12px;font-size:12px;color:var(--text2);">
+          Processing time = 40 ms per image · Find FPS
+        </div>
+        <div class="formula cyan">
+          FPS = 1000 / ms_per_frame<br>
+          FPS = 1000 / 40<br>
+          = <strong>25 FPS</strong>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Quick Reference Table -->
+  <div style="margin-top:24px;">
+    <div style="font-family:var(--font-mono);font-size:10px;color:var(--orange);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">📊 Quick Reference — All Numericals</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>Num</th><th>Grid</th><th>Boxes/Cell</th><th>Time/Box</th><th>Total Boxes</th><th style="color:var(--orange)">Total Time</th><th>Special</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>N1</td><td>7×7</td><td>2</td><td>0.4s</td><td>98</td><td style="color:var(--orange)">39.2s</td><td>Optimized: 29.4s (−25%)</td></tr>
+          <tr><td>N2</td><td>13×13</td><td>3</td><td>0.2s</td><td>507</td><td style="color:var(--orange)">101.4s</td><td>—</td></tr>
+          <tr><td>N3</td><td>9×9</td><td>2</td><td>0.3s</td><td>162</td><td style="color:var(--orange)">48.6s</td><td>Optimized: 29.16s (−40%)</td></tr>
+          <tr><td>N4</td><td>11×11</td><td>4</td><td>0.15s</td><td>484</td><td style="color:var(--orange)">72.6s</td><td>—</td></tr>
+          <tr><td>N5</td><td>7×7</td><td>2</td><td>0.25s</td><td>98/img</td><td style="color:var(--orange)">1225s</td><td>50 images batch</td></tr>
+          <tr><td>N6</td><td>7×7</td><td>2</td><td>—</td><td>—</td><td style="color:var(--yellow)">7×7×30 = 1470</td><td>Output tensor, C=20</td></tr>
+          <tr><td>N7</td><td>—</td><td>—</td><td>—</td><td>—</td><td style="color:var(--green)">84% mAP</td><td>75% + 12% relative</td></tr>
+          <tr><td>N8</td><td>—</td><td>—</td><td>40ms</td><td>—</td><td style="color:var(--cyan)">25 FPS</td><td>FPS = 1000/ms</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider" data-label="section 13"></div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!--  SECTION 13 — ASSIGNMENT 2 SOLUTIONS                -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="topic-section" id="s13">
+  <div class="section-header">
+    <span class="section-number">13</span>
+    <span class="section-icon" style="color:var(--pink)">📋</span>
+    <h2 class="section-title">Assignment 2 Solutions — Computer Vision (BSAI 6th Sem)</h2>
+  </div>
+  <div class="section-accent" style="background:linear-gradient(90deg,var(--pink),transparent)"></div>
+
+  <!-- AQ1 -->
+  <div style="margin-bottom:36px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div style="background:var(--pink-dim);border:1px solid var(--pink);color:var(--pink);font-family:var(--font-mono);font-size:11px;padding:6px 16px;letter-spacing:2px;font-weight:700;">ASSIGNMENT Q1</div>
+      <div style="font-family:var(--font-head);font-size:16px;font-weight:700;color:var(--text);">Applications of Computer Vision in Different Fields</div>
+    </div>
+
+    <div class="highlight cyan" style="margin-bottom:18px;">
+      <p><strong>Introduction:</strong> Computer Vision is a branch of AI that enables computers to understand, analyze, and interpret visual information from images and videos. It automates tasks, improves accuracy, and supports decision-making across many industries.</p>
+    </div>
+
+    <div class="grid-2">
+
+      <div class="card cyan">
+        <div class="card-title">🏥 1. Healthcare</div>
+        <ul class="point-list">
+          <li>Detection of <strong>tumors</strong> in MRI and CT scans</li>
+          <li>Analysis of X-ray images for <strong>bone fractures</strong></li>
+          <li>Identification of diseases like <strong>pneumonia and cancer</strong></li>
+          <li>Monitoring patient movements in hospitals</li>
+        </ul>
+        <div style="margin-top:10px;background:var(--bg3);padding:8px 12px;border-left:2px solid var(--cyan);font-size:11px;color:var(--text2);">
+          <strong style="color:var(--cyan)">Example:</strong> AI systems analyze chest X-rays and detect lung infections within seconds.
+        </div>
+      </div>
+
+      <div class="card yellow">
+        <div class="card-title">🚗 2. Autonomous Vehicles</div>
+        <ul class="point-list">
+          <li><strong>Lane detection</strong> and traffic sign recognition</li>
+          <li><strong>Pedestrian detection</strong> and obstacle avoidance</li>
+          <li>Real-time scene understanding</li>
+          <li>Navigation assistance</li>
+        </ul>
+        <div style="margin-top:10px;background:var(--bg3);padding:8px 12px;border-left:2px solid var(--yellow);font-size:11px;color:var(--text2);">
+          <strong style="color:var(--yellow)">Example:</strong> Tesla and Waymo use cameras and AI to identify roads, vehicles, and pedestrians in real time.
+        </div>
+      </div>
+
+      <div class="card pink">
+        <div class="card-title">🔐 3. Surveillance &amp; Security</div>
+        <ul class="point-list">
+          <li><strong>Face recognition</strong> and intrusion detection</li>
+          <li>Crowd monitoring and activity detection</li>
+          <li>Continuous automated monitoring</li>
+        </ul>
+        <div style="margin-top:10px;background:var(--bg3);padding:8px 12px;border-left:2px solid var(--pink);font-size:11px;color:var(--text2);">
+          <strong style="color:var(--pink)">Example:</strong> Airports use facial recognition systems for passenger identification and security checks.
+        </div>
+      </div>
+
+      <div class="card green">
+        <div class="card-title">🌾 4. Agriculture</div>
+        <ul class="point-list">
+          <li><strong>Crop disease detection</strong> and plant growth monitoring</li>
+          <li>Fruit counting and automated harvesting</li>
+          <li>Early disease detection, reduced labor costs</li>
+        </ul>
+      </div>
+
+      <div class="card orange">
+        <div class="card-title">🏭 5. Manufacturing Industry</div>
+        <ul class="point-list">
+          <li><strong>Defect detection</strong> and product quality inspection</li>
+          <li>Robotic assembly guidance</li>
+          <li>Improved product quality, faster production</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="highlight green" style="margin-top:16px;">
+      <p><strong>Conclusion:</strong> Computer Vision has become essential in healthcare, autonomous vehicles, surveillance, agriculture, and manufacturing — improving efficiency, accuracy, and automation across all sectors.</p>
+    </div>
+  </div>
+
+  <!-- AQ2 -->
+  <div style="margin-bottom:36px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div style="background:var(--pink-dim);border:1px solid var(--pink);color:var(--pink);font-family:var(--font-mono);font-size:11px;padding:6px 16px;letter-spacing:2px;font-weight:700;">ASSIGNMENT Q2</div>
+      <div style="font-family:var(--font-head);font-size:16px;font-weight:700;color:var(--text);">Video Geometry in Computer Vision</div>
+    </div>
+
+    <div class="highlight cyan" style="margin-bottom:18px;">
+      <p><strong>Introduction:</strong> Video Geometry is the study of geometric relationships among objects, cameras, and scenes in video sequences. It helps computers understand motion, depth, object positions, and scene structure.</p>
+    </div>
+
+    <!-- Pipeline -->
+    <div style="margin-bottom:18px;">
+      <div style="font-family:var(--font-mono);font-size:10px;color:var(--cyan);letter-spacing:2px;margin-bottom:10px;">VIDEO GEOMETRY PIPELINE</div>
+      <div class="pipeline">
+        <div class="pipe-step">
+          <div class="pipe-box" style="border-color:var(--cyan);color:var(--cyan);">3D Scene</div>
+          <div class="pipe-label">Input</div>
+        </div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe-step">
+          <div class="pipe-box" style="border-color:var(--yellow);color:var(--yellow);">Camera Capture</div>
+          <div class="pipe-label">Projection</div>
+        </div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe-step">
+          <div class="pipe-box" style="border-color:var(--orange);color:var(--orange);">Feature Detection</div>
+          <div class="pipe-label">Keypoints</div>
+        </div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe-step">
+          <div class="pipe-box" style="border-color:var(--pink);color:var(--pink);">Motion Estimation</div>
+          <div class="pipe-label">Optical Flow</div>
+        </div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe-step">
+          <div class="pipe-box" style="border-color:var(--purple);color:var(--purple);">Depth Calculation</div>
+          <div class="pipe-label">Stereo/Mono</div>
+        </div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe-step">
+          <div class="pipe-box" style="border-color:var(--green);color:var(--green);">3D Understanding</div>
+          <div class="pipe-label">Output</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card cyan">
+        <div class="card-title">📷 Camera Geometry</div>
+        <ul class="point-list">
+          <li>Projects 3D scene onto 2D image plane</li>
+          <li>Determines <strong>object position</strong></li>
+          <li>Estimates <strong>depth and distance</strong></li>
+        </ul>
+      </div>
+      <div class="card yellow">
+        <div class="card-title">🔍 Feature Detection &amp; Matching</div>
+        <ul class="point-list">
+          <li>Detects corners, edges, keypoints across frames</li>
+          <li>Methods: <strong>SIFT, SURF, ORB</strong></li>
+          <li>Enables object tracking &amp; scene reconstruction</li>
+        </ul>
+      </div>
+      <div class="card orange">
+        <div class="card-title">🎯 Motion Estimation</div>
+        <ul class="point-list">
+          <li>Calculates how objects move between frames</li>
+          <li>Techniques: <strong>Optical Flow, Block Matching</strong></li>
+          <li>Used in activity recognition, navigation</li>
+        </ul>
+      </div>
+      <div class="card pink">
+        <div class="card-title">📐 Epipolar Geometry</div>
+        <ul class="point-list">
+          <li>Geometric relation between two camera views</li>
+          <li>Used in <strong>stereo vision</strong> and depth estimation</li>
+          <li>Enables 3D reconstruction</li>
+        </ul>
+      </div>
+      <div class="card purple">
+        <div class="card-title">📏 Depth Estimation</div>
+        <ul class="point-list">
+          <li>Distance between objects and camera</li>
+          <li>Used in <strong>autonomous driving, robotics</strong></li>
+          <li>Scene understanding</li>
+        </ul>
+      </div>
+      <div class="card green">
+        <div class="card-title">🌐 3D Reconstruction</div>
+        <ul class="point-list">
+          <li>Creates 3D models from multiple frames</li>
+          <li>Used in <strong>VR, mapping, industrial inspection</strong></li>
+          <li>Combines depth + geometry</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="highlight green" style="margin-top:16px;">
+      <p><strong>Conclusion:</strong> Video Geometry provides the mathematical foundation for understanding movement, depth, and spatial relationships in videos — essential for autonomous vehicles, surveillance, robotics, and augmented reality.</p>
+    </div>
+  </div>
+
+  <!-- AQ3 -->
+  <div style="margin-bottom:24px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div style="background:var(--pink-dim);border:1px solid var(--pink);color:var(--pink);font-family:var(--font-mono);font-size:11px;padding:6px 16px;letter-spacing:2px;font-weight:700;">ASSIGNMENT Q3</div>
+      <div style="font-family:var(--font-head);font-size:16px;font-weight:700;color:var(--text);">Image Segmentation Using Thresholding Technique</div>
+    </div>
+
+    <div class="highlight cyan" style="margin-bottom:18px;">
+      <p><strong>Introduction:</strong> Image Segmentation divides an image into meaningful regions. Thresholding is the simplest technique: a threshold value T separates foreground (bright pixels → white) from background (dark pixels → black).</p>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <!-- Steps -->
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--yellow);letter-spacing:2px;margin-bottom:10px;">THRESHOLDING STEPS</div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num yellow">1</div>
+            <div class="step-content">
+              <div class="step-title">Input Image</div>
+              <div class="step-desc">Load the original image</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num yellow">2</div>
+            <div class="step-content">
+              <div class="step-title">Convert to Grayscale</div>
+              <div class="step-desc">RGB → Grayscale (single channel)</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num yellow">3</div>
+            <div class="step-content">
+              <div class="step-title">Select Threshold T</div>
+              <div class="step-desc">Common default: <strong>T = 127</strong></div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num yellow">4</div>
+            <div class="step-content">
+              <div class="step-title">Apply Threshold Rule</div>
+              <div class="step-desc">Pixel &gt; T → <strong>255 (White)</strong> &nbsp;|&nbsp; Pixel ≤ T → <strong>0 (Black)</strong></div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num green">5</div>
+            <div class="step-content">
+              <div class="step-title">Segmented Output</div>
+              <div class="step-desc">Foreground separated from background</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <!-- Example -->
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--cyan);letter-spacing:2px;margin-bottom:10px;">WORKED EXAMPLE (T = 127)</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;">
+          <div style="background:var(--bg3);border:1px solid var(--border);padding:12px;">
+            <div style="font-family:var(--font-mono);font-size:9px;color:var(--text3);margin-bottom:8px;">ORIGINAL PIXELS</div>
+            <div class="formula" style="margin:0;font-size:12px;padding:10px;">
+              50 &nbsp; 80 &nbsp; 130<br>
+              90 &nbsp; 140 &nbsp; 200<br>
+              60 &nbsp; 170 &nbsp; 220
+            </div>
+          </div>
+          <div style="background:var(--bg3);border:1px solid var(--border);padding:12px;">
+            <div style="font-family:var(--font-mono);font-size:9px;color:var(--text3);margin-bottom:8px;">AFTER THRESHOLD</div>
+            <div class="formula green" style="margin:0;font-size:12px;padding:10px;">
+              0 &nbsp;&nbsp; 0 &nbsp;&nbsp; 255<br>
+              0 &nbsp;&nbsp; 255 &nbsp; 255<br>
+              0 &nbsp;&nbsp; 255 &nbsp; 255
+            </div>
+          </div>
+        </div>
+        <!-- Code -->
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--orange);letter-spacing:2px;margin-bottom:8px;">PYTHON CODE</div>
+        <div style="background:#f5f4f0;border:1px solid var(--border2);border-left:4px solid var(--orange);padding:14px;font-family:var(--font-mono);font-size:11px;color:var(--text2);line-height:1.8;border-radius:0 8px 8px 0;">
+          <span style="color:var(--purple);">import</span> cv2<br><br>
+          image = cv2.<span style="color:var(--cyan);">imread</span>(<span style="color:var(--green);">"image.jpg"</span>, 0)<br><br>
+          _, segmented = cv2.<span style="color:var(--cyan);">threshold</span>(<br>
+          &nbsp;&nbsp;image, <span style="color:var(--orange);">127</span>, <span style="color:var(--orange);">255</span>, cv2.THRESH_BINARY<br>
+          )<br><br>
+          cv2.<span style="color:var(--cyan);">imshow</span>(<span style="color:var(--green);">"Segmented Image"</span>, segmented)<br>
+          cv2.<span style="color:var(--cyan);">waitKey</span>(<span style="color:var(--orange);">0</span>)
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight green" style="margin-top:16px;">
+      <p><strong>Conclusion:</strong> Thresholding is a simple and efficient segmentation technique. Computationally inexpensive and widely used in document processing, medical imaging, industrial inspection, and object detection tasks.</p>
+    </div>
+
+    <!-- References -->
+    <div style="margin-top:16px;background:var(--card);border:1px solid var(--border);padding:16px 20px;">
+      <div style="font-family:var(--font-mono);font-size:9px;color:var(--text3);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">📚 References</div>
+      <ul class="point-list">
+        <li>Gonzalez, R. C., &amp; Woods, R. E. — <em style="color:var(--text);">Digital Image Processing</em>, 4th Edition</li>
+        <li>Szeliski, R. — <em style="color:var(--text);">Computer Vision: Algorithms and Applications</em></li>
+        <li>OpenCV Official Documentation</li>
+        <li>Goodfellow, I., Bengio, Y., &amp; Courville, A. — <em style="color:var(--text);">Deep Learning</em></li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<div class="divider" data-label="end of notes"></div>
+<div style="text-align:center;padding:32px 0 16px;font-family:var(--font-mono);font-size:10px;color:var(--text3);">
+  <p style="color:var(--yellow);font-size:14px;font-family:var(--font-head);font-weight:700;margin-bottom:8px;">You've got this. 🎯</p>
+  <p>Computer Vision + OS — Topper Edition &nbsp;|&nbsp; All topics covered &nbsp;|&nbsp; Good luck on your exam!</p>
+</div>
+
+</main>
+
+<script>
+  // Highlight active nav dot on scroll
+  const dots = document.querySelectorAll('.nav-dot');
+  const sections = document.querySelectorAll('.topic-section');
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        dots.forEach(d => d.classList.remove('active'));
+        const id = e.target.id;
+        const idx = [...sections].indexOf(e.target);
+        if (dots[idx]) dots[idx].classList.add('active');
+      }
+    });
+  }, { threshold: 0.3 });
+
+  sections.forEach(s => obs.observe(s));
+
+  // Stagger card animations
+  document.querySelectorAll('.card').forEach((card, i) => {
+    card.style.animationDelay = `${(i % 6) * 0.05}s`;
+  });
+</script>
+</body>
+</html>
