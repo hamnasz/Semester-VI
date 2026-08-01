@@ -1,0 +1,898 @@
+2026-04-11 10:39:08,381 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 10:39:08,382 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 10:39:08,383 : INFO  : main :  : NodeLogger :  :  : # Welcome to KNIME Analytics Platform v5.11.0.v202603030810 (Build March 03, 2026)      #
+2026-04-11 10:39:08,383 : INFO  : main :  : NodeLogger :  :  : # Based on Eclipse, http://www.eclipse.org                                              #
+2026-04-11 10:39:08,383 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 10:39:08,383 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 10:39:08,383 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 10:39:08,383 : INFO  : main :  : NodeLogger :  :  : # Copyright by KNIME AG, Zurich, Switzerland and others.                                #
+2026-04-11 10:39:08,383 : INFO  : main :  : NodeLogger :  :  : # Website: http://www.knime.com                                                         #
+2026-04-11 10:39:08,383 : INFO  : main :  : NodeLogger :  :  : # E-mail: contact@knime.com                                                             #
+2026-04-11 10:39:08,383 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 10:39:08,383 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 10:39:08,383 : INFO  : main :  : NodeLogger :  :  : # For more details see the KNIME log file:                                              #
+2026-04-11 10:39:08,383 : INFO  : main :  : NodeLogger :  :  : # D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\knime.log
+2026-04-11 10:39:08,383 : INFO  : main :  : NodeLogger :  :  : #---------------------------------------------------------------------------------------#
+2026-04-11 10:39:08,400 : INFO  : main :  : NodeLogger :  :  : # logging date=Sat Apr 11 10:39:08 PKT 2026
+2026-04-11 10:39:08,400 : INFO  : main :  : NodeLogger :  :  : # java.version=21.0.9
+2026-04-11 10:39:08,402 : INFO  : main :  : NodeLogger :  :  : # java.vm.version=21.0.9+10-LTS
+2026-04-11 10:39:08,402 : INFO  : main :  : NodeLogger :  :  : # java.vendor=Eclipse Adoptium
+2026-04-11 10:39:08,402 : INFO  : main :  : NodeLogger :  :  : # os.name=Windows 11
+2026-04-11 10:39:08,402 : INFO  : main :  : NodeLogger :  :  : # os.arch=amd64
+2026-04-11 10:39:08,402 : INFO  : main :  : NodeLogger :  :  : # number of CPUs=8
+2026-04-11 10:39:08,402 : INFO  : main :  : NodeLogger :  :  : # assertions=off
+2026-04-11 10:39:08,413 : INFO  : main :  : NodeLogger :  :  : # host=DevHamnah
+2026-04-11 10:39:08,430 : INFO  : main :  : NodeLogger :  :  : # username=Developer Hamna
+2026-04-11 10:39:08,446 : INFO  : main :  : NodeLogger :  :  : # max mem=8068MB
+2026-04-11 10:39:08,446 : INFO  : main :  : NodeLogger :  :  : # application=org.knime.product.KNIME_APPLICATION
+2026-04-11 10:39:08,477 : INFO  : main :  : NodeLogger :  :  : # KNID=11-64e971d6d4d66147-01-e2d873883bd7ff1b
+2026-04-11 10:39:08,477 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 10:38:41,331 : INFO  : main :  : RegisterBouncyCastleProvider :  :  : Added BouncyCastleProvider to Java Security providers
+2026-04-11 10:39:15,698 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_database_drivers.txt' does not exist.
+2026-04-11 10:39:15,698 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_database_urls.txt' does not exist.
+2026-04-11 10:39:17,791 : INFO  : Node Repository Initializer :  : MovingAggregationNodeFactory :  :  : Modern dialog for Moving Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 10:39:17,805 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_string2date-formats.txt' does not exist.
+2026-04-11 10:39:31,867 : INFO  : main :  : ProcessWatchdog :  :  : KNIME Process Watchdog memory limit not configured
+2026-04-11 10:39:31,867 : INFO  : main :  : ProcessWatchdog :  :  : External process memory watchdog is disabled, because the memory limit is set to -1
+2026-04-11 10:39:33,723 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_org.knime.kerberos.name.txt' does not exist.
+2026-04-11 10:39:34,219 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_createFileNameHistoryKey.txt' does not exist.
+2026-04-11 10:39:35,086 : INFO  : Node Repository Initializer :  : Pivot2NodeFactory :  :  : Modern dialog for Pivot node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 10:39:35,162 : INFO  : Thread-165 :  : KnimeBrowserView :  :  : %cinfo%c Injecting global logger 
+      background: #00BCD4;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-04-11 10:39:35,403 : INFO  : Node Repository Initializer :  : GroupByNodeFactory :  :  : Modern dialog for GroupBy node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 10:39:35,951 : INFO  : Node Repository Initializer :  : ColumnAggregatorNodeFactory :  :  : Modern dialog for Column Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 10:39:42,205 : ERROR : KNIME-Worker-0 :  : DesktopAPUtil :  :  : Could not check for updates
+java.io.IOException: Read timed out, while checking updates for site at "https://update.knime.com/community-contributions/trusted/latest".
+	at org.knime.core.eclipseUtil.UpdateChecker.checkForNewRelease(UpdateChecker.java:200)
+	at org.knime.product.rcp.intro.UpdateDetector.checkForNewRelease(UpdateDetector.java:97)
+	at org.knime.ui.java.util.DesktopAPUtil.checkForUpdate(DesktopAPUtil.java:221)
+	at org.knime.gateway.impl.webui.UpdateStateProvider.lambda$0(UpdateStateProvider.java:86)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(Unknown Source)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(Unknown Source)
+	at java.base/sun.nio.ch.NioSocketImpl.read(Unknown Source)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(Unknown Source)
+	at java.base/java.net.Socket$SocketInputStream.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.decode(Unknown Source)
+	at java.base/sun.security.ssl.SSLTransport.decode(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl.decode(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl.readHandshakeRecord(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at java.base/sun.net.www.protocol.https.HttpsClient.afterConnect(Unknown Source)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(Unknown Source)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.followRedirect0(Unknown Source)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.followRedirect(Unknown Source)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+	at java.base/java.net.HttpURLConnection.getResponseCode(Unknown Source)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(Unknown Source)
+	at org.knime.core.eclipseUtil.UpdateChecker.checkForNewRelease(UpdateChecker.java:183)
+	... 7 more
+2026-04-11 10:39:42,245 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-11 10:39:42,350 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-11 10:39:42,393 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-11 10:39:42,495 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-11 10:39:42,502 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-11 10:39:42,503 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-11 10:40:00,510 : INFO  : ModalContext :  : LoadWorkflowRunnable :  :  : New workflow created.
+2026-04-11 10:40:00,660 : ERROR : Thread-1425 :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object PromiseRejectionEvent] (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-04-11 10:40:00,663 : ERROR : Thread-1427 :  : KnimeBrowserView :  :  : Uncaught (in promise) AbortError: The user aborted a request. (source: https://org.knime.ui.java/index.html#/get-started; line: 0)
+2026-04-11 10:40:13,654 : WARN  : comm-pool-thread-1 :  : Node : CSV Reader : 3:1 : Please specify a file
+2026-04-11 10:42:34,146 : INFO  : KNIME-Worker-3-CSV Reader 3:1 :  : LocalNodeExecutionJob : CSV Reader : 3:1 : CSV Reader 3:1 End execute (0 secs)
+2026-04-11 10:46:03,708 : WARN  : comm-pool-thread-6 :  : Node : GroupBy : 3:2 : No grouping column included. Aggregate complete table.
+2026-04-11 10:46:03,711 : WARN  : comm-pool-thread-6 :  : Node : GroupBy : 3:2 : No aggregation column defined
+2026-04-11 10:46:03,901 : WARN  : comm-pool-thread-6 :  : Node : GroupBy : 3:2 : Please select at least one group or aggregation column
+2026-04-11 10:47:26,810 : INFO  : KNIME-Worker-4-GroupBy 3:2 :  : LocalNodeExecutionJob : GroupBy : 3:2 : GroupBy 3:2 End execute (0 secs)
+2026-04-11 10:49:32,614 : INFO  : KNIME shutdown hooks - org.knime.core.util.FileUtil$$Lambda/0x0000019703406a18 :  : FileUtil :  :  : Deleting 2 temporary files.
+2026-04-11 20:20:41,964 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 20:20:41,978 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 20:20:41,978 : INFO  : main :  : NodeLogger :  :  : # Welcome to KNIME Analytics Platform v5.11.0.v202603030810 (Build March 03, 2026)      #
+2026-04-11 20:20:41,978 : INFO  : main :  : NodeLogger :  :  : # Based on Eclipse, http://www.eclipse.org                                              #
+2026-04-11 20:20:41,978 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 20:20:41,978 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 20:20:41,978 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 20:20:41,979 : INFO  : main :  : NodeLogger :  :  : # Copyright by KNIME AG, Zurich, Switzerland and others.                                #
+2026-04-11 20:20:41,979 : INFO  : main :  : NodeLogger :  :  : # Website: http://www.knime.com                                                         #
+2026-04-11 20:20:41,979 : INFO  : main :  : NodeLogger :  :  : # E-mail: contact@knime.com                                                             #
+2026-04-11 20:20:41,979 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 20:20:41,979 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 20:20:41,979 : INFO  : main :  : NodeLogger :  :  : # For more details see the KNIME log file:                                              #
+2026-04-11 20:20:41,979 : INFO  : main :  : NodeLogger :  :  : # D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\knime.log
+2026-04-11 20:20:41,979 : INFO  : main :  : NodeLogger :  :  : #---------------------------------------------------------------------------------------#
+2026-04-11 20:20:42,023 : INFO  : main :  : NodeLogger :  :  : # logging date=Sat Apr 11 20:20:41 PKT 2026
+2026-04-11 20:20:42,024 : INFO  : main :  : NodeLogger :  :  : # java.version=21.0.9
+2026-04-11 20:20:42,024 : INFO  : main :  : NodeLogger :  :  : # java.vm.version=21.0.9+10-LTS
+2026-04-11 20:20:42,024 : INFO  : main :  : NodeLogger :  :  : # java.vendor=Eclipse Adoptium
+2026-04-11 20:20:42,024 : INFO  : main :  : NodeLogger :  :  : # os.name=Windows 11
+2026-04-11 20:20:42,024 : INFO  : main :  : NodeLogger :  :  : # os.arch=amd64
+2026-04-11 20:20:42,025 : INFO  : main :  : NodeLogger :  :  : # number of CPUs=8
+2026-04-11 20:20:42,025 : INFO  : main :  : NodeLogger :  :  : # assertions=off
+2026-04-11 20:20:42,045 : INFO  : main :  : NodeLogger :  :  : # host=DevHamnah
+2026-04-11 20:20:42,108 : INFO  : main :  : NodeLogger :  :  : # username=Developer Hamna
+2026-04-11 20:20:42,108 : INFO  : main :  : NodeLogger :  :  : # max mem=8068MB
+2026-04-11 20:20:42,108 : INFO  : main :  : NodeLogger :  :  : # application=org.knime.product.KNIME_APPLICATION
+2026-04-11 20:20:42,181 : INFO  : main :  : NodeLogger :  :  : # KNID=11-64e971d6d4d66147-01-e2d873883bd7ff1b
+2026-04-11 20:20:42,181 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 20:20:07,027 : INFO  : main :  : RegisterBouncyCastleProvider :  :  : Added BouncyCastleProvider to Java Security providers
+2026-04-11 20:20:54,222 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_database_drivers.txt' does not exist.
+2026-04-11 20:20:54,222 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_database_urls.txt' does not exist.
+2026-04-11 20:20:56,234 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_string2date-formats.txt' does not exist.
+2026-04-11 20:20:56,311 : INFO  : Node Repository Initializer :  : MovingAggregationNodeFactory :  :  : Modern dialog for Moving Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 20:21:12,273 : INFO  : Node Repository Initializer :  : GroupByNodeFactory :  :  : Modern dialog for GroupBy node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 20:21:13,415 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_createFileNameHistoryKey.txt' does not exist.
+2026-04-11 20:21:13,859 : INFO  : Node Repository Initializer :  : Pivot2NodeFactory :  :  : Modern dialog for Pivot node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 20:21:14,187 : INFO  : Node Repository Initializer :  : ColumnAggregatorNodeFactory :  :  : Modern dialog for Column Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 20:21:14,778 : INFO  : main :  : ProcessWatchdog :  :  : KNIME Process Watchdog memory limit not configured
+2026-04-11 20:21:14,779 : INFO  : main :  : ProcessWatchdog :  :  : External process memory watchdog is disabled, because the memory limit is set to -1
+2026-04-11 20:21:17,874 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_org.knime.kerberos.name.txt' does not exist.
+2026-04-11 20:21:19,035 : INFO  : Thread-172 :  : KnimeBrowserView :  :  : %cinfo%c Injecting global logger 
+      background: #00BCD4;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-04-11 20:21:19,672 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-11 20:21:19,701 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-11 20:21:19,718 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-11 20:21:19,824 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-11 20:21:19,824 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-11 20:21:19,831 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-11 20:26:53,590 : INFO  : KNIME shutdown hooks - org.knime.core.util.FileUtil$$Lambda/0x000002a48153b440 :  : FileUtil :  :  : Deleting 3 temporary files.
+2026-04-11 20:26:53,640 : ERROR : Clear OSGi configuration :  : InvokeInstallSiteAction :  :  : Could not clean OSGi configuration area: D:\Softwares\KNIME\configuration\org.eclipse.osgi\446\0\.cp\swt-gdip-win32-4969r18.dll
+2026-04-11 20:27:18,873 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 20:27:18,873 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 20:27:18,873 : INFO  : main :  : NodeLogger :  :  : # Welcome to KNIME Analytics Platform v5.11.0.v202603030810 (Build March 03, 2026)      #
+2026-04-11 20:27:18,873 : INFO  : main :  : NodeLogger :  :  : # Based on Eclipse, http://www.eclipse.org                                              #
+2026-04-11 20:27:18,873 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 20:27:18,873 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 20:27:18,873 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 20:27:18,873 : INFO  : main :  : NodeLogger :  :  : # Copyright by KNIME AG, Zurich, Switzerland and others.                                #
+2026-04-11 20:27:18,873 : INFO  : main :  : NodeLogger :  :  : # Website: http://www.knime.com                                                         #
+2026-04-11 20:27:18,873 : INFO  : main :  : NodeLogger :  :  : # E-mail: contact@knime.com                                                             #
+2026-04-11 20:27:18,873 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 20:27:18,873 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 20:27:18,873 : INFO  : main :  : NodeLogger :  :  : # For more details see the KNIME log file:                                              #
+2026-04-11 20:27:18,873 : INFO  : main :  : NodeLogger :  :  : # D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\knime.log
+2026-04-11 20:27:18,873 : INFO  : main :  : NodeLogger :  :  : #---------------------------------------------------------------------------------------#
+2026-04-11 20:27:18,886 : INFO  : main :  : NodeLogger :  :  : # logging date=Sat Apr 11 20:27:18 PKT 2026
+2026-04-11 20:27:18,886 : INFO  : main :  : NodeLogger :  :  : # java.version=21.0.9
+2026-04-11 20:27:18,886 : INFO  : main :  : NodeLogger :  :  : # java.vm.version=21.0.9+10-LTS
+2026-04-11 20:27:18,886 : INFO  : main :  : NodeLogger :  :  : # java.vendor=Eclipse Adoptium
+2026-04-11 20:27:18,886 : INFO  : main :  : NodeLogger :  :  : # os.name=Windows 11
+2026-04-11 20:27:18,886 : INFO  : main :  : NodeLogger :  :  : # os.arch=amd64
+2026-04-11 20:27:18,886 : INFO  : main :  : NodeLogger :  :  : # number of CPUs=8
+2026-04-11 20:27:18,886 : INFO  : main :  : NodeLogger :  :  : # assertions=off
+2026-04-11 20:27:18,896 : INFO  : main :  : NodeLogger :  :  : # host=DevHamnah
+2026-04-11 20:27:18,918 : INFO  : main :  : NodeLogger :  :  : # username=Developer Hamna
+2026-04-11 20:27:18,918 : INFO  : main :  : NodeLogger :  :  : # max mem=8068MB
+2026-04-11 20:27:18,923 : INFO  : main :  : NodeLogger :  :  : # application=org.knime.product.KNIME_APPLICATION
+2026-04-11 20:27:18,950 : INFO  : main :  : NodeLogger :  :  : # KNID=11-64e971d6d4d66147-01-e2d873883bd7ff1b
+2026-04-11 20:27:18,950 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 20:27:00,636 : INFO  : main :  : RegisterBouncyCastleProvider :  :  : Added BouncyCastleProvider to Java Security providers
+2026-04-11 20:27:25,623 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_database_drivers.txt' does not exist.
+2026-04-11 20:27:25,623 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_database_urls.txt' does not exist.
+2026-04-11 20:27:27,483 : INFO  : Node Repository Initializer :  : MovingAggregationNodeFactory :  :  : Modern dialog for Moving Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 20:27:27,525 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_string2date-formats.txt' does not exist.
+2026-04-11 20:28:07,015 : INFO  : main :  : ProcessWatchdog :  :  : KNIME Process Watchdog memory limit not configured
+2026-04-11 20:28:07,015 : INFO  : main :  : ProcessWatchdog :  :  : External process memory watchdog is disabled, because the memory limit is set to -1
+2026-04-11 20:28:07,967 : INFO  : Node Repository Initializer :  : Pivot2NodeFactory :  :  : Modern dialog for Pivot node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 20:28:09,874 : INFO  : Node Repository Initializer :  : ColumnAggregatorNodeFactory :  :  : Modern dialog for Column Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 20:28:10,580 : INFO  : Node Repository Initializer :  : GroupByNodeFactory :  :  : Modern dialog for GroupBy node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 20:28:10,583 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_createFileNameHistoryKey.txt' does not exist.
+2026-04-11 20:28:11,516 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_org.knime.kerberos.name.txt' does not exist.
+2026-04-11 20:28:12,385 : INFO  : Thread-168 :  : KnimeBrowserView :  :  : %cinfo%c Injecting global logger 
+      background: #00BCD4;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-04-11 20:28:12,398 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-11 20:28:12,429 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-11 20:28:12,443 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-11 20:28:12,453 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-11 20:28:12,453 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-11 20:28:12,458 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-11 20:29:44,336 : ERROR : KNIME-Worker-0-Python Snippet 3:3 :  : Node : Python Snippet : 3:3 : Execute failed: Path to python executable is not set. Please configure under Preferences > KNIME > Python Scripting.
+de.mpicbg.knime.scripting.core.exceptions.KnimeScriptingException: Path to python executable is not set. Please configure under Preferences > KNIME > Python Scripting.
+	at de.mpicbg.knime.scripting.python.v2.AbstractPythonScriptingV2NodeModel.runScriptImpl(AbstractPythonScriptingV2NodeModel.java:650)
+	at de.mpicbg.knime.scripting.python.v2.AbstractPythonScriptingV2NodeModel.runScript(AbstractPythonScriptingV2NodeModel.java:622)
+	at de.mpicbg.knime.scripting.python.v2.node.snippet.PythonSnippetV2NodeModel.executeImpl(PythonSnippetV2NodeModel.java:62)
+	at de.mpicbg.knime.scripting.core.AbstractScriptingNodeModel.execute(AbstractScriptingNodeModel.java:176)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-04-11 20:31:15,118 : WARN  : comm-pool-thread-2 :  : Node : Create Bit Vector : 3:3 : No single column selected. Please (re-)configure the node.
+2026-04-11 20:32:13,388 : ERROR : KNIME-Worker-1-Create Bit Vector 3:3 :  : BitString2BitVectorCellFactory : Create Bit Vector : 3:3 : Error in row Row0: Invalid character ('4') in bitvector string
+2026-04-11 20:32:13,392 : ERROR : KNIME-Worker-1-Create Bit Vector 3:3 :  : BitString2BitVectorCellFactory : Create Bit Vector : 3:3 : Error in row Row1: Invalid character ('4') in bitvector string
+2026-04-11 20:32:13,392 : ERROR : KNIME-Worker-1-Create Bit Vector 3:3 :  : BitString2BitVectorCellFactory : Create Bit Vector : 3:3 : Error in row Row2: Invalid character ('9') in bitvector string
+2026-04-11 20:32:13,392 : ERROR : KNIME-Worker-1-Create Bit Vector 3:3 :  : BitString2BitVectorCellFactory : Create Bit Vector : 3:3 : Error in row Row3: Invalid character ('4') in bitvector string
+2026-04-11 20:32:13,392 : ERROR : KNIME-Worker-1-Create Bit Vector 3:3 :  : BitString2BitVectorCellFactory : Create Bit Vector : 3:3 : Error in row Row4: Invalid character ('6') in bitvector string
+2026-04-11 20:32:13,393 : ERROR : KNIME-Worker-1-Create Bit Vector 3:3 :  : BitString2BitVectorCellFactory : Create Bit Vector : 3:3 : Error in row Row5: Invalid character ('6') in bitvector string
+2026-04-11 20:32:13,393 : ERROR : KNIME-Worker-1-Create Bit Vector 3:3 :  : BitString2BitVectorCellFactory : Create Bit Vector : 3:3 : Error in row Row6: Invalid character ('6') in bitvector string
+2026-04-11 20:32:13,393 : ERROR : KNIME-Worker-1-Create Bit Vector 3:3 :  : BitString2BitVectorCellFactory : Create Bit Vector : 3:3 : Error in row Row7: Invalid character ('6') in bitvector string
+2026-04-11 20:32:13,393 : ERROR : KNIME-Worker-1-Create Bit Vector 3:3 :  : BitString2BitVectorCellFactory : Create Bit Vector : 3:3 : Error in row Row8: Invalid character ('9') in bitvector string
+2026-04-11 20:32:13,393 : ERROR : KNIME-Worker-1-Create Bit Vector 3:3 :  : BitString2BitVectorCellFactory : Create Bit Vector : 3:3 : Error in row Row9: Invalid character ('8') in bitvector string
+2026-04-11 20:32:13,393 : ERROR : KNIME-Worker-1-Create Bit Vector 3:3 :  : BitString2BitVectorCellFactory : Create Bit Vector : 3:3 : Error in row Row10: Invalid character ('5') in bitvector string
+2026-04-11 20:32:13,394 : ERROR : KNIME-Worker-1-Create Bit Vector 3:3 :  : BitString2BitVectorCellFactory : Create Bit Vector : 3:3 : Error in row Row11: Invalid character ('7') in bitvector string
+2026-04-11 20:32:13,394 : ERROR : KNIME-Worker-1-Create Bit Vector 3:3 :  : BitString2BitVectorCellFactory : Create Bit Vector : 3:3 : Error in row Row12: Invalid character ('2') in bitvector string
+2026-04-11 20:32:13,394 : ERROR : KNIME-Worker-1-Create Bit Vector 3:3 :  : BitString2BitVectorCellFactory : Create Bit Vector : 3:3 : Error in row Row13: Invalid character ('5') in bitvector string
+2026-04-11 20:32:13,394 : ERROR : KNIME-Worker-1-Create Bit Vector 3:3 :  : BitString2BitVectorCellFactory : Create Bit Vector : 3:3 : Error in row Row14: Invalid character ('3') in bitvector string
+2026-04-11 20:32:13,394 : ERROR : KNIME-Worker-1-Create Bit Vector 3:3 :  : BitString2BitVectorCellFactory : Create Bit Vector : 3:3 : Error in row Row15: Invalid character ('7') in bitvector string
+2026-04-11 20:32:13,394 : ERROR : KNIME-Worker-1-Create Bit Vector 3:3 :  : BitString2BitVectorCellFactory : Create Bit Vector : 3:3 : Error in row Row16: Invalid character ('8') in bitvector string
+2026-04-11 20:32:13,394 : ERROR : KNIME-Worker-1-Create Bit Vector 3:3 :  : BitString2BitVectorCellFactory : Create Bit Vector : 3:3 : Error in row Row17: Invalid character ('5') in bitvector string
+2026-04-11 20:32:13,395 : ERROR : KNIME-Worker-1-Create Bit Vector 3:3 :  : BitString2BitVectorCellFactory : Create Bit Vector : 3:3 : Error in row Row18: Invalid character ('9') in bitvector string
+2026-04-11 20:32:13,395 : ERROR : KNIME-Worker-1-Create Bit Vector 3:3 :  : BitString2BitVectorCellFactory : Create Bit Vector : 3:3 : Error in row Row19: Invalid character ('2') in bitvector string
+2026-04-11 20:32:13,395 : ERROR : KNIME-Worker-1-Create Bit Vector 3:3 :  : BitString2BitVectorCellFactory : Create Bit Vector : 3:3 : Suppressing further error messages...
+2026-04-11 20:32:13,411 : WARN  : KNIME-Worker-1-Create Bit Vector 3:3 :  : Node : Create Bit Vector : 3:3 : 495 errors found. Last message: Error in row Row494: Invalid character ('7') in bitvector string. See log file for details on all errors.
+2026-04-11 20:32:13,416 : INFO  : KNIME-Worker-1-Create Bit Vector 3:3 :  : LocalNodeExecutionJob : Create Bit Vector : 3:3 : Create Bit Vector 3:3 End execute (0 secs)
+2026-04-11 20:47:41,014 : INFO  : KNIME shutdown hooks - org.knime.core.util.FileUtil$$Lambda/0x000001fe81584fb8 :  : FileUtil :  :  : Deleting 3 temporary files.
+2026-04-11 20:47:41,038 : ERROR : Clear OSGi configuration :  : InvokeInstallSiteAction :  :  : Could not clean OSGi configuration area: D:\Softwares\KNIME\configuration\org.eclipse.osgi\451\0\.cp\swt-awt-win32-4969r18.dll
+2026-04-11 20:51:40,986 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 20:51:40,991 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 20:51:40,991 : INFO  : main :  : NodeLogger :  :  : # Welcome to KNIME Analytics Platform v5.11.0.v202603030810 (Build March 03, 2026)      #
+2026-04-11 20:51:40,991 : INFO  : main :  : NodeLogger :  :  : # Based on Eclipse, http://www.eclipse.org                                              #
+2026-04-11 20:51:40,991 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 20:51:40,991 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 20:51:40,991 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 20:51:40,991 : INFO  : main :  : NodeLogger :  :  : # Copyright by KNIME AG, Zurich, Switzerland and others.                                #
+2026-04-11 20:51:40,992 : INFO  : main :  : NodeLogger :  :  : # Website: http://www.knime.com                                                         #
+2026-04-11 20:51:40,992 : INFO  : main :  : NodeLogger :  :  : # E-mail: contact@knime.com                                                             #
+2026-04-11 20:51:40,992 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 20:51:40,992 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 20:51:40,992 : INFO  : main :  : NodeLogger :  :  : # For more details see the KNIME log file:                                              #
+2026-04-11 20:51:40,992 : INFO  : main :  : NodeLogger :  :  : # D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\knime.log
+2026-04-11 20:51:40,992 : INFO  : main :  : NodeLogger :  :  : #---------------------------------------------------------------------------------------#
+2026-04-11 20:51:41,015 : INFO  : main :  : NodeLogger :  :  : # logging date=Sat Apr 11 20:51:40 PKT 2026
+2026-04-11 20:51:41,015 : INFO  : main :  : NodeLogger :  :  : # java.version=21.0.9
+2026-04-11 20:51:41,015 : INFO  : main :  : NodeLogger :  :  : # java.vm.version=21.0.9+10-LTS
+2026-04-11 20:51:41,015 : INFO  : main :  : NodeLogger :  :  : # java.vendor=Eclipse Adoptium
+2026-04-11 20:51:41,017 : INFO  : main :  : NodeLogger :  :  : # os.name=Windows 11
+2026-04-11 20:51:41,017 : INFO  : main :  : NodeLogger :  :  : # os.arch=amd64
+2026-04-11 20:51:41,017 : INFO  : main :  : NodeLogger :  :  : # number of CPUs=8
+2026-04-11 20:51:41,017 : INFO  : main :  : NodeLogger :  :  : # assertions=off
+2026-04-11 20:51:41,037 : INFO  : main :  : NodeLogger :  :  : # host=DevHamnah
+2026-04-11 20:51:41,043 : INFO  : main :  : NodeLogger :  :  : # username=Developer Hamna
+2026-04-11 20:51:41,044 : INFO  : main :  : NodeLogger :  :  : # max mem=8068MB
+2026-04-11 20:51:41,044 : INFO  : main :  : NodeLogger :  :  : # application=org.knime.product.KNIME_APPLICATION
+2026-04-11 20:51:41,051 : INFO  : main :  : NodeLogger :  :  : # KNID=11-64e971d6d4d66147-01-e2d873883bd7ff1b
+2026-04-11 20:51:41,051 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 20:47:49,942 : INFO  : main :  : RegisterBouncyCastleProvider :  :  : Added BouncyCastleProvider to Java Security providers
+2026-04-11 20:48:27,506 : INFO  : main :  : EarlyStartupCondaEnvironmentInstallation :  :  : Starting conda environment initialization during early startup
+2026-04-11 20:48:27,537 : INFO  : main :  : CondaEnvironmentRegistry :  :  : No metadata.properties found for 'com_searchanalyticsnode_Search-Analytics-Node' at D:\Softwares\KNIME\bundling\com_searchanalyticsnode_Search-Analytics-Node - environment needs to be created
+2026-04-11 20:48:27,542 : INFO  : main :  : CondaEnvironmentRegistry :  :  : No metadata.properties found for 'org_knime_pythonscripting' at D:\Softwares\KNIME\bundling\org_knime_pythonscripting - environment needs to be created
+2026-04-11 20:48:28,073 : INFO  : main :  : runtime :  :  : Checking pixi cache directory for knime-python-versions (knime-python-versions-5.10.0-py311_202601271627) package: D:\Softwares\KNIME\bundling\.pixi-cache
+2026-04-11 20:48:28,073 : INFO  : main :  : runtime :  :  : Could not determine version for knime-python-versions - cleaning cache to be safe.
+2026-04-11 20:49:32,052 : INFO  : main :  : CondaEnvironmentRegistry :  :  : Written environment path file for startup-created environment: com_searchanalyticsnode_Search-Analytics-Node -> bundling\com_searchanalyticsnode_Search-Analytics-Node\.pixi\envs\default (actual environment path)
+2026-04-11 20:49:32,507 : INFO  : main :  : runtime :  :  : Checking pixi cache directory for knime-python-versions (knime-python-versions-5.11.0-py313_202602051638) package: D:\Softwares\KNIME\bundling\.pixi-cache
+2026-04-11 20:49:32,519 : INFO  : main :  : runtime :  :  : New knime-python-versions 5.11.0 is newer than cached 5.10.0 - will clean cache.
+2026-04-11 20:49:32,521 : INFO  : main :  : runtime :  :  : Cleaning pixi cache directory: D:\Softwares\KNIME\bundling\.pixi-cache
+2026-04-11 20:51:40,845 : INFO  : main :  : CondaEnvironmentRegistry :  :  : Written environment path file for startup-created environment: org_knime_pythonscripting -> bundling\org_knime_pythonscripting\.pixi\envs\default (actual environment path)
+2026-04-11 20:51:40,859 : INFO  : main :  : CondaEnvironmentRegistry :  :  : All conda environment installations completed successfully
+2026-04-11 20:51:40,863 : INFO  : main :  : EarlyStartupCondaEnvironmentInstallation :  :  : Conda environment initialization completed successfully
+2026-04-11 20:51:44,039 : INFO  : python-gateway-creator-0 :  : ProcessWatchdog :  :  : KNIME Process Watchdog memory limit not configured
+2026-04-11 20:51:44,040 : INFO  : python-gateway-creator-0 :  : ProcessWatchdog :  :  : External process memory watchdog is disabled, because the memory limit is set to -1
+2026-04-11 20:51:45,312 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_database_drivers.txt' does not exist.
+2026-04-11 20:51:45,314 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_database_urls.txt' does not exist.
+2026-04-11 20:51:51,731 : INFO  : ForkJoinPool.commonPool-worker-2 :  : PythonExtensionParser :  :  : Saved extension 'com.searchanalyticsnode.Search-Analytics-Node_1.8.2.202604031535' cache to D:\Softwares\KNIME\configuration\com.searchanalyticsnode.Search-Analytics-Node
+2026-04-11 20:51:52,059 : INFO  : KNIME-Worker-0 :  : PythonExtensionParser :  :  : Trying to load cached extension 'com.searchanalyticsnode.Search-Analytics-Node_1.8.2.202604031535' from D:\Softwares\KNIME\configuration\com.searchanalyticsnode.Search-Analytics-Node
+2026-04-11 20:51:53,034 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_org.knime.kerberos.name.txt' does not exist.
+2026-04-11 20:51:53,396 : WARN  : main :  : LongStartupHandler :  :  : Startup took 184 seconds. Long startup dialog should have been shown if conda environment installation was not in progress.
+2026-04-11 20:51:54,113 : INFO  : Thread-173 :  : KnimeBrowserView :  :  : %cinfo%c Injecting global logger 
+      background: #00BCD4;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-04-11 20:51:56,292 : INFO  : ModalContext :  : GroupByNodeFactory : Market Basket Analysis : 3 : Modern dialog for GroupBy node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 20:51:58,571 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_string2date-formats.txt' does not exist.
+2026-04-11 20:51:58,584 : INFO  : Node Repository Initializer :  : MovingAggregationNodeFactory :  :  : Modern dialog for Moving Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 20:52:02,581 : INFO  : Node Repository Initializer :  : Pivot2NodeFactory :  :  : Modern dialog for Pivot node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 20:52:05,001 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_createFileNameHistoryKey.txt' does not exist.
+2026-04-11 20:52:05,356 : INFO  : Node Repository Initializer :  : ColumnAggregatorNodeFactory :  :  : Modern dialog for Column Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 20:52:08,743 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-11 20:52:08,766 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-11 20:52:08,778 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-11 20:52:09,137 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-11 20:52:09,143 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-11 20:52:09,144 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-11 20:53:05,157 : WARN  : Thread-2156 :  : KnimeBrowserView :  :  : An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. (source: https://org.knime.core.ui.dialog/uiext-dialog/org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory/index.html; line: 0)
+2026-04-11 20:53:08,984 : WARN  : Thread-2550 :  : KnimeBrowserView :  :  : An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. (source: https://org.knime.core.ui.dialog/uiext-dialog/org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory/index.html; line: 0)
+2026-04-11 20:53:36,912 : WARN  : KNIME-Worker-0-Python Script 3:3 :  : PythonScriptNodeModel : Python Script : 3:3 : Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+2026-04-11 20:53:37,031 : ERROR : KNIME-Worker-0-Python Script 3:3 :  : Node : Python Script : 3:3 : Execute failed: NameError: name 'input_table' is not defined
+org.knime.core.node.KNIMEException: Execute failed: NameError: name 'input_table' is not defined
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.checkExecutionAnswer(PythonScriptNodeModel.java:279)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.runUserScript(PythonScriptNodeModel.java:267)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.execute(PythonScriptNodeModel.java:212)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-04-11 20:53:40,349 : WARN  : KNIME-Worker-1-Python Script 3:3 :  : PythonScriptNodeModel : Python Script : 3:3 : Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+2026-04-11 20:53:40,471 : ERROR : KNIME-Worker-1-Python Script 3:3 :  : Node : Python Script : 3:3 : Execute failed: NameError: name 'input_table' is not defined
+org.knime.core.node.KNIMEException: Execute failed: NameError: name 'input_table' is not defined
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.checkExecutionAnswer(PythonScriptNodeModel.java:279)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.runUserScript(PythonScriptNodeModel.java:267)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.execute(PythonScriptNodeModel.java:212)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-04-11 20:55:38,142 : WARN  : KNIME-Worker-2-Python Script 3:3 :  : PythonScriptNodeModel : Python Script : 3:3 : Traceback (most recent call last):
+  File "<string>", line 10, in <module>
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\pandas\core\frame.py", line 9873, in explode
+    result = df[columns[0]].explode()
+             ~~^^^^^^^^^^^^
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+2026-04-11 20:55:38,263 : ERROR : KNIME-Worker-2-Python Script 3:3 :  : Node : Python Script : 3:3 : Execute failed: KeyError: 'MerchantID'
+org.knime.core.node.KNIMEException: Execute failed: KeyError: 'MerchantID'
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.checkExecutionAnswer(PythonScriptNodeModel.java:279)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.runUserScript(PythonScriptNodeModel.java:267)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.execute(PythonScriptNodeModel.java:212)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-04-11 20:56:30,574 : WARN  : KNIME-Worker-3-Python Script 3:3 :  : PythonScriptNodeModel : Python Script : 3:3 : Traceback (most recent call last):
+  File "<string>", line 9, in <module>
+2026-04-11 20:56:30,753 : ERROR : KNIME-Worker-3-Python Script 3:3 :  : Node : Python Script : 3:3 : Execute failed: IndexError: list index out of range
+org.knime.core.node.KNIMEException: Execute failed: IndexError: list index out of range
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.checkExecutionAnswer(PythonScriptNodeModel.java:279)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.runUserScript(PythonScriptNodeModel.java:267)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.execute(PythonScriptNodeModel.java:212)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-04-11 20:56:34,256 : WARN  : KNIME-Worker-2-Python Script 3:3 :  : PythonScriptNodeModel : Python Script : 3:3 : Traceback (most recent call last):
+  File "<string>", line 9, in <module>
+2026-04-11 20:56:34,386 : ERROR : KNIME-Worker-2-Python Script 3:3 :  : Node : Python Script : 3:3 : Execute failed: IndexError: list index out of range
+org.knime.core.node.KNIMEException: Execute failed: IndexError: list index out of range
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.checkExecutionAnswer(PythonScriptNodeModel.java:279)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.runUserScript(PythonScriptNodeModel.java:267)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.execute(PythonScriptNodeModel.java:212)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-04-11 20:58:23,469 : INFO  : KNIME-Worker-4-GroupBy 3:2 :  : LocalNodeExecutionJob : GroupBy : 3:2 : GroupBy 3:2 End execute (0 secs)
+2026-04-11 20:58:28,032 : WARN  : Thread-6131 :  : KnimeBrowserView :  :  : An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. (source: https://org.knime.core.ui.dialog/uiext-dialog/org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory/index.html; line: 0)
+2026-04-11 20:58:32,071 : WARN  : KNIME-Worker-5-Python Script 3:3 :  : PythonScriptNodeModel : Python Script : 3:3 : Traceback (most recent call last):
+  File "<string>", line 9, in <module>
+2026-04-11 20:58:32,192 : ERROR : KNIME-Worker-5-Python Script 3:3 :  : Node : Python Script : 3:3 : Execute failed: IndexError: list index out of range
+org.knime.core.node.KNIMEException: Execute failed: IndexError: list index out of range
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.checkExecutionAnswer(PythonScriptNodeModel.java:279)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.runUserScript(PythonScriptNodeModel.java:267)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.execute(PythonScriptNodeModel.java:212)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-04-11 20:58:45,628 : WARN  : KNIME-Worker-4-Python Script 3:3 :  : PythonScriptNodeModel : Python Script : 3:3 : Traceback (most recent call last):
+  File "<string>", line 37, in <module>
+2026-04-11 20:58:45,746 : ERROR : KNIME-Worker-4-Python Script 3:3 :  : Node : Python Script : 3:3 : Execute failed: AttributeError: module 'knime.scripting.io' has no attribute 'write_pandas_table'
+org.knime.core.node.KNIMEException: Execute failed: AttributeError: module 'knime.scripting.io' has no attribute 'write_pandas_table'
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.checkExecutionAnswer(PythonScriptNodeModel.java:279)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.runUserScript(PythonScriptNodeModel.java:267)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.execute(PythonScriptNodeModel.java:212)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-04-11 20:58:48,878 : WARN  : KNIME-Worker-5-Python Script 3:3 :  : PythonScriptNodeModel : Python Script : 3:3 : Traceback (most recent call last):
+  File "<string>", line 37, in <module>
+2026-04-11 20:58:49,000 : ERROR : KNIME-Worker-5-Python Script 3:3 :  : Node : Python Script : 3:3 : Execute failed: AttributeError: module 'knime.scripting.io' has no attribute 'write_pandas_table'
+org.knime.core.node.KNIMEException: Execute failed: AttributeError: module 'knime.scripting.io' has no attribute 'write_pandas_table'
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.checkExecutionAnswer(PythonScriptNodeModel.java:279)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.runUserScript(PythonScriptNodeModel.java:267)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.execute(PythonScriptNodeModel.java:212)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-04-11 20:59:33,581 : INFO  : python-js-scripting-2 :  : ColumnarPreferenceUtils : Python Script : 3:3 : Column Data Cache size is 2842 MB.
+2026-04-11 20:59:33,604 : INFO  : KNIME-Worker-4-Python Script 3:3 :  : LocalNodeExecutionJob : Python Script : 3:3 : Python Script 3:3 End execute (1 sec)
+2026-04-11 21:03:29,195 : WARN  : Thread-10164 :  : KnimeBrowserView :  :  : An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. (source: https://org.knime.core.ui.dialog/uiext-dialog/org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory/index.html; line: 0)
+2026-04-11 21:03:38,276 : WARN  : Thread-10911 :  : KnimeBrowserView :  :  : An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. (source: https://org.knime.core.ui.dialog/uiext-dialog/org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory/index.html; line: 0)
+2026-04-11 21:03:49,789 : WARN  : KNIME-Worker-6-Python Script 3:4 :  : PythonScriptNodeModel : Python Script : 3:4 : Traceback (most recent call last):
+  File "<string>", line 4, in <module>
+2026-04-11 21:03:49,906 : ERROR : KNIME-Worker-6-Python Script 3:4 :  : Node : Python Script : 3:4 : Execute failed: ModuleNotFoundError: No module named 'mlxtend'
+org.knime.core.node.KNIMEException: Execute failed: ModuleNotFoundError: No module named 'mlxtend'
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.checkExecutionAnswer(PythonScriptNodeModel.java:279)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.runUserScript(PythonScriptNodeModel.java:267)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.execute(PythonScriptNodeModel.java:212)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-04-11 21:03:52,612 : WARN  : KNIME-Worker-7-Python Script 3:4 :  : PythonScriptNodeModel : Python Script : 3:4 : Traceback (most recent call last):
+  File "<string>", line 4, in <module>
+2026-04-11 21:03:52,733 : ERROR : KNIME-Worker-7-Python Script 3:4 :  : Node : Python Script : 3:4 : Execute failed: ModuleNotFoundError: No module named 'mlxtend'
+org.knime.core.node.KNIMEException: Execute failed: ModuleNotFoundError: No module named 'mlxtend'
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.checkExecutionAnswer(PythonScriptNodeModel.java:279)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.runUserScript(PythonScriptNodeModel.java:267)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.execute(PythonScriptNodeModel.java:212)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-04-11 21:06:50,746 : WARN  : ModalContext :  : AbstractColumnarContainerTable : Python Script : 3:3 : Creation of hard links not supported, will copy files instead (and suppress further warnings)
+java.nio.file.FileSystemException: D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\Market Basket Analysis\Python Script (#3)\port_1\data.zip -> C:\Users\devha\AppData\Local\Temp\knime_Market Basket A_16950\knime_container_20260411_18415584394038614792.knable: The system cannot move the file to a different disk drive
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(Unknown Source)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.createLink(Unknown Source)
+	at java.base/java.nio.file.Files.createLink(Unknown Source)
+	at org.knime.core.data.columnar.table.AbstractColumnarContainerTable.hardLinkOrCopy(AbstractColumnarContainerTable.java:317)
+	at org.knime.core.data.columnar.table.AbstractColumnarContainerTable.saveToFileOverwrite(AbstractColumnarContainerTable.java:174)
+	at org.knime.core.data.columnar.table.UnsavedColumnarContainerTable.saveToFileOverwrite(UnsavedColumnarContainerTable.java:100)
+	at org.knime.core.node.ExtensionTable.saveToFile(ExtensionTable.java:261)
+	at org.knime.core.node.BufferedDataTable.save(BufferedDataTable.java:685)
+	at org.knime.core.node.FileNodePersistor.saveBufferedDataTable(FileNodePersistor.java:1439)
+	at org.knime.core.node.FileNodePersistor.savePort(FileNodePersistor.java:1344)
+	at org.knime.core.node.FileNodePersistor.savePorts(FileNodePersistor.java:1248)
+	at org.knime.core.node.FileNodePersistor.save(FileNodePersistor.java:1202)
+	at org.knime.core.node.workflow.FileNativeNodeContainerPersistor.save(FileNativeNodeContainerPersistor.java:548)
+	at org.knime.core.node.workflow.FileSingleNodeContainerPersistor.save(FileSingleNodeContainerPersistor.java:641)
+	at org.knime.core.node.workflow.FileWorkflowPersistor.saveNodeContainer(FileWorkflowPersistor.java:2343)
+	at org.knime.core.node.workflow.FileWorkflowPersistor.saveContent(FileWorkflowPersistor.java:2091)
+	at org.knime.core.node.workflow.FileWorkflowPersistor.save(FileWorkflowPersistor.java:1982)
+	at org.knime.core.node.workflow.WorkflowManager.save(WorkflowManager.java:9745)
+	at org.knime.core.node.workflow.WorkflowManager.save(WorkflowManager.java:9694)
+	at org.knime.ui.java.api.SaveProject.saveRegularWorkflow(SaveProject.java:217)
+	at org.knime.ui.java.api.SaveProject.saveLocalProject(SaveProject.java:192)
+	at org.knime.ui.java.api.SaveProject.saveProject(SaveProject.java:176)
+	at org.knime.ui.java.api.SaveProject.lambda$0(SaveProject.java:154)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+2026-04-11 21:06:54,723 : INFO  : KNIME shutdown hooks - org.knime.core.util.FileUtil$$Lambda/0x00000248a1481860 :  : FileUtil :  :  : Deleting 15 temporary files.
+2026-04-11 21:07:09,261 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 21:07:09,261 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 21:07:09,263 : INFO  : main :  : NodeLogger :  :  : # Welcome to KNIME Analytics Platform v5.11.0.v202603030810 (Build March 03, 2026)      #
+2026-04-11 21:07:09,263 : INFO  : main :  : NodeLogger :  :  : # Based on Eclipse, http://www.eclipse.org                                              #
+2026-04-11 21:07:09,263 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 21:07:09,263 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 21:07:09,263 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 21:07:09,263 : INFO  : main :  : NodeLogger :  :  : # Copyright by KNIME AG, Zurich, Switzerland and others.                                #
+2026-04-11 21:07:09,263 : INFO  : main :  : NodeLogger :  :  : # Website: http://www.knime.com                                                         #
+2026-04-11 21:07:09,263 : INFO  : main :  : NodeLogger :  :  : # E-mail: contact@knime.com                                                             #
+2026-04-11 21:07:09,263 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 21:07:09,263 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 21:07:09,263 : INFO  : main :  : NodeLogger :  :  : # For more details see the KNIME log file:                                              #
+2026-04-11 21:07:09,263 : INFO  : main :  : NodeLogger :  :  : # D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\knime.log
+2026-04-11 21:07:09,263 : INFO  : main :  : NodeLogger :  :  : #---------------------------------------------------------------------------------------#
+2026-04-11 21:07:09,276 : INFO  : main :  : NodeLogger :  :  : # logging date=Sat Apr 11 21:07:09 PKT 2026
+2026-04-11 21:07:09,276 : INFO  : main :  : NodeLogger :  :  : # java.version=21.0.9
+2026-04-11 21:07:09,276 : INFO  : main :  : NodeLogger :  :  : # java.vm.version=21.0.9+10-LTS
+2026-04-11 21:07:09,276 : INFO  : main :  : NodeLogger :  :  : # java.vendor=Eclipse Adoptium
+2026-04-11 21:07:09,276 : INFO  : main :  : NodeLogger :  :  : # os.name=Windows 11
+2026-04-11 21:07:09,276 : INFO  : main :  : NodeLogger :  :  : # os.arch=amd64
+2026-04-11 21:07:09,276 : INFO  : main :  : NodeLogger :  :  : # number of CPUs=8
+2026-04-11 21:07:09,276 : INFO  : main :  : NodeLogger :  :  : # assertions=off
+2026-04-11 21:07:09,287 : INFO  : main :  : NodeLogger :  :  : # host=DevHamnah
+2026-04-11 21:07:09,287 : INFO  : main :  : NodeLogger :  :  : # username=Developer Hamna
+2026-04-11 21:07:09,287 : INFO  : main :  : NodeLogger :  :  : # max mem=8068MB
+2026-04-11 21:07:09,287 : INFO  : main :  : NodeLogger :  :  : # application=org.knime.product.KNIME_APPLICATION
+2026-04-11 21:07:09,292 : INFO  : main :  : NodeLogger :  :  : # KNID=11-64e971d6d4d66147-01-e2d873883bd7ff1b
+2026-04-11 21:07:09,292 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 21:07:04,159 : INFO  : main :  : RegisterBouncyCastleProvider :  :  : Added BouncyCastleProvider to Java Security providers
+2026-04-11 21:07:09,146 : INFO  : main :  : EarlyStartupCondaEnvironmentInstallation :  :  : Starting conda environment initialization during early startup
+2026-04-11 21:07:09,183 : INFO  : main :  : EarlyStartupCondaEnvironmentInstallation :  :  : Conda environment initialization completed successfully
+2026-04-11 21:07:10,788 : INFO  : ForkJoinPool.commonPool-worker-2 :  : PythonExtensionParser :  :  : Trying to load cached extension 'com.searchanalyticsnode.Search-Analytics-Node_1.8.2.202604031535' from D:\Softwares\KNIME\configuration\com.searchanalyticsnode.Search-Analytics-Node
+2026-04-11 21:07:10,988 : INFO  : KNIME-Worker-0 :  : PythonExtensionParser :  :  : Trying to load cached extension 'com.searchanalyticsnode.Search-Analytics-Node_1.8.2.202604031535' from D:\Softwares\KNIME\configuration\com.searchanalyticsnode.Search-Analytics-Node
+2026-04-11 21:07:13,471 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_database_drivers.txt' does not exist.
+2026-04-11 21:07:13,471 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_database_urls.txt' does not exist.
+2026-04-11 21:07:16,563 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_string2date-formats.txt' does not exist.
+2026-04-11 21:07:16,585 : INFO  : Node Repository Initializer :  : MovingAggregationNodeFactory :  :  : Modern dialog for Moving Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 21:07:18,370 : INFO  : main :  : ProcessWatchdog :  :  : KNIME Process Watchdog memory limit not configured
+2026-04-11 21:07:18,371 : INFO  : main :  : ProcessWatchdog :  :  : External process memory watchdog is disabled, because the memory limit is set to -1
+2026-04-11 21:07:19,765 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_org.knime.kerberos.name.txt' does not exist.
+2026-04-11 21:07:20,621 : INFO  : Thread-171 :  : KnimeBrowserView :  :  : %cinfo%c Injecting global logger 
+      background: #00BCD4;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-04-11 21:07:21,490 : INFO  : Node Repository Initializer :  : GroupByNodeFactory :  :  : Modern dialog for GroupBy node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 21:07:21,823 : INFO  : Node Repository Initializer :  : Pivot2NodeFactory :  :  : Modern dialog for Pivot node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 21:07:23,175 : WARN  : ModalContext :  : AbstractColumnarContainerTable : Python Script : 3:3 : Creation of hard links not supported, will copy files instead (and suppress further warnings)
+java.nio.file.FileSystemException: C:\Users\devha\AppData\Local\Temp\knime_Market Basket A_16214\knime_container_20260411_10038345732044597485.knable -> D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\Market Basket Analysis\Python Script (#3)\port_1\data.zip: The system cannot move the file to a different disk drive
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(Unknown Source)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.createLink(Unknown Source)
+	at java.base/java.nio.file.Files.createLink(Unknown Source)
+	at org.knime.core.data.columnar.table.AbstractColumnarContainerTable.hardLinkOrCopy(AbstractColumnarContainerTable.java:317)
+	at org.knime.core.data.columnar.table.AbstractColumnarContainerTable.<init>(AbstractColumnarContainerTable.java:141)
+	at org.knime.core.data.columnar.table.ColumnarContainerTableLoader$SavedColumnarContainerTable.<init>(ColumnarContainerTableLoader.java:97)
+	at org.knime.core.data.columnar.table.ColumnarContainerTableLoader.load(ColumnarContainerTableLoader.java:65)
+	at org.knime.core.node.ExtensionTableRegistry.loadExtensionTable(ExtensionTableRegistry.java:134)
+	at org.knime.core.node.ExtensionTable.loadExtensionTable(ExtensionTable.java:318)
+	at org.knime.core.node.BufferedDataTable.loadFromFile(BufferedDataTable.java:888)
+	at org.knime.core.node.FileNodePersistor.loadBufferedDataTable(FileNodePersistor.java:478)
+	at org.knime.core.node.FileNodePersistor.loadPort(FileNodePersistor.java:367)
+	at org.knime.core.node.FileNodePersistor.loadPorts(FileNodePersistor.java:331)
+	at org.knime.core.node.FileNodePersistor.load(FileNodePersistor.java:996)
+	at org.knime.core.node.workflow.FileNativeNodeContainerPersistor.loadNCAndModelSettings(FileNativeNodeContainerPersistor.java:281)
+	at org.knime.core.node.workflow.FileSingleNodeContainerPersistor.loadNodeContainer(FileSingleNodeContainerPersistor.java:265)
+	at org.knime.core.node.workflow.WorkflowManager.postLoad(WorkflowManager.java:9178)
+	at org.knime.core.node.workflow.WorkflowManager.loadContent(WorkflowManager.java:9080)
+	at org.knime.core.node.workflow.WorkflowManager.postLoad(WorkflowManager.java:9194)
+	at org.knime.core.node.workflow.WorkflowManager.loadContent(WorkflowManager.java:9080)
+	at org.knime.core.node.workflow.WorkflowManager.load(WorkflowManager.java:8944)
+	at org.knime.core.node.workflow.WorkflowManager.load(WorkflowManager.java:8865)
+	at org.knime.core.node.workflow.WorkflowManager.load(WorkflowManager.java:8838)
+	at org.knime.core.node.workflow.WorkflowManager.loadProject(WorkflowManager.java:8675)
+	at org.knime.workbench.editor2.LoadWorkflowRunnable.run(LoadWorkflowRunnable.java:200)
+	at org.knime.ui.java.util.DesktopAPUtil.loadWorkflowManager(DesktopAPUtil.java:171)
+	at org.knime.ui.java.util.CreateProject.lambda$1(CreateProject.java:146)
+	at org.knime.ui.java.util.DesktopAPUtil.lambda$10(DesktopAPUtil.java:422)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+2026-04-11 21:07:23,312 : INFO  : Node Repository Initializer :  : ColumnAggregatorNodeFactory :  :  : Modern dialog for Column Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 21:07:23,366 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_createFileNameHistoryKey.txt' does not exist.
+2026-04-11 21:07:23,377 : INFO  : ModalContext :  : ColumnarPreferenceUtils : Python Script : 3:3 : Column Data Cache size is 2842 MB.
+2026-04-11 21:07:23,434 : WARN  : ModalContext :  : Node : Python Script : 3:4 : Execute failed: ModuleNotFoundError: No module named 'mlxtend'
+2026-04-11 21:07:28,650 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-11 21:07:28,651 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-11 21:07:28,660 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-11 21:07:28,671 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-11 21:07:28,671 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-11 21:07:28,675 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-11 21:07:31,460 : WARN  : Thread-1929 :  : KnimeBrowserView :  :  : An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. (source: https://org.knime.core.ui.dialog/uiext-dialog/org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory/index.html; line: 0)
+2026-04-11 21:07:37,251 : WARN  : KNIME-Worker-1-Python Script 3:4 :  : PythonScriptNodeModel : Python Script : 3:4 : Traceback (most recent call last):
+  File "<string>", line 4, in <module>
+2026-04-11 21:07:37,386 : ERROR : KNIME-Worker-1-Python Script 3:4 :  : Node : Python Script : 3:4 : Execute failed: ModuleNotFoundError: No module named 'mlxtend'
+org.knime.core.node.KNIMEException: Execute failed: ModuleNotFoundError: No module named 'mlxtend'
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.checkExecutionAnswer(PythonScriptNodeModel.java:279)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.runUserScript(PythonScriptNodeModel.java:267)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.execute(PythonScriptNodeModel.java:212)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-04-11 21:07:49,806 : WARN  : KNIME-Worker-2-Python Script 3:4 :  : PythonScriptNodeModel : Python Script : 3:4 : Traceback (most recent call last):
+  File "<string>", line 4, in <module>
+2026-04-11 21:07:49,926 : ERROR : KNIME-Worker-2-Python Script 3:4 :  : Node : Python Script : 3:4 : Execute failed: ModuleNotFoundError: No module named 'mlxtend'
+org.knime.core.node.KNIMEException: Execute failed: ModuleNotFoundError: No module named 'mlxtend'
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.checkExecutionAnswer(PythonScriptNodeModel.java:279)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.runUserScript(PythonScriptNodeModel.java:267)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.execute(PythonScriptNodeModel.java:212)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-04-11 21:08:33,077 : INFO  : KNIME shutdown hooks - org.knime.core.util.FileUtil$$Lambda/0x0000019f494045e8 :  : FileUtil :  :  : Deleting 2 temporary files.
+2026-04-11 21:09:06,006 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 21:09:06,009 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 21:09:06,009 : INFO  : main :  : NodeLogger :  :  : # Welcome to KNIME Analytics Platform v5.11.0.v202603030810 (Build March 03, 2026)      #
+2026-04-11 21:09:06,009 : INFO  : main :  : NodeLogger :  :  : # Based on Eclipse, http://www.eclipse.org                                              #
+2026-04-11 21:09:06,009 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 21:09:06,009 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 21:09:06,009 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 21:09:06,009 : INFO  : main :  : NodeLogger :  :  : # Copyright by KNIME AG, Zurich, Switzerland and others.                                #
+2026-04-11 21:09:06,009 : INFO  : main :  : NodeLogger :  :  : # Website: http://www.knime.com                                                         #
+2026-04-11 21:09:06,009 : INFO  : main :  : NodeLogger :  :  : # E-mail: contact@knime.com                                                             #
+2026-04-11 21:09:06,009 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-04-11 21:09:06,009 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 21:09:06,009 : INFO  : main :  : NodeLogger :  :  : # For more details see the KNIME log file:                                              #
+2026-04-11 21:09:06,009 : INFO  : main :  : NodeLogger :  :  : # D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\knime.log
+2026-04-11 21:09:06,009 : INFO  : main :  : NodeLogger :  :  : #---------------------------------------------------------------------------------------#
+2026-04-11 21:09:06,022 : INFO  : main :  : NodeLogger :  :  : # logging date=Sat Apr 11 21:09:06 PKT 2026
+2026-04-11 21:09:06,022 : INFO  : main :  : NodeLogger :  :  : # java.version=21.0.9
+2026-04-11 21:09:06,022 : INFO  : main :  : NodeLogger :  :  : # java.vm.version=21.0.9+10-LTS
+2026-04-11 21:09:06,022 : INFO  : main :  : NodeLogger :  :  : # java.vendor=Eclipse Adoptium
+2026-04-11 21:09:06,022 : INFO  : main :  : NodeLogger :  :  : # os.name=Windows 11
+2026-04-11 21:09:06,022 : INFO  : main :  : NodeLogger :  :  : # os.arch=amd64
+2026-04-11 21:09:06,022 : INFO  : main :  : NodeLogger :  :  : # number of CPUs=8
+2026-04-11 21:09:06,022 : INFO  : main :  : NodeLogger :  :  : # assertions=off
+2026-04-11 21:09:06,032 : INFO  : main :  : NodeLogger :  :  : # host=DevHamnah
+2026-04-11 21:09:06,035 : INFO  : main :  : NodeLogger :  :  : # username=Developer Hamna
+2026-04-11 21:09:06,035 : INFO  : main :  : NodeLogger :  :  : # max mem=8068MB
+2026-04-11 21:09:06,035 : INFO  : main :  : NodeLogger :  :  : # application=org.knime.product.KNIME_APPLICATION
+2026-04-11 21:09:06,035 : INFO  : main :  : NodeLogger :  :  : # KNID=11-64e971d6d4d66147-01-e2d873883bd7ff1b
+2026-04-11 21:09:06,035 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-04-11 21:09:00,638 : INFO  : main :  : RegisterBouncyCastleProvider :  :  : Added BouncyCastleProvider to Java Security providers
+2026-04-11 21:09:05,874 : INFO  : main :  : EarlyStartupCondaEnvironmentInstallation :  :  : Starting conda environment initialization during early startup
+2026-04-11 21:09:05,914 : INFO  : main :  : EarlyStartupCondaEnvironmentInstallation :  :  : Conda environment initialization completed successfully
+2026-04-11 21:09:07,544 : INFO  : ForkJoinPool.commonPool-worker-2 :  : PythonExtensionParser :  :  : Trying to load cached extension 'com.searchanalyticsnode.Search-Analytics-Node_1.8.2.202604031535' from D:\Softwares\KNIME\configuration\com.searchanalyticsnode.Search-Analytics-Node
+2026-04-11 21:09:07,733 : INFO  : KNIME-Worker-0 :  : PythonExtensionParser :  :  : Trying to load cached extension 'com.searchanalyticsnode.Search-Analytics-Node_1.8.2.202604031535' from D:\Softwares\KNIME\configuration\com.searchanalyticsnode.Search-Analytics-Node
+2026-04-11 21:09:10,115 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_database_drivers.txt' does not exist.
+2026-04-11 21:09:10,115 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_database_urls.txt' does not exist.
+2026-04-11 21:09:13,287 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_string2date-formats.txt' does not exist.
+2026-04-11 21:09:13,332 : INFO  : Node Repository Initializer :  : MovingAggregationNodeFactory :  :  : Modern dialog for Moving Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 21:09:14,735 : INFO  : main :  : ProcessWatchdog :  :  : KNIME Process Watchdog memory limit not configured
+2026-04-11 21:09:14,735 : INFO  : main :  : ProcessWatchdog :  :  : External process memory watchdog is disabled, because the memory limit is set to -1
+2026-04-11 21:09:15,835 : INFO  : main :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_org.knime.kerberos.name.txt' does not exist.
+2026-04-11 21:09:16,555 : INFO  : Thread-169 :  : KnimeBrowserView :  :  : %cinfo%c Injecting global logger 
+      background: #00BCD4;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      (source: https://org.knime.ui.java/assets/index-qa2z6KdO.js; line: 105)
+2026-04-11 21:09:17,399 : INFO  : ModalContext :  : GroupByNodeFactory : Market Basket Analysis : 3 : Modern dialog for GroupBy node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 21:09:18,470 : WARN  : ModalContext :  : AbstractColumnarContainerTable : Python Script : 3:3 : Creation of hard links not supported, will copy files instead (and suppress further warnings)
+java.nio.file.FileSystemException: C:\Users\devha\AppData\Local\Temp\knime_Market Basket A_19176\knime_container_20260411_3239154911600180824.knable -> D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\Market Basket Analysis\Python Script (#3)\port_1\data.zip: The system cannot move the file to a different disk drive
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(Unknown Source)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.createLink(Unknown Source)
+	at java.base/java.nio.file.Files.createLink(Unknown Source)
+	at org.knime.core.data.columnar.table.AbstractColumnarContainerTable.hardLinkOrCopy(AbstractColumnarContainerTable.java:317)
+	at org.knime.core.data.columnar.table.AbstractColumnarContainerTable.<init>(AbstractColumnarContainerTable.java:141)
+	at org.knime.core.data.columnar.table.ColumnarContainerTableLoader$SavedColumnarContainerTable.<init>(ColumnarContainerTableLoader.java:97)
+	at org.knime.core.data.columnar.table.ColumnarContainerTableLoader.load(ColumnarContainerTableLoader.java:65)
+	at org.knime.core.node.ExtensionTableRegistry.loadExtensionTable(ExtensionTableRegistry.java:134)
+	at org.knime.core.node.ExtensionTable.loadExtensionTable(ExtensionTable.java:318)
+	at org.knime.core.node.BufferedDataTable.loadFromFile(BufferedDataTable.java:888)
+	at org.knime.core.node.FileNodePersistor.loadBufferedDataTable(FileNodePersistor.java:478)
+	at org.knime.core.node.FileNodePersistor.loadPort(FileNodePersistor.java:367)
+	at org.knime.core.node.FileNodePersistor.loadPorts(FileNodePersistor.java:331)
+	at org.knime.core.node.FileNodePersistor.load(FileNodePersistor.java:996)
+	at org.knime.core.node.workflow.FileNativeNodeContainerPersistor.loadNCAndModelSettings(FileNativeNodeContainerPersistor.java:281)
+	at org.knime.core.node.workflow.FileSingleNodeContainerPersistor.loadNodeContainer(FileSingleNodeContainerPersistor.java:265)
+	at org.knime.core.node.workflow.WorkflowManager.postLoad(WorkflowManager.java:9178)
+	at org.knime.core.node.workflow.WorkflowManager.loadContent(WorkflowManager.java:9080)
+	at org.knime.core.node.workflow.WorkflowManager.postLoad(WorkflowManager.java:9194)
+	at org.knime.core.node.workflow.WorkflowManager.loadContent(WorkflowManager.java:9080)
+	at org.knime.core.node.workflow.WorkflowManager.load(WorkflowManager.java:8944)
+	at org.knime.core.node.workflow.WorkflowManager.load(WorkflowManager.java:8865)
+	at org.knime.core.node.workflow.WorkflowManager.load(WorkflowManager.java:8838)
+	at org.knime.core.node.workflow.WorkflowManager.loadProject(WorkflowManager.java:8675)
+	at org.knime.workbench.editor2.LoadWorkflowRunnable.run(LoadWorkflowRunnable.java:200)
+	at org.knime.ui.java.util.DesktopAPUtil.loadWorkflowManager(DesktopAPUtil.java:171)
+	at org.knime.ui.java.util.CreateProject.lambda$1(CreateProject.java:146)
+	at org.knime.ui.java.util.DesktopAPUtil.lambda$10(DesktopAPUtil.java:422)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+2026-04-11 21:09:18,628 : INFO  : ModalContext :  : ColumnarPreferenceUtils : Python Script : 3:3 : Column Data Cache size is 2842 MB.
+2026-04-11 21:09:18,668 : WARN  : ModalContext :  : Node : Python Script : 3:4 : Execute failed: ModuleNotFoundError: No module named 'mlxtend'
+2026-04-11 21:09:18,875 : INFO  : Node Repository Initializer :  : Pivot2NodeFactory :  :  : Modern dialog for Pivot node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 21:09:19,444 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\.metadata\knime\history_createFileNameHistoryKey.txt' does not exist.
+2026-04-11 21:09:19,687 : INFO  : Node Repository Initializer :  : ColumnAggregatorNodeFactory :  :  : Modern dialog for Column Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-04-11 21:09:22,818 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-11 21:09:22,833 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-11 21:09:22,833 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-04-11 21:09:22,847 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-11 21:09:22,849 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-11 21:09:22,854 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-04-11 21:09:40,387 : WARN  : Thread-2086 :  : KnimeBrowserView :  :  : An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. (source: https://org.knime.core.ui.dialog/uiext-dialog/org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory/index.html; line: 0)
+2026-04-11 21:09:44,204 : WARN  : KNIME-Worker-1-Python Script 3:4 :  : PythonScriptNodeModel : Python Script : 3:4 : Traceback (most recent call last):
+  File "<string>", line 4, in <module>
+2026-04-11 21:09:44,352 : ERROR : KNIME-Worker-1-Python Script 3:4 :  : Node : Python Script : 3:4 : Execute failed: ModuleNotFoundError: No module named 'mlxtend'
+org.knime.core.node.KNIMEException: Execute failed: ModuleNotFoundError: No module named 'mlxtend'
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.checkExecutionAnswer(PythonScriptNodeModel.java:279)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.runUserScript(PythonScriptNodeModel.java:267)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.execute(PythonScriptNodeModel.java:212)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-04-11 21:11:05,002 : WARN  : KNIME-Worker-0-Python Script 3:4 :  : PythonScriptNodeModel : Python Script : 3:4 : Traceback (most recent call last):
+  File "<string>", line 8, in <module>
+  File "D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\Lib\subprocess.py", line 419, in check_call
+    raise CalledProcessError(retcode, cmd)
+2026-04-11 21:11:05,003 : INFO  : python-output-redirector-5 :  : PythonScriptingSession : Python Script : 3:4 : D:\Softwares\KNIME\bundling\org_knime_pythonscripting\.pixi\envs\default\python.exe: No module named pip
+2026-04-11 21:11:05,144 : ERROR : KNIME-Worker-0-Python Script 3:4 :  : Node : Python Script : 3:4 : Execute failed: CalledProcessError: Command '['D:\\Softwares\\KNIME\\bundling\\org_knime_pythonscripting\\.pixi\\envs\\default\\python.exe', '-m', 'pip', 'install', 'mlxtend']' returned non-zero exit status 1.
+org.knime.core.node.KNIMEException: Execute failed: CalledProcessError: Command '['D:\\Softwares\\KNIME\\bundling\\org_knime_pythonscripting\\.pixi\\envs\\default\\python.exe', '-m', 'pip', 'install', 'mlxtend']' returned non-zero exit status 1.
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.checkExecutionAnswer(PythonScriptNodeModel.java:279)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.runUserScript(PythonScriptNodeModel.java:267)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.execute(PythonScriptNodeModel.java:212)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:605)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1331)
+	at org.knime.core.node.Node.execute(Node.java:1038)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:618)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:201)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2026-04-11 21:12:15,272 : INFO  : KNIME-Worker-1-Python Script 3:4 :  : LocalNodeExecutionJob : Python Script : 3:4 : Python Script 3:4 End execute (1 sec)
+2026-04-11 21:13:15,946 : WARN  : Thread-4907 :  : KnimeBrowserView :  :  : An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. (source: https://org.knime.core.ui.dialog/uiext-dialog/org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory/index.html; line: 0)
+2026-04-11 21:13:28,590 : WARN  : Thread-5613 :  : KnimeBrowserView :  :  : An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. (source: https://org.knime.core.ui.dialog/uiext-dialog/org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory/index.html; line: 0)
+2026-04-11 21:22:03,447 : ERROR : ModalContext :  : Node : Python Script : 3:3 : I/O error while saving internals: D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\Market Basket Analysis\Python Script (#3)\internal\console_b.arrow
+java.nio.file.NoSuchFileException: D:\Sixth Semester\Data Mining\Mids\Lab\Lab 6\Market Basket Analysis\Python Script (#3)\internal\console_b.arrow
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(Unknown Source)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.WindowsFileCopy.move(Unknown Source)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.move(Unknown Source)
+	at java.base/java.nio.file.Files.move(Unknown Source)
+	at org.knime.python3.scripting.nodes2.ConsoleOutputUtils$Table.saveTo(ConsoleOutputUtils.java:325)
+	at org.knime.python3.scripting.nodes2.ConsoleOutputUtils$ConsoleOutputStorage.saveTo(ConsoleOutputUtils.java:229)
+	at org.knime.python3.scripting.nodes2.PythonScriptNodeModel.saveInternals(PythonScriptNodeModel.java:365)
+	at org.knime.core.node.Node.saveInternals(Node.java:2563)
+	at org.knime.core.node.FileNodePersistor.saveNodeInternDirectory(FileNodePersistor.java:1463)
+	at org.knime.core.node.FileNodePersistor.save(FileNodePersistor.java:1189)
+	at org.knime.core.node.workflow.FileNativeNodeContainerPersistor.save(FileNativeNodeContainerPersistor.java:548)
+	at org.knime.core.node.workflow.FileSingleNodeContainerPersistor.save(FileSingleNodeContainerPersistor.java:641)
+	at org.knime.core.node.workflow.FileWorkflowPersistor.saveNodeContainer(FileWorkflowPersistor.java:2343)
+	at org.knime.core.node.workflow.FileWorkflowPersistor.saveContent(FileWorkflowPersistor.java:2091)
+	at org.knime.core.node.workflow.FileWorkflowPersistor.save(FileWorkflowPersistor.java:1982)
+	at org.knime.core.node.workflow.WorkflowManager.save(WorkflowManager.java:9745)
+	at org.knime.core.node.workflow.WorkflowManager.save(WorkflowManager.java:9694)
+	at org.knime.ui.java.api.SaveProject.saveRegularWorkflow(SaveProject.java:217)
+	at org.knime.ui.java.api.SaveProject.saveLocalProject(SaveProject.java:192)
+	at org.knime.ui.java.api.SaveProject.saveProject(SaveProject.java:176)
+	at org.knime.ui.java.api.SaveProject.saveProject(SaveProject.java:165)
+	at org.knime.ui.java.api.SaveAndCloseProjects.saveAndCloseProject(SaveAndCloseProjects.java:216)
+	at org.knime.ui.java.api.SaveAndCloseProjects.saveProjects(SaveAndCloseProjects.java:201)
+	at org.knime.ui.java.api.SaveAndCloseProjects.lambda$3(SaveAndCloseProjects.java:183)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+2026-04-11 21:22:05,157 : INFO  : KNIME shutdown hooks - org.knime.core.util.FileUtil$$Lambda/0x00000282ac4444a0 :  : FileUtil :  :  : Deleting 5 temporary files.

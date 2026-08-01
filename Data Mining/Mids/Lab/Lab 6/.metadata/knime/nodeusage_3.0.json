@@ -1,0 +1,97 @@
+{
+    "version": "5.11.0.v202603030810",
+    "created": "2026-04-11 05:39",
+    "nodestats": {
+        "nodes": [
+            {
+                "id": "org.knime.base.node.io.filehandling.csv.reader.CSVTableReaderNodeFactory",
+                "nodename": "CSV Reader",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 296,
+                "nrcreated": 1,
+                "nrsettingsChanged": 1,
+                "successor": "org.knime.base.node.preproc.groupby.GroupByNodeFactory",
+                "successornodename": "GroupBy"
+            },
+            {
+                "id": "org.knime.base.node.preproc.groupby.GroupByNodeFactory",
+                "nodename": "GroupBy",
+                "nrexecs": 2,
+                "nrfails": 0,
+                "exectime": 897,
+                "nrcreated": 1,
+                "nrsettingsChanged": 3,
+                "successor": "de.mpicbg.knime.scripting.python.v2.node.snippet.PythonSnippetV2NodeFactory",
+                "successornodename": "Python Snippet"
+            },
+            {
+                "id": "de.mpicbg.knime.scripting.python.v2.node.snippet.PythonSnippetV2NodeFactory",
+                "nodename": "Python Snippet",
+                "nrexecs": 0,
+                "nrfails": 1,
+                "exectime": 113,
+                "nrcreated": 1,
+                "nrsettingsChanged": 3,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.bitvector.create.CreateBitVectorNodeFactory",
+                "nodename": "Create Bit Vector",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 53,
+                "nrcreated": 1,
+                "nrsettingsChanged": 1,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "de.mpicbg.knime.scripting.python.v2.node.source.PythonSourceV2NodeFactory",
+                "nodename": "Python Source",
+                "nrexecs": 0,
+                "nrfails": 0,
+                "exectime": 0,
+                "nrcreated": 1,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory",
+                "nodename": "Python Script",
+                "nrexecs": 2,
+                "nrfails": 14,
+                "exectime": 16685,
+                "nrcreated": 2,
+                "nrsettingsChanged": 8,
+                "successor": "org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory",
+                "successornodename": "Python Script"
+            }
+        ],
+        "metaNodes": {
+        },
+        "wrappedNodes": {
+        },
+        "createdVia": {
+            "WEB_UI": 7
+        }
+    },
+    "uptime": 642882,
+    "workflowsOpened": 6,
+    "remoteWorkflowsOpened": 0,
+    "workflowsCreated": 1,
+    "remoteWorkflowsCreated": 0,
+    "columnarStorageWorkflowsOpened": 0,
+    "workflowsImported": 0,
+    "workflowsExported": 0,
+    "webUIPerspectiveSwitches": 0,
+    "javaUIPerspectiveSwitches": 0,
+    "lastUsedPerspective": "none",
+    "launches": 6,
+    "lastApplicationID": "org.knime.product.KNIME_APPLICATION",
+    "timeSinceLastStart": 769572,
+    "crashes": 0,
+    "properlyShutDown": true
+}
