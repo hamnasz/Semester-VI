@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DermaScan — AI Skin Disease Classifier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0a0f1a;
+      --surface:   #111827;
+      --surface2:  #1a2235;
+      --border:    #1e2d42;
+      --accent:    #3b82f6;
+      --accent2:   #06b6d4;
+      --green:     #10b981;
+      --yellow:    #f59e0b;
+      --red:       #ef4444;
+      --text:      #e2e8f0;
+      --muted:     #64748b;
+      --radius:    16px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", system-ui, sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ─── Animated background grid ─── */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(59,130,246,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59,130,246,.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ─── Layout ─── */
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ─── Header ─── */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 32px 0 48px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 48px;
+    }
+
+    .logo-icon {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+    }
+
+    header h1 {
+      font-family: "DM Serif Display", serif;
+      font-size: 1.75rem;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #fff 40%, var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    header p {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .badge {
+      margin-left: auto;
+      background: rgba(59,130,246,.15);
+      color: var(--accent);
+      border: 1px solid rgba(59,130,246,.3);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ─── Main grid ─── */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    @media (max-width: 768px) {
+      .main-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── Card ─── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: border-color .2s;
+    }
+
+    .card:hover { border-color: rgba(59,130,246,.3); }
+
+    .card-title {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    /* ─── Upload zone ─── */
+    #dropzone {
+      border: 2px dashed var(--border);
+      border-radius: 12px;
+      padding: 48px 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color .2s, background .2s;
+    }
+
+    #dropzone.drag-over {
+      border-color: var(--accent);
+      background: rgba(59,130,246,.06);
+    }
+
+    #dropzone .icon {
+      font-size: 3rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    #dropzone p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    #dropzone strong { color: var(--accent); }
+
+    #file-input { display: none; }
+
+    /* ─── Preview ─── */
+    #preview-wrap {
+      display: none;
+      position: relative;
+    }
+
+    #preview-img {
+      width: 100%; height: 280px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    #change-btn {
+      position: absolute;
+      top: 10px; right: 10px;
+      background: rgba(10,15,26,.7);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 5px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.75rem;
+      backdrop-filter: blur(8px);
+      transition: background .15s;
+    }
+
+    #change-btn:hover { background: var(--surface2); }
+
+    /* ─── Analyze button ─── */
+    #analyze-btn {
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity .2s, transform .1s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+
+    #analyze-btn:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    #analyze-btn:not(:disabled):hover { opacity: .9; }
+    #analyze-btn:not(:disabled):active { transform: scale(.98); }
+
+    /* ─── Spinner ─── */
+    .spinner {
+      width: 18px; height: 18px;
+      border: 2px solid rgba(255,255,255,.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin .6s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ─── Results panel ─── */
+    #results {
+      display: none;
+      animation: fadeUp .35s ease;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── Top prediction ─── */
+    .top-prediction {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .top-prediction .disease-name {
+      font-family: "DM Serif Display", serif;
+      font-size: 1.6rem;
+      margin-bottom: 4px;
+    }
+
+    .confidence-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .conf-high { background: rgba(16,185,129,.15); color: var(--green); border: 1px solid rgba(16,185,129,.3); }
+    .conf-med  { background: rgba(245,158,11,.15); color: var(--yellow); border: 1px solid rgba(245,158,11,.3); }
+    .conf-low  { background: rgba(239,68,68,.15);  color: var(--red);    border: 1px solid rgba(239,68,68,.3); }
+
+    /* ─── Confidence bar ─── */
+    .conf-bar-wrap { margin: 6px 0 14px; }
+    .conf-bar-label {
+      display: flex; justify-content: space-between;
+      font-size: 0.78rem; color: var(--muted); margin-bottom: 5px;
+    }
+
+    .conf-bar-bg {
+      height: 6px;
+      background: var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .conf-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transition: width .6s cubic-bezier(.4,0,.2,1);
+      width: 0;
+    }
+
+    /* ─── Disease info ─── */
+    .info-block { margin-top: 14px; }
+    .info-block p { font-size: 0.85rem; color: #94a3b8; line-height: 1.6; margin-bottom: 12px; }
+
+    .tag-list { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+    .tag {
+      background: rgba(59,130,246,.1);
+      border: 1px solid rgba(59,130,246,.2);
+      color: #93c5fd;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 0.73rem;
+    }
+
+    .advice-box {
+      background: rgba(16,185,129,.07);
+      border: 1px solid rgba(16,185,129,.2);
+      border-left: 3px solid var(--green);
+      padding: 12px 14px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.82rem;
+      color: #a7f3d0;
+      line-height: 1.5;
+    }
+
+    /* ─── Urgency indicator ─── */
+    .urgency {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.72rem; font-weight: 600;
+      padding: 3px 10px; border-radius: 6px; margin-bottom: 12px;
+    }
+
+    .urg-none   { background: rgba(16,185,129,.1); color: var(--green); }
+    .urg-low    { background: rgba(245,158,11,.1);  color: var(--yellow); }
+    .urg-medium { background: rgba(239,68,68,.1);   color: var(--red); }
+
+    /* ─── Other predictions ─── */
+    .other-title {
+      font-size: 0.7rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .08em;
+      color: var(--muted); margin-bottom: 12px;
+    }
+
+    .alt-row {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .alt-row:last-child { border-bottom: none; }
+
+    .alt-name { font-size: 0.85rem; font-weight: 500; flex: 1; }
+    .alt-pct  { font-size: 0.8rem; color: var(--muted); width: 42px; text-align: right; }
+
+    .alt-bar-bg {
+      flex: 1; height: 4px;
+      background: var(--border); border-radius: 3px; overflow: hidden;
+    }
+
+    .alt-bar-fill {
+      height: 100%; background: var(--border);
+      border-radius: 3px;
+      transition: width .5s;
+    }
+
+    /* ─── Empty state ─── */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--muted);
+    }
+
+    .empty-state .big-icon { font-size: 3.5rem; display: block; margin-bottom: 14px; }
+    .empty-state p { font-size: 0.9rem; }
+
+    /* ─── Disclaimer ─── */
+    .disclaimer {
+      margin-top: 32px;
+      padding: 14px 18px;
+      background: rgba(239,68,68,.06);
+      border: 1px solid rgba(239,68,68,.2);
+      border-radius: 10px;
+      font-size: 0.78rem;
+      color: #fca5a5;
+      line-height: 1.5;
+    }
+
+    .disclaimer strong { color: #f87171; }
+
+    /* ─── Demo mode banner ─── */
+    #demo-banner {
+      display: none;
+      background: rgba(245,158,11,.1);
+      border: 1px solid rgba(245,158,11,.3);
+      color: #fcd34d;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Header -->
+  <header>
+    <div class="logo-icon">🔬</div>
+    <div>
+      <h1>DermaScan</h1>
+      <p>AI-powered skin disease analysis</p>
+    </div>
+    <span class="badge">MobileNetV2</span>
+  </header>
+
+  <!-- Main Grid -->
+  <div class="main-grid">
+
+    <!-- LEFT: Upload -->
+    <div>
+      <div class="card">
+        <div class="card-title">Upload Skin Image</div>
+
+        <!-- Drop zone -->
+        <div id="dropzone">
+          <span class="icon">🩺</span>
+          <p>Drag &amp; drop your skin image here</p>
+          <p style="margin-top:6px;"><strong>or click to browse</strong></p>
+          <p style="margin-top:8px;font-size:0.75rem;">JPG · PNG · JPEG · WEBP</p>
+        </div>
+
+        <!-- Preview -->
+        <div id="preview-wrap">
+          <img id="preview-img" src="" alt="Preview"/>
+          <button id="change-btn">✕ Change</button>
+        </div>
+
+        <input type="file" id="file-input" accept=".jpg,.jpeg,.png,.webp"/>
+
+        <button id="analyze-btn" disabled>
+          <div class="spinner" id="spinner"></div>
+          <span id="btn-text">🔍 Analyse Image</span>
+        </button>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="disclaimer">
+        <strong>⚠️ Medical Disclaimer:</strong>
+        This tool is for educational purposes only. It is <strong>not</strong> a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified dermatologist.
+      </div>
+    </div>
+
+    <!-- RIGHT: Results -->
+    <div>
+      <div class="card" style="min-height: 420px;">
+        <div class="card-title">Analysis Results</div>
+
+        <!-- Demo banner -->
+        <div id="demo-banner">
+          ⚠️ Demo mode active — run <code>train_model.py</code> first to use the real model.
+        </div>
+
+        <!-- Empty state -->
+        <div class="empty-state" id="empty-state">
+          <span class="big-icon">🧬</span>
+          <p>Upload a skin image to<br>get an AI-powered analysis.</p>
+        </div>
+
+        <!-- Results -->
+        <div id="results">
+          <!-- Top prediction -->
+          <div class="top-prediction">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+              <span id="res-icon" style="font-size:1.6rem">🔴</span>
+              <div class="disease-name" id="res-name">—</div>
+            </div>
+
+            <span class="confidence-pill" id="conf-pill">— %</span>
+            <span class="urgency" id="urgency-tag">—</span>
+
+            <div class="conf-bar-wrap">
+              <div class="conf-bar-label">
+                <span>Confidence</span>
+                <span id="conf-pct-label">—</span>
+              </div>
+              <div class="conf-bar-bg">
+                <div class="conf-bar-fill" id="conf-bar"></div>
+              </div>
+            </div>
+
+            <div class="info-block">
+              <p id="res-description">—</p>
+              <div class="tag-list" id="res-symptoms"></div>
+              <div class="advice-box" id="res-advice">—</div>
+            </div>
+          </div>
+
+          <!-- Other predictions -->
+          <div>
+            <div class="other-title">Other Possibilities</div>
+            <div id="alt-predictions"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end main-grid -->
+</div><!-- end container -->
+
+<script>
+  const dropzone     = document.getElementById("dropzone");
+  const fileInput    = document.getElementById("file-input");
+  const previewWrap  = document.getElementById("preview-wrap");
+  const previewImg   = document.getElementById("preview-img");
+  const changeBtn    = document.getElementById("change-btn");
+  const analyzeBtn   = document.getElementById("analyze-btn");
+  const spinner      = document.getElementById("spinner");
+  const btnText      = document.getElementById("btn-text");
+  const emptyState   = document.getElementById("empty-state");
+  const results      = document.getElementById("results");
+  const demoBanner   = document.getElementById("demo-banner");
+
+  let selectedFile = null;
+
+  // ── File selection ──
+  dropzone.addEventListener("click", () => fileInput.click());
+
+  fileInput.addEventListener("change", e => {
+    if (e.target.files[0]) setFile(e.target.files[0]);
+  });
+
+  changeBtn.addEventListener("click", () => {
+    selectedFile = null;
+    fileInput.value = "";
+    previewWrap.style.display = "none";
+    dropzone.style.display = "block";
+    analyzeBtn.disabled = true;
+    resetResults();
+  });
+
+  // ── Drag & drop ──
+  dropzone.addEventListener("dragover", e => {
+    e.preventDefault();
+    dropzone.classList.add("drag-over");
+  });
+
+  ["dragleave", "dragend"].forEach(ev =>
+    dropzone.addEventListener(ev, () => dropzone.classList.remove("drag-over"))
+  );
+
+  dropzone.addEventListener("drop", e => {
+    e.preventDefault();
+    dropzone.classList.remove("drag-over");
+    const f = e.dataTransfer.files[0];
+    if (f && f.type.startsWith("image/")) setFile(f);
+  });
+
+  function setFile(file) {
+    selectedFile = file;
+    const reader = new FileReader();
+    reader.onload = ev => {
+      previewImg.src = ev.target.result;
+      dropzone.style.display = "none";
+      previewWrap.style.display = "block";
+      analyzeBtn.disabled = false;
+    };
+    reader.readAsDataURL(file);
+    resetResults();
+  }
+
+  // ── Analyse ──
+  analyzeBtn.addEventListener("click", async () => {
+    if (!selectedFile) return;
+
+    spinner.style.display = "block";
+    btnText.textContent = "Analysing …";
+    analyzeBtn.disabled = true;
+
+    const formData = new FormData();
+    formData.append("file", selectedFile);
+
+    try {
+      const resp = await fetch("/predict", { method: "POST", body: formData });
+      const data = await resp.json();
+
+      if (data.error) throw new Error(data.error);
+
+      renderResults(data);
+    } catch (err) {
+      alert("Error: " + err.message);
+    } finally {
+      spinner.style.display = "none";
+      btnText.textContent = "🔍 Analyse Image";
+      analyzeBtn.disabled = false;
+    }
+  });
+
+  // ── Render results ──
+  function renderResults(data) {
+    demoBanner.style.display = data.demo_mode ? "block" : "none";
+    emptyState.style.display = "none";
+    results.style.display = "block";
+
+    const top = data.predictions[0];
+    const info = top.info || {};
+    const conf = top.confidence;
+    const confPct = (conf * 100).toFixed(1);
+
+    document.getElementById("res-icon").textContent = info.icon || "🔍";
+    document.getElementById("res-name").textContent =
+      top.uncertain ? "Uncertain / Low Confidence" : top.disease.replace(/_/g, " ");
+    document.getElementById("res-description").textContent =
+      top.uncertain ? "The model could not identify the condition clearly. Please try a clearer image or consult a professional." : (info.description || "—");
+
+    // Confidence pill
+    const pill = document.getElementById("conf-pill");
+    pill.textContent = confPct + "% confidence";
+    pill.className = "confidence-pill " + (conf >= 0.7 ? "conf-high" : conf >= 0.45 ? "conf-med" : "conf-low");
+
+    // Bar
+    document.getElementById("conf-bar").style.width = confPct + "%";
+    document.getElementById("conf-pct-label").textContent = confPct + "%";
+
+    // Urgency
+    const urg = document.getElementById("urgency-tag");
+    const urgency = info.urgency || "none";
+    const urgMap = { none: ["urg-none", "✅ Normal"], low: ["urg-low", "⚠️ Low urgency"], medium: ["urg-medium", "🔴 See a doctor"] };
+    urg.className = "urgency " + (urgMap[urgency]?.[0] || "urg-none");
+    urg.textContent = urgMap[urgency]?.[1] || "";
+
+    // Symptoms
+    const sympEl = document.getElementById("res-symptoms");
+    sympEl.innerHTML = (info.symptoms || []).map(s => `<span class="tag">${s}</span>`).join("");
+
+    // Advice
+    document.getElementById("res-advice").textContent = top.uncertain
+      ? "Please try with a higher quality, well-lit image. See a dermatologist for accurate assessment."
+      : (info.advice || "Consult a dermatologist.");
+
+    // Alternatives
+    const altEl = document.getElementById("alt-predictions");
+    altEl.innerHTML = data.predictions.slice(1).map(p => {
+      const pct = (p.confidence * 100).toFixed(1);
+      const barColor = p.confidence > 0.3 ? "#3b82f6" : "#334155";
+      return `
+        <div class="alt-row">
+          <span class="alt-name">${(p.info.icon || "🔍")} ${p.disease.replace(/_/g, " ")}</span>
+          <div class="alt-bar-bg">
+            <div class="alt-bar-fill" style="width:${pct}%;background:${barColor}"></div>
+          </div>
+          <span class="alt-pct">${pct}%</span>
+        </div>`;
+    }).join("");
+  }
+
+  function resetResults() {
+    results.style.display = "none";
+    emptyState.style.display = "block";
+    demoBanner.style.display = "none";
+  }
+</script>
+</body>
+</html>
