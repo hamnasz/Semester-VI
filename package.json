@@ -1,0 +1,13 @@
+{
+  "name": "semester-vi-field-journal",
+  "version": "1.0.0",
+  "description": "Static academic-diary frontend that renders the hamnasz/Semester-VI repository live via the GitHub API.",
+  "private": true,
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "test": "node test/smoke.js && node test/smoke-error.js"
+  },
+  "devDependencies": {
+    "jsdom": "^30.0.1"
+  }
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semester VI — Field Journal</title>
+<meta name="description" content="A personal digital diary and archive for Semester VI coursework, rendered live from GitHub.">
+
+<!-- Fonts: a handwritten display face used sparingly, a warm serif for reading, a mono face for file metadata -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%92%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Paper texture + grain overlay, sits behind everything -->
+<div class="paper-texture" aria-hidden="true"></div>
+
+<!-- ============================= COVER ============================= -->
+<section id="view-cover" class="view view-cover" data-view="cover">
+  <div class="cover-inner">
+    <div class="cover-stamp" aria-hidden="true">
+      <svg viewBox="0 0 120 120" class="stamp-ring">
+        <circle cx="60" cy="60" r="54" />
+        <text><textPath href="#stamp-path">• SEMESTER ARCHIVE • FIELD NOTES • </textPath></text>
+        <path id="stamp-path" d="M 60,60 m -44,0 a 44,44 0 1,1 88,0 a 44,44 0 1,1 -88,0" fill="none"/>
+      </svg>
+      <span class="stamp-center">VI</span>
+    </div>
+
+    <p class="cover-eyebrow">a running field journal, kept in public</p>
+    <h1 class="cover-title">
+      <span class="cover-title-line">Semester</span>
+      <span class="cover-title-line cover-title-hand">Six</span>
+    </h1>
+    <p class="cover-sub">
+      Every lecture slide, lab manual, scanned page and half-finished note from this term,
+      pulled straight from <code class="repo-tag">hamnasz/Semester-VI</code> and kept exactly
+      as it was left — nothing copied, nothing staged, nothing hardcoded.
+    </p>
+
+    <div class="cover-actions">
+      <button class="btn btn-primary btn-wax" id="btn-open-journal">
+        <span>Open the Journal</span>
+        <svg viewBox="0 0 24 24" class="icon-arrow"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+      </button>
+      <a class="btn btn-ghost" href="https://github.com/hamnasz/Semester-VI" target="_blank" rel="noopener">
+        View source on GitHub
+      </a>
+    </div>
+
+    <div class="cover-meta" id="cover-meta">
+      <div class="meta-chip skeleton-chip"><span class="skeleton-line"></span></div>
+      <div class="meta-chip skeleton-chip"><span class="skeleton-line"></span></div>
+      <div class="meta-chip skeleton-chip"><span class="skeleton-line"></span></div>
+    </div>
+
+    <div class="stitch-divider" aria-hidden="true"></div>
+
+    <div class="cover-toc">
+      <p class="toc-label">Table of Contents</p>
+      <ol class="toc-list" id="toc-list">
+        <li class="toc-skel"><span class="skeleton-line"></span></li>
+        <li class="toc-skel"><span class="skeleton-line"></span></li>
+        <li class="toc-skel"><span class="skeleton-line"></span></li>
+        <li class="toc-skel"><span class="skeleton-line"></span></li>
+      </ol>
+    </div>
+
+    <p class="cover-footnote">
+      Rebuilt on every visit straight from the GitHub REST API — new files show up here the
+      moment they're pushed, no rebuild step required.
+    </p>
+  </div>
+</section>
+
+<!-- ============================= ARCHIVE ============================= -->
+<section id="view-archive" class="view view-archive" data-view="archive" hidden>
+
+  <header class="archive-header">
+    <button class="brand-mark" id="btn-home" title="Back to cover">
+      <span class="brand-glyph">📔</span>
+      <span class="brand-text">Semester VI<small>Field Journal</small></span>
+    </button>
+
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" class="icon-search" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input type="search" id="search-input" class="search-input" placeholder="Search every file in the archive…" autocomplete="off">
+      <button class="search-clear" id="search-clear" hidden>&times;</button>
+    </div>
+
+    <button class="btn btn-icon-label" id="btn-toggle-filters" aria-expanded="false">
+      <svg viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+      <span>Filter</span>
+    </button>
+  </header>
+
+  <div class="filter-bar" id="filter-bar" hidden>
+    <span class="filter-label">Show:</span>
+    <div class="chip-row" id="type-filters"></div>
+  </div>
+
+  <!-- horizontal "manila folder tabs" for top level subjects -->
+  <nav class="chapter-rail" id="chapter-rail" aria-label="Subjects">
+    <div class="chapter-rail-inner" id="chapter-rail-inner">
+      <div class="tab-skel"></div><div class="tab-skel"></div><div class="tab-skel"></div>
+    </div>
+  </nav>
+
+  <div class="breadcrumb-strip" id="breadcrumb-strip" aria-label="Breadcrumb"></div>
+
+  <main class="archive-main" id="archive-main">
+    <div class="state-loading" id="state-loading">
+      <div class="loader-book" aria-hidden="true">
+        <div class="loader-page"></div>
+        <div class="loader-page"></div>
+        <div class="loader-page"></div>
+      </div>
+      <p class="loader-caption" id="loader-caption">Fetching the repository tree from GitHub…</p>
+    </div>
+
+    <div class="state-error" id="state-error" hidden>
+      <div class="error-card">
+        <span class="error-glyph" id="error-glyph">✂️</span>
+        <h3 id="error-title">Something tore the page</h3>
+        <p id="error-desc">The archive couldn't be reached.</p>
+        <button class="btn btn-primary" id="btn-retry">Try again</button>
+      </div>
+    </div>
+
+    <div class="state-empty" id="state-empty" hidden>
+      <div class="empty-card">
+        <span class="empty-glyph">📄</span>
+        <h3>This chapter hasn't been written yet</h3>
+        <p>No files live in this folder.</p>
+      </div>
+    </div>
+
+    <div class="state-empty" id="state-no-results" hidden>
+      <div class="empty-card">
+        <span class="empty-glyph">🔍</span>
+        <h3>No pages match that search</h3>
+        <p id="no-results-desc">Try a different word, or clear the filters above.</p>
+      </div>
+    </div>
+
+    <div class="card-grid" id="card-grid" hidden></div>
+  </main>
+</section>
+
+<!-- ============================= FILE VIEWER OVERLAY ============================= -->
+<div class="viewer-overlay" id="viewer-overlay" hidden>
+  <div class="viewer-sheet" role="dialog" aria-modal="true" aria-labelledby="viewer-filename">
+    <header class="viewer-topbar">
+      <div class="viewer-titles">
+        <span class="viewer-badge" id="viewer-badge">FILE</span>
+        <h2 class="viewer-filename" id="viewer-filename">filename.ext</h2>
+        <span class="viewer-path" id="viewer-path"></span>
+      </div>
+      <div class="viewer-actions">
+        <a class="btn btn-ghost btn-sm" id="viewer-github-link" target="_blank" rel="noopener">View on GitHub</a>
+        <a class="btn btn-primary btn-sm" id="viewer-download-link" download>Download</a>
+        <button class="btn btn-icon" id="btn-close-viewer" aria-label="Close">&times;</button>
+      </div>
+    </header>
+    <div class="viewer-body" id="viewer-body">
+      <!-- filled dynamically per file type -->
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<script src="js/github-api.js"></script>
+<script src="js/viewers.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
