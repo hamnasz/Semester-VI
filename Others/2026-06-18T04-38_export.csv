@@ -1,0 +1,3 @@
+﻿Question (truncated),Embedding Model,Method,Context Coverage,Avg Chunk Score,Ret. Time (s),Gen. Time (s),Non-Answer
+tell me about Vector Store,all-MiniLM-L6-v2,generative,100%,0.2382,0.03,22.332,✅ No
+what is chunk size of the project,all-MiniLM-L6-v2,generative,100%,0.2295,0.031,51.915,✅ No

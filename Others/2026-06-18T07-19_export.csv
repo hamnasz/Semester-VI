@@ -1,0 +1,2 @@
+﻿Question (truncated),Embedding Model,Method,Context Coverage,Avg Chunk Score,Ret. Time (s),Gen. Time (s),Non-Answer
+what is chunk size of model,all-MiniLM-L6-v2,generative,100%,0.2165,0.023,54.507,✅ No
