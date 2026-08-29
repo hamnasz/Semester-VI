@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اسلام اور فیمنزم: ایک فلسفیانہ سفر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --cream: #FAF8F5;
+    --warm-white: #FFFFFF;
+    --ink: #1C1917;
+    --ink-soft: #3D3835;
+    --ink-muted: #78716C;
+    --gold: #B8975A;
+    --gold-light: #D4B483;
+    --gold-pale: #F5EDD9;
+    --sage: #8FAF8A;
+    --sage-pale: #EEF4ED;
+    --border: #E8E2D9;
+    --border-soft: #F0EBE3;
+    --section-alt: #F7F4EF;
+    --hadith-bg: #FAFDF9;
+    --quran-bg: linear-gradient(135deg, #F9F5EC 0%, #FDF8EE 100%);
+    --shadow-soft: 0 2px 20px rgba(28,25,23,0.06);
+    --shadow-card: 0 4px 32px rgba(28,25,23,0.08);
+    --shadow-gold: 0 4px 24px rgba(184,151,90,0.15);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --font-urdu: 'Noto Nastaliq Urdu', serif;
+    --font-arabic: 'Amiri', serif;
+    --font-en: 'Inter', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--font-urdu);
+    font-size: 19px;
+    line-height: 2.2;
+    direction: rtl;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HERO ────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px 100px;
+    background: var(--warm-white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 0%, rgba(184,151,90,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 40% at 80% 100%, rgba(143,175,138,0.06) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .geometric-ornament {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 48px;
+    opacity: 0.18;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold-pale);
+    border: 1px solid rgba(184,151,90,0.3);
+    border-radius: 100px;
+    padding: 8px 20px;
+    font-family: var(--font-en);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 40px;
+    direction: ltr;
+  }
+
+  .hero-title {
+    font-size: clamp(32px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--ink);
+    margin-bottom: 28px;
+    max-width: 760px;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(17px, 2vw, 21px);
+    color: var(--ink-muted);
+    font-weight: 400;
+    max-width: 620px;
+    line-height: 2.1;
+    margin-bottom: 60px;
+  }
+
+  .hero-divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--ink-muted);
+    font-family: var(--font-en);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    animation: float 2.5s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-6px); }
+  }
+
+  /* ── LAYOUT ──────────────────────────────────── */
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .container-wide {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ── SECTION BASE ────────────────────────────── */
+  .section {
+    padding: 90px 0;
+  }
+
+  .section-alt {
+    background: var(--section-alt);
+  }
+
+  .section-white {
+    background: var(--warm-white);
+  }
+
+  /* ── SECTION HEADER ──────────────────────────── */
+  .section-number {
+    font-family: var(--font-en);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    direction: ltr;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: flex-end;
+  }
+
+  .section-number::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+    order: 1;
+  }
+
+  .section-title {
+    font-size: clamp(24px, 3.5vw, 36px);
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ── PROSE ───────────────────────────────────── */
+  .prose {
+    font-size: 19px;
+    line-height: 2.4;
+    color: var(--ink-soft);
+  }
+
+  .prose p {
+    margin-bottom: 28px;
+  }
+
+  .prose p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ── OPENING QUOTE ───────────────────────────── */
+  .opening-quote {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-right: 4px solid var(--gold);
+    border-radius: var(--radius);
+    padding: 40px 44px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow-soft);
+    font-size: 20px;
+    line-height: 2.5;
+    color: var(--ink-soft);
+    position: relative;
+  }
+
+  .opening-quote::before {
+    content: '\201C';
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    font-size: 100px;
+    line-height: 1;
+    color: var(--gold);
+    opacity: 0.2;
+    font-family: Georgia, serif;
+  }
+
+  /* ── QURAN VERSE ─────────────────────────────── */
+  .quran-block {
+    background: var(--quran-bg);
+    border: 1px solid rgba(184,151,90,0.25);
+    border-radius: var(--radius);
+    padding: 44px 40px 36px;
+    margin: 40px 0;
+    text-align: center;
+    box-shadow: var(--shadow-gold);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .quran-block::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .quran-ornament {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 20px;
+    opacity: 0.4;
+  }
+
+  .arabic-text {
+    font-family: var(--font-arabic);
+    font-size: clamp(22px, 3vw, 30px);
+    line-height: 2.1;
+    color: var(--ink);
+    font-weight: 700;
+    direction: rtl;
+    margin-bottom: 24px;
+    letter-spacing: 0.02em;
+  }
+
+  .quran-translation {
+    font-size: 17px;
+    color: var(--ink-soft);
+    line-height: 2.2;
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+
+  .quran-ref {
+    font-family: var(--font-en);
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    direction: ltr;
+  }
+
+  /* ── HADITH CARD ─────────────────────────────── */
+  .hadith-card {
+    background: var(--hadith-bg);
+    border: 1px solid rgba(143,175,138,0.3);
+    border-radius: var(--radius);
+    padding: 36px 40px;
+    margin: 36px 0;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+  }
+
+  .hadith-card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--sage);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+
+  .hadith-label {
+    font-family: var(--font-en);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 16px;
+    direction: ltr;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-end;
+  }
+
+  .hadith-arabic {
+    font-family: var(--font-arabic);
+    font-size: 20px;
+    line-height: 2;
+    color: var(--ink);
+    direction: rtl;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  .hadith-text {
+    font-size: 18px;
+    line-height: 2.3;
+    color: var(--ink-soft);
+  }
+
+  /* ── HIGHLIGHT BOX ───────────────────────────── */
+  .highlight-box {
+    background: var(--gold-pale);
+    border-radius: var(--radius);
+    padding: 36px 40px;
+    margin: 36px 0;
+    border: 1px solid rgba(184,151,90,0.2);
+  }
+
+  .highlight-box p {
+    font-size: 18px;
+    line-height: 2.3;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+
+  .highlight-box p:last-child { margin-bottom: 0; }
+
+  /* ── COMPARISON TABLE ────────────────────────── */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 36px 0;
+  }
+
+  .compare-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 28px 28px 24px;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .compare-card-label {
+    font-family: var(--font-en);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 14px;
+    direction: ltr;
+  }
+
+  .compare-card p {
+    font-size: 17px;
+    line-height: 2.2;
+    color: var(--ink-soft);
+  }
+
+  /* ── RIGHTS LIST ─────────────────────────────── */
+  .rights-list {
+    list-style: none;
+    margin: 28px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .rights-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 18px;
+    line-height: 2;
+    color: var(--ink-soft);
+    justify-content: flex-end;
+  }
+
+  .rights-list li::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    margin-top: 14px;
+    flex-shrink: 0;
+    order: 1;
+  }
+
+  /* ── PERSON CARD ─────────────────────────────── */
+  .person-block {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 40px;
+    margin: 36px 0;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .person-block::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+  }
+
+  .person-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .person-label {
+    font-family: var(--font-en);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    direction: ltr;
+  }
+
+  .person-content {
+    font-size: 18px;
+    line-height: 2.3;
+    color: var(--ink-soft);
+  }
+
+  .person-lesson {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  /* ── TIMELINE ROW ─────────────────────────────── */
+  .timeline {
+    margin: 32px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .timeline-item {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    justify-content: flex-end;
+  }
+
+  .timeline-content {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    margin-right: 16px;
+    flex: 1;
+    font-size: 17px;
+    line-height: 2;
+    color: var(--ink-soft);
+    box-shadow: var(--shadow-soft);
+    position: relative;
+  }
+
+  .timeline-year {
+    font-family: var(--font-en);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--gold);
+    direction: ltr;
+    min-width: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 16px;
+  }
+
+  /* ── SECTION DIVIDER ─────────────────────────── */
+  .ornament-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 16px 0;
+  }
+
+  .ornament-divider span {
+    display: block;
+    height: 1px;
+    flex: 1;
+    background: var(--border);
+  }
+
+  .ornament-divider i {
+    color: var(--gold);
+    font-size: 14px;
+    opacity: 0.7;
+  }
+
+  /* ── CONCLUSION BLOCK ────────────────────────── */
+  .conclusion-block {
+    background: linear-gradient(135deg, #1C1917 0%, #2D2723 100%);
+    color: #FAF8F5;
+    border-radius: var(--radius);
+    padding: 60px 52px;
+    margin: 48px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .conclusion-block::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(184,151,90,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .conclusion-block .arabic-text {
+    color: var(--gold-light);
+    margin-bottom: 24px;
+  }
+
+  .conclusion-block .quran-translation {
+    color: rgba(250,248,245,0.8);
+  }
+
+  .conclusion-block .quran-ref {
+    color: var(--gold-light);
+  }
+
+  /* ── FINAL CLOSING ───────────────────────────── */
+  .closing-section {
+    background: var(--warm-white);
+    padding: 100px 0;
+    text-align: center;
+  }
+
+  .closing-text {
+    font-size: clamp(20px, 2.5vw, 26px);
+    line-height: 2.2;
+    color: var(--ink-soft);
+    max-width: 680px;
+    margin: 0 auto 32px;
+  }
+
+  .closing-thanks {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+
+  /* ── INSTRUCTIONS SECTION ────────────────────── */
+  .instructions-section {
+    background: var(--section-alt);
+    border-top: 1px solid var(--border);
+    padding: 80px 0;
+  }
+
+  .instructions-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .instructions-header .section-number {
+    justify-content: center;
+  }
+
+  .instructions-header .section-number::before {
+    order: unset;
+  }
+
+  .instructions-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-top: 12px;
+  }
+
+  .instruction-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 36px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .instruction-card h3 {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: flex-end;
+  }
+
+  .instruction-card h3 i {
+    color: var(--gold);
+    font-size: 16px;
+  }
+
+  .instruction-card p, .instruction-card li {
+    font-size: 17px;
+    line-height: 2.2;
+    color: var(--ink-soft);
+  }
+
+  .ref-list {
+    list-style: none;
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+
+  .ref-list li {
+    background: var(--gold-pale);
+    border: 1px solid rgba(184,151,90,0.25);
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 15px;
+    color: var(--ink-soft);
+    font-family: var(--font-arabic);
+  }
+
+  /* ── FOOTER ──────────────────────────────────── */
+  footer {
+    background: var(--ink);
+    color: rgba(250,248,245,0.5);
+    text-align: center;
+    padding: 32px;
+    font-family: var(--font-en);
+    font-size: 13px;
+    direction: ltr;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────── */
+  @media (max-width: 768px) {
+    body { font-size: 17px; line-height: 2.1; }
+    .container, .container-wide { padding: 0 20px; }
+    .section { padding: 60px 0; }
+    .opening-quote { padding: 28px 24px; }
+    .quran-block { padding: 32px 24px; }
+    .hadith-card { padding: 28px 24px; }
+    .person-block { padding: 28px 24px; }
+    .conclusion-block { padding: 40px 28px; }
+    .compare-grid { grid-template-columns: 1fr; }
+    .closing-section { padding: 70px 0; }
+    .hero { padding: 60px 20px 80px; min-height: auto; }
+  }
+
+  @media (max-width: 480px) {
+    body { font-size: 16px; }
+    .arabic-text { font-size: 20px; }
+    .instruction-card { padding: 24px 20px; }
+  }
+
+  /* ── UTILITY ─────────────────────────────────── */
+  .ltr { direction: ltr; }
+  .text-gold { color: var(--gold); }
+  .mb-0 { margin-bottom: 0 !important; }
+
+  /* ── SMOOTH REVEAL ───────────────────────────── */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<section class="hero">
+  <svg class="geometric-ornament" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#B8975A" stroke-width="1">
+      <polygon points="60,5 115,35 115,85 60,115 5,85 5,35" stroke-width="1.5"/>
+      <polygon points="60,18 102,42 102,78 60,102 18,78 18,42"/>
+      <polygon points="60,30 90,48 90,72 60,90 30,72 30,48"/>
+      <circle cx="60" cy="60" r="12"/>
+      <line x1="60" y1="5" x2="60" y2="30"/>
+      <line x1="115" y1="35" x2="102" y2="42"/>
+      <line x1="115" y1="85" x2="102" y2="78"/>
+      <line x1="60" y1="115" x2="60" y2="90"/>
+      <line x1="5" y1="85" x2="18" y2="78"/>
+      <line x1="5" y1="35" x2="18" y2="42"/>
+    </g>
+  </svg>
+
+  <div class="hero-badge ltr">
+    <i class="fas fa-book-open"></i>
+    Philosophical Speech Manuscript
+  </div>
+
+  <h1 class="hero-title">اسلام اور فیمنزم</h1>
+  <p class="hero-subtitle">ایک فلسفیانہ سفر۔ ایک ایمانداری کی آواز۔ ایک سوال جو ہر عورت کے دل میں کہیں نہ کہیں موجود ہے۔</p>
+  <div class="hero-divider"></div>
+
+  <div class="scroll-hint ltr">
+    <i class="fas fa-chevron-down"></i>
+    Scroll to read
+  </div>
+</section>
+
+<!-- ══════════════════ SECTION 1: آغاز ══════════════════ -->
+<section class="section section-white reveal">
+  <div class="container">
+    <div class="section-number">01 / آغاز</div>
+    <h2 class="section-title">آغاز: ایک پرانا سوال</h2>
+
+    <div class="opening-quote">
+      <p>میں آج آپ سے ایک بہت پرانا سوال پوچھنا چاہتی ہوں۔ یہ سوال فلسفے کا ہے۔ یہ سوال تاریخ کا ہے۔ اور یہ سوال ہر اس عورت کا ہے جو کبھی کسی کمرے میں بیٹھ کر سوچتی ہے کہ مجھے یہاں ہونا چاہیے یا نہیں۔</p>
+      <p>سوال یہ ہے: <strong>کیا اسلام اور فیمنزم دشمن ہیں؟</strong></p>
+    </div>
+
+    <div class="prose">
+      <p>آج تک اس سوال کے دو جواب دیے جاتے رہے ہیں۔</p>
+
+      <p>ایک طرف وہ لوگ ہیں جو کہتے ہیں: اسلام عورت کو قید کرتا ہے، فیمنزم اسے آزاد کرتا ہے۔ اس لیے اگر تم اسلام مانتی ہو تو فیمنسٹ نہیں ہو سکتیں۔</p>
+
+      <p>دوسری طرف وہ لوگ ہیں جو کہتے ہیں: فیمنزم مغرب کی سازش ہے، اسلام مکمل ضابطۂ حیات ہے، ان دونوں کو ملانا گناہ ہے۔</p>
+
+      <p>اور میں آج آپ کے سامنے کھڑی ہوں، یہ بتانے کے لیے کہ <strong>دونوں جواب ادھورے ہیں۔</strong></p>
+
+      <p>کیونکہ جب آپ قرآن پاک کو اس کی اصل تفسیر کے ساتھ پڑھتے ہیں تو ایک بالکل مختلف تصویر سامنے آتی ہے۔ ایسی تصویر جو نہ مغربی فیمنسٹ کو پسند آئے گی اور نہ روایتی مذہبی طبقے کو۔</p>
+
+      <p>کیونکہ سچ اکثر دونوں انتہاؤں کے درمیان کہیں ہوتا ہے، مگر وہاں تک پہنچنے کے لیے سوچنا پڑتا ہے۔</p>
+
+      <p><strong>تو آج، آئیں سوچتے ہیں۔</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ SECTION 2: کیا عورت ناقص ہے؟ ══════════════════ -->
+<section class="section section-alt reveal">
+  <div class="container">
+    <div class="section-number">02 / فلسفہ</div>
+    <h2 class="section-title">کیا عورت ناقص ہے؟</h2>
+
+    <div class="prose">
+      <p>سب سے پہلے وہ سوال جو کوئی نہیں پوچھتا: <strong>کیا عورت ناقص ہے؟</strong></p>
+
+      <p>یہ سوال آج کا نہیں۔ دنیا کے ہر بڑے فلسفے نے اس سوال کا جواب دیا ہے، اور ہر بار عورت کو کمتر قرار دیا گیا۔</p>
+    </div>
+
+    <div class="highlight-box">
+      <p>یونانی فلسفے میں ارسطو نے لکھا: عورت ایک نامکمل مرد ہے۔</p>
+      <p>قرونِ وسطیٰ کے یورپ میں چرچ نے صدیوں تک بحث کی کہ عورت میں روح ہے بھی یا نہیں۔</p>
+      <p>ہندو فلسفے میں کہا گیا: عورت کی پیدائش پچھلے جنم کے گناہوں کی سزا ہے۔</p>
+    </div>
+
+    <div class="prose">
+      <p><strong>اور قرآن نے کیا کہا؟</strong></p>
+    </div>
+
+    <div class="quran-block">
+      <svg class="quran-ornament" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g fill="none" stroke="#B8975A" stroke-width="1">
+          <polygon points="20,2 38,11 38,29 20,38 2,29 2,11"/>
+          <polygon points="20,8 32,15 32,25 20,32 8,25 8,15"/>
+          <circle cx="20" cy="20" r="5"/>
+        </g>
+      </svg>
+      <div class="arabic-text">يَا أَيُّهَا النَّاسُ اتَّقُوا رَبَّكُمُ الَّذِي خَلَقَكُم مِّن نَّفْسٍ وَاحِدَةٍ</div>
+      <p class="quran-translation">اے لوگو! اپنے رب سے ڈرو، جس نے تمہیں پیدا کیا ایک نفس سے۔</p>
+      <p class="quran-ref ltr">سورۃ النساء — آیت 1</p>
+    </div>
+
+    <div class="prose">
+      <p>ایک نفس۔ <strong>نفسٍ واحدہ۔</strong></p>
+
+      <p>قرآن کی تفسیر میں اس آیت پر بہت گہری بحث ہے، اور وہ بحث یہ ہے: جب دونوں کی اصل ایک ہے تو کمتری کہاں سے آئی؟</p>
+
+      <p><strong>قرآن کہتا ہے: آئی ہی نہیں۔</strong></p>
+
+      <p>اور جو لوگ یہ کہتے ہیں کہ عورت پسلی سے بنی تو وہ کمتر ہے، قرآن کی تفسیر میں اس کا جواب موجود ہے: پسلی جسم کا وہ حصہ ہے جو دل کی حفاظت کرتی ہے۔ یعنی، اگر عورت پسلی ہے تو وہ <strong>محافظ</strong> ہے۔ کمتر نہیں۔</p>
+    </div>
+
+    <div class="quran-block">
+      <div class="arabic-text">إِنَّ أَكْرَمَكُمْ عِندَ اللَّهِ أَتْقَاكُمْ</div>
+      <p class="quran-translation">اللہ کے نزدیک سب سے معزز وہ ہے جو سب سے زیادہ متقی ہے۔</p>
+    </div>
+
+    <div class="prose">
+      <p>تقویٰ کی کوئی جنس نہیں ہوتی۔</p>
+
+      <p>دنیا کے ہر فلسفے نے عورت کو ناقص کہا۔ قرآن نے کہا: ناقص وہ ہے جس کا تقویٰ ناقص ہے، اور یہ مرد بھی ہو سکتا ہے۔</p>
+
+      <p>یہ وہ جواب ہے جو چودہ سو سال پہلے آیا، جب دنیا کا کوئی فلسفہ یہاں تک نہیں پہنچا تھا۔</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ SECTION 3: قوّامون ══════════════════ -->
+<section class="section section-white reveal">
+  <div class="container">
+    <div class="section-number">03 / تفسیر</div>
+    <h2 class="section-title">"قوّامون" کا اصل مطلب</h2>
+
+    <div class="prose">
+      <p>اب وہ آیت جسے سب سے زیادہ غلط پڑھا جاتا ہے۔</p>
+    </div>
+
+    <div class="quran-block">
+      <div class="arabic-text">الرِّجَالُ قَوَّامُونَ عَلَى النِّسَاء</div>
+      <p class="quran-translation">مرد عورتوں کے قوّام ہیں۔</p>
+      <p class="quran-ref ltr">سورۃ النساء — آیت 34</p>
+    </div>
+
+    <div class="prose">
+      <p>اس کا ترجمہ اکثر یہ کیا جاتا ہے: مرد عورتوں پر حاکم ہیں۔ اور اسی ایک لفظ "حاکم" نے صدیوں کا ظلم روا رکھا۔</p>
+
+      <p>مگر قرآن کی تفسیر میں یہ واضح ہے: <strong>"قوّام" کا معنی حاکم یا مالک نہیں۔ قوّام کا معنی ہے، ذمہ دار، نگہبان، خرچ اٹھانے والا۔</strong></p>
+    </div>
+
+    <div class="quran-block">
+      <div class="arabic-text">بِمَا فَضَّلَ اللَّهُ بَعْضَهُمْ عَلَىٰ بَعْضٍ وَبِمَا أَنفَقُوا</div>
+      <p class="quran-translation">اس بنا پر کہ اللہ نے بعض کو بعض پر فضیلت دی ہے اور اس بنا پر کہ وہ خرچ کرتے ہیں۔</p>
+      <p class="quran-ref ltr">سورۃ النساء — آیت 34</p>
+    </div>
+
+    <div class="prose">
+      <p>یعنی، یہ قوّامیت مشروط ہے۔ جب تک وہ خرچ کرے، جب تک وہ ذمہ داری نبھائے۔ <strong>جس دن خرچ بند، قوّامیت ختم۔</strong> قرآن نے خود یہ شرط لگائی۔</p>
+
+      <p>اب سوچیں، آج کتنے گھر ہیں جہاں مرد "قوّام" بنا بیٹھا ہے، مگر نہ خرچ کرتا ہے، نہ ذمہ داری اٹھاتا ہے، بلکہ اسی آیت کو ڈھال بنا کر عورت پر حکم چلاتا ہے۔ قرآن کے مطابق اس کی یہ "قوّامیت" باطل ہے۔</p>
+
+      <p>کیونکہ قرآن نے مرد کو مالک نہیں بنایا۔ <strong>قرآن نے مرد کو ذمہ دار بنایا۔</strong> اور ذمہ داری حق نہیں مانگتی، فرض ادا کرتی ہے۔</p>
+
+      <p>یہ فرق بہت گہرا ہے، اور یہ فرق اکثر نہیں بتایا جاتا۔</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ SECTION 4: حقوقِ نسواں ══════════════════ -->
+<section class="section section-alt reveal">
+  <div class="container">
+    <div class="section-number">04 / تاریخ</div>
+    <h2 class="section-title">ساتویں صدی کا حقوقِ نسواں کا منشور</h2>
+
+    <div class="prose">
+      <p>اب میں آپ کو ایک <span class="ltr" style="font-family:var(--font-en);font-size:0.9em;">comparison</span> دینا چاہتی ہوں۔</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-content">انگلینڈ میں پہلی بار قانون بنا کہ شادی شدہ عورت اپنی جائیداد رکھ سکتی ہے۔ پہلے شوہر سے شادی ہوتے ہی عورت کی ہر چیز شوہر کی ہو جاتی تھی۔</div>
+        <div class="timeline-year">1870</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">امریکہ میں عورت کو ووٹ کا حق ملا۔</div>
+        <div class="timeline-year">1920</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">مغرب میں عورت کو طلاق کے یکساں حقوق ملے۔</div>
+        <div class="timeline-year">1970</div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p><strong>اب سنیں، قرآن نے یہ سب کب دیا؟</strong></p>
+    </div>
+
+    <div class="quran-block">
+      <div class="arabic-text">وَلَهُنَّ مِثْلُ الَّذِي عَلَيْهِنَّ بِالْمَعْرُوفِ</div>
+      <p class="quran-translation">اور عورتوں کے حقوق ویسے ہی ہیں جیسے ان پر ذمہ داریاں ہیں۔</p>
+      <p class="quran-ref ltr">سورۃ البقرہ — آیت 228</p>
+    </div>
+
+    <div class="prose">
+      <p>قرآن کی تفسیر میں یہ آیت حقوق کی مساوات کا باقاعدہ اعلان قرار دی گئی ہے، اور یہ اعلان ساتویں صدی عیسوی میں آیا۔</p>
+      <p>قرآن نے دیا:</p>
+    </div>
+
+    <ul class="rights-list">
+      <li>جائیداد کا حق، اپنے نام پر، بغیر کسی کی اجازت کے</li>
+      <li>تجارت کا حق، حضرت خدیجہ رضی اللہ عنہا اس کی زندہ مثال ہیں</li>
+      <li>مہر کا حق، جو صرف عورت کا ہے، کوئی واپس نہیں لے سکتا</li>
+      <li>خلع کا حق، عورت خود رشتہ ختم کر سکتی ہے</li>
+      <li>وراثت کا حق، اپنے باپ، شوہر، بیٹے سے</li>
+    </ul>
+
+    <div class="prose">
+      <p>اور یہ سب <strong>632ء میں۔</strong> جب یورپ میں عورت کو انسان سمجھا ہی نہیں جاتا تھا۔</p>
+
+      <p>تو سوال یہ پیدا ہوتا ہے، اگر قرآن نے یہ سب چودہ سو سال پہلے دے دیا تو آج مسلمان عورت اتنی بے حقوق کیوں ہے؟</p>
+
+      <p>جواب صرف ایک ہے: <strong>کیونکہ ہم نے قرآن پڑھنا چھوڑ دیا، اور قرآن کی جگہ روایت نے لے لی۔</strong></p>
+
+      <p>قرآن اور روایت، یہ دونوں ایک نہیں ہیں۔ اور یہ فرق سمجھنا ضروری ہے۔</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ SECTION 5: مریم علیہا السلام ══════════════════ -->
+<section class="section section-white reveal">
+  <div class="container">
+    <div class="section-number">05 / قرآنی کردار</div>
+    <h2 class="section-title">مریم علیہا السلام</h2>
+
+    <div class="prose">
+      <p>قرآن پاک میں ایک کردار ہے، ایک ایسا کردار جو پوری انسانی تاریخ میں بے مثال ہے۔</p>
+
+      <p>قرآن میں کسی بھی صحابی کے نام پر سورت نہیں۔ کسی بھی خلیفہ کے نام پر سورت نہیں۔ مگر ایک عورت ہیں جن کے نام پر قرآن میں پوری سورت ہے۔</p>
+
+      <p><strong>مریم علیہا السلام۔</strong></p>
+
+      <p>قرآن کی سورۃ مریم میں جب فرشتہ آیا اور بشارت دی، تو مریم علیہا السلام نے کیا کیا؟ انہوں نے سوال کیا:</p>
+    </div>
+
+    <div class="quran-block">
+      <div class="arabic-text">أَنَّىٰ يَكُونُ لِي غُلَامٌ وَلَمْ يَمْسَسْنِي بَشَرٌ</div>
+      <p class="quran-translation">میرے لیے بیٹا کیسے ہو سکتا ہے جبکہ مجھے کسی انسان نے ہاتھ بھی نہیں لگایا؟</p>
+      <p class="quran-ref ltr">سورۃ مریم</p>
+    </div>
+
+    <div class="prose">
+      <p>یہ سوال ایک فرشتے سے پوچھا جا رہا ہے، اللہ کے بھیجے ہوئے فرشتے سے۔</p>
+
+      <p>اور قرآن نے اس سوال کو محفوظ کیا۔ روایت نہیں کیا کہ مریم نے بے ادبی کی، بلکہ قرآن نے یہ سوال بعینہ نقل کیا۔ اس لیے کہ قرآن کا پیغام یہ ہے: <strong>عورت سوال کر سکتی ہے۔ عورت کو سوچنا ہے، اندھا یقین نہیں مانگا۔</strong></p>
+
+      <p>اور پھر، جب مریم علیہا السلام بچے کو گود میں لے کر اپنی قوم کے سامنے آئیں تو لوگوں نے طعنے دیے، الزام لگائے، تہمت لگائی۔</p>
+
+      <p>مریم علیہا السلام نے کیا کیا؟ انہوں نے بچے کی طرف اشارہ کیا۔</p>
+    </div>
+
+    <div class="quran-block">
+      <div class="arabic-text">فَأَشَارَتْ إِلَيْهِ</div>
+      <p class="quran-translation">تو اس نے اس کی طرف اشارہ کیا۔</p>
+    </div>
+
+    <div class="prose">
+      <p>بس، اشارہ۔ کوئی وضاحت نہیں۔ کوئی معافی نہیں۔ کسی مرد کا سہارا نہیں۔ کوئی وکیل نہیں۔ کوئی گواہ نہیں۔ صرف <strong>اللہ پر یقین۔</strong></p>
+
+      <p>یہ ہے قرآن کا ماڈل عورت کے لیے۔</p>
+
+      <p>مغربی فیمنزم کہتا ہے: مرد سے آزادی حاصل کرو۔ قرآن کا مریم والا سبق کہتا ہے: جب اللہ سے تعلق مضبوط ہو تو کسی کی ضرورت ہی نہیں رہتی۔</p>
+
+      <p>یہ آزادی نہیں، یہ اس سے بھی بڑی چیز ہے۔ <strong>یہ خود کفالت ہے، روحانی خود کفالت۔</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ SECTION 6: دو فلسفوں کا تصادم ══════════════════ -->
+<section class="section section-white reveal">
+  <div class="container">
+    <div class="section-number">06 / فلسفیانہ تقابل</div>
+    <h2 class="section-title">دو فلسفوں کا تصادم</h2>
+
+    <div class="prose">
+      <p>اب وہ جگہ جہاں اصل سوال ہے۔</p>
+
+      <p>مغربی فیمنزم کی بنیاد کیا ہے؟ <strong><span class="ltr" style="font-family:var(--font-en);">Bodily Autonomy</span>، میرا جسم، میری مرضی۔ کوئی نہ روکے، کوئی نہ ٹوکے۔</strong></p>
+
+      <p>یہ بات سن کر غصہ آتا ہے؟ نہیں آنا چاہیے، کیونکہ یہ نعرہ اس ظلم کے جواب میں آیا جو صدیوں سے عورت کے جسم پر کیا گیا۔ اس نعرے کے پیچھے درد ہے اور وہ درد سچا ہے۔</p>
+
+      <p>مگر، اسلام ایک مختلف بنیاد پر کھڑا ہے۔</p>
+    </div>
+
+    <div class="quran-block">
+      <div class="arabic-text">إِنَّ الْمُسْلِمِينَ وَالْمُسْلِمَاتِ وَالْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ وَالْقَانِتِينَ وَالْقَانِتَاتِ وَالصَّادِقِينَ وَالصَّادِقَاتِ...</div>
+      <p class="quran-translation">بے شک مسلمان مرد اور مسلمان عورتیں، مومن مرد اور مومن عورتیں، فرمانبردار مرد اور فرمانبردار عورتیں، سچے مرد اور سچی عورتیں...</p>
+      <p class="quran-ref ltr">سورۃ الاحزاب — آیت 35</p>
+    </div>
+
+    <div class="prose">
+      <p>اللہ نے اس آیت میں دس صفات گنائی ہیں، مسلم، مومن، قانت، صادق، صابر، خاشع، متصدق، صائم، حافظ، ذاکر۔ اور ہر ایک صفت میں مرد کا ذکر کیا اور عورت کا ذکر کیا۔ <strong>ساتھ ساتھ۔ برابر برابر۔</strong></p>
+
+      <p>قرآن کی تفسیر میں اس آیت کو روحانی مساوات کا اعلان کہا گیا ہے، یعنی آخرت میں اجر کا معیار جنس نہیں، <strong>عمل</strong> ہے۔</p>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <div class="compare-card-label ltr">مغربی فیمنزم</div>
+        <p>مجھے کوئی نہ روکے۔ آزادی دیتا ہے مگر جوابدہی کے بغیر۔</p>
+      </div>
+      <div class="compare-card">
+        <div class="compare-card-label ltr">قرآنی پیغام</div>
+        <p>تمہیں کوئی روک نہیں سکتا کیونکہ تم براہِ راست اللہ کے سامنے جوابدہ ہو۔ ذمہ داری دیتا ہے اور اس ذمہ داری میں وہ آزادی ہے جو کوئی انسان نہیں چھین سکتا۔</p>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>کیونکہ جو عورت اللہ کے سامنے جوابدہ ہے، وہ کسی انسان کے سامنے نہیں جھکتی۔ نہ باپ کے نام پر، نہ شوہر کے نام پر، نہ معاشرے کے نام پر۔</p>
+
+      <p>یہ صرف آزادی نہیں، <strong>یہ آزادی کی سب سے اعلیٰ شکل ہے: کردار، خود اپنے سامنے جوابدہ ہونا۔</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ SECTION 8: تین عظیم خواتین ══════════════════ -->
+<section class="section section-alt reveal">
+  <div class="container">
+    <div class="section-number">07 / اسلامی تاریخ</div>
+    <h2 class="section-title">تین عظیم خواتین</h2>
+
+    <div class="prose">
+      <p>میں آپ کو تین خواتین سے ملوانا چاہتی ہوں، جنہیں قرآن اور اسلامی تاریخ نے خود اٹھایا۔</p>
+    </div>
+
+    <div class="person-block">
+      <div class="person-label ltr">01 — اقتصادی آزادی</div>
+      <div class="person-name">حضرت خدیجہ رضی اللہ عنہا</div>
+      <div class="person-content">
+        <p>وہ ایک کامیاب تاجرہ تھیں۔ خود تجارت کرتی تھیں۔ لوگوں کو ملازم رکھتی تھیں۔ انہوں نے نبی ﷺ کو اپنی تجارت پر بھیجا اور پھر خود رشتے کا پیغام بھیجا۔</p>
+        <p>ساتویں صدی میں، عرب میں، ایک عورت نے خود نکاح کا پیغام بھیجا۔ اور یہ اسلام میں ممنوع نہیں تھا۔</p>
+        <p>قرآن نے کبھی نہیں کہا کہ عورت کمائی نہیں کر سکتی۔ قرآن نے کبھی نہیں کہا کہ عورت ملازم نہیں رکھ سکتی۔ قرآن نے کبھی نہیں کہا کہ عورت رشتے کی بات نہیں کر سکتی۔ <strong>یہ سب ہماری روایت نے کہا ہے، قرآن نے نہیں۔</strong></p>
+      </div>
+      <div class="person-lesson">پیغام: اقتصادی آزادی اور سماجی اقدام قرآن کا عطا کردہ حق ہے۔</div>
+    </div>
+
+    <div class="person-block">
+      <div class="person-label ltr">02 — علمی اختیار</div>
+      <div class="person-name">حضرت عائشہ رضی اللہ عنہا</div>
+      <div class="person-content">
+        <p>کسی نے ان کے بارے میں ایک حدیث غلط روایت کی۔ حضرت عائشہ رضی اللہ عنہا نے صحابی سے کہا: آپ نے غلط سنا، نبی ﷺ نے یہ نہیں فرمایا۔ صحابی، مرد صحابی، نے ان کی بات سنی اور تسلیم کی۔</p>
+        <p>یعنی، علم کے میدان میں، ایک عورت نے مردوں کو درست کیا۔ اور یہ اسلامی تاریخ کا حصہ ہے۔</p>
+        <p>قرآن میں کہیں نہیں لکھا کہ علم صرف مرد کا حق ہے۔ <strong>"اقرأ"</strong>، قرآن کا پہلا لفظ، اس میں جنس نہیں بتائی گئی۔</p>
+      </div>
+      <div class="person-lesson">پیغام: علمی اختیار ہر مسلمان عورت کا حق ہے۔</div>
+    </div>
+
+    <div class="person-block">
+      <div class="person-label ltr">03 — نسلِ نبوت</div>
+      <div class="person-name">حضرت فاطمہ رضی اللہ عنہا</div>
+      <div class="person-content">
+        <p>قرآن میں سورۃ الکوثر ہے، جس میں اللہ نے نبی ﷺ کو "کوثر" کی بشارت دی۔ مفسرین نے لکھا ہے کہ کوثر کا ایک مطلب یہ بھی ہے کہ آپ ﷺ کی نسل اور ذکر آگے بڑھے گا۔ اور وہ نسل، حضرت فاطمہ رضی اللہ عنہا سے چلی۔ بیٹوں سے نہیں، <strong>بیٹی سے۔</strong></p>
+        <p>جس معاشرے میں بیٹیاں زندہ دفن کی جاتی تھیں، اللہ نے اپنے سب سے پیارے نبی کی نسل ایک بیٹی کے ذریعے آگے بڑھائی۔</p>
+      </div>
+      <div class="person-lesson">یہ اتفاق نہیں، یہ پیغام ہے۔ یہ اللہ کا بیان ہے کہ عورت مرکز ہے، حاشیہ نہیں۔</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ SECTION 9: ایمانداری کا تقاضا ══════════════════ -->
+<section class="section section-white reveal">
+  <div class="container">
+    <div class="section-number">08 / ایمانداری</div>
+    <h2 class="section-title">ایمانداری کا تقاضا</h2>
+
+    <div class="prose">
+      <p>اور اب، سب سے ضروری بات۔ میں ایمانداری سے بات کروں گی، کیونکہ ایک فلسفے کی نمائندگی کرنے کا مطلب ہے کہ اسے اس کی پوری پیچیدگی کے ساتھ پیش کیا جائے۔</p>
+
+      <p>کچھ لوگ کہتے ہیں کہ اسلام اور فیمنزم بالکل ایک ہی ہیں۔ یہ سچ نہیں۔ <strong>اختلافات ہیں۔ اصلی اختلافات۔</strong></p>
+    </div>
+
+    <div class="hadith-card">
+      <div class="hadith-label ltr"><i class="fas fa-balance-scale"></i> پہلا اختلاف: تعدد ازدواج</div>
+      <div class="hadith-arabic">وَلَن تَسْتَطِيعُوا أَن تَعْدِلُوا بَيْنَ النِّسَاءِ وَلَوْ حَرَصْتُمْ</div>
+      <p class="hadith-text">تم کبھی عدل نہیں کر سکتے عورتوں کے درمیان، چاہے کتنی ہی کوشش کرو۔ (سورۃ النساء، آیت 129)</p>
+    </div>
+
+    <div class="prose">
+      <p>قرآن میں سورۃ النساء آیت 3 میں یہ اجازت دی گئی ہے، مگر شرط کے ساتھ: عدل۔ اور پھر اسی سورت میں آیت 129 میں قرآن خود کہتا ہے کہ عدل ممکن نہیں۔</p>
+
+      <p>قرآن کی تفسیر میں اس پر بحث ہے کہ قرآن نے اس اجازت کو خود اتنا محدود کر دیا کہ جو شخص قرآن کو سمجھ کر پڑھے، وہ اس راہ پر نہیں جائے گا۔</p>
+    </div>
+
+    <div class="hadith-card">
+      <div class="hadith-label ltr"><i class="fas fa-balance-scale"></i> دوسرا اختلاف: وراثت میں نصف حصہ</div>
+      <p class="hadith-text">قرآن میں یہ حکم ہے کہ بیٹے کو بیٹی سے دوگنا ملتا ہے۔ مگر قرآن کا پورا نظام دیکھیں۔</p>
+    </div>
+
+    <div class="highlight-box">
+      <p>عورت کو مہر ملتا ہے، جو صرف اس کا ہے۔</p>
+      <p>عورت پر گھر کا خرچ نہیں، وہ مرد پر ہے۔</p>
+      <p>عورت پر بچوں کا خرچ نہیں، وہ بھی مرد پر ہے۔</p>
+      <p>عورت کو نفقہ ملتا ہے، طلاق کی صورت میں بھی۔</p>
+    </div>
+
+    <div class="prose">
+      <p>یعنی، وراثت میں کم ملتا ہے مگر ذمہ داری صفر۔ مرد کو زیادہ ملتا ہے مگر سب خرچ کرنا پڑتا ہے۔ <strong>یہ ایک مکمل اقتصادی نظام ہے جس میں دونوں کا کردار مختلف ہے مگر بوجھ برابر۔</strong></p>
+
+      <p>اب میرا موقف کیا ہے؟</p>
+
+      <p>اسلامی فیمنزم کا مطلب یہ نہیں کہ قرآن کو مغربی فیمنزم کے سانچے میں ڈھالا جائے، کہ جو بات پسند آئے وہ مانیں، جو نہ آئے وہ چھوڑ دیں۔</p>
+
+      <p>اسلامی فیمنزم کا مطلب یہ ہے: <strong>قرآن کو اس کی گہرائی میں، اس کے سیاق میں، اس کی مکمل تفسیر کے ساتھ پڑھا جائے اور پھر اسلامی تعلیمات کی روشنی میں عورت کے اوپر ہونے والے ظلم کے خلاف آواز اٹھائی جائے۔</strong></p>
+
+      <p>کیونکہ وہ ظلم اسلام کے نام پر ہوتا ہے، مگر ہوتا ہے قرآن کے خلاف۔</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ SECTION 10: اختتام ══════════════════ -->
+<section class="section section-alt reveal">
+  <div class="container">
+    <div class="section-number">09 / اختتام</div>
+    <h2 class="section-title">اختتام: ایک دوسرے کے ولی</h2>
+
+    <div class="conclusion-block">
+      <svg class="quran-ornament" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="margin:0 auto 24px;">
+        <g fill="none" stroke="#D4B483" stroke-width="1">
+          <polygon points="20,2 38,11 38,29 20,38 2,29 2,11"/>
+          <polygon points="20,10 30,16 30,24 20,30 10,24 10,16"/>
+          <circle cx="20" cy="20" r="4"/>
+        </g>
+      </svg>
+      <div class="arabic-text">وَالْمُؤْمِنُونَ وَالْمُؤْمِنَاتُ بَعْضُهُمْ أَوْلِيَاءُ بَعْضٍ يَأْمُرُونَ بِالْمَعْرُوفِ وَيَنْهَوْنَ عَنِ الْمُنكَرِ</div>
+      <p class="quran-translation">مومن مرد اور مومن عورتیں ایک دوسرے کے ولی ہیں۔ وہ نیکی کا حکم دیتے ہیں اور برائی سے روکتے ہیں۔</p>
+      <p class="quran-ref ltr">سورۃ التوبہ — آیت 71</p>
+    </div>
+
+    <div class="prose">
+      <p>قرآن نے یہاں دونوں کو برابر ذمہ دار قرار دیا ہے، نیکی پھیلانے کا اور برائی روکنے کا۔</p>
+
+      <p>قرآن نے نہیں کہا کہ صرف مرد یہ کام کریں گے۔ قرآن نے نہیں کہا کہ عورت گھر بیٹھے اور مرد آواز اٹھائے۔ <strong>قرآن نے ساتھ ساتھ رکھا۔ ایک ہی فقرے میں۔ ایک ہی ذمہ داری میں۔</strong></p>
+    </div>
+
+    <div class="ornament-divider">
+      <span></span>
+      <i class="fas fa-star-and-crescent"></i>
+      <span></span>
+    </div>
+
+    <div class="highlight-box">
+      <p>مغربی فیمنزم نے عورت کو مرد جیسا بنانے کی کوشش کی۔ قرآن نے کہا: عورت کو مرد جیسا نہیں بننا، عورت کو <strong>انسانِ کامل</strong> بننا ہے۔</p>
+      <p>اور انسانِ کامل کی کوئی جنس نہیں ہوتی، صرف تقویٰ ہوتا ہے، صرف کردار ہوتا ہے، صرف ذمہ داری ہوتی ہے۔</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CLOSING ══════════════════ -->
+<section class="closing-section reveal">
+  <div class="container">
+    <div class="prose" style="text-align:center; max-width:700px; margin:0 auto 48px;">
+      <p>میں آج یہاں کیوں کھڑی ہوں؟</p>
+      <p>اس لیے نہیں کہ کسی نے مجھے یہاں آنے دیا۔ اس لیے کہ <strong>قرآن نے مجھے یہاں ہونے کا حق دیا ہے۔ نہ احسان کے طور پر، بلکہ میرے حق کے طور پر۔</strong></p>
+      <p>اور میں اس حق کا استعمال کرنے آئی ہوں۔</p>
+    </div>
+
+    <div style="text-align:center;">
+      <div class="hero-divider" style="margin:0 auto 36px;"></div>
+      <p class="closing-thanks">شکریہ</p>
+      <p style="color:var(--ink-muted); font-size:16px; font-family:var(--font-en); direction:ltr; letter-spacing:0.05em; margin-top:8px;">— خاموشی سے ایک قدم پیچھے ہٹیں — سر اونچا رکھیں — مسکرائیں</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ INSTRUCTIONS ══════════════════ -->
+<section class="instructions-section reveal">
+  <div class="container-wide">
+    <div class="instructions-header">
+      <div class="section-number" style="justify-content:center;">پریزنٹیشن کی ہدایات</div>
+      <h2>پریزنٹیشن کے لیے ضروری ہدایات</h2>
+    </div>
+
+    <div class="instruction-card">
+      <h3><i class="fas fa-quran"></i> عربی آیات کا انداز</h3>
+      <p>ہر آیت پہلے عربی میں پڑھیں، ٹھہر کر، آہستہ، صحیح تلفظ کے ساتھ۔ پھر ترجمہ دیں۔ پھر اپنی بات۔ یہ ترتیب مت توڑیں، اس سے علمی وزن پیدا ہوتا ہے۔</p>
+    </div>
+
+    <div class="instruction-card">
+      <h3><i class="fas fa-pause-circle"></i> وقفے</h3>
+      <p>سوال پوچھنے کے بعد 2 سے 3 سیکنڈ رکیں۔ سامعین کو سوچنے دیں۔ پھر جواب دیں۔ یہ خاموشی آپ کی کمزوری نہیں، <strong>آپ کا ہتھیار ہے۔</strong></p>
+    </div>
+
+    <div class="instruction-card">
+      <h3><i class="fas fa-book"></i> سوالات کی صورت میں حوالہ جات</h3>
+      <p>اگر کوئی حوالہ مانگے تو بتائیں:</p>
+      <ul class="ref-list">
+        <li>سورۃ النساء آیت 1</li>
+        <li>سورۃ النساء آیت 3</li>
+        <li>سورۃ النساء آیت 34</li>
+        <li>سورۃ النساء آیت 129</li>
+        <li>سورۃ البقرہ آیت 228</li>
+        <li>سورۃ الاحزاب آیت 35</li>
+        <li>سورۃ التوبہ آیت 71</li>
+        <li>سورۃ مریم</li>
+      </ul>
+    </div>
+
+    <div class="instruction-card">
+      <h3><i class="fas fa-heart"></i> سب سے اہم</h3>
+      <p>یہ اسکرپٹ لفظ بلفظ نہ پڑھیں۔ اسے سمجھیں اور اپنے الفاظ میں کہیں۔</p>
+      <p style="margin-top:14px; font-size:19px; color:var(--ink); font-weight:600;">جو بات دل سے نکلتی ہے، دل میں اترتی ہے۔ جو بات زبانی یاد کی ہو، صرف کانوں تک پہنچتی ہے۔</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <span style="font-family:var(--font-urdu); font-size:15px; direction:rtl; color:rgba(250,248,245,0.6);">اسلام اور فیمنزم</span>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  A Philosophical Speech Manuscript
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.07 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
