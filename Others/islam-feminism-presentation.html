@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اسلام اور فیمنزم: ایک فکری سفر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #C9A84C;
+    --gold-light:  #E6C97A;
+    --gold-pale:   #F5E9C8;
+    --rose:        #8B3A5A;
+    --rose-light:  #B5637A;
+    --deep:        #0D0D1A;
+    --deep-2:      #14142B;
+    --deep-3:      #1C1C3A;
+    --glass-bg:    rgba(255,255,255,0.06);
+    --glass-border:rgba(201,168,76,0.22);
+    --text-main:   #F0EAD6;
+    --text-soft:   #B8A88A;
+    --text-verse:  #E6C97A;
+    --radius:      20px;
+    --radius-lg:   32px;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Nastaliq Urdu', 'Noto Naskh Arabic', serif;
+    background: var(--deep);
+    color: var(--text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ─── Animated background ─── */
+  .bg-orbs {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+  }
+  .orb {
+    position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.18;
+    animation: drift 18s ease-in-out infinite;
+  }
+  .orb:nth-child(1){ width:520px; height:520px; background:var(--rose);    top:-120px; right:-80px; animation-duration:20s;}
+  .orb:nth-child(2){ width:400px; height:400px; background:var(--gold);    bottom:-100px; left:-60px; animation-duration:25s; animation-delay:-8s;}
+  .orb:nth-child(3){ width:300px; height:300px; background:#2D1B5E; top:40%; left:50%; transform:translate(-50%,-50%); animation-duration:30s; animation-delay:-5s;}
+  @keyframes drift {
+    0%,100%{transform:translate(0,0) scale(1);}
+    33%{transform:translate(30px,-40px) scale(1.06);}
+    66%{transform:translate(-20px,30px) scale(0.96);}
+  }
+
+  /* ─── Hero ─── */
+  .hero {
+    position: relative; z-index:1; min-height: 100vh;
+    display:flex; align-items:center; justify-content:center;
+    padding: 60px 24px;
+    text-align: center;
+  }
+  .hero-inner { max-width: 820px; }
+
+  .hero-badge {
+    display: inline-block;
+    font-family: 'Amiri', serif;
+    font-size: 1rem;
+    color: var(--gold-light);
+    background: rgba(201,168,76,0.12);
+    border: 1px solid var(--glass-border);
+    border-radius: 999px;
+    padding: 8px 24px;
+    letter-spacing: 0.04em;
+    margin-bottom: 36px;
+    backdrop-filter: blur(8px);
+  }
+
+  .hero-title {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.6;
+    color: var(--text-main);
+    margin-bottom: 20px;
+  }
+  .hero-title span { color: var(--gold-light); }
+
+  .hero-sub {
+    font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+    color: var(--text-soft);
+    line-height: 2;
+    margin-bottom: 48px;
+  }
+
+  .hero-divider {
+    width: 120px; height: 2px; margin: 0 auto 48px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .scroll-hint {
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    color: var(--text-soft); font-size:0.9rem; cursor:pointer;
+    animation: bounce 2s ease-in-out infinite;
+  }
+  .scroll-hint svg { width:22px; height:22px; stroke: var(--gold-light); }
+  @keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
+
+  /* ─── Section container ─── */
+  .slides-section {
+    position: relative; z-index:1;
+    padding: 0 20px 80px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  /* ─── Slide Card ─── */
+  .slide-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    padding: clamp(28px, 5vw, 52px);
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+    opacity: 0; transform: translateY(36px);
+    transition: opacity 0.7s ease, transform 0.7s ease, box-shadow 0.3s;
+  }
+  .slide-card.visible {
+    opacity:1; transform:translateY(0);
+  }
+  .slide-card:hover {
+    box-shadow: 0 8px 48px rgba(201,168,76,0.12);
+    border-color: rgba(201,168,76,0.38);
+  }
+
+  /* glow accent line left */
+  .slide-card::before {
+    content:''; position:absolute;
+    top:0; right:0; width:3px; height:100%;
+    background: linear-gradient(to bottom, var(--gold-light), transparent);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  }
+
+  /* slide number badge */
+  .slide-num {
+    position: absolute;
+    top: 24px; left: 28px;
+    font-family: 'Amiri', serif;
+    font-size: 0.8rem;
+    color: var(--gold-light);
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 999px;
+    padding: 4px 14px;
+  }
+
+  /* slide icon */
+  .slide-icon {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+    display:block;
+  }
+
+  /* slide heading */
+  .slide-heading {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-bottom: 24px;
+    line-height: 1.7;
+    padding-top: 8px;
+  }
+
+  /* body text */
+  .slide-body {
+    font-size: clamp(1rem, 2.2vw, 1.15rem);
+    line-height: 2.2;
+    color: var(--text-main);
+  }
+  .slide-body p { margin-bottom: 20px; }
+  .slide-body p:last-child { margin-bottom: 0; }
+
+  /* Arabic verse block */
+  .verse-block {
+    background: rgba(201,168,76,0.08);
+    border-right: 3px solid var(--gold);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 24px 0;
+    text-align: center;
+  }
+  .verse-arabic {
+    font-family: 'Amiri', 'Noto Naskh Arabic', serif;
+    font-size: clamp(1.3rem, 3.5vw, 1.7rem);
+    color: var(--text-verse);
+    line-height: 2;
+    direction: rtl;
+    margin-bottom: 10px;
+  }
+  .verse-ref {
+    font-size: 0.82rem;
+    color: var(--text-soft);
+    font-style: italic;
+    letter-spacing: 0.02em;
+  }
+  .verse-translation {
+    font-size: 0.98rem;
+    color: var(--text-soft);
+    margin-top: 8px;
+    line-height:1.9;
+  }
+
+  /* Highlight callout */
+  .callout {
+    background: linear-gradient(135deg, rgba(139,58,90,0.18), rgba(201,168,76,0.10));
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin: 22px 0;
+    font-size: clamp(1rem, 2.2vw, 1.1rem);
+    color: var(--gold-pale);
+    line-height: 2.1;
+  }
+
+  /* Person cards inside slide */
+  .person-cards { display:grid; gap:18px; margin-top:20px; }
+  .person-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 14px;
+    padding: 20px 22px;
+  }
+  .person-name {
+    font-family:'Noto Nastaliq Urdu',serif;
+    font-size:1.1rem; font-weight:700;
+    color: var(--gold-light);
+    margin-bottom:10px;
+  }
+  .person-desc { font-size:0.98rem; line-height:2.1; color:var(--text-main); }
+
+  /* comparison table */
+  .compare-grid {
+    display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:20px 0;
+  }
+  @media(max-width:580px){ .compare-grid{ grid-template-columns:1fr; } }
+  .compare-box {
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(201,168,76,0.15);
+    border-radius:14px; padding:18px;
+  }
+  .compare-box-title {
+    font-size:0.88rem; font-weight:600;
+    color:var(--gold-light); margin-bottom:12px;
+    letter-spacing:0.03em; border-bottom:1px solid rgba(201,168,76,0.2); padding-bottom:8px;
+  }
+  .compare-box p { font-size:0.97rem; line-height:2; color:var(--text-main); }
+
+  /* timeline row */
+  .timeline-row {
+    display:flex; align-items:flex-start; gap:16px;
+    padding: 14px 0; border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .timeline-row:last-child{ border-bottom:none; }
+  .timeline-year {
+    min-width:52px; font-family:'Amiri',serif;
+    font-size:0.88rem; color:var(--gold-light);
+    background:rgba(201,168,76,0.1); border-radius:8px;
+    padding:4px 8px; text-align:center; flex-shrink:0; margin-top:3px;
+  }
+  .timeline-text { font-size:0.97rem; line-height:2; color:var(--text-main); }
+
+  /* footer */
+  .footer {
+    position:relative; z-index:1;
+    text-align:center; padding:48px 24px;
+    color:var(--text-soft); font-size:0.88rem; line-height:2;
+    border-top:1px solid rgba(201,168,76,0.12);
+  }
+  .footer-verse {
+    font-family:'Amiri',serif;
+    font-size:1.15rem;
+    color:var(--gold-light);
+    margin-bottom:16px;
+  }
+
+  /* nav dots */
+  .nav-dots {
+    position:fixed; left:20px; top:50%; transform:translateY(-50%);
+    display:flex; flex-direction:column; gap:10px; z-index:100;
+  }
+  .nav-dot {
+    width:8px; height:8px; border-radius:50%;
+    background:rgba(201,168,76,0.3); cursor:pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .nav-dot.active{ background:var(--gold-light); transform:scale(1.4); }
+  @media(max-width:640px){ .nav-dots{ display:none; } }
+
+  /* scroll progress bar */
+  .progress-bar {
+    position:fixed; top:0; left:0; width:0%; height:3px; z-index:999;
+    background:linear-gradient(90deg, var(--rose), var(--gold-light));
+    transition: width 0.1s;
+  }
+
+  /* ─── responsive ─── */
+  @media(max-width:640px){
+    .hero{ min-height:85vh; }
+    .slide-num{ top:16px; left:16px; }
+    .slide-card{ padding:28px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="bg-orbs">
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+</div>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">🎤 ایک فلسفیانہ خطاب</div>
+    <h1 class="hero-title">کیا <span>اسلام</span> اور <span>فیمنزم</span><br>دشمن ہیں؟</h1>
+    <p class="hero-sub">ایک بہت پرانا سوال، ایک نئی روشنی میں<br>قرآن، تاریخ، اور عورت کے حقوق کا سفر</p>
+    <div class="hero-divider"></div>
+    <div class="scroll-hint" onclick="document.querySelector('.slides-section').scrollIntoView({behavior:'smooth'})">
+      <svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      سلائیڈز دیکھیں
+    </div>
+  </div>
+</section>
+
+<!-- ─── NAV DOTS ─── -->
+<nav class="nav-dots" id="navDots"></nav>
+
+<!-- ─── SLIDES ─── -->
+<main class="slides-section" id="slidesSection">
+
+  <!-- Slide 1 -->
+  <article class="slide-card" data-slide="1">
+    <span class="slide-num">سلائیڈ ۱</span>
+    <span class="slide-icon">🌙</span>
+    <h2 class="slide-heading">آغاز: ایک پرانا سوال</h2>
+    <div class="slide-body">
+      <p>میں آج آپ سے ایک بہت پرانا سوال پوچھنا چاہتی ہوں۔ یہ سوال فلسفے کا ہے۔ یہ سوال تاریخ کا ہے۔ اور یہ سوال ہر اس عورت کا ہے جو کبھی کسی کمرے میں بیٹھ کر سوچتی ہے کہ مجھے یہاں ہونا چاہیے یا نہیں۔</p>
+      <div class="callout">❓ <strong>سوال یہ ہے: کیا اسلام اور فیمنزم دشمن ہیں؟</strong></div>
+      <p>آج تک اس سوال کے دو جواب دیے جاتے رہے ہیں۔</p>
+      <div class="compare-grid">
+        <div class="compare-box">
+          <div class="compare-box-title">پہلا موقف</div>
+          <p>اسلام عورت کو قید کرتا ہے اور فیمنزم اسے آزاد کرتا ہے۔ اس لیے اگر تم اسلام مانتی ہو تو فیمنسٹ نہیں ہو سکتیں۔</p>
+        </div>
+        <div class="compare-box">
+          <div class="compare-box-title">دوسرا موقف</div>
+          <p>فیمنزم مغرب کی سازش ہے، اسلام مکمل ضابطۂ حیات ہے، ان دونوں کو ملانا گناہ ہے۔</p>
+        </div>
+      </div>
+      <div class="callout">✨ دونوں جواب ادھورے ہیں کیونکہ سچ اکثر دونوں انتہاؤں کے درمیان ہوتا ہے۔ تو آج آئیں سوچتے ہیں۔</div>
+    </div>
+  </article>
+
+  <!-- Slide 2 -->
+  <article class="slide-card" data-slide="2">
+    <span class="slide-num">سلائیڈ ۲</span>
+    <span class="slide-icon">🔍</span>
+    <h2 class="slide-heading">کیا عورت ناقص ہے؟</h2>
+    <div class="slide-body">
+      <p>سب سے پہلے وہ سوال جو کوئی نہیں پوچھتا: کیا عورت ناقص ہے؟ دنیا کے ہر بڑے فلسفے نے اس سوال کا جواب دیا ہے اور ہر بار عورت کو کمتر قرار دیا گیا۔</p>
+      <div class="compare-grid">
+        <div class="compare-box">
+          <div class="compare-box-title">یونانی فلسفہ</div>
+          <p>ارسطو نے لکھا: عورت ایک نامکمل مرد ہے۔</p>
+        </div>
+        <div class="compare-box">
+          <div class="compare-box-title">قرونِ وسطیٰ کا یورپ</div>
+          <p>چرچ نے صدیوں تک بحث کی کہ عورت میں روح ہے بھی یا نہیں۔</p>
+        </div>
+        <div class="compare-box">
+          <div class="compare-box-title">ہندو فلسفہ</div>
+          <p>عورت کی پیدائش پچھلے جنم کے گناہوں کی سزا ہے۔</p>
+        </div>
+        <div class="compare-box">
+          <div class="compare-box-title">قرآن نے کیا کہا؟</div>
+          <p>ایک نفس، نفسٍ واحدہ۔ دونوں کی اصل ایک ہے۔ کمتری کہاں سے آئی؟</p>
+        </div>
+      </div>
+      <div class="verse-block">
+        <div class="verse-arabic">يَا أَيُّهَا النَّاسُ اتَّقُوا رَبَّكُمُ الَّذِي خَلَقَكُم مِّن نَّفْسٍ وَاحِدَةٍ</div>
+        <div class="verse-ref">سورۃ النساء، آیت ۱</div>
+        <div class="verse-translation">اے لوگو! اپنے رب سے ڈرو جس نے تمہیں پیدا کیا ایک نفس سے۔</div>
+      </div>
+      <div class="verse-block">
+        <div class="verse-arabic">إِنَّ أَكْرَمَكُمْ عِندَ اللَّهِ أَتْقَاكُمْ</div>
+        <div class="verse-ref">سورۃ الحجرات، آیت ۱۳</div>
+        <div class="verse-translation">اللہ کے نزدیک سب سے معزز وہ ہے جو سب سے زیادہ متقی ہے۔</div>
+      </div>
+      <div class="callout">✨ تقویٰ کی کوئی جنس نہیں ہوتی۔ یہ جواب چودہ سو سال پہلے آیا، جب دنیا کا کوئی فلسفہ یہاں تک نہیں پہنچا تھا۔</div>
+    </div>
+  </article>
+
+  <!-- Slide 3 -->
+  <article class="slide-card" data-slide="3">
+    <span class="slide-num">سلائیڈ ۳</span>
+    <span class="slide-icon">⚖️</span>
+    <h2 class="slide-heading">"قوّامون": اصل مطلب</h2>
+    <div class="slide-body">
+      <p>اب وہ آیت جسے سب سے زیادہ غلط پڑھا جاتا ہے۔</p>
+      <div class="verse-block">
+        <div class="verse-arabic">الرِّجَالُ قَوَّامُونَ عَلَى النِّسَاء بِمَا فَضَّلَ اللَّهُ بَعْضَهُمْ عَلَىٰ بَعْضٍ وَبِمَا أَنفَقُوا</div>
+        <div class="verse-ref">سورۃ النساء، آیت ۳۴</div>
+        <div class="verse-translation">مرد عورتوں کے قوّام ہیں، اس وجہ سے جو اللہ نے بعض کو بعض پر فضیلت دی ہے اور اس وجہ سے کہ وہ خرچ کرتے ہیں۔</div>
+      </div>
+      <div class="compare-grid">
+        <div class="compare-box">
+          <div class="compare-box-title">❌ غلط ترجمہ</div>
+          <p>مرد عورتوں پر <strong>حاکم</strong> ہیں، اسی ایک لفظ نے صدیوں کا ظلم روا رکھا۔</p>
+        </div>
+        <div class="compare-box">
+          <div class="compare-box-title">✅ درست مطلب</div>
+          <p>'قوّام' کا معنی ہے: <strong>ذمہ دار، نگہبان، خرچ اٹھانے والا</strong>، نہ کہ حاکم یا مالک۔</p>
+        </div>
+      </div>
+      <div class="callout">
+        ⚠️ یہ قوّامیت <strong>مشروط</strong> ہے۔ جب تک وہ خرچ کرے، جب تک وہ ذمہ داری نبھائے۔<br><br>
+        جس دن خرچ بند، قوّامیت ختم۔ قرآن نے خود یہ شرط لگائی۔
+      </div>
+      <p>قرآن نے مرد کو مالک نہیں بنایا بلکہ ذمہ دار بنایا۔ اور ذمہ داری حق نہیں مانگتی، فرض ادا کرتی ہے۔</p>
+    </div>
+  </article>
+
+  <!-- Slide 4 -->
+  <article class="slide-card" data-slide="4">
+    <span class="slide-num">سلائیڈ ۴</span>
+    <span class="slide-icon">📜</span>
+    <h2 class="slide-heading">ساتویں صدی کا حقوقِ نسواں کا منشور</h2>
+    <div class="slide-body">
+      <p>ایک موازنہ جو سوچنے پر مجبور کرتا ہے:</p>
+
+      <div class="timeline-row">
+        <span class="timeline-year">۱۸۷۰ع</span>
+        <span class="timeline-text">انگلینڈ میں پہلی بار قانون بنا کہ شادی شدہ عورت اپنی جائیداد رکھ سکتی ہے۔</span>
+      </div>
+      <div class="timeline-row">
+        <span class="timeline-year">۱۹۲۰ع</span>
+        <span class="timeline-text">امریکہ میں عورت کو ووٹ کا حق ملا۔</span>
+      </div>
+      <div class="timeline-row">
+        <span class="timeline-year">۱۹۷۰ع</span>
+        <span class="timeline-text">مغرب میں عورت کو طلاق کے یکساں حقوق ملے۔</span>
+      </div>
+      <div class="timeline-row">
+        <span class="timeline-year">۶۳۲ع</span>
+        <span class="timeline-text">قرآن نے یہ تمام حقوق عطا کر دیے، چودہ سو سال پہلے۔</span>
+      </div>
+
+      <div class="verse-block">
+        <div class="verse-arabic">وَلَهُنَّ مِثْلُ الَّذِي عَلَيْهِنَّ بِالْمَعْرُوفِ</div>
+        <div class="verse-ref">سورۃ البقرہ، آیت ۲۲۸</div>
+        <div class="verse-translation">اور عورتوں کے حقوق ویسے ہی ہیں جیسے ان پر ذمہ داریاں ہیں۔</div>
+      </div>
+
+      <div class="compare-grid">
+        <div class="compare-box">
+          <div class="compare-box-title">💰 جائیداد کا حق</div>
+          <p>اپنے نام پر، بغیر کسی کی اجازت کے۔</p>
+        </div>
+        <div class="compare-box">
+          <div class="compare-box-title">📈 تجارت کا حق</div>
+          <p>خدیجہ رضی اللہ عنہا اس کی زندہ مثال ہیں۔</p>
+        </div>
+        <div class="compare-box">
+          <div class="compare-box-title">💍 مہر کا حق</div>
+          <p>جو صرف عورت کا ہے، کوئی واپس نہیں لے سکتا۔</p>
+        </div>
+        <div class="compare-box">
+          <div class="compare-box-title">⚖️ خلع کا حق</div>
+          <p>عورت خود رشتہ ختم کر سکتی ہے۔</p>
+        </div>
+      </div>
+      <div class="callout">❓ اگر قرآن نے یہ سب چودہ سو سال پہلے دے دیا تو آج مسلمان عورت اتنی بے حقوق کیوں ہے؟<br><br>جواب صرف ایک ہے: ہم نے <strong>قرآن پڑھنا چھوڑ دیا</strong> اور قرآن کی جگہ روایت نے لے لی۔</div>
+    </div>
+  </article>
+
+  <!-- Slide 5 -->
+  <article class="slide-card" data-slide="5">
+    <span class="slide-num">سلائیڈ ۵</span>
+    <span class="slide-icon">⭐</span>
+    <h2 class="slide-heading">مریم علیہا السلام: قرآن کا ماڈل</h2>
+    <div class="slide-body">
+      <div class="callout">قرآن پاک میں کسی بھی صحابی کے نام پر سورت نہیں۔ کسی بھی خلیفہ کے نام پر سورت نہیں۔ مگر ایک عورت ہیں جن کے نام پر قرآن میں پوری سورت ہے۔<br><strong>مریم علیہا السلام۔</strong></div>
+      <div class="verse-block">
+        <div class="verse-arabic">أَنَّىٰ يَكُونُ لِي غُلَامٌ وَلَمْ يَمْسَسْنِي بَشَرٌ</div>
+        <div class="verse-ref">سورۃ مریم، آیت ۲۰</div>
+        <div class="verse-translation">میرے لیے بیٹا کیسے ہو سکتا ہے جبکہ مجھے کسی انسان نے ہاتھ بھی نہیں لگایا؟</div>
+      </div>
+      <p>یہ سوال ایک فرشتے سے پوچھا جا رہا ہے، اللہ کے بھیجے ہوئے فرشتے سے۔ قرآن نے اس سوال کو محفوظ کیا، یہ بتانے کے لیے کہ <strong>عورت سوال کر سکتی ہے۔</strong></p>
+      <div class="verse-block">
+        <div class="verse-arabic">فَأَشَارَتْ إِلَيْهِ</div>
+        <div class="verse-ref">سورۃ مریم، آیت ۲۹</div>
+        <div class="verse-translation">تو انہوں نے اس (بچے) کی طرف اشارہ کیا۔</div>
+      </div>
+      <div class="compare-grid">
+        <div class="compare-box">
+          <div class="compare-box-title">مغربی فیمنزم کا سبق</div>
+          <p>مرد سے آزادی حاصل کرو۔</p>
+        </div>
+        <div class="compare-box">
+          <div class="compare-box-title">قرآن کا مریم والا سبق</div>
+          <p>جب اللہ سے تعلق مضبوط ہو تو کسی کی ضرورت ہی نہیں رہتی۔</p>
+        </div>
+      </div>
+      <div class="callout">✨ یہ محض آزادی نہیں، یہ اس سے بھی بڑی چیز ہے۔ یہ خود کفالت ہے: <strong>روحانی خود کفالت۔</strong></div>
+    </div>
+  </article>
+
+
+  <!-- Slide 7 -->
+  <article class="slide-card" data-slide="7">
+    <span class="slide-num">سلائیڈ ۷</span>
+    <span class="slide-icon">🌐</span>
+    <h2 class="slide-heading">دو فلسفوں کا تصادم</h2>
+    <div class="slide-body">
+      <div class="verse-block">
+        <div class="verse-arabic">إِنَّ الْمُسْلِمِينَ وَالْمُسْلِمَاتِ وَالْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ وَالْقَانِتِينَ وَالْقَانِتَاتِ وَالصَّادِقِينَ وَالصَّادِقَاتِ...</div>
+        <div class="verse-ref">سورۃ الاحزاب، آیت ۳۵</div>
+        <div class="verse-translation">اللہ نے دس صفات گنائی ہیں اور ہر ایک صفت میں مرد کا ذکر کیا اور عورت کا ذکر کیا۔ ساتھ ساتھ۔ برابر برابر۔</div>
+      </div>
+      <div class="compare-grid">
+        <div class="compare-box">
+          <div class="compare-box-title">🌍 مغربی فیمنزم</div>
+          <p><strong>Bodily Autonomy</strong>، یعنی میرا جسم، میری مرضی۔ آزادی دیتا ہے مگر جوابدہی کے بغیر۔</p>
+        </div>
+        <div class="compare-box">
+          <div class="compare-box-title">☪️ قرآن کا نظام</div>
+          <p>ذمہ داری دیتا ہے اور اس ذمہ داری میں وہ آزادی ہے جو <strong>کوئی انسان نہیں چھین سکتا۔</strong></p>
+        </div>
+      </div>
+      <p>فیمنزم کہتا ہے: مجھے کوئی نہ روکے۔ قرآن کہتا ہے: تمہیں کوئی روک نہیں سکتا کیونکہ تم براہِ راست <strong>اللہ کے سامنے جوابدہ</strong> ہو۔</p>
+      <div class="callout">🔑 کیونکہ جو عورت اللہ کے سامنے جوابدہ ہے وہ کسی انسان کے سامنے نہیں جھکتی۔<br>نہ باپ کے نام پر، نہ شوہر کے نام پر، نہ معاشرے کے نام پر۔<br><br>یہ صرف آزادی نہیں بلکہ آزادی کی <strong>سب سے اعلیٰ شکل</strong> ہے: خود اپنے سامنے جوابدہ ہونا۔</div>
+    </div>
+  </article>
+
+  <!-- Slide 8 -->
+  <article class="slide-card" data-slide="8">
+    <span class="slide-num">سلائیڈ ۸</span>
+    <span class="slide-icon">👑</span>
+    <h2 class="slide-heading">تین عظیم خواتین</h2>
+    <div class="slide-body">
+      <div class="person-cards">
+        <div class="person-card">
+          <div class="person-name">💼 حضرت خدیجہ رضی اللہ عنہا</div>
+          <div class="person-desc">ایک کامیاب تاجرہ، خود تجارت کرتی تھیں، لوگوں کو ملازم رکھتی تھیں۔ انہوں نے نبی ﷺ کو اپنی تجارت پر بھیجا اور پھر خود رشتے کا پیغام بھیجا۔ ساتویں صدی میں، عرب میں۔<br><br><em>پیغام: اقتصادی آزادی اور سماجی اقدام قرآن کا عطا کردہ حق ہے۔</em></div>
+        </div>
+        <div class="person-card">
+          <div class="person-name">📚 حضرت عائشہ رضی اللہ عنہا</div>
+          <div class="person-desc">کسی نے ان کے بارے میں ایک حدیث غلط روایت کی۔ حضرت عائشہ رضی اللہ عنہا نے صحابی سے کہا: آپ نے غلط سنا۔ مرد صحابی نے ان کی بات سنی اور تسلیم کی۔ علم کے میدان میں ایک عورت نے مردوں کو درست کیا۔<br><br><em>پیغام: علمی اختیار ہر مسلمان عورت کا حق ہے۔</em></div>
+        </div>
+        <div class="person-card">
+          <div class="person-name">🌹 حضرت فاطمہ رضی اللہ عنہا</div>
+          <div class="person-desc">قرآن میں سورۃ الکوثر جس میں اللہ نے نبی ﷺ کو 'کوثر' کی بشارت دی۔ نبی ﷺ کی نسل بیٹوں سے نہیں بلکہ <strong>بیٹی سے چلی۔</strong> جس معاشرے میں بیٹیاں زندہ دفن کی جاتی تھیں، اللہ نے اپنے سب سے پیارے نبی کی نسل ایک بیٹی کے ذریعے آگے بڑھائی۔<br><br><em>یہ اتفاق نہیں بلکہ پیغام ہے: عورت مرکز ہے، حاشیہ نہیں۔</em></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Slide 9 -->
+  <article class="slide-card" data-slide="9">
+    <span class="slide-num">سلائیڈ ۹</span>
+    <span class="slide-icon">⚡</span>
+    <h2 class="slide-heading">ایمانداری کا تقاضا</h2>
+    <div class="slide-body">
+      <p>اور اب سب سے ضروری بات۔ کچھ لوگ کہتے ہیں کہ اسلام اور فیمنزم بالکل ایک ہی ہیں، یہ سچ نہیں۔ اختلافات ہیں، اصلی اختلافات۔</p>
+      <div class="compare-grid">
+        <div class="compare-box">
+          <div class="compare-box-title">پہلا: تعدد ازدواج</div>
+          <p>قرآن نے اجازت دی مگر شرط یہ رکھی: عدل۔ پھر فرمایا کہ تم کبھی عدل نہیں کر سکتے۔ یوں قرآن نے اجازت کو خود ہی محدود کر دیا۔</p>
+        </div>
+        <div class="compare-box">
+          <div class="compare-box-title">دوسرا: وراثت</div>
+          <p>بیٹے کو دوگنا ملتا ہے مگر سارا خرچ بھی اسی پر ہے۔ عورت کو کم ملتا ہے مگر ذمہ داری صفر۔ بوجھ برابر۔</p>
+        </div>
+      </div>
+      <div class="verse-block">
+        <div class="verse-arabic">وَلَن تَسْتَطِيعُوا أَن تَعْدِلُوا بَيْنَ النِّسَاءِ وَلَوْ حَرَصْتُمْ</div>
+        <div class="verse-ref">سورۃ النساء، آیت ۱۲۹</div>
+        <div class="verse-translation">تم کبھی عدل نہیں کر سکتے عورتوں کے درمیان، چاہے کتنی ہی کوشش کرو۔</div>
+      </div>
+      <div class="callout">
+        💡 اسلامی فیمنزم کا مطلب یہ نہیں کہ قرآن کو مغربی فیمنزم کے سانچے میں ڈھالا جائے۔<br><br>
+        اسلامی فیمنزم کا مطلب ہے: قرآن کو اس کی گہرائی میں، اس کے سیاق میں، اس کی مکمل تفسیر کے ساتھ پڑھا جائے اور پھر اسلامی تعلیمات کی روشنی میں عورت کے اوپر ہونے والے ظلم کے خلاف آواز اٹھائی جائے۔<br><br>
+        کیونکہ وہ ظلم اسلام کے نام پر ہوتا ہے مگر ہوتا ہے <strong>قرآن کے خلاف۔</strong>
+      </div>
+    </div>
+  </article>
+
+  <!-- Slide 10 -->
+  <article class="slide-card" data-slide="10">
+    <span class="slide-num">سلائیڈ ۱۰</span>
+    <span class="slide-icon">🕊️</span>
+    <h2 class="slide-heading">اختتام: میں یہاں کیوں ہوں؟</h2>
+    <div class="slide-body">
+      <div class="verse-block">
+        <div class="verse-arabic">وَالْمُؤْمِنُونَ وَالْمُؤْمِنَاتُ بَعْضُهُمْ أَوْلِيَاءُ بَعْضٍ يَأْمُرُونَ بِالْمَعْرُوفِ وَيَنْهَوْنَ عَنِ الْمُنكَرِ</div>
+        <div class="verse-ref">سورۃ التوبہ، آیت ۷۱</div>
+        <div class="verse-translation">مومن مرد اور مومن عورتیں ایک دوسرے کے ولی ہیں، وہ نیکی کا حکم دیتے ہیں اور برائی سے روکتے ہیں۔</div>
+      </div>
+      <p>قرآن نے یہاں دونوں کو برابر ذمہ دار قرار دیا ہے: نیکی پھیلانے کا اور برائی روکنے کا۔ ایک ہی فقرے میں، ایک ہی ذمہ داری میں۔</p>
+      <div class="compare-grid">
+        <div class="compare-box">
+          <div class="compare-box-title">مغربی فیمنزم نے کہا</div>
+          <p>عورت کو مرد جیسا بنانے کی کوشش کی۔</p>
+        </div>
+        <div class="compare-box">
+          <div class="compare-box-title">قرآن نے کہا</div>
+          <p>عورت کو انسانِ کامل بننا ہے جس کی کوئی جنس نہیں، صرف تقویٰ ہوتا ہے۔</p>
+        </div>
+      </div>
+      <div class="callout" style="background:linear-gradient(135deg,rgba(201,168,76,0.15),rgba(139,58,90,0.15));border-color:rgba(201,168,76,0.35);font-size:1.05rem;">
+        🌟 میں آج یہاں کیوں کھڑی ہوں؟<br><br>
+        اس لیے نہیں کہ کسی نے مجھے یہاں آنے دیا۔<br>
+        اس لیے کہ <strong>قرآن نے مجھے یہاں ہونے کا حق دیا ہے۔</strong><br>
+        نہ احسان کے طور پر بلکہ میرے حق کے طور پر۔<br><br>
+        اور میں اس حق کا استعمال کرنے آئی ہوں۔
+      </div>
+      <p style="text-align:center;font-size:1.5rem;margin-top:24px;color:var(--gold-light);letter-spacing:0.05em;">شکریہ 🌙</p>
+    </div>
+  </article>
+
+  <!-- References box -->
+  <article class="slide-card" data-slide="ref" style="margin-top:48px;">
+    <span class="slide-num">حوالہ جات</span>
+    <span class="slide-icon">📖</span>
+    <h2 class="slide-heading">قرآنی آیات: فوری حوالہ</h2>
+    <div class="slide-body">
+      <div class="compare-grid">
+        <div class="compare-box"><div class="compare-box-title">سورۃ النساء</div><p>آیت ۱، ۳، ۳۴، ۱۲۹</p></div>
+        <div class="compare-box"><div class="compare-box-title">سورۃ البقرہ</div><p>آیت ۲۲۸</p></div>
+        <div class="compare-box"><div class="compare-box-title">سورۃ الاحزاب</div><p>آیت ۳۵</p></div>
+        <div class="compare-box"><div class="compare-box-title">سورۃ التوبہ</div><p>آیت ۷۱</p></div>
+        <div class="compare-box"><div class="compare-box-title">سورۃ مریم</div><p>آیت ۲۰، ۲۹</p></div>
+        <div class="compare-box"><div class="compare-box-title">سورۃ الحجرات</div><p>آیت ۱۳</p></div>
+      </div>
+      <p style="margin-top:20px;color:var(--text-soft);font-size:0.93rem;text-align:center;">💡 ہدایت: عربی آیات پہلے پڑھیں، ٹھہر کر آہستہ، پھر ترجمہ، پھر اپنی بات۔</p>
+    </div>
+  </article>
+
+</main>
+
+<!-- ─── FOOTER ─── -->
+<footer class="footer">
+  <div class="footer-verse">إِنَّ أَكْرَمَكُمْ عِندَ اللَّهِ أَتْقَاكُمْ</div>
+  اللہ کے نزدیک سب سے معزز وہ ہے جو سب سے زیادہ متقی ہے۔
+</footer>
+
+<script>
+  // ─── Intersection Observer for slide animations ───
+  const cards = document.querySelectorAll('.slide-card');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  cards.forEach(c => observer.observe(c));
+
+  // ─── Nav dots ───
+  const navDots = document.getElementById('navDots');
+  const slideCards = document.querySelectorAll('.slide-card[data-slide]');
+  const numbered = Array.from(slideCards).filter(c => !isNaN(parseInt(c.dataset.slide)));
+
+  numbered.forEach((card, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'nav-dot';
+    dot.title = `سلائیڈ ${i + 1}`;
+    dot.addEventListener('click', () => {
+      card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    navDots.appendChild(dot);
+  });
+
+  // ─── Scroll progress + active dot ───
+  const dots = document.querySelectorAll('.nav-dot');
+  const progressBar = document.getElementById('progressBar');
+
+  window.addEventListener('scroll', () => {
+    // progress
+    const h = document.documentElement;
+    const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    progressBar.style.width = pct + '%';
+
+    // active dot
+    let activeIdx = 0;
+    numbered.forEach((card, i) => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.5) activeIdx = i;
+    });
+    dots.forEach((d, i) => d.classList.toggle('active', i === activeIdx));
+  });
+</script>
+</body>
+</html>
