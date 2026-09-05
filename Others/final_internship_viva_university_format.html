@@ -142,7 +142,7 @@ body.present-mode .sidebar{margin-left:-253px; opacity:0; pointer-events:none;}
 
 .stage{flex:1; position:relative; overflow:hidden; background:var(--paper);}
 .slide{
-  position:absolute; inset:0; overflow-y:auto; z-index:1;
+  position:absolute; inset:0; overflow-y:auto;
   padding:44px 64px 90px; display:none;
 }
 .slide.active{display:block; animation:slideIn .38s ease both;}
@@ -419,97 +419,393 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:24px 0;}
 }
 
 /* ============================================================
-   REDESIGN ADDITIONS — background texture, project tints,
-   funnels, evidence tags, sidebar groups, hero/circular visuals
+   UNIVERSITY OF FAISALABAD PRESENTATION THEME
+   Applied to the existing interactive viva without changing
+   the presentation content or interactive functionality.
    ============================================================ */
+:root{
+  --paper:#ffffff;
+  --surface:#ffffff;
+  --surface-2:#f6f6f6;
+  --ink:#171717;
+  --ink-dim:#555;
+  --ink-faint:#858585;
+  --border:#dedede;
+  --border-strong:#bdbdbd;
 
-/* Subtle AI-grid texture behind every slide, faded toward the edges */
-.stage::before{
-  content:""; position:absolute; inset:0; pointer-events:none; z-index:0;
-  background-image:radial-gradient(circle, var(--border-strong) 1px, transparent 1px);
-  background-size:28px 28px;
-  opacity:.4;
-  -webkit-mask-image:radial-gradient(ellipse 65% 55% at 50% 0%, #000 0%, transparent 78%);
-  mask-image:radial-gradient(ellipse 65% 55% at 50% 0%, #000 0%, transparent 78%);
-}
-.slide-inner{position:relative; z-index:1;}
+  --uni-red:#dd272c;
+  --uni-red-dark:#b91f24;
+  --uni-red-soft:#f8e5e6;
+  --uni-red-wash:rgba(221,39,44,.08);
 
-/* Per-project background tint, applied per slide */
-.slide.proj-nlp{background-image:radial-gradient(circle at 88% -6%, rgba(83,70,201,.06), transparent 50%);}
-.slide.proj-ocr{background-image:radial-gradient(circle at 88% -6%, rgba(15,125,117,.06), transparent 50%);}
+  --gold:#b98535;
+  --gold-deep:#8d641f;
+  --gold-pale:#f8efdf;
 
-/* Evidence tags — small "this is a documented fact" markers */
-.evidence-tag{
-  display:inline-flex; align-items:center; gap:5px;
-  font-family:var(--mono); font-size:10.5px; font-weight:700; letter-spacing:.3px;
-  color:var(--success); background:var(--success-pale);
-  padding:3px 9px; border-radius:999px; margin-left:10px; vertical-align:middle;
-}
-.evidence-tag.tag-danger{color:var(--danger); background:var(--danger-pale);}
-.evidence-tag.tag-gold{color:var(--gold-deep); background:var(--gold-pale);}
+  --nlp:#5346c9;
+  --nlp-pale:#eceafb;
+  --ocr:#0f7d75;
+  --ocr-pale:#e3f4f1;
 
-/* Funnel visual — decreasing-width stacked stages */
-.funnel{display:flex; flex-direction:column; align-items:center; margin:22px 0 8px;}
-.funnel-stage{
-  width:100%; text-align:center; padding:14px 10px; border-radius:var(--radius-m);
-  color:#fff; box-shadow:0 4px 14px rgba(20,24,31,.08);
-}
-.funnel-stage .fnum{font-family:var(--mono); font-size:24px; font-weight:800; letter-spacing:-.5px;}
-.funnel-stage .flabel{font-size:11.5px; font-weight:600; opacity:.92; margin-top:2px;}
-.funnel-arrow{color:var(--ink-faint); font-size:13px; padding:3px 0; font-family:var(--mono);}
-.funnel-split{display:flex; gap:12px; width:100%; justify-content:center;}
-.funnel-split .funnel-stage{flex:1;}
+  --danger:#c23c3c;
+  --danger-pale:#fbe9e8;
+  --success:#1f8a54;
+  --success-pale:#e6f4ec;
 
-/* Horizontal comparison bars (GitHub activity) */
-.hbar-row{display:flex; align-items:center; gap:12px; margin-bottom:12px;}
-.hbar-label{width:150px; flex-shrink:0; font-size:12.5px; font-weight:700; color:var(--ink-dim);}
-.hbar-track{flex:1; height:22px; background:var(--surface-2); border-radius:999px; overflow:hidden; position:relative;}
-.hbar-fill{height:100%; border-radius:999px; width:0; transition:width 1s cubic-bezier(.2,.8,.2,1);}
-.hbar-fill.ocr{background:linear-gradient(90deg,var(--ocr),#14a89b);}
-.hbar-fill.nlp{background:linear-gradient(90deg,var(--nlp),#7d6fe0);}
-.hbar-val{width:56px; text-align:right; font-family:var(--mono); font-weight:800; font-size:14px; flex-shrink:0;}
+  --code-bg:#171717;
+  --code-ink:#eeeeee;
+  --code-dim:#a5a5a5;
+  --code-accent:#a8dfb1;
 
-/* Sidebar group labels */
-.nb-group{
-  padding:14px 18px 6px; font-size:10.5px; font-weight:800; letter-spacing:.6px;
-  color:var(--ink-faint); text-transform:uppercase;
-}
-.nb-group:first-child{padding-top:4px;}
+  --radius-s:3px;
+  --radius-m:5px;
+  --radius-l:7px;
 
-/* Title slide — track cards + floating badges */
-.title-tracks{display:flex; gap:14px; margin-top:30px; max-width:760px;}
-.title-track{
-  flex:1; border-radius:var(--radius-l); padding:18px 20px; position:relative; overflow:hidden;
-  border:1px solid var(--border);
-}
-.title-track.nlp{background:linear-gradient(160deg,var(--nlp-pale),var(--surface) 70%);}
-.title-track.ocr{background:linear-gradient(160deg,var(--ocr-pale),var(--surface) 70%);}
-.title-track .tt-eyebrow{font-size:10.5px; font-weight:800; letter-spacing:.5px; text-transform:uppercase;}
-.title-track.nlp .tt-eyebrow{color:var(--nlp);}
-.title-track.ocr .tt-eyebrow{color:var(--ocr);}
-.title-track .tt-name{font-size:16px; font-weight:800; color:var(--ink); margin-top:4px;}
-.title-float{
-  position:absolute; font-family:var(--mono); font-size:12px; font-weight:700;
-  color:var(--ink-faint); opacity:.28; pointer-events:none; user-select:none;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --serif:Georgia,"Times New Roman",Times,serif;
+  --mono:ui-monospace,"SFMono-Regular","Cascadia Mono",Consolas,monospace;
 }
 
-/* ML lifecycle wheel */
-.wheel-wrap{display:flex; justify-content:center; margin:22px 0 8px;}
-.wheel-wrap svg{max-width:100%; height:auto;}
+html,body{background:var(--paper);}
+body{overflow:hidden;color:var(--ink);}
 
-/* Cinematic conclusion closer */
-.cinematic{text-align:center; margin:34px 0 10px;}
-.cinematic .c-from{font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:2px; color:var(--ink-faint);}
-.cinematic .c-main{font-size:26px; font-weight:800; letter-spacing:-.3px; margin:8px 0; color:var(--ink);}
-.cinematic .c-to{font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:2px; color:var(--gold-deep);}
-.cinematic .c-stats{margin-top:16px; font-family:var(--mono); font-size:13px; color:var(--ink-dim);}
+.sidebar{display:none !important;}
 
-/* Investigation progress dots */
-.inv-progress{display:flex; gap:7px; margin:16px 0 2px;}
-.ip-dot{width:9px; height:9px; border-radius:50%; background:var(--border-strong); transition:background .2s ease;}
-.ip-dot.on{background:var(--gold);}
-.ip-dot.on.root{background:var(--danger);}
-.ip-dot.on.fix{background:var(--success);}
+.main{width:100%;height:100vh;}
+.topbar{
+  height:146px;
+  flex-shrink:0;
+  padding:0 5.5vw;
+  background:var(--uni-red);
+  border:0;
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+.topbar::after{
+  content:"";
+  position:absolute;
+  right:-55px;
+  top:-100px;
+  width:360px;
+  height:360px;
+  border:42px solid rgba(255,255,255,.13);
+  border-radius:50%;
+  pointer-events:none;
+}
+.topbar-left{gap:14px;z-index:2;}
+.topbar-left img{
+  width:50px;
+  filter:brightness(0) invert(1);
+}
+.topbar-title,
+.topbar-section,
+.topbar-count{color:#fff;}
+.topbar-title{
+  font-family:var(--serif);
+  font-size:20px;
+  font-weight:700;
+}
+.topbar-sep{color:rgba(255,255,255,.5);}
+.topbar-section{
+  font-family:var(--serif);
+  font-size:16px;
+}
+.topbar-right{
+  z-index:2;
+  gap:18px;
+}
+.topbar-right::before{
+  content:"🌐  www.tuf.edu.pk   ·   ◎  unioffaisalabad";
+  color:#fff;
+  font-family:var(--sans);
+  font-size:13px;
+  letter-spacing:.15px;
+}
+.topbar-count{
+  display:none;
+}
+.progress-track{
+  height:4px;
+  background:rgba(0,0,0,.13);
+}
+.progress-fill{
+  background:#fff;
+  opacity:.9;
+}
+
+.stage{
+  background:#fff;
+}
+.slide{
+  padding:52px 7vw 82px;
+  background:#fff;
+}
+.slide-inner{
+  max-width:1120px;
+}
+
+/* University-style title treatment */
+.eyebrow{
+  color:var(--uni-red-dark);
+  font-family:var(--sans);
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:11px;
+}
+.eyebrow.nlp{color:var(--nlp);}
+.eyebrow.ocr{color:var(--ocr);}
+
+h1.headline,h2.headline{
+  font-family:var(--serif);
+  color:#151515;
+  font-weight:700;
+}
+h1.headline{
+  font-size:48px;
+  line-height:1.08;
+  letter-spacing:-.7px;
+}
+h2.headline{
+  font-size:36px;
+  line-height:1.14;
+  letter-spacing:-.35px;
+}
+.dek{
+  color:#5a5a5a;
+  max-width:760px;
+}
+
+/* Red university rule under section headings */
+.slide-inner > .headline::after{
+  content:"";
+  display:block;
+  width:58px;
+  height:4px;
+  margin-top:16px;
+  background:var(--uni-red);
+}
+
+/* Cleaner academic cards */
+.card,.model-card,.cell,.invbox,.skill-group,.acc-item,.ba-figure,
+details.qa{
+  border-color:#d8d8d8;
+  border-radius:5px;
+  box-shadow:0 2px 8px rgba(0,0,0,.035);
+}
+.card{padding:22px;}
+.cell-head{
+  background:#f3f3f3;
+  border-bottom-color:#d8d8d8;
+}
+.cell-head .idx{color:var(--uni-red-dark);}
+.badge{
+  border-radius:3px;
+}
+.badge.gold{
+  background:var(--uni-red-soft);
+  color:var(--uni-red-dark);
+}
+.section-tag{
+  border-color:#d5d5d5;
+  border-radius:3px;
+}
+.chip{
+  border-radius:3px;
+}
+
+/* Academic table/header feel */
+.table th{
+  color:#777;
+  border-bottom:2px solid var(--uni-red);
+}
+.table td{
+  border-bottom-color:#e5e5e5;
+}
+
+/* Make important numeric highlights use the university red */
+.stat-hero .num{color:var(--uni-red-dark);}
+.stat-mini.gold{border-color:var(--uni-red);}
+.run-btn:hover{
+  border-color:var(--uni-red);
+  color:var(--uni-red-dark);
+}
+.pstep:hover{border-color:var(--uni-red);}
+.pstep.open{
+  border-color:var(--uni-red);
+  background:var(--uni-red-soft);
+}
+.pinfo{background:#f5f5f5;}
+.inv-btn{background:var(--uni-red-dark);}
+.inv-btn:hover{background:#971b20;}
+.inv-step::before{background:var(--uni-red);}
+.inv-step.root::before{background:var(--danger);}
+.inv-step.fix::before{background:var(--success);}
+.change-before{background:#fae9e9;}
+.change-after{background:#e8f4ed;}
+
+/* Presentation controls */
+.controls{
+  right:28px;
+  bottom:24px;
+  border:1px solid #d4d4d4;
+  border-radius:5px;
+  box-shadow:0 5px 18px rgba(0,0,0,.12);
+}
+.ctrl-btn{
+  border-radius:3px;
+}
+.ctrl-btn:hover{
+  background:var(--uni-red-soft);
+  color:var(--uni-red-dark);
+}
+
+/* Page number in the university style */
+.stage::after{
+  content:"";
+  position:absolute;
+  right:3.5vw;
+  bottom:20px;
+  color:#888;
+  font-family:var(--serif);
+  font-size:14px;
+  pointer-events:none;
+}
+
+/* Title slide: reproduce the supplied university cover language */
+body.title-slide-active .topbar,
+body.title-slide-active .progress-track{
+  display:none;
+}
+body.title-slide-active .stage{
+  background:var(--uni-red);
+}
+body.title-slide-active .slide{
+  background:var(--uni-red);
+  color:#fff;
+  padding:0;
+}
+body.title-slide-active .slide-inner{
+  max-width:none;
+  height:100%;
+  padding:70px 8vw 80px;
+  position:relative;
+  overflow:hidden;
+}
+body.title-slide-active .slide-inner::before{
+  content:"";
+  position:absolute;
+  left:8vw;
+  top:58px;
+  width:58px;
+  height:82px;
+  border:4px solid rgba(255,255,255,.9);
+  border-radius:28px 28px 7px 7px;
+  opacity:.95;
+}
+body.title-slide-active .slide-inner::after{
+  content:"";
+  position:absolute;
+  right:-10px;
+  top:28px;
+  width:300px;
+  height:300px;
+  border:44px solid rgba(255,255,255,.16);
+  border-radius:50%;
+}
+body.title-slide-active .section-tag{
+  border:0;
+  color:#fff;
+  padding:0;
+  margin:0 0 36px 90px;
+  font-family:var(--serif);
+  font-size:16px;
+  opacity:.92;
+}
+body.title-slide-active h1.headline{
+  color:#fff;
+  font-size:64px !important;
+  max-width:820px;
+  margin-top:110px;
+  margin-bottom:18px;
+}
+body.title-slide-active .slide-inner > .headline::after{
+  background:#fff;
+}
+body.title-slide-active .dek{
+  color:rgba(255,255,255,.9);
+  font-size:20px !important;
+  max-width:780px;
+}
+body.title-slide-active .card{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.22);
+  box-shadow:none;
+  color:#fff;
+}
+body.title-slide-active .card dt,
+body.title-slide-active .card dd,
+body.title-slide-active .small-note{
+  color:rgba(255,255,255,.92) !important;
+}
+body.title-slide-active .badge{
+  background:rgba(255,255,255,.13);
+  color:#fff;
+  border-color:rgba(255,255,255,.25);
+}
+body.title-slide-active .badge.nlp,
+body.title-slide-active .badge.ocr{
+  background:rgba(255,255,255,.13);
+  color:#fff;
+}
+body.title-slide-active .controls{
+  background:rgba(255,255,255,.96);
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .topbar{
+    height:88px;
+    padding:0 20px;
+  }
+  .topbar-left img{width:36px;}
+  .topbar-title{font-size:15px;}
+  .topbar-section{display:none;}
+  .topbar-right::before{font-size:10px;}
+  .slide{padding:34px 24px 90px;}
+  h1.headline{font-size:36px !important;}
+  h2.headline{font-size:29px;}
+  body.title-slide-active .slide-inner{
+    padding:42px 24px 70px;
+  }
+  body.title-slide-active .slide-inner::before{
+    left:24px;
+    top:35px;
+  }
+  body.title-slide-active .section-tag{
+    margin-left:74px;
+    font-size:13px;
+  }
+  body.title-slide-active h1.headline{
+    margin-top:90px;
+    font-size:43px !important;
+  }
+}
+
+/* Print/PDF-friendly academic presentation */
+@media print{
+  body{overflow:visible;}
+  .controls{display:none !important;}
+  .slide{
+    position:relative !important;
+    display:block !important;
+    min-height:100vh;
+    page-break-after:always;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -552,28 +848,12 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:24px 0;}
       <!-- SLIDE 0 — TITLE                                        -->
       <!-- ===================================================== -->
       <section class="slide" id="slide-0">
-        <div class="slide-inner" style="max-width:920px; padding-top:52px;">
-          <div class="title-float" style="top:2px; right:10px;">01 · 02</div>
-          <div class="title-float" style="top:96px; right:-14px;">XLM‑R · TrOCR</div>
-          <div class="title-float" style="top:210px; right:40px;">🤗 Hugging Face</div>
-          <div class="title-float" style="top:320px; right:-6px;">Streamlit · GitHub</div>
-
+        <div class="slide-inner" style="max-width:920px; padding-top:60px;">
           <div class="section-tag">🤗 Final Internship Departmental Evaluation</div>
-          <h1 class="headline" style="font-size:54px;">Final Internship Presentation</h1>
+          <h1 class="headline" style="font-size:52px;">Final Internship Presentation</h1>
           <div class="dek" style="font-size:19px; max-width:700px;">Artificial Intelligence &amp; Machine Learning Internship — Code Saviours, Batch SI-26</div>
 
-          <div class="title-tracks">
-            <div class="title-track nlp">
-              <div class="tt-eyebrow">Project 01 · NLP</div>
-              <div class="tt-name">Roman Urdu–English Code-Switching ID</div>
-            </div>
-            <div class="title-track ocr">
-              <div class="tt-eyebrow">Project 02 · Computer Vision</div>
-              <div class="tt-name">Urdu OCR — TrOCR Fine-Tuning</div>
-            </div>
-          </div>
-
-          <div class="grid-2" style="margin-top:24px; max-width:760px;">
+          <div class="grid-2" style="margin-top:36px; max-width:760px;">
             <div class="card">
               <div class="kv">
                 <dt>Student</dt><dd style="font-family:var(--sans); font-weight:700;">Humna Imran</dd>
@@ -592,10 +872,10 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:24px 0;}
             </div>
           </div>
 
-          <div class="badge-row" style="margin-top:24px;">
+          <div class="badge-row" style="margin-top:30px;">
+            <span class="badge nlp">NLP · Code-Switching ID</span>
+            <span class="badge ocr">Computer Vision · Urdu OCR</span>
             <span class="badge gold">2 deployed apps</span>
-            <span class="badge">251 commits</span>
-            <span class="badge">8 weeks</span>
           </div>
           <p class="small-note" style="margin-top:30px;">Use the arrow keys, or the controls in the bottom-right, to move through the notebook →</p>
         </div>
@@ -690,7 +970,7 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:24px 0;}
       <!-- ===================================================== -->
       <!-- SLIDE 3 — P1 PROBLEM                                   -->
       <!-- ===================================================== -->
-      <section class="slide proj-nlp" id="slide-3">
+      <section class="slide" id="slide-3">
         <div class="slide-inner">
           <div class="eyebrow nlp">Project 1 · Weeks 6–7</div>
           <h2 class="headline">Problem &amp; objective</h2>
@@ -723,7 +1003,7 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:24px 0;}
       <!-- ===================================================== -->
       <!-- SLIDE 4 — P1 DATASET                                   -->
       <!-- ===================================================== -->
-      <section class="slide proj-nlp" id="slide-4">
+      <section class="slide" id="slide-4">
         <div class="slide-inner">
           <div class="eyebrow nlp">Project 1 · Dataset</div>
           <h2 class="headline">From raw text to 2,490 labelled words</h2>
@@ -759,20 +1039,12 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:24px 0;}
           </div>
           <p class="small-note" style="margin-top:-8px; margin-bottom:20px;">Click a stage to see what happened there.</p>
 
-          <div class="funnel" style="max-width:520px; margin-left:auto; margin-right:auto;">
-            <div class="funnel-stage" style="width:100%; background:linear-gradient(135deg,var(--nlp),#7d6fe0);">
-              <div class="fnum">~15,900</div><div class="flabel">usable sentences after cleaning</div>
-            </div>
-            <div class="funnel-arrow">↓ filtered for genuine code-switching</div>
-            <div class="funnel-stage" style="width:66%; background:linear-gradient(135deg,var(--nlp),#8b7fe8);">
-              <div class="fnum">220</div><div class="flabel">code-switched sentences kept</div>
-            </div>
-            <div class="funnel-arrow">↓ every word labelled</div>
-            <div class="funnel-stage" style="width:82%; background:linear-gradient(135deg,var(--gold),var(--gold-deep));">
-              <div class="fnum">2,490</div><div class="flabel">word-level labels, final dataset</div>
-            </div>
+          <div class="grid-4">
+            <div class="stat-mini nlp"><div class="num">~15,900</div><div class="lbl">usable sentences after cleaning</div></div>
+            <div class="stat-mini nlp"><div class="num">220</div><div class="lbl">code-switched sentences kept</div></div>
+            <div class="stat-mini nlp"><div class="num">2,490</div><div class="lbl">word-level labels, final dataset</div></div>
+            <div class="stat-mini gold"><div class="num">~95%</div><div class="lbl">est. correctness on spot-check</div></div>
           </div>
-          <p class="small-note" style="text-align:center;">~95% estimated correctness on a hand-checked spot sample.</p>
 
           <div class="grid-2 mt20">
             <div class="ba-figure">
@@ -790,21 +1062,15 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:24px 0;}
       <!-- ===================================================== -->
       <!-- SLIDE 5 — P1 MODEL / TRAINING / RESULTS                -->
       <!-- ===================================================== -->
-      <section class="slide proj-nlp" id="slide-5">
+      <section class="slide" id="slide-5">
         <div class="slide-inner">
           <div class="eyebrow nlp">Project 1 · Model, Training &amp; Results</div>
-          <h2 class="headline">90.75% word-level accuracy<span class="evidence-tag">✓ EXPERIMENT RESULT</span></h2>
+          <h2 class="headline">90.75% word-level accuracy</h2>
 
           <div class="stat-hero">
             <span class="num stat-num" data-target="90.75" data-decimals="2">0</span><span class="unit">%</span>
           </div>
           <div class="stat-label mb0">held-out word-level accuracy — xlm-roberta-base, fine-tuned for token classification</div>
-
-          <div class="grid-3" style="margin-top:18px; max-width:520px;">
-            <div class="stat-mini nlp"><div class="num">93.7%</div><div class="lbl">URD F1</div></div>
-            <div class="stat-mini nlp"><div class="num">82.4%</div><div class="lbl">ENG F1</div></div>
-            <div class="stat-mini danger"><div class="num">0%</div><div class="lbl">MIX F1</div></div>
-          </div>
 
           <div class="grid-2 mt28">
             <div class="cell">
@@ -848,7 +1114,7 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:24px 0;}
       <!-- ===================================================== -->
       <!-- SLIDE 6 — P1 DEBUG + DEPLOY                            -->
       <!-- ===================================================== -->
-      <section class="slide proj-nlp" id="slide-6">
+      <section class="slide" id="slide-6">
         <div class="slide-inner">
           <div class="eyebrow nlp">Project 1 · Challenge, Debugging &amp; Deployment</div>
           <h2 class="headline">Why MIX scored zero — and what I did about it</h2>
@@ -887,7 +1153,7 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:24px 0;}
       <!-- ===================================================== -->
       <!-- SLIDE 7 — P2 INTRO                                     -->
       <!-- ===================================================== -->
-      <section class="slide proj-ocr" id="slide-7">
+      <section class="slide" id="slide-7">
         <div class="slide-inner">
           <div class="eyebrow ocr">Project 2 · Weeks 1–5</div>
           <h2 class="headline">Urdu Optical Character Recognition</h2>
@@ -923,7 +1189,7 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:24px 0;}
       <!-- ===================================================== -->
       <!-- SLIDE 8 — P2 DATA & PREPROCESSING                      -->
       <!-- ===================================================== -->
-      <section class="slide proj-ocr" id="slide-8">
+      <section class="slide" id="slide-8">
         <div class="slide-inner">
           <div class="eyebrow ocr">Urdu OCR · Data &amp; Preprocessing</div>
           <h2 class="headline">Building a 263-pair dataset from nothing</h2>
@@ -937,25 +1203,12 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:24px 0;}
             </div>
           </div>
 
-          <div class="funnel" style="max-width:520px; margin-left:auto; margin-right:auto;">
-            <div class="funnel-stage" style="width:100%; background:linear-gradient(135deg,var(--ocr),#14a89b);">
-              <div class="fnum">~137k</div><div class="flabel">headline corpus for synthetic text</div>
-            </div>
-            <div class="funnel-arrow">↓ rendered + combined with real scans</div>
-            <div class="funnel-split" style="width:72%;">
-              <div class="funnel-stage" style="background:linear-gradient(135deg,var(--ocr),#14a89b);">
-                <div class="fnum">110</div><div class="flabel">synthetic lines</div>
-              </div>
-              <div class="funnel-stage" style="background:linear-gradient(135deg,var(--gold),var(--gold-deep));">
-                <div class="fnum">60</div><div class="flabel">real scanned lines</div>
-              </div>
-            </div>
-            <div class="funnel-arrow">↓ combined with additional scanned pages</div>
-            <div class="funnel-stage" style="width:52%; background:linear-gradient(135deg,var(--ink),#3a4150);">
-              <div class="fnum">263</div><div class="flabel">final image-text pairs</div>
-            </div>
+          <div class="grid-4">
+            <div class="stat-mini ocr"><div class="num">263</div><div class="lbl">final labelled image-text pairs</div></div>
+            <div class="stat-mini ocr"><div class="num">~137k</div><div class="lbl">headline corpus for synthetic text</div></div>
+            <div class="stat-mini ocr"><div class="num">110</div><div class="lbl">synthetic lines added on expansion</div></div>
+            <div class="stat-mini gold"><div class="num">60</div><div class="lbl">real scanned ground-truth lines</div></div>
           </div>
-          <p class="small-note" style="text-align:center;">The 263 total also includes additional scanned novel &amp; newspaper pages beyond the two counts above.</p>
 
           <hr class="rule">
 
@@ -981,7 +1234,7 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:24px 0;}
       <!-- ===================================================== -->
       <!-- SLIDE 9 — P2 BASELINE VS CUSTOM                        -->
       <!-- ===================================================== -->
-      <section class="slide proj-ocr" id="slide-9">
+      <section class="slide" id="slide-9">
         <div class="slide-inner">
           <div class="eyebrow ocr">Urdu OCR · Baseline vs. Custom Model</div>
           <h2 class="headline">Proving a custom model was actually needed</h2>
@@ -1031,27 +1284,19 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:24px 0;}
       <!-- ===================================================== -->
       <!-- SLIDE 10 — P2 FAILURE INVESTIGATION                    -->
       <!-- ===================================================== -->
-      <section class="slide proj-ocr" id="slide-10">
+      <section class="slide" id="slide-10">
         <div class="slide-inner">
           <div class="eyebrow ocr">Urdu OCR · The Failure That Taught Me the Most</div>
           <h2 class="headline">The model failed. The debugging succeeded.</h2>
 
           <div class="invbox">
-            <div class="inv-result" style="align-items:flex-end;">
-              <div>
-                <div class="stat-hero" style="margin:0 0 2px;">
-                  <span class="num" style="color:var(--danger); font-size:64px;">0</span><span class="unit" style="color:var(--danger);">%</span>
-                </div>
-                <div class="stat-label mb0">exact-match accuracy, 52 held-out images<span class="evidence-tag tag-danger">✓ EXPERIMENT RESULT</span></div>
-              </div>
+            <div class="inv-result">
+              <div class="stat-mini danger"><div class="num">0%</div><div class="lbl">exact-match accuracy, 52 held-out images</div></div>
               <div class="stat-mini danger"><div class="num">~0.1%</div><div class="lbl">mean character-level similarity</div></div>
             </div>
             <p style="font-size:13.5px; color:var(--ink-dim); margin-bottom:16px;">Every prediction collapsed to the same fixed 20-character placeholder string, no matter what the input image contained.</p>
 
             <button class="inv-btn" id="invBtn">🔍 Investigate Failure</button>
-            <div class="inv-progress" id="invProgress">
-              <span class="ip-dot"></span><span class="ip-dot"></span><span class="ip-dot"></span><span class="ip-dot root"></span><span class="ip-dot fix"></span>
-            </div>
 
             <div class="inv-steps" id="invSteps">
               <div class="inv-step" data-step="1"><div class="inv-tag">INVESTIGATION 01</div><div class="inv-text">Predictions were checked side by side — every single one was identical, regardless of the input image.</div></div>
@@ -1094,55 +1339,6 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:24px 0;}
           <h2 class="headline">Machine Learning is an end-to-end engineering process</h2>
           <p class="dek">Training a model and shipping something someone else can open and use turned out to be two different skills.</p>
 
-          <div class="wheel-wrap">
-            <svg viewBox="0 0 380 380" width="330" height="330">
-              <circle cx="190" cy="190" r="138" fill="none" style="stroke:var(--border);" stroke-width="1.5" stroke-dasharray="3 6"/>
-              <circle cx="190" cy="190" r="54" style="fill:var(--surface); stroke:var(--border-strong);" stroke-width="1.5"/>
-              <text x="190" y="185" text-anchor="middle" font-family="var(--sans)" font-size="12" font-weight="800" style="fill:var(--ink);">ML</text>
-              <text x="190" y="201" text-anchor="middle" font-family="var(--sans)" font-size="12" font-weight="800" style="fill:var(--ink);">ENGINEERING</text>
-
-              <circle cx="190" cy="52" r="24" style="fill:var(--gold-pale); stroke:var(--gold);" stroke-width="1.5"/>
-              <text x="190" y="58" text-anchor="middle" font-size="16">💡</text>
-              <text x="190" y="92" text-anchor="middle" font-size="11" font-weight="700" style="fill:var(--ink-dim);">Problem</text>
-
-              <circle cx="287.6" cy="92.4" r="24" style="fill:var(--nlp-pale); stroke:var(--nlp);" stroke-width="1.5"/>
-              <text x="287.6" y="98.4" text-anchor="middle" font-size="16">📊</text>
-              <text x="287.6" y="132.4" text-anchor="middle" font-size="11" font-weight="700" style="fill:var(--ink-dim);">Data</text>
-
-              <circle cx="328" cy="190" r="24" style="fill:var(--nlp-pale); stroke:var(--nlp);" stroke-width="1.5"/>
-              <text x="328" y="196" text-anchor="middle" font-size="16">🧹</text>
-              <text x="328" y="230" text-anchor="middle" font-size="11" font-weight="700" style="fill:var(--ink-dim);">Preprocess</text>
-
-              <circle cx="287.6" cy="287.6" r="24" style="fill:var(--ocr-pale); stroke:var(--ocr);" stroke-width="1.5"/>
-              <text x="287.6" y="293.6" text-anchor="middle" font-size="16">🧠</text>
-              <text x="287.6" y="327.6" text-anchor="middle" font-size="11" font-weight="700" style="fill:var(--ink-dim);">Model</text>
-
-              <circle cx="190" cy="328" r="24" style="fill:var(--ocr-pale); stroke:var(--ocr);" stroke-width="1.5"/>
-              <text x="190" y="334" text-anchor="middle" font-size="16">📈</text>
-              <text x="190" y="368" text-anchor="middle" font-size="11" font-weight="700" style="fill:var(--ink-dim);">Evaluation</text>
-
-              <circle cx="92.4" cy="287.6" r="24" style="fill:var(--danger-pale); stroke:var(--danger);" stroke-width="1.5"/>
-              <text x="92.4" y="293.6" text-anchor="middle" font-size="16">🐛</text>
-              <text x="92.4" y="327.6" text-anchor="middle" font-size="11" font-weight="700" style="fill:var(--ink-dim);">Debugging</text>
-
-              <circle cx="52" cy="190" r="24" style="fill:var(--gold-pale); stroke:var(--gold);" stroke-width="1.5"/>
-              <text x="52" y="196" text-anchor="middle" font-size="16">🤗</text>
-              <text x="52" y="230" text-anchor="middle" font-size="11" font-weight="700" style="fill:var(--ink-dim);">HF Hub</text>
-
-              <circle cx="92.4" cy="92.4" r="24" style="fill:var(--gold-pale); stroke:var(--gold);" stroke-width="1.5"/>
-              <text x="92.4" y="98.4" text-anchor="middle" font-size="16">🚀</text>
-              <text x="92.4" y="132.4" text-anchor="middle" font-size="11" font-weight="700" style="fill:var(--ink-dim);">Streamlit</text>
-
-              <defs>
-                <marker id="wheelArrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-                  <path d="M0,0 L8,4 L0,8 z" style="fill:var(--ink-faint);"/>
-                </marker>
-              </defs>
-              <path d="M 102 100 A 138 138 0 0 1 178 53" fill="none" style="stroke:var(--ink-faint);" stroke-width="1.5" marker-end="url(#wheelArrow)"/>
-            </svg>
-          </div>
-          <p class="small-note" style="text-align:center; margin-top:-4px;">Iterate → the cycle repeats: each debugging finding fed back into an earlier stage. Click a stage below for what happened there.</p>
-
           <div class="pipeline-wrap">
             <div class="pipeline" id="ppipeline">
               <div class="pstep" data-info="pp2-1"><div class="pico">💡</div><div class="plabel">Problem</div></div>
@@ -1177,19 +1373,12 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:24px 0;}
 
           <hr class="rule">
 
-          <h3 style="font-size:15px; font-weight:800; margin-bottom:12px;">GitHub activity<span class="evidence-tag tag-gold">✓ REPORT VERIFIED</span></h3>
-          <div class="hbar-row">
-            <div class="hbar-label">Urdu OCR</div>
-            <div class="hbar-track"><div class="hbar-fill ocr" data-w="88"></div></div>
-            <div class="hbar-val">221</div>
+          <h3 style="font-size:15px; font-weight:800; margin-bottom:12px;">GitHub activity</h3>
+          <div class="gh-row">
+            <div class="gh-card"><div class="ghn stat-num" data-target="221" data-decimals="0">0</div><div class="ghl">commits · Urdu OCR (30 Jun – 20 Aug)</div></div>
+            <div class="gh-card"><div class="ghn stat-num" data-target="30" data-decimals="0">0</div><div class="ghl">commits · Code-Switching (7–21 Aug)</div></div>
+            <div class="gh-card"><div class="ghn stat-num" data-target="251" data-decimals="0">0</div><div class="ghl">commits, total across both repos</div></div>
           </div>
-          <div class="hbar-row">
-            <div class="hbar-label">Code-Switching</div>
-            <div class="hbar-track"><div class="hbar-fill nlp" data-w="12"></div></div>
-            <div class="hbar-val">30</div>
-          </div>
-          <div class="code-block mt14">$ git log --oneline --all | wc -l
-<span class="fn">251</span>  <span class="cm"># commits across both repositories</span></div>
           <p class="small-note">Many commits are plain bug fixes — execution counts, a <code>FileNotFoundError</code> during loading, a broken install command. Iterative, trial-and-error work, not one polished attempt.</p>
 
           <h3 style="font-size:15px; font-weight:800; margin:22px 0 4px;">Experiment log</h3>
@@ -1323,13 +1512,6 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:24px 0;}
 
           <div class="closing-quote">The internship taught me that real-world AI is not just about getting a high score. It is about understanding the data, validating the pipeline, debugging failures, and being able to explain the result.</div>
 
-          <div class="cinematic">
-            <div class="c-from">FROM MODEL TRAINING</div>
-            <div class="c-main">to model engineering</div>
-            <div class="c-to">— HUMNA IMRAN, BS ARTIFICIAL INTELLIGENCE</div>
-            <div class="c-stats">251 commits · 2 projects · 8 weeks</div>
-          </div>
-
           <div class="mt28">
             <div class="thankyou">Thank You</div>
             <div style="font-size:20px; color:var(--ink-dim); font-weight:600;">Questions?</div>
@@ -1417,15 +1599,15 @@ const SECTIONS = [
   {label:"Introduction"},
   {label:"Internship Overview"},
   {label:"Two Projects"},
-  {label:"Problem", group:"Project 01 · Code-Switching"},
-  {label:"Dataset"},
-  {label:"Results"},
-  {label:"Debug & Deploy"},
-  {label:"Urdu OCR", group:"Project 02 · Urdu OCR"},
-  {label:"Data & Preprocessing"},
-  {label:"Baseline vs. Custom"},
-  {label:"Failure Investigation"},
-  {label:"Problem → Product", group:"Outcome"},
+  {label:"Project 1: Problem"},
+  {label:"Project 1: Dataset"},
+  {label:"Project 1: Results"},
+  {label:"Project 1: Deploy"},
+  {label:"Project 2: Urdu OCR"},
+  {label:"OCR: Data"},
+  {label:"OCR: Baseline"},
+  {label:"OCR: Failure"},
+  {label:"Problem → Product"},
   {label:"Skills"},
   {label:"Growth"},
   {label:"Conclusion"},
@@ -1490,15 +1672,7 @@ const NOTES = {
    ============================================================ */
 const navlist = document.getElementById('navlist');
 SECTIONS.forEach((s,i)=>{
-  if(s.group){
-    const gl = document.createElement('li');
-    gl.className = 'nb-group';
-    gl.setAttribute('aria-hidden','true');
-    gl.textContent = s.group;
-    navlist.appendChild(gl);
-  }
   const li = document.createElement('li');
-  li.className = 'nav-item';
   li.innerHTML = `<button data-i="${i}"><span class="num">${String(i+1).padStart(2,'0')}</span><span>${s.label}</span></button>`;
   navlist.appendChild(li);
 });
@@ -1508,10 +1682,11 @@ let current = 0;
 function goTo(i){
   i = Math.max(0, Math.min(TOTAL-1, i));
   current = i;
+  document.body.classList.toggle('title-slide-active', i === 0);
   document.querySelectorAll('.slide').forEach((el,idx)=>{
     el.classList.toggle('active', idx===i);
   });
-  document.querySelectorAll('#navlist li.nav-item').forEach((el,idx)=>{
+  document.querySelectorAll('#navlist li').forEach((el,idx)=>{
     el.classList.toggle('active', idx===i);
   });
   document.getElementById('topbarSection').textContent = SECTIONS[i].label;
@@ -1527,13 +1702,12 @@ function goTo(i){
       b.style.height='0';
       requestAnimationFrame(()=> requestAnimationFrame(()=>{ b.style.height=b.dataset.h+'%'; }));
     });
-    active.querySelectorAll('.hbar-fill').forEach(b=>{
-      b.style.width='0';
-      requestAnimationFrame(()=> requestAnimationFrame(()=>{ b.style.width=b.dataset.w+'%'; }));
-    });
   }
   renderNotes(i);
 }
+
+/* University cover state on initial load */
+document.body.classList.add('title-slide-active');
 
 navlist.addEventListener('click', e=>{
   const btn = e.target.closest('button[data-i]');
@@ -1604,12 +1778,10 @@ document.querySelectorAll('.pipeline').forEach(pipe=>{
   const btn = document.getElementById('invBtn');
   if(!btn) return;
   const steps = Array.from(document.querySelectorAll('#invSteps .inv-step'));
-  const dots = Array.from(document.querySelectorAll('#invProgress .ip-dot'));
   let n = 0;
   btn.addEventListener('click', ()=>{
     if(n < steps.length){
       steps[n].classList.add('show');
-      if(dots[n]) dots[n].classList.add('on');
       n++;
       if(n===steps.length){
         btn.textContent = '✓ Investigation complete';
