@@ -32,6 +32,53 @@
     return tree.filter((item) => isInAllowedSubject(item.path));
   }
 
+  /**
+   * One tiny hand-drawn doodle + accent colour per known subject, used on
+   * the chapter rail, the cover table of contents, and the subject banner.
+   * Anything not in this list (there isn't anything today, but a repo's
+   * folders can change) falls back to a generic notebook-page doodle so
+   * the journal never breaks if a new subject shows up.
+   */
+  const SUBJECT_ICONS = {
+    'computer networks': {
+      color: 'var(--dusty-blue)', tint: 'var(--tint-blue)',
+      svg: '<svg viewBox="0 0 32 32" class="subject-doodle" aria-hidden="true"><circle cx="16" cy="7" r="3"/><circle cx="6" cy="25" r="3"/><circle cx="26" cy="25" r="3"/><path d="M16 10v6M13.3 18.6L7.7 22.6M18.7 18.6L24.3 22.6"/></svg>',
+    },
+    'computer vision': {
+      color: 'var(--brick)', tint: 'var(--tint-terracotta)',
+      svg: '<svg viewBox="0 0 32 32" class="subject-doodle" aria-hidden="true"><rect x="4" y="10" width="24" height="16" rx="3"/><path d="M11 10l2.3-4h5.4l2.3 4"/><circle cx="16" cy="18" r="5.5"/><circle cx="16" cy="18" r="2"/><circle cx="23" cy="14" r="1.1" fill="currentColor" stroke="none"/></svg>',
+    },
+    'data mining': {
+      color: 'var(--moss)', tint: 'var(--tint-green)',
+      svg: '<svg viewBox="0 0 32 32" class="subject-doodle" aria-hidden="true"><path d="M5 27V6M5 27h23"/><path d="M8 22l6-8 5 4 8-11"/><circle cx="8" cy="22" r="1.3" fill="currentColor" stroke="none"/><circle cx="14" cy="14" r="1.3" fill="currentColor" stroke="none"/><circle cx="19" cy="18" r="1.3" fill="currentColor" stroke="none"/><circle cx="27" cy="7" r="1.3" fill="currentColor" stroke="none"/></svg>',
+    },
+    'deep learning': {
+      color: 'var(--lavender)', tint: 'var(--tint-lavender)',
+      svg: '<svg viewBox="0 0 32 32" class="subject-doodle" aria-hidden="true"><circle cx="6" cy="7" r="2.1"/><circle cx="6" cy="16" r="2.1"/><circle cx="6" cy="25" r="2.1"/><circle cx="18" cy="10" r="2.1"/><circle cx="18" cy="22" r="2.1"/><circle cx="28" cy="16" r="2.1"/><path d="M8 7l8 3M8 7l8 15M8 16l8-6M8 16l8 6M8 25l8-3M8 25l8-3M20 10l6 6M20 22l6-6"/></svg>',
+    },
+    'multivariable calculus': {
+      color: 'var(--dusty-pink)', tint: 'var(--tint-pink)',
+      svg: '<svg viewBox="0 0 32 32" class="subject-doodle" aria-hidden="true"><path d="M4 16h23M19 12.5l4.5 3.5-4.5 3.5"/><path d="M16 28V5M12 9l4-4.5 4 4.5"/><path d="M6 22c4-9 8-13 10-13s5 15 10 5"/></svg>',
+    },
+    'theory of automata': {
+      color: 'var(--brass)', tint: 'var(--tint-yellow)',
+      svg: '<svg viewBox="0 0 32 32" class="subject-doodle" aria-hidden="true"><circle cx="8" cy="16" r="5"/><circle cx="24" cy="16" r="5"/><circle cx="24" cy="16" r="7.3"/><path d="M13 13.5c3-2.6 6-2.6 8 0M13 18.5c3 2.6 6 2.6 8 0"/></svg>',
+    },
+  };
+  const DEFAULT_SUBJECT_ICON = {
+    color: 'var(--ink-soft)', tint: 'var(--card-bg-alt)',
+    svg: '<svg viewBox="0 0 32 32" class="subject-doodle" aria-hidden="true"><path d="M8 4h12l6 6v18H8z"/><path d="M20 4v6h6"/><path d="M11.5 16h9M11.5 20.5h9M11.5 25h5.5"/></svg>',
+  };
+  function subjectIcon(name) {
+    return SUBJECT_ICONS[String(name).trim().toLowerCase()] || DEFAULT_SUBJECT_ICON;
+  }
+
+  /** A few close paper shades so neighbouring cards read as separate
+   * sheets instead of one uniform slab — picked deterministically from
+   * the file's own path, same trick as the existing tilt/tape values. */
+  const FILE_SHADES = ['var(--shade-file-0)', 'var(--shade-file-1)', 'var(--shade-file-2)', 'var(--shade-file-3)'];
+  const FOLDER_SHADES = ['var(--shade-folder-0)', 'var(--shade-folder-1)', 'var(--shade-folder-2)', 'var(--shade-folder-3)'];
+
   const state = {
     tree: null,        // flat [{path, type, size}] straight from the GitHub API
     meta: null,        // repo metadata (description, pushed_at, ...)
@@ -192,20 +239,23 @@
 
     const fileCount = state.tree.filter((i) => i.type === 'blob').length;
     const subjects = topLevelSubjects();
+    const chipTilts = [-1.1, 0.9, -0.6];
     const chips = [
-      `<div class="meta-chip"><b>${fileCount}</b> files archived</div>`,
-      `<div class="meta-chip"><b>${subjects.length}</b> subjects</div>`,
+      `<div class="meta-chip" style="--tilt:${chipTilts[0]}deg"><b>${fileCount}</b> files archived</div>`,
+      `<div class="meta-chip" style="--tilt:${chipTilts[1]}deg"><b>${subjects.length}</b> subjects</div>`,
     ];
     if (state.meta && state.meta.pushed_at) {
-      chips.push(`<div class="meta-chip">last entry <b>${humanizeDate(state.meta.pushed_at)}</b></div>`);
+      chips.push(`<div class="meta-chip" style="--tilt:${chipTilts[2]}deg">last entry <b>${humanizeDate(state.meta.pushed_at)}</b></div>`);
     }
     metaEl.innerHTML = chips.join('');
 
     tocEl.innerHTML = subjects.map((s, idx) => {
       const count = descendantFileCount(s.path);
       const num = String(idx + 1).padStart(2, '0');
-      return `<li><button class="toc-item" data-subject="${encodeURIComponent(s.path)}">
+      const icon = subjectIcon(baseName(s.path));
+      return `<li><button class="toc-item" data-subject="${encodeURIComponent(s.path)}" style="--tab-accent:${icon.color}">
         <span class="toc-num">${num}</span>
+        <span class="toc-doodle">${icon.svg}</span>
         <span class="toc-name">${escapeHtml(baseName(s.path))}</span>
         <span class="toc-count">${count} file${count === 1 ? '' : 's'}</span>
       </button></li>`;
@@ -224,6 +274,7 @@
 
     renderChapterRail();
     renderBreadcrumb();
+    renderSubjectHeader();
     renderGrid();
   }
 
@@ -232,14 +283,33 @@
     const subjects = topLevelSubjects();
     rail.innerHTML = subjects.map((s) => {
       const isActive = state.currentPath === s.path || state.currentPath.startsWith(s.path + '/');
-      const color = Viewers.hashColor(s.path);
-      return `<button class="chapter-tab ${isActive ? 'active' : ''}" data-path="${encodeURIComponent(s.path)}">
-        <span class="tab-dot" style="background:${color}"></span>${escapeHtml(baseName(s.path))}
+      const icon = subjectIcon(baseName(s.path));
+      return `<button class="chapter-tab ${isActive ? 'active' : ''}" data-path="${encodeURIComponent(s.path)}" style="--tab-accent:${icon.color}; --tab-tint:${icon.tint}">
+        <span class="tab-doodle">${icon.svg}</span>${escapeHtml(baseName(s.path))}
       </button>`;
     }).join('');
     qsa('.chapter-tab', rail).forEach((btn) => {
       btn.addEventListener('click', () => navigateFolder(decodeURIComponent(btn.dataset.path)));
     });
+  }
+
+  /** Small themed strip shown only while browsing inside one subject —
+   * ties the chapter-rail colour/doodle back to the grid beneath it. */
+  function renderSubjectHeader() {
+    const banner = el('subject-banner');
+    if (!banner) return;
+    if (state.searchQuery || !state.currentPath) { banner.hidden = true; return; }
+    const topSegment = state.currentPath.split('/')[0];
+    const icon = subjectIcon(topSegment);
+    const count = descendantFileCount(topSegment);
+    banner.hidden = false;
+    banner.style.setProperty('--tab-accent', icon.color);
+    banner.style.setProperty('--tab-tint', icon.tint);
+    banner.innerHTML = `<span class="subject-banner-doodle">${icon.svg}</span>
+      <span class="subject-banner-text">
+        <span class="subject-banner-name">${escapeHtml(topSegment)}</span>
+        <span class="subject-banner-note">${count} file${count === 1 ? '' : 's'} filed away in this chapter</span>
+      </span>`;
   }
 
   function renderBreadcrumb() {
@@ -301,8 +371,13 @@
 
   function folderCardHtml(item) {
     const count = descendantFileCount(item.path);
-    const tilt = ((hashInt(item.path) % 5) - 2) * 0.4;
-    return `<button class="item-card folder-card" style="--tilt:${tilt}deg" data-folder="${encodeURIComponent(item.path)}">
+    const h = hashInt(item.path);
+    const tilt = ((h % 5) - 2) * 0.4;
+    const shade = FOLDER_SHADES[h % FOLDER_SHADES.length];
+    const pinClass = h % 5 === 0 ? ' has-pin' : '';
+    const pin = h % 5 === 0 ? `<span class="push-pin" style="--pin-tone:${Viewers.hashColor(item.path)}"></span>` : '';
+    return `<button class="item-card folder-card${pinClass}" style="--tilt:${tilt}deg; --card-tint:${shade}" data-folder="${encodeURIComponent(item.path)}">
+      ${pin}
       <span class="folder-icon">🗂️</span>
       <span class="folder-name">${escapeHtml(baseName(item.path))}</span>
       <span class="folder-count">${count} file${count === 1 ? '' : 's'}</span>
@@ -311,10 +386,21 @@
 
   function fileCardHtml(item, showPath) {
     const ext = Viewers.extOf(item.path) || '—';
-    const tilt = ((hashInt(item.path) % 5) - 2) * 0.4;
+    const kind = Viewers.classify(item.path);
+    const h = hashInt(item.path);
+    const tilt = ((h % 5) - 2) * 0.4;
     const tapeRot = ((hashInt(item.path + 't') % 7) - 3);
-    return `<div class="item-card file-card" style="--tilt:${tilt}deg" data-file="${encodeURIComponent(item.path)}">
+    const shade = FILE_SHADES[h % FILE_SHADES.length];
+    const pinClass = h % 6 === 0 ? ' has-pin' : (h % 7 === 3 ? ' has-clip' : '');
+    const pin = h % 6 === 0 ? `<span class="push-pin" style="--pin-tone:${Viewers.badgeColor(item.path)}"></span>` : '';
+    const clip = h % 7 === 3 ? `<span class="paper-clip"></span>` : '';
+    const thumb = kind === 'image'
+      ? `<div class="file-photo"><img src="${GitHubAPI.rawUrl(item.path)}" alt="" loading="lazy" onerror="this.closest('.file-photo').classList.add('broken')"></div>`
+      : '';
+    return `<div class="item-card file-card file-card--${kind}${pinClass}" style="--tilt:${tilt}deg; --card-tint:${shade}" data-file="${encodeURIComponent(item.path)}">
+      ${pin}${clip}
       <span class="file-tape" style="--tape-color:${Viewers.badgeColor(item.path)}; --tape-rot:${tapeRot}deg"></span>
+      ${thumb}
       <div class="file-top">
         <span class="file-ext-badge" style="--badge-color:${Viewers.badgeColor(item.path)}">${escapeHtml(ext)}</span>
         <span class="file-name">${escapeHtml(baseName(item.path))}</span>
@@ -460,14 +546,14 @@
       searchDebounce = setTimeout(() => {
         state.searchQuery = searchInput.value.trim();
         el('search-clear').hidden = !state.searchQuery;
-        if (state.tree) { renderBreadcrumb(); renderGrid(); }
+        if (state.tree) { renderBreadcrumb(); renderSubjectHeader(); renderGrid(); }
       }, 150);
     });
     el('search-clear').addEventListener('click', () => {
       searchInput.value = '';
       state.searchQuery = '';
       el('search-clear').hidden = true;
-      if (state.tree) { renderBreadcrumb(); renderGrid(); }
+      if (state.tree) { renderBreadcrumb(); renderSubjectHeader(); renderGrid(); }
       searchInput.focus();
     });
 
