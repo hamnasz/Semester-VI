@@ -824,8 +824,35 @@ svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1
   .subject-banner-doodle { width: 26px; height: 26px; }
   .subject-banner-name { font-size: 18px; }
   .viewer-sheet { height: 100vh; border-radius: 0; width: 100%; }
-  .viewer-topbar { padding: 14px; }
-  .viewer-actions .btn-sm span, .viewer-actions .btn-sm { font-size: 12px; padding: 7px 10px; }
+
+  /* Compact file-viewer header: badge + filename share one line and the
+     filename truncates instead of wrapping; the repo path drops to its own
+     thin truncated line instead of a wrapped block; the action buttons move
+     to a third compact row instead of stacking. Content and desktop layout
+     are untouched — this block only fires under the mobile breakpoint. */
+  .viewer-topbar { flex-wrap: wrap; align-items: center; padding: 10px 12px; gap: 4px 10px; }
+  .viewer-titles {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 3px 8px;
+    flex: 1 1 auto; min-width: 0; width: 100%;
+  }
+  .viewer-badge { flex-shrink: 0; font-size: 9px; padding: 2px 7px; }
+  .viewer-filename {
+    flex: 1 1 auto; min-width: 60px; margin: 0; font-size: 14.5px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  /* Full path stays in the DOM (and in the title attr) — on mobile it's a
+     single truncated line rather than a multi-line block. */
+  .viewer-path {
+    flex: 1 1 100%; display: block; font-size: 10.5px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .viewer-actions { flex: 1 1 100%; gap: 6px; }
+  .viewer-actions .btn-sm span, .viewer-actions .btn-sm { font-size: 11.5px; padding: 6px 9px; }
+  .viewer-actions .btn-icon { width: 32px; height: 32px; font-size: 19px; }
+
+  .viewer-image-wrap { padding: 10px; }
+  .viewer-body.pad { padding: 16px 14px; }
+  .viewer-text { padding: 16px; }
 }
 
 @media (max-width: 420px) {
