@@ -471,8 +471,12 @@
     el('viewer-overlay').hidden = false;
     document.body.style.overflow = 'hidden';
     el('viewer-badge').textContent = (Viewers.extOf(file.path) || 'file').toUpperCase();
-    el('viewer-filename').textContent = baseName(file.path);
-    el('viewer-path').textContent = file.path;
+    const filenameEl = el('viewer-filename');
+    filenameEl.textContent = baseName(file.path);
+    filenameEl.title = file.path; // full name+path available on hover/long-press when truncated on mobile
+    const pathEl = el('viewer-path');
+    pathEl.textContent = file.path;
+    pathEl.title = file.path;
     el('viewer-github-link').href = GitHubAPI.githubBlobUrl(file.path);
     const dl = el('viewer-download-link');
     dl.href = GitHubAPI.rawUrl(file.path);
