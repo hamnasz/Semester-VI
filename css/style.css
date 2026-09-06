@@ -1,8 +1,12 @@
 /* =========================================================================
    SEMESTER VI — FIELD JOURNAL
    Design tokens
-   Palette:  paper ivory · slate ink · moss (washi tape) · brick (pen accent) · brass (foil)
-   Type:     Caveat (handwritten flourish, used sparingly) · Source Serif 4 (reading) · IBM Plex Mono (data)
+   Palette:  paper ivory · slate ink · moss (green) · brick (terracotta) ·
+             brass (soft yellow) · dusty blue · lavender · dusty pink —
+             one accent per subject, so each chapter of the notebook gets
+             its own pen colour instead of the whole site sharing one.
+   Type:     Caveat (handwritten flourish, used sparingly) · Source Serif 4
+             (reading) · IBM Plex Mono (data / file metadata)
    ========================================================================= */
 
 :root {
@@ -15,18 +19,43 @@
   --ink-soft:     #5c6672;
   --ink-faint:    #8b9199;
 
-  /* -- color: accents -- */
-  --moss:         #63744e;
+  /* -- color: the six subject accents -- */
+  --moss:         #63744e;   /* Data Mining */
   --moss-deep:    #4c5c3b;
-  --brick:        #96402f;
+  --brick:        #96402f;   /* Computer Vision */
   --brick-deep:   #7a3125;
-  --brass:        #a9822f;
+  --brass:        #a9822f;   /* Theory of Automata */
   --brass-deep:   #8a6a22;
+  --dusty-blue:      #4f7690; /* Computer Networks */
+  --dusty-blue-deep: #3c5c72;
+  --lavender:        #7c6a95; /* Deep Learning */
+  --lavender-deep:   #61517a;
+  --dusty-pink:      #ab5f6c; /* Multivariable Calculus */
+  --dusty-pink-deep: #8a4a56;
+
+  /* -- pale tints of each accent, for sticky-notes / tinted surfaces -- */
+  --tint-green:      #e7ead9;
+  --tint-terracotta: #f2ded2;
+  --tint-yellow:     #f4e9c7;
+  --tint-blue:       #e2eaee;
+  --tint-lavender:   #eae3ef;
+  --tint-pink:       #f3e0e2;
 
   /* -- surfaces -- */
   --card-bg:      #faf4e6;
   --card-bg-alt:  #f4ecd8;
   --overlay-bg:   rgba(38, 47, 58, 0.55);
+
+  /* -- a few close paper shades, so cards next to each other read as
+        separate sheets rather than one uniform slab -- */
+  --shade-file-0: #faf4e6;
+  --shade-file-1: #f5efdc;
+  --shade-file-2: #f8f1de;
+  --shade-file-3: #f2ecda;
+  --shade-folder-0: #f4ecd8;
+  --shade-folder-1: #efe6cd;
+  --shade-folder-2: #f2e9d2;
+  --shade-folder-3: #ece2c8;
 
   /* -- type -- */
   --font-hand:  'Caveat', cursive;
@@ -55,6 +84,22 @@
     --card-bg:      #262c26;
     --card-bg-alt:  #2c332c;
     --overlay-bg:   rgba(10, 12, 10, 0.72);
+
+    --shade-file-0: #262c26;
+    --shade-file-1: #242a25;
+    --shade-file-2: #282e27;
+    --shade-file-3: #232924;
+    --shade-folder-0: #2c332c;
+    --shade-folder-1: #2a312a;
+    --shade-folder-2: #2e352d;
+    --shade-folder-3: #293029;
+
+    --tint-green:      rgba(99,116,78,0.18);
+    --tint-terracotta: rgba(150,64,47,0.18);
+    --tint-yellow:     rgba(169,130,47,0.2);
+    --tint-blue:       rgba(79,118,144,0.2);
+    --tint-lavender:   rgba(124,106,149,0.2);
+    --tint-pink:       rgba(171,95,108,0.2);
   }
 }
 
@@ -162,6 +207,74 @@ svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1
 .btn-icon-label[aria-expanded="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 
 /* =========================================================================
+   SCRAPBOOK DECORATIONS — small reusable CSS/SVG pieces, used selectively
+   throughout the cover and archive rather than piled onto everything.
+   ========================================================================= */
+
+/* strip of washi/masking tape. Colour + rotation + width are set per use
+   via CSS custom properties so one rule covers every placement. */
+.washi-tape {
+  --tape-w: 58px; --tape-h: 20px; --tape-rot: -4deg; --tape-tone: var(--moss);
+  position: absolute; width: var(--tape-w); height: var(--tape-h);
+  background:
+    repeating-linear-gradient(127deg, rgba(255,255,255,0.32) 0 5px, rgba(255,255,255,0.1) 5px 11px),
+    var(--tape-tone);
+  opacity: 0.62; transform: rotate(var(--tape-rot));
+  box-shadow: 0 2px 3px rgba(0,0,0,0.15);
+}
+
+/* small metal push-pin, glossy highlight in the top-left of the head */
+.push-pin {
+  --pin-tone: var(--brick);
+  position: absolute; width: 13px; height: 13px; border-radius: 50%;
+  background: radial-gradient(circle at 34% 30%, rgba(255,255,255,0.75), transparent 45%), var(--pin-tone);
+  box-shadow: 0 2px 3px rgba(0,0,0,0.32), inset 0 -2px 2px rgba(0,0,0,0.2);
+}
+
+/* silvery paper clip, drawn once as an SVG data-uri so it never needs an
+   external image request */
+.paper-clip {
+  position: absolute; width: 17px; height: 32px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 32'%3E%3Cpath d='M6 7v17a3.6 3.6 0 0 0 7.2 0V5.4a2.3 2.3 0 0 0-4.6 0v16.4a1 1 0 0 0 2 0V8.5' fill='none' stroke='%237d7263' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-size: contain;
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.22));
+}
+
+/* small round sticker, e.g. on the cover or a card corner */
+.sticker-dot {
+  --sticker-tone: var(--brass);
+  position: absolute; width: 15px; height: 15px; border-radius: 50%;
+  background: var(--sticker-tone); border: 2px solid var(--card-bg);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+
+/* five-point star sticker, pure CSS via clip-path */
+.sticker-star {
+  --sticker-tone: var(--brass);
+  position: absolute; width: 20px; height: 20px; background: var(--sticker-tone);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.22));
+}
+
+/* highlighter swipe behind a run of text */
+.highlight {
+  background: linear-gradient(120deg, transparent 0%, var(--tint-yellow) 10%, var(--tint-yellow) 90%, transparent 100%);
+  padding: 0.04em 0.2em; border-radius: 2px;
+}
+
+/* wavy hand-underline under a word or short phrase */
+.pencil-underline {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='7'%3E%3Cpath d='M0 3.5 Q 5 0.5 10 3.5 T 20 3.5 T 30 3.5 T 40 3.5' fill='none' stroke='%2396402f' stroke-width='1.6'/%3E%3C/svg%3E");
+  background-repeat: repeat-x; background-position: 0 100%; background-size: 34px 7px;
+  padding-bottom: 4px;
+}
+
+/* a tiny hand-drawn accent icon — used for subject doodles everywhere
+   (chapter tabs, cover, table of contents, subject banner). Standardised
+   stroke width so the same icon reads consistently from 18px to 48px. */
+.subject-doodle { stroke-width: 2.35; }
+
+/* =========================================================================
    COVER
    ========================================================================= */
 
@@ -173,61 +286,155 @@ svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1
 }
 @media (prefers-color-scheme: dark) { .view-cover { background-image: none; } }
 
-.cover-inner { max-width: 640px; width: 100%; text-align: center; }
+/* wide outer stage — .cover-inner is the readable column centred inside
+   it; the spine holes and taped cards live in the side gutters this
+   creates, so they can never collide with the text column beneath. */
+.cover-stage { position: relative; width: 100%; max-width: 1180px; margin: 0 auto; }
 
-.cover-stamp { position: relative; width: 112px; height: 112px; margin: 0 auto 28px; color: var(--brick); opacity: 0.92; }
+.cover-inner {
+  position: relative; max-width: 660px; width: 100%; margin: 0 auto; text-align: center;
+  background: var(--card-bg);
+  border: 1px solid var(--paper-shadow);
+  border-radius: 3px 14px 14px 3px;
+  padding: 56px 44px 46px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.5) inset,
+    0 22px 46px rgba(38,47,58,0.16),
+    0 4px 10px rgba(38,47,58,0.08);
+  transform: rotate(-0.35deg);
+}
+/* two more sheets peeking out from behind, so the cover reads as a small
+   stack of paper rather than one flat card. Purely decorative, so it is
+   safe to clip their edges unevenly. */
+.cover-inner::before, .cover-inner::after {
+  content: ''; position: absolute; inset: 0; z-index: -1; border-radius: 3px 14px 14px 3px;
+  background: var(--card-bg-alt); border: 1px solid var(--paper-shadow);
+}
+.cover-inner::before { transform: rotate(1.1deg) translate(5px, 7px); }
+.cover-inner::after {
+  transform: rotate(-1.6deg) translate(-6px, 11px);
+  background: var(--paper-deep);
+  clip-path: polygon(0 0,100% 0,100% 97%,96% 100%,88% 96%,80% 100%,72% 96%,64% 100%,56% 96%,48% 100%,40% 96%,32% 100%,24% 96%,16% 100%,8% 96%,0 100%);
+}
+
+/* notebook binding: a column of punched holes down the left gutter,
+   only shown once there is real gutter width to sit in. */
+.cover-spine {
+  position: absolute; left: 6px; top: 64px; bottom: 64px; width: 24px;
+  display: none; flex-direction: column; justify-content: space-between; align-items: center;
+}
+.cover-spine span {
+  width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0;
+  background: var(--paper); border: 1px solid var(--paper-shadow);
+  box-shadow: inset 0 2px 3px rgba(0,0,0,0.3), 0 1px 0 rgba(255,255,255,0.55);
+}
+
+/* small taped "specimen cards" in the right gutter, each carrying one of
+   the subject doodles as a teaser for what is inside the notebook. */
+.taped-card {
+  position: absolute; display: none; width: 96px; padding: 14px 10px 10px;
+  background: var(--card-bg); border: 1px solid var(--paper-shadow); border-radius: 4px;
+  box-shadow: 0 8px 18px rgba(38,47,58,0.16);
+  text-align: center; color: var(--tc-accent, var(--ink-soft));
+}
+.taped-card .subject-doodle { width: 30px; height: 30px; margin: 0 auto 6px; display: block; }
+.taped-card-label {
+  display: block; font-family: var(--font-hand); font-size: 16px; color: var(--ink-soft);
+  transform: rotate(-1deg);
+}
+.taped-card--1 { right: 4px; top: 4%; transform: rotate(4deg); }
+.taped-card--2 { right: 26px; top: 39%; transform: rotate(-3deg); }
+.taped-card--3 { right: 0; top: 74%; transform: rotate(2.5deg); }
+.taped-card .washi-tape { top: -10px; left: 50%; margin-left: calc(var(--tape-w) / -2); }
+.taped-card .push-pin { top: -6px; left: 50%; margin-left: -6.5px; }
+
+@media (min-width: 1080px) {
+  .cover-spine, .taped-card { display: flex; }
+  .taped-card { display: block; }
+}
+
+.cover-stamp { position: relative; width: 108px; height: 108px; margin: 0 auto 24px; color: var(--brick); opacity: 0.92; transform: rotate(-5deg); }
 .stamp-ring { width: 100%; height: 100%; fill: none; }
-.stamp-ring circle { stroke: currentColor; stroke-width: 1.4; opacity: 0.8; }
-.stamp-ring text { font-family: var(--font-mono); font-size: 8.4px; letter-spacing: 2px; fill: currentColor; stroke: none; }
+.stamp-ring circle { stroke: currentColor; stroke-width: 1.3; opacity: 0.8; stroke-dasharray: 2 1.4; }
+.stamp-ring text { font-family: var(--font-mono); font-size: 8.2px; letter-spacing: 2px; fill: currentColor; stroke: none; }
 .stamp-center {
   position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-hand); font-size: 46px; font-weight: 700; color: var(--brick);
-  transform: rotate(-3deg);
+  font-family: var(--font-hand); font-size: 44px; font-weight: 700; color: var(--brick);
+  transform: rotate(2deg);
 }
 
+/* the eyebrow reads as a margin annotation now — hand-font, not a tracked
+   corporate label — with a small pencil underline under the key phrase */
 .cover-eyebrow {
-  font-family: var(--font-mono); font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--ink-soft); margin-bottom: 14px;
+  font-family: var(--font-hand); font-size: 21px; font-weight: 600;
+  color: var(--ink-soft); margin-bottom: 6px; transform: rotate(-0.6deg);
 }
-.cover-title { line-height: 0.95; margin-bottom: 22px; }
+
+.cover-title { line-height: 0.95; margin-bottom: 6px; }
 .cover-title-line { display: block; font-size: clamp(2.6rem, 8vw, 4.6rem); font-weight: 700; letter-spacing: -0.01em; }
 .cover-title-hand {
   font-family: var(--font-hand); font-weight: 700; color: var(--brick);
   font-size: clamp(3.4rem, 11vw, 6rem); transform: rotate(-2deg); display: inline-block; margin-top: -6px;
 }
 
+/* small handwritten degree tag, taped just under the title */
+.cover-degree-tag {
+  position: relative; display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-hand); font-size: 19px; color: var(--moss-deep);
+  background: var(--tint-green); border-radius: 3px; padding: 5px 16px 6px;
+  transform: rotate(-1.4deg); margin: 6px 0 24px;
+}
+.cover-degree-tag .washi-tape { --tape-w: 40px; --tape-h: 14px; --tape-tone: var(--moss); top: -8px; left: 50%; margin-left: -20px; }
+
 .cover-sub {
-  display: block; max-width: 480px; margin: 0 auto 32px; color: var(--ink-soft);
+  display: block; max-width: 480px; margin: 0 auto 30px; color: var(--ink-soft);
   font-size: 17px; line-height: 1.65;
 }
 .repo-tag {
   background: var(--card-bg-alt); padding: 2px 7px; border-radius: 4px; font-size: 14px;
-  border: 1px solid var(--paper-shadow);
+  border: 1px solid var(--paper-shadow); font-family: var(--font-mono);
 }
 
-.cover-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
+/* the "start here" note sits in normal flow directly above the actions
+   row, its arrow curling down into it — points at the button without
+   ever needing to be pinned to its exact, dynamically-sized position. */
+.hand-note-cta {
+  display: flex; flex-direction: column; align-items: center; gap: 0;
+  font-family: var(--font-hand); font-size: 20px; color: var(--brick);
+  transform: rotate(-3deg); margin-bottom: -8px;
+}
+.hand-note-arrow { width: 20px; height: 30px; color: var(--brick); }
 
-.cover-meta { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 46px; }
+.cover-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 38px; }
+
+.cover-meta { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 42px; }
 .meta-chip {
   font-family: var(--font-mono); font-size: 12.5px; color: var(--ink-soft);
   background: var(--card-bg); border: 1px solid var(--paper-shadow); border-radius: 999px;
-  padding: 7px 14px;
+  padding: 7px 14px; transform: rotate(var(--tilt, 0deg));
+  box-shadow: 0 2px 5px rgba(38,47,58,0.06);
 }
 .meta-chip b { color: var(--ink); font-weight: 600; }
 
 .stitch-divider {
-  height: 1px; margin: 0 auto 40px; max-width: 320px;
+  height: 1px; margin: 0 auto 36px; max-width: 320px;
   background-image: repeating-linear-gradient(90deg, var(--brass) 0 6px, transparent 6px 12px);
   opacity: 0.6;
 }
 
-.cover-toc { text-align: left; margin-bottom: 44px; }
+.cover-toc { text-align: left; margin-bottom: 40px; }
 .toc-label {
-  font-family: var(--font-hand); font-size: 22px; color: var(--brick); margin-bottom: 14px; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  font-family: var(--font-hand); font-size: 22px; color: var(--brick); margin-bottom: 16px; text-align: center;
+}
+.sticky-note-tag {
+  font-family: var(--font-hand); font-size: 15.5px; color: var(--brass-deep);
+  background: var(--tint-yellow); padding: 4px 14px 5px; border-radius: 2px;
+  transform: rotate(-1.6deg); box-shadow: 0 2px 4px rgba(0,0,0,0.08);
 }
 .toc-list { display: flex; flex-direction: column; gap: 2px; }
 .toc-item {
-  display: flex; align-items: baseline; gap: 12px; padding: 13px 6px;
+  display: flex; align-items: center; gap: 12px; padding: 12px 6px;
   border-bottom: 1px dashed var(--paper-shadow);
   text-decoration: none; color: var(--ink);
   transition: padding-left var(--dur-fast) var(--ease-page), background var(--dur-fast);
@@ -236,8 +443,9 @@ svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1
   border-left: none; border-right: none; border-top: none;
   width: 100%; text-align: left; font-size: 16px;
 }
-.toc-item:hover { padding-left: 14px; background: var(--card-bg); }
+.toc-item:hover { padding-left: 14px; background: var(--card-bg-alt); }
 .toc-num { font-family: var(--font-mono); font-size: 13px; color: var(--brass-deep); min-width: 22px; }
+.toc-doodle { width: 20px; height: 20px; flex-shrink: 0; color: var(--tab-accent, var(--ink-faint)); }
 .toc-name { flex: 1; font-weight: 600; }
 .toc-count { font-family: var(--font-mono); font-size: 12.5px; color: var(--ink-faint); }
 .toc-skel { padding: 13px 6px; border-bottom: 1px dashed var(--paper-shadow); }
@@ -294,7 +502,7 @@ svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1
   display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
   padding: 12px 24px; background: var(--card-bg-alt); border-bottom: 1px solid var(--paper-shadow);
 }
-.filter-label { font-family: var(--font-mono); font-size: 12px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 1px; }
+.filter-label { font-family: var(--font-hand); font-size: 16px; color: var(--ink-soft); }
 .chip-row { display: flex; gap: 8px; flex-wrap: wrap; }
 .chip {
   font-size: 13px; font-weight: 600; padding: 6px 13px; border-radius: 999px;
@@ -308,18 +516,21 @@ svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1
 .chapter-rail::-webkit-scrollbar { display: none; }
 .chapter-rail-inner { display: flex; gap: 6px; min-width: max-content; }
 .chapter-tab {
-  font-family: var(--font-serif); font-weight: 600; font-size: 14.5px;
-  padding: 11px 20px 13px; border-radius: 10px 10px 0 0; border: 1.5px solid var(--paper-shadow); border-bottom: none;
+  font-family: var(--font-serif); font-weight: 600; font-size: 14px;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 18px 12px 14px; border-radius: 10px 10px 0 0;
+  border: 1.5px solid var(--paper-shadow); border-left: 4px solid var(--tab-accent, var(--paper-shadow)); border-bottom: none;
   background: var(--card-bg-alt); color: var(--ink-soft); position: relative; top: 2px;
   transition: top var(--dur-fast) var(--ease-page), background var(--dur-fast), color var(--dur-fast);
   white-space: nowrap;
 }
 .chapter-tab:hover { color: var(--ink); top: 0px; }
 .chapter-tab.active {
-  background: var(--card-bg); color: var(--ink); top: 0; border-bottom: 1.5px solid var(--card-bg);
-  box-shadow: 0 -3px 10px rgba(38,47,58,0.06);
+  background: var(--tab-tint, var(--card-bg)); color: var(--ink); top: 0;
+  border-bottom: 1.5px solid var(--tab-tint, var(--card-bg));
+  box-shadow: 0 -3px 10px rgba(38,47,58,0.08);
 }
-.chapter-tab .tab-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 8px; }
+.tab-doodle { width: 19px; height: 19px; flex-shrink: 0; color: var(--tab-accent, var(--ink-faint)); }
 .tab-skel { width: 96px; height: 40px; border-radius: 10px 10px 0 0; background: var(--paper-deep); opacity: .6; }
 
 .breadcrumb-strip {
@@ -335,11 +546,26 @@ svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1
 .crumb.current { color: var(--ink); }
 .crumb-sep { color: var(--ink-faint); font-size: 12px; }
 
+/* subject banner — a small themed strip that only appears while browsing
+   inside one particular subject, tying the chapter-rail colour and
+   doodle back to the grid beneath it. */
+.subject-banner {
+  display: flex; align-items: center; gap: 14px;
+  margin: 18px 24px 0; padding: 14px 18px;
+  background: var(--tab-tint, var(--card-bg-alt)); border: 1px solid var(--paper-shadow);
+  border-left: 5px solid var(--tab-accent, var(--paper-shadow)); border-radius: 6px;
+  max-width: 1152px; margin-left: auto; margin-right: auto;
+}
+.subject-banner-doodle { width: 34px; height: 34px; flex-shrink: 0; color: var(--tab-accent, var(--ink-soft)); }
+.subject-banner-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.subject-banner-name { font-family: var(--font-hand); font-size: 22px; color: var(--ink); line-height: 1; }
+.subject-banner-note { font-size: 13px; color: var(--ink-soft); }
+
 /* =========================================================================
    ARCHIVE — main states + card grid
    ========================================================================= */
 
-.archive-main { flex: 1; padding: 26px 24px 60px; max-width: 1200px; width: 100%; margin: 0 auto; }
+.archive-main { flex: 1; padding: 22px 24px 60px; max-width: 1200px; width: 100%; margin: 0 auto; }
 
 .state-loading, .error-card, .empty-card {
   display: flex; flex-direction: column; align-items: center; text-align: center;
@@ -359,14 +585,18 @@ svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1
 .error-glyph, .empty-glyph { font-size: 40px; }
 .error-card h3, .empty-card h3 { font-size: 20px; margin-bottom: 2px; }
 .error-card p, .empty-card p { color: var(--ink-soft); max-width: 360px; font-size: 14.5px; line-height: 1.5; }
+.error-card, .empty-card {
+  background: var(--card-bg); border: 1px solid var(--paper-shadow); border-radius: 10px;
+  max-width: 420px; margin: 30px auto; box-shadow: 0 8px 22px rgba(38,47,58,0.08);
+}
 
 .card-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 20px 18px;
 }
 
 /* folder + file cards share a base */
 .item-card {
-  position: relative; background: var(--card-bg); border: 1.5px solid var(--paper-shadow);
+  position: relative; background: var(--card-tint, var(--card-bg)); border: 1.5px solid var(--paper-shadow);
   border-radius: var(--radius-md); padding: 18px 16px 16px; text-align: left; cursor: pointer;
   display: flex; flex-direction: column; gap: 10px; min-height: 128px;
   transition: transform var(--dur-med) var(--ease-page), box-shadow var(--dur-med) var(--ease-page), border-color var(--dur-fast);
@@ -378,12 +608,18 @@ svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1
   box-shadow: 0 10px 24px rgba(38,47,58,0.14);
   border-color: var(--ink-faint);
 }
+.item-card:hover .file-tape { box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
+
+/* selectively-applied push-pin / paper-clip accents (roughly one card in
+   six or seven gets one — see app.js) */
+.item-card.has-pin .push-pin { top: -7px; left: 26px; }
+.item-card.has-clip .paper-clip { top: -14px; right: 14px; transform: rotate(8deg); }
 
 /* folder card: envelope tab */
-.folder-card { background: var(--card-bg-alt); }
+.folder-card { background: var(--card-tint, var(--card-bg-alt)); }
 .folder-card::before {
   content: ''; position: absolute; top: -7px; left: 16px; width: 46px; height: 12px;
-  background: var(--card-bg-alt); border: 1.5px solid var(--paper-shadow); border-bottom: none;
+  background: var(--card-tint, var(--card-bg-alt)); border: 1.5px solid var(--paper-shadow); border-bottom: none;
   border-radius: 5px 5px 0 0;
 }
 .folder-icon { font-size: 26px; }
@@ -398,10 +634,11 @@ svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1
   filter: drop-shadow(-1px 1px 1px rgba(0,0,0,0.08));
 }
 .file-tape {
-  position: absolute; top: -8px; left: 22px; width: 44px; height: 16px;
+  position: absolute; top: -8px; left: 22px; width: 44px; height: 16px; z-index: 3;
   background: var(--tape-color, var(--moss)); opacity: 0.55;
   transform: rotate(var(--tape-rot, -4deg));
   box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+  transition: box-shadow var(--dur-med);
 }
 .file-top { display: flex; align-items: center; gap: 10px; }
 .file-ext-badge {
@@ -419,6 +656,36 @@ svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1
 }
 .file-card-actions { display: flex; gap: 8px; margin-top: 4px; }
 .file-card-actions .btn { flex: 1; padding: 7px 10px; font-size: 12.5px; }
+
+/* type-specific inner treatments — used selectively, not on every kind */
+
+/* images: a little polaroid, tape holding it to the page */
+.file-photo {
+  position: relative; margin: -18px -16px 4px; aspect-ratio: 4 / 3; overflow: hidden;
+  background: var(--paper-deep); border-bottom: 13px solid var(--card-tint, var(--card-bg));
+}
+.file-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.file-photo.broken { display: none; }
+.file-card--image::after { display: none; }
+
+/* presentations: a second sheet peeking out behind, like a small deck */
+.file-card--presentation::before {
+  content: ''; position: absolute; inset: 5px -5px -5px 5px; z-index: -1;
+  background: var(--card-bg-alt); border: 1.5px solid var(--paper-shadow); border-radius: var(--radius-md);
+}
+
+/* documents: faint ruled lines, like a typed page */
+.file-card--document {
+  background-image: repeating-linear-gradient(180deg, transparent 0 21px, var(--paper-line) 22px);
+  background-position: 0 50px; background-repeat: repeat;
+}
+
+/* code + notebooks: tiny terminal-window dots in the corner */
+.file-card--code, .file-card--notebook { position: relative; }
+.file-card--code::before, .file-card--notebook::before {
+  content: '● ● ●'; position: absolute; top: 9px; right: 14px;
+  font-size: 6px; letter-spacing: 3px; color: var(--ink-faint); opacity: 0.55;
+}
 
 /* =========================================================================
    FILE VIEWER OVERLAY
@@ -447,10 +714,11 @@ svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1
 }
 .viewer-titles { min-width: 0; }
 .viewer-badge {
-  font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: var(--paper);
-  background: var(--ink-soft); padding: 3px 8px; border-radius: 4px; letter-spacing: 0.5px;
+  display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: #fff;
+  background: var(--brick); padding: 3px 9px; border-radius: 2px; letter-spacing: 0.5px;
+  transform: rotate(-2deg); box-shadow: 0 1px 2px rgba(0,0,0,0.15);
 }
-.viewer-filename { font-size: 18px; margin: 8px 0 3px; word-break: break-word; }
+.viewer-filename { font-size: 18px; margin: 9px 0 3px; word-break: break-word; }
 .viewer-path { font-family: var(--font-mono); font-size: 12px; color: var(--ink-faint); }
 .viewer-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
 
@@ -536,15 +804,23 @@ svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1
    Responsive
    ========================================================================= */
 
+@media (max-width: 900px) {
+  .cover-inner { padding: 44px 30px 38px; }
+}
+
 @media (max-width: 760px) {
-  .cover-inner { text-align: left; }
-  .cover-eyebrow, .cover-title, .cover-sub, .cover-actions, .cover-meta, .toc-label, .cover-footnote { text-align: center; }
+  .cover-inner { text-align: left; border-radius: 3px 10px 10px 3px; }
+  .cover-eyebrow, .cover-title, .cover-sub, .cover-degree-tag, .hand-note-cta, .cover-actions, .cover-meta, .toc-label, .cover-footnote { text-align: center; }
+  .cover-degree-tag { display: flex; width: fit-content; margin-left: auto; margin-right: auto; }
   .archive-header { flex-wrap: wrap; padding: 12px 14px; }
   .search-wrap { order: 3; flex-basis: 100%; }
   .brand-text { display: none; }
   .archive-main { padding: 18px 14px 50px; }
   .card-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
   .breadcrumb-strip, .chapter-rail { padding-left: 14px; padding-right: 14px; }
+  .subject-banner { margin: 14px 14px 0; padding: 12px 14px; gap: 10px; }
+  .subject-banner-doodle { width: 26px; height: 26px; }
+  .subject-banner-name { font-size: 18px; }
   .viewer-sheet { height: 100vh; border-radius: 0; width: 100%; }
   .viewer-topbar { padding: 14px; }
   .viewer-actions .btn-sm span, .viewer-actions .btn-sm { font-size: 12px; padding: 7px 10px; }
@@ -553,4 +829,6 @@ svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1
 @media (max-width: 420px) {
   .cover-title-line { font-size: 2.3rem; }
   .cover-title-hand { font-size: 3rem; }
+  .cover-stamp { width: 84px; height: 84px; }
+  .stamp-center { font-size: 34px; }
 }
