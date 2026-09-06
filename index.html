@@ -21,7 +21,30 @@
 
 <!-- ============================= COVER ============================= -->
 <section id="view-cover" class="view view-cover" data-view="cover">
-  <div class="cover-inner">
+  <div class="cover-stage">
+
+    <div class="cover-spine" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="taped-card taped-card--1" style="--tc-accent:var(--brick)" aria-hidden="true">
+      <span class="washi-tape" style="--tape-tone:var(--brick)"></span>
+      <svg viewBox="0 0 32 32" class="subject-doodle"><rect x="4" y="10" width="24" height="16" rx="3"/><path d="M11 10l2.3-4h5.4l2.3 4"/><circle cx="16" cy="18" r="5.5"/><circle cx="16" cy="18" r="2"/><circle cx="23" cy="14" r="1.1" fill="currentColor" stroke="none"/></svg>
+      <span class="taped-card-label">vision</span>
+    </div>
+    <div class="taped-card taped-card--2" style="--tc-accent:var(--lavender)" aria-hidden="true">
+      <span class="push-pin" style="--pin-tone:var(--lavender)"></span>
+      <svg viewBox="0 0 32 32" class="subject-doodle"><circle cx="6" cy="7" r="2.1"/><circle cx="6" cy="16" r="2.1"/><circle cx="6" cy="25" r="2.1"/><circle cx="18" cy="10" r="2.1"/><circle cx="18" cy="22" r="2.1"/><circle cx="28" cy="16" r="2.1"/><path d="M8 7l8 3M8 7l8 15M8 16l8-6M8 16l8 6M8 25l8-3M8 25l8-3M20 10l6 6M20 22l6-6"/></svg>
+      <span class="taped-card-label">deep learning</span>
+    </div>
+    <div class="taped-card taped-card--3" style="--tc-accent:var(--brass)" aria-hidden="true">
+      <span class="washi-tape" style="--tape-tone:var(--brass); --tape-rot:3deg"></span>
+      <svg viewBox="0 0 32 32" class="subject-doodle"><circle cx="8" cy="16" r="5"/><circle cx="24" cy="16" r="5"/><circle cx="24" cy="16" r="7.3"/><path d="M13 13.5c3-2.6 6-2.6 8 0M13 18.5c3 2.6 6 2.6 8 0"/></svg>
+      <span class="taped-card-label">automata</span>
+    </div>
+
+    <div class="cover-inner">
+    <span class="sticker-star" style="top:22px; left:20px; --sticker-tone:var(--dusty-blue); transform:rotate(-12deg);" aria-hidden="true"></span>
     <div class="cover-stamp" aria-hidden="true">
       <svg viewBox="0 0 120 120" class="stamp-ring">
         <circle cx="60" cy="60" r="54" />
@@ -31,17 +54,27 @@
       <span class="stamp-center">VI</span>
     </div>
 
-    <p class="cover-eyebrow">a running field journal, kept in public</p>
+    <p class="cover-eyebrow">a running field journal, <span class="pencil-underline">kept in public</span></p>
     <h1 class="cover-title">
       <span class="cover-title-line">Semester</span>
       <span class="cover-title-line cover-title-hand">Six</span>
     </h1>
+
+    <p class="cover-degree-tag">
+      <span class="washi-tape"></span>
+      BS Artificial Intelligence
+    </p>
+
     <p class="cover-sub">
       Every lecture slide, lab manual, scanned page and half-finished note from this term,
       pulled straight from <code class="repo-tag">hamnasz/Semester-VI</code> and kept exactly
       as it was left — nothing copied, nothing staged, nothing hardcoded.
     </p>
 
+    <p class="hand-note-cta" aria-hidden="true">
+      start here
+      <svg class="hand-note-arrow" viewBox="0 0 24 34"><path d="M12 2v26M12 28l-6-6M12 28l6-6"/></svg>
+    </p>
     <div class="cover-actions">
       <button class="btn btn-primary btn-wax" id="btn-open-journal">
         <span>Open the Journal</span>
@@ -61,7 +94,10 @@
     <div class="stitch-divider" aria-hidden="true"></div>
 
     <div class="cover-toc">
-      <p class="toc-label">Table of Contents</p>
+      <p class="toc-label">
+        <span class="sticky-note-tag">things I'm studying this term</span>
+        Table of Contents
+      </p>
       <ol class="toc-list" id="toc-list">
         <li class="toc-skel"><span class="skeleton-line"></span></li>
         <li class="toc-skel"><span class="skeleton-line"></span></li>
@@ -74,6 +110,7 @@
       Rebuilt on every visit straight from the GitHub REST API — new files show up here the
       moment they're pushed, no rebuild step required.
     </p>
+    </div>
   </div>
 </section>
 
@@ -111,6 +148,8 @@
   </nav>
 
   <div class="breadcrumb-strip" id="breadcrumb-strip" aria-label="Breadcrumb"></div>
+
+  <div class="subject-banner" id="subject-banner" hidden></div>
 
   <main class="archive-main" id="archive-main">
     <div class="state-loading" id="state-loading">
