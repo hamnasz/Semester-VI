@@ -16,7 +16,8 @@ const Viewers = (() => {
     pdf: ['pdf'],
     markdown: ['md', 'markdown'],
     text: ['txt', 'log'],
-    code: ['js', 'py', 'json', 'css', 'html', 'java', 'c', 'cpp', 'ts', 'sql', 'sh', 'yml', 'yaml', 'xml'],
+    code: ['js', 'py', 'json', 'css', 'java', 'c', 'cpp', 'ts', 'sql', 'sh', 'yml', 'yaml', 'xml'],
+    html: ['html'],
     notebook: ['ipynb'],
     csv: ['csv'],
     document: ['docx', 'doc'],
@@ -46,20 +47,20 @@ const Viewers = (() => {
     if (kind === 'presentation') return 'Presentations';
     if (kind === 'document') return 'Documents';
     if (kind === 'spreadsheet' || kind === 'csv') return 'Spreadsheets';
-    if (kind === 'markdown' || kind === 'text' || kind === 'code' || kind === 'notebook') return 'Code & Notes';
+    if (kind === 'markdown' || kind === 'text' || kind === 'code' || kind === 'notebook' || kind === 'html') return 'Code & Notes';
     return 'Other';
   }
 
   const KIND_ICON = {
     image: '🖼️', pdf: '📕', markdown: '📝', text: '📄', code: '💻',
     notebook: '📓', csv: '📊', document: '📘', presentation: '📙',
-    spreadsheet: '📗', other: '📎', folder: '🗂️',
+    spreadsheet: '📗', other: '📎', folder: '🗂️', html: '🌐',
   };
 
   const BADGE_COLOR = {
     pdf: '#96402f', image: '#63744e', markdown: '#3a5a7a', text: '#5c6672',
     code: '#26313c', notebook: '#3a5a7a', csv: '#4c5c3b', document: '#3a5a7a',
-    presentation: '#96402f', spreadsheet: '#4c5c3b', other: '#8b7355',
+    presentation: '#96402f', spreadsheet: '#4c5c3b', other: '#8b7355', html: '#a9822f',
   };
 
   function fileIcon(path) { return KIND_ICON[classify(path)] || KIND_ICON.other; }
@@ -186,6 +187,49 @@ const Viewers = (() => {
   }
 
   /* ------------------------------------------------------------------
+     HTML files → rendered as an actual page inside a sandboxed iframe.
+     Rather than hand-rewriting every href/src in the markup, we inject
+     a single <base> tag pointed at the file's own folder on the raw
+     host — the browser then resolves every relative link, stylesheet,
+     script, image and CSS url() itself, exactly as it would for a
+     normal page fetched from that folder.
+     ------------------------------------------------------------------ */
+  function dirRawUrl(path) {
+    const idx = path.lastIndexOf('/');
+    const folder = idx === -1 ? '' : path.slice(0, idx);
+    const base = GitHubAPI.rawUrl(folder);
+    return base.endsWith('/') ? base : `${base}/`;
+  }
+
+  function buildIsolatedHtml(rawHtml, path) {
+    const baseHref = dirRawUrl(path);
+    let doc;
+    try {
+      doc = new DOMParser().parseFromString(rawHtml, 'text/html');
+    } catch (e) {
+      doc = null;
+    }
+    // Malformed enough that DOMParser gave us nothing usable — fall back
+    // to a plain textual prepend so the file still gets a shot at rendering.
+    if (!doc || !doc.head) {
+      return `<base href="${baseHref}">` + rawHtml;
+    }
+    let baseEl = doc.head.querySelector('base');
+    if (!baseEl) {
+      baseEl = doc.createElement('base');
+      doc.head.insertBefore(baseEl, doc.head.firstChild);
+    }
+    baseEl.setAttribute('href', baseHref);
+    // Clicking a link inside the small preview frame would otherwise
+    // navigate the frame itself; send it to a new tab instead.
+    doc.querySelectorAll('a[href]').forEach((a) => {
+      if (!a.getAttribute('target')) a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener noreferrer');
+    });
+    return '<!DOCTYPE html>\n' + doc.documentElement.outerHTML;
+  }
+
+  /* ------------------------------------------------------------------
      CSV → table (simple RFC4180-ish parser: handles quoted fields
      and escaped quotes, which covers the vast majority of real CSVs).
      ------------------------------------------------------------------ */
@@ -302,6 +346,18 @@ const Viewers = (() => {
         if (!res.ok) throw new Error('fetch failed');
         const text = await res.text();
         container.innerHTML = `<div class="viewer-markdown">${renderMarkdown(text, file.path)}</div>`;
+        return;
+      }
+
+      if (kind === 'html') {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error('fetch failed');
+        const rawHtml = await res.text();
+        const isolatedHtml = buildIsolatedHtml(rawHtml, file.path);
+        container.innerHTML = `<iframe class="viewer-frame html-frame" sandbox="allow-scripts allow-popups" title="${escapeHtml(file.path)}"></iframe>`;
+        // Set as a property rather than an HTML-escaped attribute — simpler
+        // and safer for arbitrary markup than string-embedding it.
+        container.querySelector('iframe').srcdoc = isolatedHtml;
         return;
       }
 
